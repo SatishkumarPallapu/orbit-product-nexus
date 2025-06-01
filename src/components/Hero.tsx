@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
@@ -47,6 +46,56 @@ export const Hero = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="relative"
         >
+          {/* Profile Image */}
+          <motion.div
+            initial={{ scale: 0, rotateY: -180 }}
+            animate={{ scale: 1, rotateY: 0 }}
+            transition={{ duration: 1.2, delay: 0.5 }}
+            className="mb-6 sm:mb-8"
+          >
+            <motion.div
+              whileHover={{ 
+                scale: 1.05,
+                rotateY: 10,
+                transition: { duration: 0.3 }
+              }}
+              className="relative inline-block"
+              style={{ transform: 'perspective(1000px)' }}
+            >
+              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto relative">
+                {/* Animated border */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-orange-400 p-1"
+                >
+                  <div className="w-full h-full rounded-full bg-slate-900" />
+                </motion.div>
+                
+                {/* Image container */}
+                <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
+                  {/* Placeholder - replace src with your actual image */}
+                  <img
+                    src="/placeholder.svg"
+                    alt="Alex Rodriguez"
+                    className="w-full h-full object-cover rounded-full"
+                    onError={(e) => {
+                      // Fallback to initials if image fails to load
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  {/* Fallback initials */}
+                  <div className="absolute inset-0 flex items-center justify-center text-white text-2xl sm:text-3xl md:text-4xl font-bold" style={{ display: 'none' }}>
+                    AR
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
