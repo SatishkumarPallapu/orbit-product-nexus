@@ -19,21 +19,25 @@ export const Hero = () => {
       <div className="max-w-6xl mx-auto text-center relative z-10 w-full">
         {/* Floating 3D Elements - Responsive */}
         <motion.div
-          style={{ y: y1 }}
+          style={{ 
+            y: y1,
+            transform: 'perspective(1000px) rotateX(45deg) rotateY(45deg)'
+          }}
           initial={{ scale: 0, rotateY: -180 }}
           animate={{ scale: 1, rotateY: 0 }}
           transition={{ duration: 1.5, delay: 0.5 }}
           className="absolute -top-10 sm:-top-20 -left-5 sm:-left-20 w-20 h-20 sm:w-40 sm:h-40 bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl sm:rounded-3xl transform rotate-12 opacity-20"
-          style={{ transform: 'perspective(1000px) rotateX(45deg) rotateY(45deg)' }}
         />
         
         <motion.div
-          style={{ y: y2 }}
+          style={{ 
+            y: y2,
+            transform: 'perspective(800px) rotateX(-30deg) rotateY(-30deg)'
+          }}
           initial={{ scale: 0, rotateX: 180 }}
           animate={{ scale: 1, rotateX: 0 }}
           transition={{ duration: 1.5, delay: 1 }}
           className="absolute -top-5 sm:-top-10 -right-5 sm:-right-10 w-16 h-16 sm:w-32 sm:h-32 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl sm:rounded-2xl transform -rotate-12 opacity-30"
-          style={{ transform: 'perspective(800px) rotateX(-30deg) rotateY(-30deg)' }}
         />
 
         {/* Main Content */}
