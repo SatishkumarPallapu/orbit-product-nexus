@@ -87,7 +87,7 @@ export const Navigation = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20"
           >
-            <Link to="/" className="text-white font-semibold text-lg">AR</Link>
+            <Link to="/" className="text-white font-semibold text-lg">VP</Link>
           </motion.div>
 
           <motion.button

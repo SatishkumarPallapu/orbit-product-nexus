@@ -11,7 +11,7 @@ export const AudioManager = () => {
   
   // Profile intro text for text-to-speech fallback
   const profileIntro = `
-    Hi, I'm Alex Rodriguez, a passionate Product Manager with over 8 years of experience 
+    Hi, I'm Venky Pallapu, a passionate Product Manager with over 8 years of experience 
     transforming ideas into impactful products. I specialize in data-driven insights, 
     user-centered design, and strategic execution. I've successfully launched over 50 products 
     with a 98% client satisfaction rate and achieved an average 5x ROI increase for my clients. 
@@ -33,7 +33,7 @@ export const AudioManager = () => {
         if ('speechSynthesis' in window) {
           const utterance = new SpeechSynthesisUtterance(profileIntro);
           utterance.rate = 0.9;
-          utterance.pitch = 1;
+          utterance.pitch = 0.5;
           utterance.volume = 0.8;
           speechSynthesis.speak(utterance);
           setIsPlaying(true);

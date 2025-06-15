@@ -123,7 +123,7 @@ export const Hero = () => {
                 {/* Image container */}
                 <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
                   <img
-                    src="/placeholder.svg"
+                    src="/venky_full_suit_half.png"
                     alt="Alex Rodriguez"
                     className="w-full h-full object-cover rounded-full"
                     onError={(e) => {
@@ -159,14 +159,14 @@ export const Hero = () => {
             transition={{ duration: 1, delay: 1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight"
           >
-            Alex
+            Venkatesh
             <motion.span
               initial={{ rotateY: 90 }}
               animate={{ rotateY: 0 }}
               transition={{ duration: 1, delay: 1.5 }}
               className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-orange-400"
             >
-              Rodriguez
+              Pallapu
             </motion.span>
           </motion.h1>
 

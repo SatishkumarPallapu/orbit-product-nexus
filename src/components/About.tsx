@@ -14,14 +14,14 @@ export const About = () => {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
+      className="min-h-screen flex lg:items-start items-center justify-center px-4 sm:px-6 lg:px-8 "
     >
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-12 sm:mb-16 mt-0"
         >
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Me</span>
