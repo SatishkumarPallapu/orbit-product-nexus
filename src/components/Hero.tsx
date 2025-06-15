@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Sparkles, Target, TrendingUp, Users, Lightbulb, BarChart3, Zap } from 'lucide-react';
+import { ArrowRight, Sparkles, Target, TrendingUp, Users, Lightbulb, BarChart3, Zap, Download } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
   const { scrollY } = useViewportScroll();
@@ -18,13 +19,23 @@ export const Hero = () => {
     { icon: Zap, delay: 3, x: 18, y: -8 }
   ];
 
+  const handleDownloadResume = () => {
+    // Create a placeholder resume download
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // Replace with your actual resume file
+    link.download = 'Alex_Rodriguez_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-24 md:pt-28"
     >
       <div className="max-w-6xl mx-auto text-center relative z-10 w-full">
         {/* Floating PM Icons */}
@@ -48,7 +59,7 @@ export const Hero = () => {
                 y: { duration: 3, repeat: Infinity, delay: item.delay },
                 x: { duration: 4, repeat: Infinity, delay: item.delay }
               }}
-              className="absolute w-8 h-8 sm:w-12 sm:h-12 text-blue-400 opacity-60"
+              className="absolute w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-blue-400 opacity-60"
               style={{ 
                 left: `${50 + item.x}%`, 
                 top: `${30 + item.y}%`,
@@ -60,27 +71,21 @@ export const Hero = () => {
           );
         })}
 
-        {/* Floating 3D Elements - Responsive */}
+        {/* Floating 3D Elements - Fully Responsive */}
         <motion.div
-          style={{ 
-            y: y1,
-            transform: 'perspective(1000px) rotateX(45deg) rotateY(45deg)'
-          }}
+          style={{ y: y1 }}
           initial={{ scale: 0, rotateY: -180 }}
           animate={{ scale: 1, rotateY: 0 }}
           transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute -top-10 sm:-top-20 -left-5 sm:-left-20 w-20 h-20 sm:w-40 sm:h-40 bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl sm:rounded-3xl transform rotate-12 opacity-20"
+          className="absolute -top-10 sm:-top-16 md:-top-20 -left-5 sm:-left-10 md:-left-20 w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-blue-400 to-purple-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-12 opacity-20"
         />
         
         <motion.div
-          style={{ 
-            y: y2,
-            transform: 'perspective(800px) rotateX(-30deg) rotateY(-30deg)'
-          }}
+          style={{ y: y2 }}
           initial={{ scale: 0, rotateX: 180 }}
           animate={{ scale: 1, rotateX: 0 }}
           transition={{ duration: 1.5, delay: 1 }}
-          className="absolute -top-5 sm:-top-10 -right-5 sm:-right-10 w-16 h-16 sm:w-32 sm:h-32 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl sm:rounded-2xl transform -rotate-12 opacity-30"
+          className="absolute -top-5 sm:-top-8 md:-top-10 -right-5 sm:-right-8 md:-right-10 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg sm:rounded-xl md:rounded-2xl transform -rotate-12 opacity-30"
         />
 
         {/* Main Content */}
@@ -95,7 +100,7 @@ export const Hero = () => {
             initial={{ scale: 0, rotateY: -180 }}
             animate={{ scale: 1, rotateY: 0 }}
             transition={{ duration: 1.2, delay: 0.5 }}
-            className="mb-6 sm:mb-8"
+            className="mb-4 sm:mb-6 md:mb-8"
           >
             <motion.div
               whileHover={{ 
@@ -104,9 +109,8 @@ export const Hero = () => {
                 transition: { duration: 0.3 }
               }}
               className="relative inline-block"
-              style={{ transform: 'perspective(1000px)' }}
             >
-              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto relative">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mx-auto relative">
                 {/* Animated border */}
                 <motion.div
                   animate={{ rotate: 360 }}
@@ -118,13 +122,11 @@ export const Hero = () => {
                 
                 {/* Image container */}
                 <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
-                  {/* Placeholder - replace src with your actual image */}
                   <img
                     src="/placeholder.svg"
                     alt="Alex Rodriguez"
                     className="w-full h-full object-cover rounded-full"
                     onError={(e) => {
-                      // Fallback to initials if image fails to load
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
                       const fallback = target.nextElementSibling as HTMLElement;
@@ -132,7 +134,7 @@ export const Hero = () => {
                     }}
                   />
                   {/* Fallback initials */}
-                  <div className="absolute inset-0 flex items-center justify-center text-white text-2xl sm:text-3xl md:text-4xl font-bold" style={{ display: 'none' }}>
+                  <div className="absolute inset-0 flex items-center justify-center text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold" style={{ display: 'none' }}>
                     AR
                   </div>
                 </div>
@@ -144,10 +146,10 @@ export const Hero = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-6 sm:mb-8"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-4 sm:mb-6 md:mb-8"
             whileHover={{ scale: 1.05 }}
           >
-            <Sparkles size={14} className="text-orange-400 sm:w-4 sm:h-4" />
+            <Sparkles size={12} className="text-orange-400 sm:w-4 sm:h-4" />
             <span className="text-white/80 text-xs sm:text-sm">Product Manager & Innovation Catalyst</span>
           </motion.div>
 
@@ -155,7 +157,7 @@ export const Hero = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight"
           >
             Alex
             <motion.span
@@ -172,7 +174,7 @@ export const Hero = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1.3 }}
-            className="text-base sm:text-xl md:text-2xl text-white/70 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/70 mb-4 sm:mb-6 md:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
           >
             Transforming ideas into impactful products through data-driven insights, 
             user-centered design, and strategic execution.
@@ -182,45 +184,48 @@ export const Hero = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
           >
-            <motion.button
-              whileHover={{ scale: 1.05, rotateX: 5 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-semibold overflow-hidden"
-              style={{ 
-                boxShadow: '0 20px 40px rgba(59, 130, 246, 0.3)',
-                transform: 'perspective(1000px)'
-              }}
-            >
-              <span className="relative z-10 flex items-center justify-center gap-2">
-                View My Work
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform sm:w-5 sm:h-5" />
-              </span>
-              <motion.div
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '100%' }}
-                transition={{ duration: 0.5 }}
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-              />
-            </motion.button>
+            <Link to="/projects">
+              <motion.button
+                whileHover={{ scale: 1.05, rotateX: 5 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-semibold overflow-hidden text-sm sm:text-base"
+                style={{ 
+                  boxShadow: '0 20px 40px rgba(59, 130, 246, 0.3)',
+                }}
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  View My Work
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform sm:w-5 sm:h-5" />
+                </span>
+                <motion.div
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                />
+              </motion.button>
+            </Link>
 
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/30 rounded-full text-white font-semibold backdrop-blur-md hover:border-white/50 transition-colors"
+              onClick={handleDownloadResume}
+              className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-2 border-white/30 rounded-full text-white font-semibold backdrop-blur-md hover:border-white/50 transition-colors text-sm sm:text-base flex items-center justify-center gap-2"
             >
+              <Download size={16} className="sm:w-5 sm:h-5" />
               Download Resume
             </motion.button>
           </motion.div>
         </motion.div>
 
-        {/* 3D Stats Cards with PM Metrics - Responsive Grid */}
+        {/* 3D Stats Cards with PM Metrics - Fully Responsive Grid */}
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12 sm:mt-20 px-4"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 px-2 sm:px-4"
         >
           {[
             { value: '50+', label: 'Products Launched', color: 'from-blue-400 to-blue-600', icon: Target },
@@ -239,9 +244,8 @@ export const Hero = () => {
                   scale: 1.05,
                   transition: { duration: 0.3 }
                 }}
-                className="relative p-4 sm:p-6 bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/20 group"
+                className="relative p-3 sm:p-4 md:p-6 bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-white/20 group"
                 style={{ 
-                  transform: 'perspective(1000px)',
                   boxShadow: '0 25px 50px rgba(0, 0, 0, 0.25)'
                 }}
               >
@@ -256,13 +260,13 @@ export const Hero = () => {
                     repeat: Infinity, 
                     delay: index * 0.5 
                   }}
-                  className="mb-3 flex justify-center"
+                  className="mb-2 sm:mb-3 flex justify-center"
                 >
-                  <Icon className={`w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`} />
+                  <Icon className={`w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`} />
                 </motion.div>
 
                 <motion.div 
-                  className={`text-2xl sm:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}
+                  className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 sm:mb-2`}
                   animate={{ 
                     scale: [1, 1.05, 1],
                   }}
@@ -274,7 +278,7 @@ export const Hero = () => {
                 >
                   {stat.value}
                 </motion.div>
-                <div className="text-white/70 text-sm sm:text-base">{stat.label}</div>
+                <div className="text-white/70 text-xs sm:text-sm md:text-base">{stat.label}</div>
 
                 {/* Pulsing dot indicator */}
                 <motion.div
@@ -287,19 +291,19 @@ export const Hero = () => {
                     repeat: Infinity, 
                     delay: index * 0.4 
                   }}
-                  className={`absolute top-2 right-2 w-2 h-2 rounded-full bg-gradient-to-r ${stat.color}`}
+                  className={`absolute top-2 right-2 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gradient-to-r ${stat.color}`}
                 />
               </motion.div>
             );
           })}
         </motion.div>
 
-        {/* Product Lifecycle Visualization */}
+        {/* Product Lifecycle Visualization - Responsive */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, delay: 3.5 }}
-          className="mt-16 sm:mt-20 flex justify-center items-center gap-2 sm:gap-4"
+          className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 flex justify-center items-center gap-1 sm:gap-2 md:gap-4 flex-wrap"
         >
           {['Ideate', 'Build', 'Launch', 'Scale'].map((phase, index) => (
             <motion.div
@@ -307,7 +311,7 @@ export const Hero = () => {
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 4 + index * 0.3, duration: 0.8 }}
-              className="flex items-center gap-2"
+              className="flex items-center gap-1 sm:gap-2"
             >
               <motion.div
                 animate={{ 
@@ -319,7 +323,7 @@ export const Hero = () => {
                   repeat: Infinity, 
                   delay: index * 0.5 
                 }}
-                className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-r ${
+                className={`w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full bg-gradient-to-r ${
                   index === 0 ? 'from-yellow-400 to-orange-500' :
                   index === 1 ? 'from-blue-400 to-purple-500' :
                   index === 2 ? 'from-green-400 to-teal-500' :
@@ -335,7 +339,7 @@ export const Hero = () => {
                     repeat: Infinity, 
                     delay: 4.5 + index * 0.5 
                   }}
-                  className="w-4 sm:w-8 h-0.5 bg-gradient-to-r from-white/20 to-white/40 origin-left"
+                  className="w-2 sm:w-4 md:w-8 h-0.5 bg-gradient-to-r from-white/20 to-white/40 origin-left"
                 />
               )}
             </motion.div>
