@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle, ExternalLink, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, ExternalLink, Github, Linkedin, Twitter, MessageCircle } from 'lucide-react';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,11 +14,29 @@ export const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 3000);
-    }, 1000);
+    
+    // Create WhatsApp message
+    const whatsappMessage = `Hi! I'm ${formData.name}${formData.company ? ` from ${formData.company}` : ''}.
+
+Email: ${formData.email}
+
+Message: ${formData.message}`;
+    
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Your WhatsApp number (replace with your actual number)
+    const whatsappNumber = '+15551234567'; // Replace with your WhatsApp number
+    
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${encodedMessage}`;
+    
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
+    
+    // Show success message
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 3000);
   };
 
   const contactMethods = [
@@ -33,6 +51,13 @@ export const Contact = () => {
       label: 'Phone',
       value: '+1 (555) 123-4567',
       color: 'from-purple-500 to-pink-500'
+    },
+    {
+      icon: MessageCircle,
+      label: 'WhatsApp',
+      value: '+1 (555) 123-4567',
+      color: 'from-green-500 to-green-600',
+      action: () => window.open('https://wa.me/15551234567', '_blank')
     },
     {
       icon: MapPin,
@@ -91,7 +116,8 @@ export const Contact = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10" />
               
               <div className="relative z-10">
-                <h3 className="text-3xl font-bold text-white mb-8">Send a Message</h3>
+                <h3 className="text-3xl font-bold text-white mb-2">Send a Message</h3>
+                <p className="text-white/60 text-sm mb-8">Your message will be sent via WhatsApp</p>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -167,9 +193,9 @@ export const Contact = () => {
                     whileTap={{ scale: 0.95 }}
                     type="submit"
                     disabled={isSubmitted}
-                    className="w-full relative px-8 py-4 bg-gradient-to-r from-pink-500 to-orange-500 rounded-xl text-white font-semibold overflow-hidden disabled:opacity-50"
+                    className="w-full relative px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 rounded-xl text-white font-semibold overflow-hidden disabled:opacity-50"
                     style={{ 
-                      boxShadow: '0 20px 40px rgba(236, 72, 153, 0.3)',
+                      boxShadow: '0 20px 40px rgba(34, 197, 94, 0.3)',
                       transform: 'perspective(1000px)'
                     }}
                   >
@@ -177,12 +203,12 @@ export const Contact = () => {
                       {isSubmitted ? (
                         <>
                           <CheckCircle size={20} />
-                          Message Sent!
+                          Sent to WhatsApp!
                         </>
                       ) : (
                         <>
-                          <Send size={20} />
-                          Send Message
+                          <MessageCircle size={20} />
+                          Send via WhatsApp
                         </>
                       )}
                     </span>
@@ -222,6 +248,7 @@ export const Contact = () => {
                       scale: 1.05,
                       transition: { duration: 0.3 }
                     }}
+                    onClick={method.action}
                     className="relative p-6 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 cursor-pointer group"
                     style={{ 
                       transform: 'perspective(1000px)',
