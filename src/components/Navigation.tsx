@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { User, Briefcase, Target, TrendingUp, Mail, Home, Menu, X } from 'lucide-react';
+import { User, Briefcase, Target, TrendingUp, Mail, Home, Menu, X, Award } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 export const Navigation = () => {
@@ -11,6 +11,7 @@ export const Navigation = () => {
   const navItems = [
     { id: '/', label: 'Home', icon: Home },
     { id: '/about', label: 'About', icon: User },
+    { id: '/experience', label: 'Experience', icon: Award },
     { id: '/projects', label: 'Projects', icon: Briefcase },
     { id: '/skills', label: 'Skills', icon: Target },
     { id: '/process', label: 'Process', icon: TrendingUp },
