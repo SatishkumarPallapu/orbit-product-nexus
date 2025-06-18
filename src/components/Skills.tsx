@@ -250,7 +250,7 @@ export const Skills = () => {
           <div className="flex flex-wrap justify-center gap-4">
             {[
               'Agile/Scrum', 'Jira', 'Figma', 'Tableau', 'Google Analytics', 
-              'Mixpanel', 'Amplitude', 'Slack', 'Notion', 'Miro'
+              'Mixpanel', 'Amplitude', 'Slack', 'Notion', 'Miro', 'Confluence'
             ].map((tool, index) => (
               <motion.span
                 key={index}
