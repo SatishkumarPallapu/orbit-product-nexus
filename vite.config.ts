@@ -19,4 +19,16 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'mapbox': ['mapbox-gl', 'react-map-gl'],
+          'framer': ['framer-motion'],
+          'vendor': ['lucide-react', 'sonner'],
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1500,
+  },
 }));
