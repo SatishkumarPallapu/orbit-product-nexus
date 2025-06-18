@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { User, Briefcase, Target, TrendingUp, Mail, Home, Menu, X, Award } from 'lucide-react';
