@@ -5,6 +5,7 @@ import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock } from 'luci
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
+
 //   const projects = [
 //     {
 //       id: 1,
@@ -290,6 +291,115 @@ const projects = [
     "impact": "Improved CTR by 8.5%, reduced bounce rate by 12%, and increased repeat bookings by 11.8%"
   }
 ]
+
+
+  const projects = [
+    {
+      id: 1,
+      title: 'E-commerce Revolution',
+      category: 'Mobile App',
+      description: 'Redesigned checkout flow resulting in 40% increase in conversion rates',
+      longDescription: [
+        'Led a comprehensive redesign of the mobile checkout experience',
+        'Implemented progressive disclosure, one-click payments, and smart form validation',
+        'Conducted extensive A/B testing and user research to optimize every step of the funnel'
+      ],
+      metrics: {
+        revenue: '+$2.5M ARR',
+        conversion: '+40%',
+        users: '500K+',
+        timeline: '6 months'
+      },
+      color: 'from-blue-500 to-purple-600',
+      technologies: ['React Native', 'GraphQL', 'Stripe', 'Analytics'],
+      impact: 'Increased company revenue by $2.5M annually and improved user satisfaction scores by 35%'
+    },
+    {
+      id: 2,
+      title: 'AI-Powered Analytics',
+      category: 'SaaS Platform',
+      description: 'Built ML-driven insights platform serving 10K+ businesses',
+      longDescription: [
+        'Spearheaded the development of an AI-powered analytics platform',
+        'Provided automated insights and recommendations to business users',
+        'Collaborated with data science teams to translate complex ML models into actionable business intelligence'
+      ],
+      metrics: {
+        revenue: '+$5M ARR',
+        conversion: '+60%',
+        users: '10K+',
+        timeline: '12 months'
+      },
+      color: 'from-purple-500 to-pink-600',
+      technologies: ['Python', 'TensorFlow', 'React', 'PostgreSQL'],
+      impact: 'Enabled data-driven decision making for 10,000+ businesses and reduced analysis time by 80%'
+    },
+    {
+      id: 3,
+      title: 'Fintech Innovation',
+      category: 'Financial App',
+      description: 'Launched digital banking features with 95% user adoption',
+      longDescription: [
+        'Led the product strategy and execution for a suite of digital banking features',
+        'Developed budgeting tools, savings goals, and investment tracking capabilities',
+        'Worked closely with regulatory teams to ensure compliance while maintaining exceptional UX'
+      ],
+      metrics: {
+        revenue: '+$8M ARR',
+        conversion: '+95%',
+        users: '1M+',
+        timeline: '18 months'
+      },
+      color: 'from-orange-500 to-red-600',
+      technologies: ['Flutter', 'Node.js', 'Blockchain', 'Plaid API'],
+      impact: 'Achieved 95% feature adoption rate and positioned company as fintech innovation leader'
+    },
+    {
+      id: 4,
+      title: 'TImesheet Guru',
+      category: ' Internal Employee Productivity & Time Tracking Tool',
+      description: 'An internal time tracking and productivity tool - streamline timesheet logging, and performance reporting across departments',
+      longDescription: [
+        'Conceptualized, developed, and launched in just 60 days as a 0→1 internal web application',
+        'Led a 5-member cross-functional team (PM, FE, BE, QA, and UI/UX)',
+        'Replaced manual logging with a scalable, automated system',
+        'Enabled session tracking, role-based access, compliance, and real-time dashboards for 500+ users',
+        'Reduced payroll and timesheet discrepancies and improved reporting accuracy'
+      ],
+      metrics: {
+        revenue: ' NA',
+        conversion: '100%',
+        users: '500+',
+        timeline: 'August 2022 – September 2022 (60 days)'
+      },
+      color: 'from-yellow-500 to-yellow-600',
+      technologies: ['Flutter', 'Node.js', 'Blockchain', 'Plaid API'],
+      impact: `The tool achieved company-wide adoption as the daily standard for time reporting, significantly improving operational transparency. It enabled proactive resource planning and more effective performance reviews by providing accurate, real-time visibility into task-level efforts. By replacing manual logging processes, it reduced friction and human error, leading to increased efficiency. Additionally, the success and feedback from this tool directly informed the development of further automation solutions for HR and operations teams`
+    },
+    {
+      id: 5,
+      title: 'Payment Page Abandonment Optimization',
+      category: 'Conversion Optimization',
+      description: 'A strategic redesign of the e-commerce payment flow to reduce checkout abandonment by integrating trusted payment methods, predictive incentives, and behavioral nudges.',
+      longDescription: [
+        'Led a complete revamp of the payment experience with a 6-member team',
+        'Conducted in-depth funnel and session analysis to identify friction points',
+        'Launched instant wallet checkout with KakaoPay and NaverPay',
+        'Introduced a real-time coupon engine and implemented exit recovery modals',
+        'Added secure design cues and refund guarantees to boost trust',
+        'Achieved measurable conversion lifts and increased revenue from repeat buyers'
+      ],
+      metrics: {
+        revenue: '+22%',
+        conversion: '+13%',
+        users: '500k+',
+        timeline: 'November 2022 – April 2023'
+      },
+      color: 'from-orange-500 to-yellow-600',
+      technologies: ['Flutter', 'Node.js', 'Blockchain', 'Plaid API'],
+      impact: `The redesigned payment experience led to a 16% reduction in checkout abandonment, outperforming industry benchmarks. One-tap wallet integration improved the checkout completion rate by 19%, while behavioral enhancements such as predictive coupon suggestions and exit-intent modals significantly boosted user engagement and retention. These changes resulted in a 4x increase in coupon usage and a 22% revenue lift from returning users. Overall, A/B testing validated a 13% improvement in conversion rates across over half a million sessions, demonstrating the substantial business value of these UX and behavioral optimizations.`
+    }
+  ];
 
 
   return (
