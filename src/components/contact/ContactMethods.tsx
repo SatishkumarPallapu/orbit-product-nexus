@@ -8,26 +8,28 @@ export const ContactMethods = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'alex@productmanager.com',
-      color: 'from-blue-500 to-cyan-500'
+      value: 'pallapuvenkatesh2122@gmail.com',
+      color: 'from-blue-500 to-cyan-500',
+      action: () => window.open('mailto:support@example.com', '_blank')
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      color: 'from-purple-500 to-pink-500'
+      value: '+91 94411-00146',
+      color: 'from-purple-500 to-pink-500',
+      action: () => window.open('tel:+91 9441100146', '_blank')
     },
     {
       icon: MessageCircle,
       label: 'WhatsApp',
-      value: '+1 (555) 123-4567',
+      value: '+91 94411-00146',
       color: 'from-green-500 to-green-600',
       action: () => window.open('https://wa.me/15551234567', '_blank')
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Hyderabad, Telangana',
       color: 'from-orange-500 to-red-500'
     }
   ];

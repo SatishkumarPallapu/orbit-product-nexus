@@ -5,9 +5,9 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 
 export const SocialLinks = () => {
   const socialLinks = [
-    { icon: Linkedin, label: 'LinkedIn', href: '#', color: 'from-blue-600 to-blue-700' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/venkateshpallapu-6b2b0a144/', color: 'from-blue-600 to-blue-700' },
     { icon: Twitter, label: 'Twitter', href: '#', color: 'from-sky-400 to-sky-600' },
-    { icon: Github, label: 'GitHub', href: '#', color: 'from-gray-700 to-gray-900' }
+    { icon: Github, label: 'GitHub', href: 'https://github.com/venkateshpallapu2122', color: 'from-gray-700 to-gray-900' }
   ];
 
   return (
@@ -26,6 +26,7 @@ export const SocialLinks = () => {
             <motion.a
               key={index}
               href={social.href}
+              target='_blank'
               initial={{ scale: 0, rotateY: -90 }}
               animate={{ scale: 1, rotateY: 0 }}
               transition={{ duration: 0.6, delay: 1.8 + index * 0.1 }}

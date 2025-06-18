@@ -14,7 +14,7 @@ export const About = () => {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex lg:items-start items-center justify-center px-4 sm:px-6 lg:px-8  md:pb-20"
+      className="min-h-screen flex lg:items-start items-center justify-center px-4 sm:px-6 lg:px-8  pb-20"
     >
       <div className="max-w-6xl mx-auto w-full">
         <motion.div

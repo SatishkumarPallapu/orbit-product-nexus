@@ -85,7 +85,7 @@ export const Hero = () => {
           initial={{ scale: 0, rotateX: 180 }}
           animate={{ scale: 1, rotateX: 0 }}
           transition={{ duration: 1.5, delay: 1 }}
-          className="absolute -top-5 sm:-top-8 md:-top-10 -right-5 sm:-right-8 md:-right-10 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg sm:rounded-xl md:rounded-2xl transform -rotate-12 opacity-30"
+          className="absolute -top-5 sm:-top-8 md:-top-10 -right-5 sm:-right-8 md:-right-10 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg sm:rounded-xl md:rounded-2xl transform -rotate-12 opacity-30 pb-10"
         />
 
         {/* Main Content */}
@@ -303,7 +303,7 @@ export const Hero = () => {
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, delay: 3.5 }}
-          className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 flex justify-center items-center gap-1 sm:gap-2 md:gap-4 flex-wrap"
+          className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 flex justify-center items-center gap-1 sm:gap-2 md:gap-4 flex-wrap mb-10"
         >
           {['Ideate', 'Build', 'Launch', 'Scale'].map((phase, index) => (
             <motion.div

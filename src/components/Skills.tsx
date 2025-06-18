@@ -59,7 +59,7 @@ export const Skills = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex items-center justify-center px-4"
+      className="min-h-screen flex items-center justify-center px-4 pb-20"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div

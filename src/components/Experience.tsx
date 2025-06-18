@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Building, ChevronRight, TrendingUp } from 'lucide-react';
-
 
 // const experiences = [
 //   {
@@ -116,10 +114,11 @@ const experiences = [
           "JIRA",
           "Confluence"
         ]
+      }
+    ]
   },
   {
     id: 2,
-
     company: "CarTrade Tech Limited (CARWALE.COM)",
     location: "Hyderabad, India",
     totalDuration: "Jul 2021 – Dec 2021",
@@ -155,21 +154,6 @@ const experiences = [
           "Reduced average delivery time by 20% through optimized logistics"
         ],
         technologies: ["Excel", "Local Supply Chain Tools"]
-    company: "Digital Innovations Ltd.",
-    location: "New York, NY", 
-    totalDuration: "Jun 2018 - Dec 2019",
-    roles: [
-      {
-        title: "Frontend Developer",
-        duration: "Jun 2018 - Dec 2019",
-        type: "Full-time",
-        description: "Developed modern web applications and worked closely with UX/UI designers to implement pixel-perfect interfaces. Focused on performance optimization and user experience.",
-        achievements: [
-          "Delivered 8+ client projects on time and within budget",
-          "Improved website loading speed by 45%",
-          "Established component library used across multiple projects"
-        ],
-        technologies: ["React", "JavaScript", "Sass", "Bootstrap", "PHP", "MySQL"]
       }
     ]
   }
@@ -264,7 +248,6 @@ export const Experience = () => {
                       {role.description}
                     </p>
 
-
                     {/* Achievements */}
                     <div className="mb-6">
                       <h4 className="text-lg font-semibold text-white mb-3">Key Achievements</h4>
@@ -278,9 +261,6 @@ export const Experience = () => {
                       </ul>
                     </div>
 
-
-
-              
                     {/* Technologies */}
                     <div>
                       <h4 className="text-lg font-semibold text-white mb-3">Technologies Used</h4>

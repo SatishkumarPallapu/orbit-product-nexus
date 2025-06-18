@@ -26,7 +26,7 @@ Message: ${formData.message}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
     
     // Your WhatsApp number (replace with your actual number)
-    const whatsappNumber = '+15551234567'; // Replace with your WhatsApp number
+    const whatsappNumber = '+919441100146'; // Replace with your WhatsApp number
     
     // Create WhatsApp URL
     const whatsappURL = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${encodedMessage}`;
