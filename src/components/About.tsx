@@ -60,7 +60,7 @@ export const About = () => {
                 className="relative mb-6"
               >
                 <div className="w-32 h-32 sm:w-48 sm:h-48 mx-auto bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl sm:rounded-3xl flex items-center justify-center text-4xl sm:text-6xl font-bold text-white relative overflow-hidden">
-                  AR
+                  VP
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -76,11 +76,11 @@ export const About = () => {
                 <div className="flex items-center justify-center gap-4 sm:gap-6 text-white/60 text-sm sm:text-base">
                   <div className="flex items-center gap-2">
                     <MapPin size={14} className="sm:w-4 sm:h-4" />
-                    <span>San Francisco, CA</span>
+                    <span>Hyderabad, TG</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Calendar size={14} className="sm:w-4 sm:h-4" />
-                    <span>8+ Years</span>
+                    <span>3+ Years</span>
                   </div>
                 </div>
               </div>
@@ -96,8 +96,8 @@ export const About = () => {
           >
             <div className="space-y-4 sm:space-y-6">
               <p className="text-white/80 text-base sm:text-lg leading-relaxed">
-                With over 8 years of experience in product management, I've led cross-functional teams 
-                to launch 50+ successful products that have generated millions in revenue and delighted 
+                With over 3+ years of experience in product management, I've led cross-functional teams 
+                to launch 4+ successful products that have generated millions in revenue and delighted 
                 users worldwide.
               </p>
               
