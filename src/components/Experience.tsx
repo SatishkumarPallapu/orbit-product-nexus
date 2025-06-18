@@ -54,7 +54,7 @@ const experiences = [
 export const Experience = () => {
   return (
     <div className="min-h-screen py-20 px-4">
-<!-- >>>>>>> main -->
+
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -175,4 +175,4 @@ export const Experience = () => {
       </div>
     </div>
   );
-
+}
