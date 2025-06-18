@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Building, ChevronRight } from 'lucide-react';
@@ -53,8 +52,8 @@ const experiences = [
 
 export const Experience = () => {
   return (
-    <div className="min-h-screen py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+ <div className="min-h-screen pb-16 px-4">
+  <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -173,5 +172,6 @@ export const Experience = () => {
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+
+  }
