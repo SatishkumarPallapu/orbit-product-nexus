@@ -14,7 +14,7 @@ export const About = () => {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex lg:items-start items-center justify-center px-4 sm:px-6 lg:px-8 "
+      className="min-h-screen flex lg:items-start items-center justify-center px-4 sm:px-6 lg:px-8  md:pb-20"
     >
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
@@ -31,7 +31,7 @@ export const About = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
           {/* Profile Card */}
           <motion.div
             initial={{ rotateY: -90, opacity: 0 }}
@@ -70,8 +70,8 @@ export const About = () => {
               </motion.div>
 
               <div className="text-center space-y-4">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white">Alex Rodriguez</h3>
-                <p className="text-blue-300 text-base sm:text-lg">Senior Product Manager</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white">Venkatesh Pallapu</h3>
+                <p className="text-blue-300 text-base sm:text-lg"> Product Manager</p>
                 
                 <div className="flex items-center justify-center gap-4 sm:gap-6 text-white/60 text-sm sm:text-base">
                   <div className="flex items-center gap-2">
@@ -96,14 +96,15 @@ export const About = () => {
           >
             <div className="space-y-4 sm:space-y-6">
               <p className="text-white/80 text-base sm:text-lg leading-relaxed">
-                With over 3+ years of experience in product management, I've led cross-functional teams 
-                to launch 4+ successful products that have generated millions in revenue and delighted 
-                users worldwide.
+               I'm Venkatesh Pallapu, a strategic Product Manager with 3+ years of experience, passionate about building impactful digital products and solving complex business problems. I specialize in <b>0→1 product development, SaaS platforms, and data-driven optimization</b> across eCommerce, campaign governance, and internal productivity tools.
               </p>
               
               <p className="text-white/80 text-base sm:text-lg leading-relaxed">
-                I specialize in transforming complex business challenges into elegant product solutions 
-                through data-driven insights, user research, and agile methodologies.
+                I bring a unique blend of analytical rigor and user empathy, and thrive in fast-paced, agile environments. From defining product vision to shipping scalable MVPs, I lead cross-functional teams with clarity and ownership. I believe great products are born at the intersection of <b>user research, market understanding, and lean execution</b>
+              </p>
+
+              <p className="text-white/80 text-base sm:text-lg leading-relaxed">
+                My goal? Build products that <i>empower users, drive engagement, and deliver measurable impact.</i>
               </p>
             </div>
 
@@ -150,7 +151,7 @@ export const About = () => {
               }}
             >
               <Heart size={16} className="sm:w-5 sm:h-5" />
-              Let's Connect
+              <a href="/contact">Let's Connect</a>
             </motion.button>
           </motion.div>
         </div>
