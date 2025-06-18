@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock } from 'lucide-react';
@@ -12,7 +11,11 @@ export const Projects = () => {
       title: 'E-commerce Revolution',
       category: 'Mobile App',
       description: 'Redesigned checkout flow resulting in 40% increase in conversion rates',
-      longDescription: 'Led a comprehensive redesign of the mobile checkout experience, implementing progressive disclosure, one-click payments, and smart form validation. Conducted extensive A/B testing and user research to optimize every step of the funnel.',
+      longDescription: [
+        'Led a comprehensive redesign of the mobile checkout experience',
+        'Implemented progressive disclosure, one-click payments, and smart form validation',
+        'Conducted extensive A/B testing and user research to optimize every step of the funnel'
+      ],
       metrics: {
         revenue: '+$2.5M ARR',
         conversion: '+40%',
@@ -28,7 +31,11 @@ export const Projects = () => {
       title: 'AI-Powered Analytics',
       category: 'SaaS Platform',
       description: 'Built ML-driven insights platform serving 10K+ businesses',
-      longDescription: 'Spearheaded the development of an AI-powered analytics platform that provides automated insights and recommendations to business users. Collaborated with data science teams to translate complex ML models into actionable business intelligence.',
+      longDescription: [
+        'Spearheaded the development of an AI-powered analytics platform',
+        'Provided automated insights and recommendations to business users',
+        'Collaborated with data science teams to translate complex ML models into actionable business intelligence'
+      ],
       metrics: {
         revenue: '+$5M ARR',
         conversion: '+60%',
@@ -44,7 +51,11 @@ export const Projects = () => {
       title: 'Fintech Innovation',
       category: 'Financial App',
       description: 'Launched digital banking features with 95% user adoption',
-      longDescription: 'Led the product strategy and execution for a suite of digital banking features including budgeting tools, savings goals, and investment tracking. Worked closely with regulatory teams to ensure compliance while maintaining exceptional UX.',
+      longDescription: [
+        'Led the product strategy and execution for a suite of digital banking features',
+        'Developed budgeting tools, savings goals, and investment tracking capabilities',
+        'Worked closely with regulatory teams to ensure compliance while maintaining exceptional UX'
+      ],
       metrics: {
         revenue: '+$8M ARR',
         conversion: '+95%',
@@ -55,13 +66,18 @@ export const Projects = () => {
       technologies: ['Flutter', 'Node.js', 'Blockchain', 'Plaid API'],
       impact: 'Achieved 95% feature adoption rate and positioned company as fintech innovation leader'
     },
-
-      {
+    {
       id: 4,
       title: 'TImesheet Guru',
       category: ' Internal Employee Productivity & Time Tracking Tool',
       description: 'An internal time tracking and productivity tool - streamline timesheet logging, and performance reporting across departments',
-      longDescription: `TimesheetGuru was conceptualized, developed, and launched in just 60 days as a 0→1 internal web application aimed at improving how employees report time, tasks, and productivity. As the Product Manager, I led a 5-member cross-functional team (PM, FE, BE, QA, and UI/UX) to replace manual logging with a scalable, automated system. The tool enabled session tracking, role-based access, compliance, and real-time dashboards for 500+ users. Post-launch, the product reduced payroll and timesheet discrepancies, improved reporting accuracy, and became a foundation for future automation within HR and ops.`,
+      longDescription: [
+        'Conceptualized, developed, and launched in just 60 days as a 0→1 internal web application',
+        'Led a 5-member cross-functional team (PM, FE, BE, QA, and UI/UX)',
+        'Replaced manual logging with a scalable, automated system',
+        'Enabled session tracking, role-based access, compliance, and real-time dashboards for 500+ users',
+        'Reduced payroll and timesheet discrepancies and improved reporting accuracy'
+      ],
       metrics: {
         revenue: ' NA',
         conversion: '100%',
@@ -72,13 +88,19 @@ export const Projects = () => {
       technologies: ['Flutter', 'Node.js', 'Blockchain', 'Plaid API'],
       impact: `The tool achieved company-wide adoption as the daily standard for time reporting, significantly improving operational transparency. It enabled proactive resource planning and more effective performance reviews by providing accurate, real-time visibility into task-level efforts. By replacing manual logging processes, it reduced friction and human error, leading to increased efficiency. Additionally, the success and feedback from this tool directly informed the development of further automation solutions for HR and operations teams`
     },
-
-     {
+    {
       id: 5,
       title: 'Payment Page Abandonment Optimization',
       category: 'Conversion Optimization',
       description: 'A strategic redesign of the e-commerce payment flow to reduce checkout abandonment by integrating trusted payment methods, predictive incentives, and behavioral nudges.',
-      longDescription: `As the Product Manager for a 6-member team, I led a complete revamp of the payment experience between November 2022 and April 2023. The goal was to address high checkout abandonment and build user confidence at the final step. We conducted in-depth funnel and session analysis to identify friction points, then launched instant wallet checkout with KakaoPay and NaverPay, introduced a real-time coupon engine, and implemented exit recovery modals based on behavioral triggers. Additional enhancements included secure design cues and refund guarantees to boost trust. These efforts resulted in measurable conversion lifts and increased revenue from repeat buyers. `,
+      longDescription: [
+        'Led a complete revamp of the payment experience with a 6-member team',
+        'Conducted in-depth funnel and session analysis to identify friction points',
+        'Launched instant wallet checkout with KakaoPay and NaverPay',
+        'Introduced a real-time coupon engine and implemented exit recovery modals',
+        'Added secure design cues and refund guarantees to boost trust',
+        'Achieved measurable conversion lifts and increased revenue from repeat buyers'
+      ],
       metrics: {
         revenue: '+22%',
         conversion: '+13%',
@@ -221,7 +243,16 @@ export const Projects = () => {
                       {/* Header */}
                       <div className="text-center space-y-4">
                         <h3 className="text-4xl font-bold text-white">{project.title}</h3>
-                        <p className="text-xl text-white/70">{project.longDescription}</p>
+                        <div className="text-left max-w-none">
+                          <ul className="text-xl text-white/70 space-y-2">
+                            {project.longDescription.map((point, index) => (
+                              <li key={index} className="flex items-start gap-3">
+                                <span className="text-blue-400 mt-2 flex-shrink-0">•</span>
+                                <span>{point}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
 
                       {/* Metrics Grid */}
