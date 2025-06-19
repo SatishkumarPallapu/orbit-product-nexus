@@ -206,6 +206,7 @@ export const Process = () => {
                           {step.title}
                         </h3>
                         <p className="text-white/60 text-sm">{step.description}</p>
+                        <p className="text-orange-400 text-sm font-semibold mt-1">{step.timeline}</p>
                       </div>
 
                       <motion.div
