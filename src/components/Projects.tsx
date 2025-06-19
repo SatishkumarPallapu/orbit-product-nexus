@@ -289,57 +289,7 @@ const projects = [
     "impact": "Improved CTR by 8.5%, reduced bounce rate by 12%, and increased repeat bookings by 11.8%"
   }
 ];
-    {
-      id: 3,
-      title: 'Fintech Innovation',
-      category: 'Financial App',
-      description: 'Launched digital banking features with 95% user adoption',
-      longDescription: 'Led the product strategy and execution for a suite of digital banking features including budgeting tools, savings goals, and investment tracking. Worked closely with regulatory teams to ensure compliance while maintaining exceptional UX.',
-      metrics: {
-        revenue: '+$8M ARR',
-        conversion: '+95%',
-        users: '1M+',
-        timeline: '18 months'
-      },
-      color: 'from-orange-500 to-red-600',
-      technologies: ['Flutter', 'Node.js', 'Blockchain', 'Plaid API'],
-      impact: 'Achieved 95% feature adoption rate and positioned company as fintech innovation leader'
-    },
-
-      {
-      id: 4,
-      title: 'TImesheet Guru',
-      category: ' Internal Employee Productivity & Time Tracking Tool',
-      description: 'An internal time tracking and productivity tool - streamline timesheet logging, and performance reporting across departments',
-      longDescription: `TimesheetGuru was conceptualized, developed, and launched in just 60 days as a 0→1 internal web application aimed at improving how employees report time, tasks, and productivity. As the Product Manager, I led a 5-member cross-functional team (PM, FE, BE, QA, and UI/UX) to replace manual logging with a scalable, automated system. The tool enabled session tracking, role-based access, compliance, and real-time dashboards for 500+ users. Post-launch, the product reduced payroll and timesheet discrepancies, improved reporting accuracy, and became a foundation for future automation within HR and ops.`,
-      metrics: {
-        revenue: ' NA',
-        conversion: '100%',
-        users: '500+',
-        timeline: 'August 2022 – September 2022 (60 days)'
-      },
-      color: 'from-yellow-500 to-yellow-600',
-      technologies: ['Flutter', 'Node.js', 'Blockchain', 'Plaid API'],
-      impact: `The tool achieved company-wide adoption as the daily standard for time reporting, significantly improving operational transparency. It enabled proactive resource planning and more effective performance reviews by providing accurate, real-time visibility into task-level efforts. By replacing manual logging processes, it reduced friction and human error, leading to increased efficiency. Additionally, the success and feedback from this tool directly informed the development of further automation solutions for HR and operations teams`
-    },
-
-     {
-      id: 5,
-      title: 'Payment Page Abandonment Optimization',
-      category: 'Conversion Optimization',
-      description: 'A strategic redesign of the e-commerce payment flow to reduce checkout abandonment by integrating trusted payment methods, predictive incentives, and behavioral nudges.',
-      longDescription: `As the Product Manager for a 6-member team, I led a complete revamp of the payment experience between November 2022 and April 2023. The goal was to address high checkout abandonment and build user confidence at the final step. We conducted in-depth funnel and session analysis to identify friction points, then launched instant wallet checkout with KakaoPay and NaverPay, introduced a real-time coupon engine, and implemented exit recovery modals based on behavioral triggers. Additional enhancements included secure design cues and refund guarantees to boost trust. These efforts resulted in measurable conversion lifts and increased revenue from repeat buyers. `,
-      metrics: {
-        revenue: '+22%',
-        conversion: '+13%',
-        users: '500k+',
-        timeline: 'November 2022 – April 2023'
-      },
-      color: 'from-orange-500 to-yellow-600',
-      technologies: ['Flutter', 'Node.js', 'Blockchain', 'Plaid API'],
-      impact: `The redesigned payment experience led to a 16% reduction in checkout abandonment, outperforming industry benchmarks. One-tap wallet integration improved the checkout completion rate by 19%, while behavioral enhancements such as predictive coupon suggestions and exit-intent modals significantly boosted user engagement and retention. These changes resulted in a 4x increase in coupon usage and a 22% revenue lift from returning users. Overall, A/B testing validated a 13% improvement in conversion rates across over half a million sessions, demonstrating the substantial business value of these UX and behavioral optimizations.`
-    }
-  ];
+    
 
   return (
     <motion.section
