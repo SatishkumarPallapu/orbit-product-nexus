@@ -11,11 +11,11 @@ export const AudioManager = () => {
   
   // Profile intro text for text-to-speech fallback
   const profileIntro = `
-    Hi, I'm Venky Pallapu, a passionate Product Manager with over 8 years of experience 
-    transforming ideas into impactful products. I specialize in data-driven insights, 
-    user-centered design, and strategic execution. I've successfully launched over 50 products 
-    with a 98% client satisfaction rate and achieved an average 5x ROI increase for my clients. 
-    Welcome to my portfolio where innovation meets execution.
+   I'm Venkatesh Pallapu, a strategic Product Manager with 3+ years of experience, passionate about building impactful digital products and solving complex business problems. I specialize in 0→1 product development, SaaS platforms, and data-driven optimization across eCommerce, campaign governance, and internal productivity tools. With over 3+ years of experience in product management, I've led cross-functional teams to launch 4+ successful products that have generated millions in revenue and delighted users worldwide.
+
+I bring a unique blend of analytical rigor and user empathy, and thrive in fast-paced, agile environments. From defining product vision to shipping scalable MVPs, I lead cross-functional teams with clarity and ownership. I believe great products are born at the intersection of user research, market understanding, and lean execution
+
+My goal? Build products that empower users, drive engagement, and deliver measurable impact.
   `;
 
   useEffect(() => {
