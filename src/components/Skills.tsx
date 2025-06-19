@@ -59,7 +59,7 @@ export const Skills = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex items-center justify-center px-4"
+      className="min-h-screen flex items-center justify-center px-4 pb-20"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -249,8 +249,10 @@ export const Skills = () => {
           <h3 className="text-2xl font-bold text-white mb-8">Technical Proficiencies</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              'Agile/Scrum', 'Jira', 'Figma', 'Tableau', 'Google Analytics', 
-              'Mixpanel', 'Amplitude', 'Slack', 'Notion', 'Miro'
+
+'Agile/Scrum', 'Jira', 'Figma', 'Tableau', 'Google Analytics', 
+              'Mixpanel', 'Amplitude', 'Slack', 'Notion', 'Miro', 'Confluence', 'Git', 'N8N', 'Firebase'
+
             ].map((tool, index) => (
               <motion.span
                 key={index}
