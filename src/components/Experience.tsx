@@ -164,7 +164,6 @@ export const Experience = () => {
   return (
     <div className="min-h-screen pb-16 px-4">
 
-    <div className="min-h-screen py-20 px-4">
 
       <div className="max-w-6xl mx-auto">
         {/* Header */}
@@ -307,4 +306,5 @@ export const Experience = () => {
         </motion.div>
       </div>
     </div>
-  );
+  )
+};
