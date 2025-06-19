@@ -96,7 +96,7 @@ export const About = () => {
           >
             <div className="space-y-4 sm:space-y-6">
               <p className="text-white/80 text-base sm:text-lg leading-relaxed">
-               I'm Venkatesh Pallapu, a strategic Product Manager with 3+ years of experience, passionate about building impactful digital products and solving complex business problems. I specialize in <b>0→1 product development, SaaS platforms, and data-driven optimization</b> across eCommerce, campaign governance, and internal productivity tools.
+               I'm Venkatesh Pallapu, a strategic Product Manager with 3+ years of experience, passionate about building impactful digital products and solving complex business problems. I specialize in <b>0→1 product development, SaaS platforms, and data-driven optimization</b> across eCommerce, campaign governance, and internal productivity tools. 
               </p>
               
               <p className="text-white/80 text-base sm:text-lg leading-relaxed">
@@ -108,7 +108,7 @@ export const About = () => {
               </p>
             </div>
 
-            {/* Achievement Cards */}
+            {/* Achievement Cards  */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { icon: Award, title: 'Product Excellence Award', desc: '2023 Innovation Leader' },
