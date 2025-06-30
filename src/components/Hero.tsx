@@ -228,7 +228,7 @@ export const Hero = () => {
           className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 px-2 sm:px-4"
         >
           {[
-            { value: '50+', label: 'Products Launched', color: 'from-blue-400 to-blue-600', icon: Target },
+            { value: '5+', label: 'Products Launched', color: 'from-blue-400 to-blue-600', icon: Target },
             { value: '98%', label: 'Client Satisfaction', color: 'from-purple-400 to-purple-600', icon: Users },
             { value: '5x', label: 'Average ROI Increase', color: 'from-orange-400 to-orange-600', icon: TrendingUp }
           ].map((stat, index) => {
