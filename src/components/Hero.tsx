@@ -22,8 +22,8 @@ export const Hero = () => {
   const handleDownloadResume = () => {
     // Create a placeholder resume download
     const link = document.createElement('a');
-    link.href = '/Venkatesh_Pallapu_PM_Resume.pdf'; // Replace with your actual resume file
-    link.download = 'Venkatesh_Pallapu_PM_Resume.pdf';
+    link.href = '/Venkatesh_Pallapu_PM.pdf'; // Replace with your actual resume file
+    link.download = 'Venkatesh_Pallapu_PM.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -124,7 +124,7 @@ export const Hero = () => {
                 <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
                   <img
                     src="/venky_full_suit_half.png"
-                    alt="Alex Rodriguez"
+                    alt="Venkatesh Pallapu"
                     className="w-full h-full object-cover rounded-full"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
@@ -228,7 +228,7 @@ export const Hero = () => {
           className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 px-2 sm:px-4"
         >
           {[
-            { value: '5+', label: 'Products Launched', color: 'from-blue-400 to-blue-600', icon: Target },
+            { value: '05+', label: 'Products Launched', color: 'from-blue-400 to-blue-600', icon: Target },
             { value: '98%', label: 'Client Satisfaction', color: 'from-purple-400 to-purple-600', icon: Users },
             { value: '5x', label: 'Average ROI Increase', color: 'from-orange-400 to-orange-600', icon: TrendingUp }
           ].map((stat, index) => {
