@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock, FileText, Layers, Monitor } from 'lucide-react';
+import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock, FileText, Layers, Monitor, Bot } from 'lucide-react';
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
-  const [activeSection, setActiveSection] = useState<'projects' | 'case-studies' | 'prototypes'>('projects');
+  const [activeSection, setActiveSection] = useState<'projects' | 'case-studies' | 'prototypes' | 'ai-agents'>('projects');
 
   const projects = [
     {
@@ -306,12 +306,105 @@ export const Projects = () => {
     }
   ];
 
+  const aiAgents = [
+    {
+      id: 301,
+      title: "Customer Support AI Agent",
+      category: "Conversational AI",
+      description: "Intelligent customer support agent handling 85% of inquiries autonomously",
+      longDescription: [
+        "Developed sophisticated NLP-powered customer support agent using GPT-4 and custom training data",
+        "Integrated with existing CRM and knowledge base for contextual responses",
+        "Implemented escalation logic for complex queries requiring human intervention",
+        "Built real-time sentiment analysis to identify frustrated customers",
+        "Created multi-language support for global customer base"
+      ],
+      metrics: {
+        revenue: "30% cost reduction",
+        conversion: "85% auto-resolution",
+        users: "50K+ interactions/month",
+        timeline: "4 months development"
+      },
+      color: "from-blue-500 to-cyan-600",
+      roles: ['AI Engineer', 'NLP Specialist', 'Backend Developer', 'UX Designer'],
+      impact: "Reduced support costs by 30% while improving customer satisfaction scores by 25% through 24/7 availability and consistent response quality"
+    },
+    {
+      id: 302,
+      title: "Sales Intelligence Agent",
+      category: "Sales Automation",
+      description: "AI-powered sales agent that qualifies leads and schedules meetings automatically",
+      longDescription: [
+        "Built intelligent sales agent using conversation AI and lead scoring algorithms",
+        "Integrated with Salesforce CRM for seamless lead management and tracking",
+        "Implemented dynamic conversation flows based on prospect behavior and responses",
+        "Created automated follow-up sequences with personalized messaging",
+        "Developed integration with calendar systems for automated meeting scheduling"
+      ],
+      metrics: {
+        revenue: "+$2M pipeline",
+        conversion: "60% lead qualification",
+        users: "10K+ prospects engaged",
+        timeline: "6 months development"
+      },
+      color: "from-green-500 to-emerald-600",
+      roles: ['AI Product Manager', 'Conversation Designer', 'CRM Specialist', 'Sales Ops'],
+      impact: "Generated $2M in qualified pipeline while reducing sales team workload by 40%, allowing focus on high-value prospects and closing deals"
+    },
+    {
+      id: 303,
+      title: "Content Generation Agent",
+      category: "Creative AI",
+      description: "Multi-modal AI agent for automated content creation across platforms",
+      longDescription: [
+        "Developed comprehensive content generation system using GPT-4, Claude, and image generation models",
+        "Built brand voice consistency engine to maintain tone across all generated content",
+        "Integrated with social media APIs for automated posting and scheduling",
+        "Created content performance analysis and optimization recommendations",
+        "Implemented multi-format content adaptation (blog posts, social media, emails, ads)"
+      ],
+      metrics: {
+        revenue: "50% content cost reduction",
+        conversion: "300% content output increase",
+        users: "15 marketing teams",
+        timeline: "8 months development"
+      },
+      color: "from-purple-500 to-pink-600",
+      roles: ['AI Engineer', 'Content Strategist', 'Marketing Ops', 'Brand Manager'],
+      impact: "Increased content production by 300% while maintaining brand consistency, resulting in 40% improvement in engagement rates across all channels"
+    },
+    {
+      id: 304,
+      title: "Code Review Assistant Agent",
+      category: "Developer Tools",
+      description: "AI-powered code review agent integrated with GitHub for automated quality assurance",
+      longDescription: [
+        "Built intelligent code review system using specialized LLMs trained on best practices",
+        "Integrated with GitHub Actions for automated pull request analysis",
+        "Implemented security vulnerability detection and performance optimization suggestions",
+        "Created custom rule engines for company-specific coding standards",
+        "Developed learning system that improves suggestions based on team feedback"
+      ],
+      metrics: {
+        revenue: "40% dev time savings",
+        conversion: "95% bug detection accuracy",
+        users: "100+ developers",
+        timeline: "5 months development"
+      },
+      color: "from-orange-500 to-red-600",
+      roles: ['DevOps Engineer', 'AI Specialist', 'Senior Developers', 'Security Expert'],
+      impact: "Reduced code review time by 60% while improving code quality scores by 35%, catching 95% of potential issues before production deployment"
+    }
+  ];
+
   const getCurrentData = () => {
     switch (activeSection) {
       case 'case-studies':
         return caseStudies;
       case 'prototypes':
         return prototypes;
+      case 'ai-agents':
+        return aiAgents;
       default:
         return projects;
     }
@@ -323,6 +416,8 @@ export const Projects = () => {
         return 'Case Studies';
       case 'prototypes':
         return 'Prototypes';
+      case 'ai-agents':
+        return 'AI Agents';
       default:
         return 'Featured Projects';
     }
@@ -334,6 +429,8 @@ export const Projects = () => {
         return 'In-depth research and strategic analysis driving product decisions';
       case 'prototypes':
         return 'Experimental concepts and proof-of-concept implementations';
+      case 'ai-agents':
+        return 'Intelligent agents automating complex workflows and decision-making';
       default:
         return 'Transforming ideas into market-leading products';
     }
@@ -366,7 +463,8 @@ export const Projects = () => {
             {[
               { key: 'projects', label: 'Projects', icon: Monitor },
               { key: 'case-studies', label: 'Case Studies', icon: FileText },
-              { key: 'prototypes', label: 'Prototypes', icon: Layers }
+              { key: 'prototypes', label: 'Prototypes', icon: Layers },
+              { key: 'ai-agents', label: 'AI Agents', icon: Bot }
             ].map(({ key, label, icon: Icon }) => (
               <motion.button
                 key={key}
@@ -495,7 +593,7 @@ export const Projects = () => {
                 style={{ transform: 'perspective(1000px)' }}
               >
                 {(() => {
-                  const allItems = [...projects, ...caseStudies, ...prototypes];
+                  const allItems = [...projects, ...caseStudies, ...prototypes, ...aiAgents];
                   const item = allItems.find(p => p.id === selectedProject);
                   if (!item) return null;
 
