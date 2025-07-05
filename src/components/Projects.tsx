@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock, FileText, Layers, Monitor, Bot } from 'lucide-react';
+import { CaseStudyCard } from './CaseStudyCard';
+import { CaseStudyViewer } from './CaseStudyViewer';
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -201,42 +203,114 @@ export const Projects = () => {
       title: "Mobile-First E-commerce Redesign",
       category: "UX Research & Strategy",
       description: "Comprehensive user research and design strategy for mobile commerce optimization",
-      longDescription: [
-        "Conducted in-depth user interviews with 50+ mobile shoppers",
-        "Analyzed user journey mapping and identified key friction points",
-        "Developed personas and user scenarios based on behavioral data",
-        "Created wireframes and high-fidelity prototypes for testing"
+      thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=200&fit=crop",
+      documentPdf: "/case-studies/mobile-ecommerce-redesign.pdf",
+      images: [
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop"
       ],
-      metrics: {
-        revenue: "Research Phase",
-        conversion: "35% improvement",
-        users: "2M+ mobile users",
-        timeline: "3 months research"
-      },
-      color: "from-blue-500 to-cyan-600",
-      roles: ['UX Researcher', 'Product Designer', 'Data Analyst', 'User Researcher'],
-      impact: "Identified key mobile UX patterns that informed a 35% conversion improvement"
+      duration: "3 months",
+      teamSize: "5 members",
+      objective: "Reduce mobile checkout abandonment by 50% through comprehensive UX research and strategic design improvements",
+      outcome: "Achieved 35% improvement in conversion rates and reduced time-to-purchase by 40%",
+      longDescription: [
+        "Conducted in-depth user interviews with 50+ mobile shoppers across different demographics",
+        "Analyzed user journey mapping and identified key friction points in the checkout process",
+        "Developed detailed personas and user scenarios based on behavioral data and shopping patterns",
+        "Created wireframes and high-fidelity prototypes for extensive user testing and validation"
+      ],
+      methodology: [
+        "User Interviews & Surveys",
+        "Journey Mapping & Pain Point Analysis",
+        "Competitive Benchmarking",
+        "A/B Testing Framework",
+        "Heuristic Evaluation",
+        "Accessibility Audit"
+      ],
+      keyFindings: [
+        "Mobile users abandon checkout 3x more often due to form complexity",
+        "Guest checkout option increased completion by 25%",
+        "Single-page checkout reduced abandonment by 18%",
+        "Payment method visibility crucial for user confidence"
+      ],
+      tags: ['UX Research', 'Mobile Design', 'E-commerce', 'User Testing', 'Journey Mapping', 'Conversion Optimization'],
+      color: "from-blue-500 to-cyan-600"
     },
     {
       id: 102,
       title: "SaaS Onboarding Flow Analysis",
       category: "Product Analytics",
       description: "Deep-dive analysis of user onboarding to reduce time-to-value",
-      longDescription: [
-        "Mapped complete user onboarding journey from signup to first value",
-        "Identified drop-off points using cohort analysis and funnel metrics",
-        "Conducted exit interviews with churned users in first 30 days",
-        "Developed progressive disclosure strategy for complex features"
+      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=200&fit=crop",
+      documentPdf: "/case-studies/saas-onboarding-analysis.pdf",
+      images: [
+        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=400&h=300&fit=crop"
       ],
-      metrics: {
-        revenue: "Analysis Phase",
-        conversion: "60% completion rate",
-        users: "10K+ new signups",
-        timeline: "6 weeks analysis"
-      },
-      color: "from-purple-500 to-indigo-600",
-      roles: ['Product Analyst', 'UX Designer', 'Customer Success', 'Engineering'],
-      impact: "Reduced time-to-first-value from 14 days to 3 days through strategic onboarding redesign"
+      duration: "6 weeks",
+      teamSize: "4 members",
+      objective: "Analyze and optimize user onboarding flow to improve product adoption and reduce churn",
+      outcome: "Reduced time-to-first-value from 14 days to 3 days, improved 30-day retention by 45%",
+      longDescription: [
+        "Mapped complete user onboarding journey from signup to first meaningful value achievement",
+        "Identified critical drop-off points using cohort analysis and advanced funnel metrics",
+        "Conducted comprehensive exit interviews with users who churned within first 30 days",
+        "Developed progressive disclosure strategy for complex features to reduce cognitive load"
+      ],
+      methodology: [
+        "Cohort Analysis",
+        "Funnel Analytics",
+        "Exit Interview Protocol",
+        "Feature Usage Tracking",
+        "Customer Success Collaboration",
+        "Progressive Disclosure Design"
+      ],
+      keyFindings: [
+        "Users needed to complete 3 key actions within first session for long-term retention",
+        "Feature discovery was the primary blocker to value realization",
+        "Personalized onboarding paths increased completion by 60%",
+        "In-app guidance reduced support tickets by 40%"
+      ],
+      tags: ['Product Analytics', 'User Onboarding', 'SaaS', 'Retention', 'Data Analysis', 'User Experience'],
+      color: "from-purple-500 to-indigo-600"
+    },
+    {
+      id: 103,
+      title: "Healthcare App Accessibility Study",
+      category: "Accessibility Research",
+      description: "Comprehensive accessibility audit and improvement recommendations for healthcare mobile application",
+      thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=200&fit=crop",
+      documentPdf: "/case-studies/healthcare-accessibility-study.pdf",
+      images: [
+        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop"
+      ],
+      duration: "4 months",
+      teamSize: "6 members",
+      objective: "Ensure WCAG 2.1 AA compliance and improve usability for users with disabilities",
+      outcome: "Achieved 98% WCAG compliance and improved accessibility score from 65% to 94%",
+      longDescription: [
+        "Conducted comprehensive accessibility audit using automated and manual testing methods",
+        "Engaged with users with various disabilities for user testing and feedback sessions",
+        "Developed accessibility guidelines and design system components",
+        "Implemented assistive technology compatibility improvements"
+      ],
+      methodology: [
+        "WCAG 2.1 Compliance Audit",
+        "Screen Reader Testing",
+        "Keyboard Navigation Assessment",
+        "Color Contrast Analysis",
+        "User Testing with Disabilities",
+        "Assistive Technology Integration"
+      ],
+      keyFindings: [
+        "Critical health information was inaccessible to screen reader users",
+        "Color-only indicators failed for colorblind users",
+        "Touch targets were too small for users with motor impairments",
+        "Complex navigation structure hindered cognitive accessibility"
+      ],
+      tags: ['Accessibility', 'Healthcare', 'WCAG Compliance', 'Inclusive Design', 'User Testing', 'Mobile Apps'],
+      color: "from-green-500 to-teal-600"
     }
   ];
 
@@ -436,13 +510,121 @@ export const Projects = () => {
     }
   };
 
+  const renderCaseStudies = () => (
+    <motion.div
+      key="case-studies"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      {caseStudies.map((caseStudy, index) => (
+        <CaseStudyCard
+          key={caseStudy.id}
+          caseStudy={caseStudy}
+          index={index}
+          onClick={() => setSelectedProject(caseStudy.id)}
+        />
+      ))}
+    </motion.div>
+  );
+
+  const renderOtherSections = () => (
+    <motion.div
+      key={activeSection}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      {getCurrentData().map((item, index) => (
+        <motion.div
+          key={item.id}
+          initial={{ rotateY: -90, opacity: 0 }}
+          animate={{ rotateY: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: index * 0.2 }}
+          whileHover={{ 
+            rotateY: 10, 
+            scale: 1.05,
+            transition: { duration: 0.3 }
+          }}
+          onClick={() => setSelectedProject(item.id)}
+          className="relative cursor-pointer group"
+          style={{ transform: 'perspective(1000px)' }}
+        >
+          <div className={`relative p-6 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden h-full`}>
+            {/* Gradient Background */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`} />
+            
+            {/* Floating Number */}
+            <motion.div
+              animate={{ 
+                y: [0, -5, 0],
+                rotateZ: [0, 2, 0]
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity,
+                delay: index * 0.5
+              }}
+              className={`absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br ${item.color} rounded-full flex items-center justify-center text-white font-bold shadow-lg`}
+            >
+              {String(item.id).padStart(2, '0')}
+            </motion.div>
+
+            <div className="relative z-10 space-y-4">
+              <div className="space-y-2">
+                <div className="text-orange-400 text-sm font-medium uppercase tracking-wide">
+                  {item.category}
+                </div>
+                <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-300 transition-all duration-300">
+                  {item.title}
+                </h3>
+                <p className="text-white/70 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+
+              {/* Quick Metrics */}
+              <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
+                <div className="text-center">
+                  <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                    {item.metrics.conversion}
+                  </div>
+                  <div className="text-white/60 text-xs">Conversion</div>
+                </div>
+                <div className="text-center">
+                  <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                    {item.metrics.users}
+                  </div>
+                  <div className="text-white/60 text-xs">Users</div>
+                </div>
+              </div>
+
+              {/* Hover Effect */}
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                whileHover={{ scale: 1, opacity: 1 }}
+                className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl flex items-center justify-center"
+              >
+                <ExternalLink className="text-white/80" size={32} />
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex lg:items-start justify-center px-4 "
+      className="min-h-screen flex lg:items-start justify-center px-4"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -486,96 +668,19 @@ export const Projects = () => {
 
         {/* Projects Grid */}
         <AnimatePresence mode="wait">
-          <motion.div
-            key={activeSection}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {getCurrentData().map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ rotateY: -90, opacity: 0 }}
-                animate={{ rotateY: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                whileHover={{ 
-                  rotateY: 10, 
-                  scale: 1.05,
-                  transition: { duration: 0.3 }
-                }}
-                onClick={() => setSelectedProject(item.id)}
-                className="relative cursor-pointer group"
-                style={{ transform: 'perspective(1000px)' }}
-              >
-                <div className={`relative p-6 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden h-full`}>
-                  {/* Gradient Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`} />
-                  
-                  {/* Floating Number */}
-                  <motion.div
-                    animate={{ 
-                      y: [0, -5, 0],
-                      rotateZ: [0, 2, 0]
-                    }}
-                    transition={{ 
-                      duration: 3, 
-                      repeat: Infinity,
-                      delay: index * 0.5
-                    }}
-                    className={`absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br ${item.color} rounded-full flex items-center justify-center text-white font-bold shadow-lg`}
-                  >
-                    {String(item.id).padStart(2, '0')}
-                  </motion.div>
-
-                  <div className="relative z-10 space-y-4">
-                    <div className="space-y-2">
-                      <div className="text-orange-400 text-sm font-medium uppercase tracking-wide">
-                        {item.category}
-                      </div>
-                      <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-300 transition-all duration-300">
-                        {item.title}
-                      </h3>
-                      <p className="text-white/70 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-
-                    {/* Quick Metrics */}
-                    <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
-                      <div className="text-center">
-                        <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
-                          {item.metrics.conversion}
-                        </div>
-                        <div className="text-white/60 text-xs">Conversion</div>
-                      </div>
-                      <div className="text-center">
-                        <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
-                          {item.metrics.users}
-                        </div>
-                        <div className="text-white/60 text-xs">Users</div>
-                      </div>
-                    </div>
-
-                    {/* Hover Effect */}
-                    <motion.div
-                      initial={{ scale: 0, opacity: 0 }}
-                      whileHover={{ scale: 1, opacity: 1 }}
-                      className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl flex items-center justify-center"
-                    >
-                      <ExternalLink className="text-white/80" size={32} />
-                    </motion.div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          {activeSection === 'case-studies' ? renderCaseStudies() : renderOtherSections()}
         </AnimatePresence>
 
-        {/* Project Detail Modal */}
+        {/* Modals */}
         <AnimatePresence>
-          {selectedProject && (
+          {selectedProject && activeSection === 'case-studies' && (
+            <CaseStudyViewer
+              caseStudy={caseStudies.find(cs => cs.id === selectedProject)!}
+              onClose={() => setSelectedProject(null)}
+            />
+          )}
+          
+          {selectedProject && activeSection !== 'case-studies' && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
