@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock, FileText, Layers, Monitor, Bot } from 'lucide-react';
@@ -587,21 +588,23 @@ export const Projects = () => {
                 </p>
               </div>
 
-              {/* Quick Metrics */}
-              <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
-                <div className="text-center">
-                  <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
-                    {item.metrics.conversion}
+              {/* Quick Metrics - only for items with metrics property */}
+              {'metrics' in item && (
+                <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
+                  <div className="text-center">
+                    <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                      {item.metrics.conversion}
+                    </div>
+                    <div className="text-white/60 text-xs">Conversion</div>
                   </div>
-                  <div className="text-white/60 text-xs">Conversion</div>
-                </div>
-                <div className="text-center">
-                  <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
-                    {item.metrics.users}
+                  <div className="text-center">
+                    <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                      {item.metrics.users}
+                    </div>
+                    <div className="text-white/60 text-xs">Users</div>
                   </div>
-                  <div className="text-white/60 text-xs">Users</div>
                 </div>
-              </div>
+              )}
 
               {/* Hover Effect */}
               <motion.div
@@ -702,6 +705,11 @@ export const Projects = () => {
                   const item = allItems.find(p => p.id === selectedProject);
                   if (!item) return null;
 
+                  // Check if item has metrics property (projects, prototypes, ai-agents)
+                  const hasMetrics = 'metrics' in item;
+                  const hasRoles = 'roles' in item;
+                  const hasImpact = 'impact' in item;
+
                   return (
                     <div className="space-y-8">
                       {/* Header */}
@@ -719,54 +727,60 @@ export const Projects = () => {
                         </div>
                       </div>
 
-                      {/* Metrics Grid */}
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {[
-                          { icon: DollarSign, label: 'Revenue Impact', value: item.metrics.revenue },
-                          { icon: TrendingUp, label: 'Conversion Lift', value: item.metrics.conversion },
-                          { icon: Users, label: 'Users Reached', value: item.metrics.users },
-                          { icon: Clock, label: 'Timeline', value: item.metrics.timeline }
-                        ].map((metric, index) => {
-                          const Icon = metric.icon;
-                          return (
-                            <motion.div
-                              key={index}
-                              initial={{ y: 20, opacity: 0 }}
-                              animate={{ y: 0, opacity: 1 }}
-                              transition={{ delay: index * 0.1 }}
-                              className="text-center p-4 bg-white/5 rounded-2xl border border-white/10"
-                            >
-                              <Icon className={`mx-auto mb-2 text-2xl bg-gradient-to-r ${item.color} bg-clip-text text-transparent`} size={32} />
-                              <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
-                              <div className="text-white/60 text-sm">{metric.label}</div>
-                            </motion.div>
-                          );
-                        })}
-                      </div>
-
-                      {/* Technologies/Roles */}
-                      <div className="space-y-4">
-                        <h4 className="text-xl font-semibold text-white">Teams Collaborated</h4>
-                        <div className="flex flex-wrap gap-3">
-                          {item.roles.map((tech, index) => (
-                            <motion.span
-                              key={index}
-                              initial={{ scale: 0 }}
-                              animate={{ scale: 1 }}
-                              transition={{ delay: 0.5 + index * 0.1 }}
-                              className={`px-4 py-2 bg-gradient-to-r ${item.color} rounded-full text-white font-medium`}
-                            >
-                              {tech}
-                            </motion.span>
-                          ))}
+                      {/* Metrics Grid - only show if item has metrics */}
+                      {hasMetrics && (
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                          {[
+                            { icon: DollarSign, label: 'Revenue Impact', value: (item as any).metrics.revenue },
+                            { icon: TrendingUp, label: 'Conversion Lift', value: (item as any).metrics.conversion },
+                            { icon: Users, label: 'Users Reached', value: (item as any).metrics.users },
+                            { icon: Clock, label: 'Timeline', value: (item as any).metrics.timeline }
+                          ].map((metric, index) => {
+                            const Icon = metric.icon;
+                            return (
+                              <motion.div
+                                key={index}
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: index * 0.1 }}
+                                className="text-center p-4 bg-white/5 rounded-2xl border border-white/10"
+                              >
+                                <Icon className={`mx-auto mb-2 text-2xl bg-gradient-to-r ${item.color} bg-clip-text text-transparent`} size={32} />
+                                <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
+                                <div className="text-white/60 text-sm">{metric.label}</div>
+                              </motion.div>
+                            );
+                          })}
                         </div>
-                      </div>
+                      )}
 
-                      {/* Impact */}
-                      <div className="space-y-4">
-                        <h4 className="text-xl font-semibold text-white">Business Impact</h4>
-                        <p className="text-white/80 text-lg leading-relaxed">{item.impact}</p>
-                      </div>
+                      {/* Technologies/Roles - only show if item has roles */}
+                      {hasRoles && (
+                        <div className="space-y-4">
+                          <h4 className="text-xl font-semibold text-white">Teams Collaborated</h4>
+                          <div className="flex flex-wrap gap-3">
+                            {(item as any).roles.map((tech: string, index: number) => (
+                              <motion.span
+                                key={index}
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ delay: 0.5 + index * 0.1 }}
+                                className={`px-4 py-2 bg-gradient-to-r ${item.color} rounded-full text-white font-medium`}
+                              >
+                                {tech}
+                              </motion.span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Impact - only show if item has impact */}
+                      {hasImpact && (
+                        <div className="space-y-4">
+                          <h4 className="text-xl font-semibold text-white">Business Impact</h4>
+                          <p className="text-white/80 text-lg leading-relaxed">{(item as any).impact}</p>
+                        </div>
+                      )}
 
                       {/* Close Button */}
                       <div className="text-center">
