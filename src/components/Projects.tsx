@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock, FileText, Layers, Monitor, Bot } from 'lucide-react';
+import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock, FileText, Layers, Monitor, Bot, Globe, Code2 } from 'lucide-react';
 import { CaseStudyCard } from './CaseStudyCard';
 import { CaseStudyViewer } from './CaseStudyViewer';
 
@@ -318,66 +317,138 @@ export const Projects = () => {
   const prototypes = [
     {
       id: 201,
-      title: "AI-Powered Content Recommendations",
-      category: "Interactive Prototype",
-      description: "Machine learning-driven content discovery interface prototype",
+      title: "E-commerce Dashboard Analytics",
+      category: "Full-Stack Web Application",
+      description: "Comprehensive analytics dashboard for e-commerce platforms with real-time data visualization",
+      preview: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      liveUrl: "https://ecommerce-analytics-dashboard.vercel.app",
+      githubUrl: "https://github.com/yourusername/ecommerce-dashboard",
       longDescription: [
-        "Built interactive Figma prototype with micro-interactions",
-        "Designed ML-powered recommendation algorithm interface",
-        "Created adaptive UI that learns from user preferences",
-        "Integrated voice search and visual recognition features"
+        "Built with React, TypeScript, and Tailwind CSS for modern UI/UX",
+        "Integrated Chart.js and Recharts for dynamic data visualizations",
+        "Implemented real-time data updates using WebSocket connections",
+        "Features responsive design optimized for desktop and mobile devices",
+        "Includes dark/light theme toggle and customizable dashboard widgets"
       ],
-      metrics: {
-        revenue: "Prototype Phase",
-        conversion: "85% user approval",
-        users: "Internal testing",
-        timeline: "4 week sprint"
-      },
-      color: "from-emerald-500 to-teal-600",
-      roles: ['Product Designer', 'UX Engineer', 'ML Engineer', 'Frontend Developer'],
-      impact: "Prototype validated concept leading to $2M investment in AI recommendation engine"
+      techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js', 'Vercel'],
+      features: [
+        "Real-time sales analytics",
+        "Customer behavior insights",
+        "Revenue trend analysis",
+        "Product performance metrics",
+        "Exportable reports"
+      ],
+      color: "from-blue-500 to-cyan-600",
+      status: "Live",
+      lastUpdated: "2 weeks ago"
     },
     {
       id: 202,
-      title: "Real-time Collaboration Dashboard",
-      category: "Web App Prototype",
-      description: "Live collaborative workspace with real-time editing and communication",
+      title: "Task Management SaaS",
+      category: "Productivity Application",
+      description: "Modern project management tool with team collaboration features and AI-powered insights",
+      preview: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      liveUrl: "https://taskflow-manager.vercel.app",
+      githubUrl: "https://github.com/yourusername/taskflow-saas",
       longDescription: [
-        "Developed working prototype using React and WebSocket technology",
-        "Implemented real-time cursor tracking and live document editing",
-        "Created integrated video chat and screen sharing capabilities",
-        "Built notification system for collaborative project management"
+        "Full-stack application built with Next.js and Supabase backend",
+        "Implements real-time collaboration using Supabase real-time subscriptions",
+        "Features drag-and-drop task management with smooth animations",
+        "Includes user authentication, role-based permissions, and team management",
+        "AI-powered task prioritization and deadline prediction algorithms"
       ],
-      metrics: {
-        revenue: "MVP Phase",
-        conversion: "90% task completion",
-        users: "25 beta testers",
-        timeline: "8 week development"
-      },
-      color: "from-orange-500 to-red-600",
-      roles: ['Full-stack Developer', 'UX Designer', 'DevOps Engineer', 'QA Tester'],
-      impact: "Prototype led to acquisition offer and integration into existing collaboration platform"
+      techStack: ['Next.js', 'Supabase', 'PostgreSQL', 'Framer Motion', 'Stripe'],
+      features: [
+        "Real-time team collaboration",
+        "Drag-and-drop task boards",
+        "AI task prioritization",
+        "Time tracking & reporting",
+        "Integration with popular tools"
+      ],
+      color: "from-purple-500 to-pink-600",
+      status: "Live",
+      lastUpdated: "1 week ago"
     },
     {
       id: 203,
-      title: "Voice-First Shopping Assistant",
-      category: "Voice Interface Prototype",
-      description: "Conversational AI shopping assistant with natural language processing",
+      title: "AI Content Generator",
+      category: "AI-Powered Tool",
+      description: "Multi-modal content creation platform powered by OpenAI GPT and image generation APIs",
+      preview: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+      liveUrl: "https://ai-content-studio.vercel.app",
+      githubUrl: "https://github.com/yourusername/ai-content-generator",
       longDescription: [
-        "Designed voice interaction flows for hands-free shopping experience",
-        "Integrated speech recognition and natural language understanding",
-        "Created multi-modal interface combining voice, visual, and haptic feedback",
-        "Tested accessibility features for visually impaired users"
+        "Integrated multiple AI APIs including OpenAI GPT-4, DALL-E, and Stable Diffusion",
+        "Built with React and Node.js backend for seamless API orchestration",
+        "Features content templates for blogs, social media, and marketing copy",
+        "Implements usage tracking, subscription management, and payment processing",
+        "Includes content history, favorites, and collaborative workspace features"
       ],
-      metrics: {
-        revenue: "Concept Phase",
-        conversion: "78% task success",
-        users: "15 accessibility testers",
-        timeline: "6 week prototype"
-      },
-      color: "from-violet-500 to-purple-600",
-      roles: ['Voice UX Designer', 'AI Engineer', 'Accessibility Expert', 'Audio Engineer'],
-      impact: "Prototype demonstrated 40% faster shopping completion for voice-preferred users"
+      techStack: ['React', 'Node.js', 'OpenAI API', 'Stripe', 'MongoDB'],
+      features: [
+        "Multi-format content generation",
+        "AI image creation",
+        "Brand voice consistency",
+        "Content optimization",
+        "Collaboration tools"
+      ],
+      color: "from-emerald-500 to-teal-600",
+      status: "Live",
+      lastUpdated: "3 days ago"
+    },
+    {
+      id: 204,
+      title: "Real Estate Platform",
+      category: "Marketplace Application",
+      description: "Modern property listing platform with advanced search, virtual tours, and AI property matching",
+      preview: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+      liveUrl: "https://property-finder-pro.vercel.app",
+      githubUrl: "https://github.com/yourusername/real-estate-platform",
+      longDescription: [
+        "Comprehensive property marketplace with advanced filtering and search capabilities",
+        "Integrated Google Maps API for location-based property discovery",
+        "Features virtual tour integration and high-quality image galleries",
+        "Implements user authentication for buyers, sellers, and agents",
+        "AI-powered property recommendations based on user preferences and behavior"
+      ],
+      techStack: ['React', 'Firebase', 'Google Maps API', 'Cloudinary', 'Material-UI'],
+      features: [
+        "Advanced property search",
+        "Virtual tour integration",
+        "AI property matching",
+        "Mortgage calculator",
+        "Agent communication portal"
+      ],
+      color: "from-orange-500 to-red-600",
+      status: "Live",
+      lastUpdated: "5 days ago"
+    },
+    {
+      id: 205,
+      title: "Fitness Tracking App",
+      category: "Health & Wellness",
+      description: "Comprehensive fitness tracking platform with workout planning, nutrition logging, and progress analytics",
+      preview: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
+      liveUrl: "https://fittrack-pro.vercel.app",
+      githubUrl: "https://github.com/yourusername/fitness-tracker",
+      longDescription: [
+        "Progressive Web App optimized for mobile and desktop experiences",
+        "Integrated with fitness APIs for workout data and nutrition information",
+        "Features custom workout builder with exercise library and video demonstrations",
+        "Implements social features for sharing progress and connecting with fitness communities",
+        "AI-powered personalized workout and nutrition recommendations"
+      ],
+      techStack: ['PWA', 'React', 'IndexedDB', 'Chart.js', 'Service Workers'],
+      features: [
+        "Workout planning & tracking",
+        "Nutrition logging",
+        "Progress analytics",
+        "Social fitness community",
+        "AI personal trainer"
+      ],
+      color: "from-green-500 to-emerald-600",
+      status: "Live",
+      lastUpdated: "1 week ago"
     }
   ];
 
@@ -490,7 +561,7 @@ export const Projects = () => {
       case 'case-studies':
         return 'Case Studies';
       case 'prototypes':
-        return 'Prototypes';
+        return 'Live Prototypes';
       case 'ai-agents':
         return 'AI Agents';
       default:
@@ -503,7 +574,7 @@ export const Projects = () => {
       case 'case-studies':
         return 'In-depth research and strategic analysis driving product decisions';
       case 'prototypes':
-        return 'Experimental concepts and proof-of-concept implementations';
+        return 'Live websites and applications deployed on Vercel with GitHub integration';
       case 'ai-agents':
         return 'Intelligent agents automating complex workflows and decision-making';
       default:
@@ -527,6 +598,119 @@ export const Projects = () => {
           index={index}
           onClick={() => setSelectedProject(caseStudy.id)}
         />
+      ))}
+    </motion.div>
+  );
+
+  const renderPrototypes = () => (
+    <motion.div
+      key="prototypes"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      {prototypes.map((prototype, index) => (
+        <motion.div
+          key={prototype.id}
+          initial={{ rotateY: -90, opacity: 0 }}
+          animate={{ rotateY: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: index * 0.15 }}
+          whileHover={{ 
+            scale: 1.02,
+            transition: { duration: 0.2 }
+          }}
+          className="relative cursor-pointer group bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden h-full"
+        >
+          {/* Preview Image */}
+          <div className="relative h-48 overflow-hidden">
+            <img 
+              src={prototype.preview} 
+              alt={prototype.title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            
+            {/* Status Badge */}
+            <div className="absolute top-4 right-4">
+              <span className="px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full flex items-center gap-1">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                {prototype.status}
+              </span>
+            </div>
+          </div>
+
+          <div className="p-6 space-y-4">
+            {/* Header */}
+            <div className="space-y-2">
+              <div className="text-orange-400 text-sm font-medium uppercase tracking-wide">
+                {prototype.category}
+              </div>
+              <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-300 transition-all duration-300">
+                {prototype.title}
+              </h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                {prototype.description}
+              </p>
+            </div>
+
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-2">
+              {prototype.techStack.slice(0, 3).map((tech, idx) => (
+                <span key={idx} className={`px-2 py-1 text-xs bg-gradient-to-r ${prototype.color} rounded-full text-white font-medium`}>
+                  {tech}
+                </span>
+              ))}
+              {prototype.techStack.length > 3 && (
+                <span className="px-2 py-1 text-xs bg-white/10 rounded-full text-white/60">
+                  +{prototype.techStack.length - 3} more
+                </span>
+              )}
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex gap-3 pt-4">
+              <motion.a
+                href={prototype.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg font-medium text-sm hover:shadow-lg transition-shadow"
+              >
+                <Globe size={16} />
+                Live Demo
+              </motion.a>
+              <motion.a
+                href={prototype.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-lg font-medium text-sm border border-white/20 hover:border-white/40 transition-colors"
+              >
+                <Github size={16} />
+                Code
+              </motion.a>
+            </div>
+
+            {/* Last Updated */}
+            <div className="text-white/50 text-xs">
+              Updated {prototype.lastUpdated}
+            </div>
+          </div>
+
+          {/* Hover Overlay */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileHover={{ opacity: 1 }}
+            className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl flex items-center justify-center"
+            onClick={() => setSelectedProject(prototype.id)}
+          >
+            <ExternalLink className="text-white/80" size={32} />
+          </motion.div>
+        </motion.div>
       ))}
     </motion.div>
   );
@@ -648,7 +832,7 @@ export const Projects = () => {
             {[
               { key: 'projects', label: 'Projects', icon: Monitor },
               { key: 'case-studies', label: 'Case Studies', icon: FileText },
-              { key: 'prototypes', label: 'Prototypes', icon: Layers },
+              { key: 'prototypes', label: 'Live Prototypes', icon: Code2 },
               { key: 'ai-agents', label: 'AI Agents', icon: Bot }
             ].map(({ key, label, icon: Icon }) => (
               <motion.button
@@ -671,7 +855,9 @@ export const Projects = () => {
 
         {/* Projects Grid */}
         <AnimatePresence mode="wait">
-          {activeSection === 'case-studies' ? renderCaseStudies() : renderOtherSections()}
+          {activeSection === 'case-studies' && renderCaseStudies()}
+          {activeSection === 'prototypes' && renderPrototypes()}
+          {(activeSection === 'projects' || activeSection === 'ai-agents') && renderOtherSections()}
         </AnimatePresence>
 
         {/* Modals */}
@@ -683,7 +869,126 @@ export const Projects = () => {
             />
           )}
           
-          {selectedProject && activeSection !== 'case-studies' && (
+          {selectedProject && activeSection === 'prototypes' && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              onClick={() => setSelectedProject(null)}
+            >
+              <motion.div
+                initial={{ scale: 0.8, y: 50, opacity: 0 }}
+                animate={{ scale: 1, y: 0, opacity: 1 }}
+                exit={{ scale: 0.8, y: 50, opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {(() => {
+                  const prototype = prototypes.find(p => p.id === selectedProject);
+                  if (!prototype) return null;
+
+                  return (
+                    <div className="space-y-8">
+                      {/* Header */}
+                      <div className="text-center space-y-4">
+                        <h3 className="text-4xl font-bold text-white">{prototype.title}</h3>
+                        <p className="text-xl text-white/70">{prototype.description}</p>
+                      </div>
+
+                      {/* Preview Image */}
+                      <div className="relative rounded-2xl overflow-hidden">
+                        <img 
+                          src={prototype.preview} 
+                          alt={prototype.title}
+                          className="w-full h-64 object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                      </div>
+
+                      {/* Description */}
+                      <div className="space-y-4">
+                        <h4 className="text-xl font-semibold text-white">Technical Implementation</h4>
+                        <ul className="text-white/80 space-y-2">
+                          {prototype.longDescription.map((point, index) => (
+                            <li key={index} className="flex items-start gap-3">
+                              <span className="text-blue-400 mt-2 flex-shrink-0">•</span>
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Features */}
+                      <div className="space-y-4">
+                        <h4 className="text-xl font-semibold text-white">Key Features</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          {prototype.features.map((feature, index) => (
+                            <div key={index} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10">
+                              <div className={`w-2 h-2 bg-gradient-to-r ${prototype.color} rounded-full`}></div>
+                              <span className="text-white/80">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Tech Stack */}
+                      <div className="space-y-4">
+                        <h4 className="text-xl font-semibold text-white">Technology Stack</h4>
+                        <div className="flex flex-wrap gap-3">
+                          {prototype.techStack.map((tech, index) => (
+                            <span
+                              key={index}
+                              className={`px-4 py-2 bg-gradient-to-r ${prototype.color} rounded-full text-white font-medium`}
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="flex flex-wrap gap-4 justify-center">
+                        <motion.a
+                          href={prototype.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-shadow"
+                        >
+                          <Globe size={20} />
+                          View Live Demo
+                        </motion.a>
+                        <motion.a
+                          href={prototype.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold border border-white/20 hover:border-white/40 transition-colors"
+                        >
+                          <Github size={20} />
+                          View Source Code
+                        </motion.a>
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={() => setSelectedProject(null)}
+                          className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-semibold border border-white/20 hover:border-white/40 transition-colors"
+                        >
+                          Close
+                        </motion.button>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </motion.div>
+            </motion.div>
+          )}
+          
+          {selectedProject && activeSection !== 'case-studies' && activeSection !== 'prototypes' && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
