@@ -4,17 +4,17 @@ import { motion } from 'framer-motion';
 import { Award, Calendar, ExternalLink, Shield, CheckCircle, Star, Trophy } from 'lucide-react';
 
 const certifications = [
-  {
+ {
     id: 1,
-    title: "Certified Product Manager",
-    issuer: "Product Management Institute", 
-    date: "2023",
-    validUntil: "2026",
-    credentialId: "CPM-2023-45789",
+    title: "Automating Sales Tasks with Zapier",
+    issuer: "Coursera", 
+    date: "2025",
+    validUntil: "LIfetime",
+    credentialId: "KYTTUGO3KYQK",
     description: "Comprehensive certification covering product strategy, roadmapping, user research, and product lifecycle management.",
-    skills: ["Product Strategy", "Roadmapping", "User Research", "Agile", "Analytics"],
-    verificationUrl: "#",
-    image: "/placeholder.svg",
+    skills: ["Gmail", "Operations Management", "Automation", "Productivity Software", "Business Process Automation", "Order Fulfillment", "Workflow Management", "Google Sheets", "Sales Support", "Google Docs"],
+    verificationUrl: "https://www.coursera.org/account/accomplishments/verify/KYTTUGO3KYQK",
+    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
     color: "from-blue-500 to-indigo-600",
     status: "active",
     logoUrl: "https://images.credly.com/images/6c1b3b2e-2f1a-4f3d-9f1a-2b3c4d5e6f7g/product-management-institute.png"
