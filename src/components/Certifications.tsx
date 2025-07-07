@@ -1,11 +1,146 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Award, Calendar, ExternalLink, Shield, CheckCircle, Star, Trophy } from 'lucide-react';
+import { Award, Calendar, ExternalLink, Shield, CheckCircle, Star, Trophy, Globe } from 'lucide-react';
 
 const certifications = [
  {
     id: 1,
+    title: "Supply Chain Logistics",
+    issuer: "Coursera / Rutgers University",
+    date: "2020",
+    validUntil: "Lifetime",
+    credentialId: "8TGUP5W5Y5GE",
+    description: "Completed an online course on Supply Chain Logistics covering global logistics, inventory management, and distribution networks.",
+    skills: ["Supply Chain", "Logistics", "Inventory Management", "Distribution", "Operations"],
+    verificationUrl: "https://www.coursera.org/verify/8TGUP5W5Y5GE",
+    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    color: "from-yellow-500 to-red-600",
+    status: "active",
+    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/8TGUP5W5Y5GE"
+  },
+  {
+    id: 2,
+    title: "Introduction to Google SEO",
+    issuer: "Coursera / UC Davis",
+    date: "2020",
+    validUntil: "Lifetime",
+    credentialId: "KA86N797Z2FG",
+    description: "Learned foundational SEO strategies, keyword research, and web optimization to improve search engine visibility.",
+    skills: ["SEO", "Google Tools", "Keyword Research", "Search Rankings", "Digital Marketing"],
+    verificationUrl: "https://www.coursera.org/verify/KA86N797Z2FG",
+    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    color: "from-green-500 to-lime-600",
+    status: "active",
+    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/KA86N797Z2FG"
+  },
+  {
+    id: 3,
+    title: "Enterprise Product Management Fundamentals",
+    issuer: "Coursera / Microsoft",
+    date: "2025",
+    validUntil: "Lifetime",
+    credentialId: "YQY5MXNJSAXM",
+    description: "Covers core enterprise product management concepts including user needs, stakeholder management, and value delivery.",
+    skills: ["Product Management", "Enterprise Products", "Stakeholder Alignment", "User Research", "Roadmapping"],
+    verificationUrl: "https://www.coursera.org/verify/YQY5MXNJSAXM",
+    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    color: "from-blue-500 to-indigo-600",
+    status: "active",
+    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/YQY5MXNJSAXM"
+  },
+  {
+    id: 4,
+    title: "Product Roadmapping Micro-Certification",
+    issuer: "Product School",
+    date: "2025",
+    validUntil: "Lifetime",
+    credentialId: "PS-RM-2025",
+    description: "Certified in building strategic product roadmaps that align with business goals and user needs.",
+    skills: ["Product Strategy", "Roadmapping", "Vision Alignment", "Stakeholder Management"],
+    verificationUrl: "",
+    image: "https://productschool.com/assets/meta/favicon-192x192.png",
+    color: "from-indigo-500 to-purple-600",
+    status: "active",
+    logoUrl: "https://productschool.teachable.com/courses/2111849/certificate"
+  },
+  {
+    id: 5,
+    title: "Product Launches Micro-Certification",
+    issuer: "Product School",
+    date: "2025",
+    validUntil: "Lifetime",
+    credentialId: "PS-PL-2025",
+    description: "Certified in managing end-to-end product launches, market readiness, and cross-functional execution.",
+    skills: ["Go-To-Market", "Launch Strategy", "Coordination", "Execution", "Growth"],
+    verificationUrl: "",
+    image: "https://productschool.com/assets/meta/favicon-192x192.png",
+    color: "from-orange-500 to-pink-600",
+    status: "active",
+    logoUrl: "https://productschool.teachable.com/courses/2406983/certificate"
+  },
+  {
+    id: 6,
+    title: "Product Experimentation Micro-Certification",
+    issuer: "Product School",
+    date: "2025",
+    validUntil: "Lifetime",
+    credentialId: "PS-EX-2025",
+    description: "Certified in experimentation frameworks like A/B testing to validate product decisions with data.",
+    skills: ["A/B Testing", "Experiment Design", "Hypothesis Validation", "Data-Driven Decisions"],
+    verificationUrl: "",
+    image: "https://productschool.com/assets/meta/favicon-192x192.png",
+    color: "from-red-500 to-yellow-500",
+    status: "active",
+    logoUrl: "https://productschool.teachable.com/courses/2702393/certificate"
+  },
+  {
+    id: 7,
+    title: "Product Discovery Micro-Certification",
+    issuer: "Product School",
+    date: "2025",
+    validUntil: "Lifetime",
+    credentialId: "PS-DS-2025",
+    description: "Certified in uncovering user needs through research, problem framing, and validation techniques.",
+    skills: ["Product Discovery", "User Research", "Problem Framing", "Customer Interviews"],
+    verificationUrl: "",
+    image: "https://productschool.com/assets/meta/favicon-192x192.png",
+    color: "from-teal-500 to-green-600",
+    status: "active",
+    logoUrl: "https://productschool.teachable.com/courses/2600192/certificate"
+  },
+  {
+    id: 8,
+    title: "Product Analytics Micro-Certification",
+    issuer: "Product School",
+    date: "2025",
+    validUntil: "Lifetime",
+    credentialId: "PS-AN-2025",
+    description: "Certified in using analytics tools to monitor product performance and guide strategic decisions.",
+    skills: ["Analytics", "Data Analysis", "Metrics", "KPI Monitoring", "Product Decisions"],
+    verificationUrl: "",
+    image: "https://productschool.com/assets/meta/favicon-192x192.png",
+    color: "from-gray-500 to-slate-700",
+    status: "active",
+    logoUrl: "https://productschool.teachable.com/courses/1373833/certificate"
+  },
+  {
+    id: 9,
+    title: "Product Prioritization Micro-Certification",
+    issuer: "Product School",
+    date: "2025",
+    validUntil: "Lifetime",
+    credentialId: "PS-PR-2025",
+    description: "Certified in frameworks like RICE and MoSCoW for effective prioritization in product development.",
+    skills: ["Prioritization", "RICE Framework", "MoSCoW Method", "Product Planning"],
+    verificationUrl: "",
+    image: "https://productschool.com/assets/meta/favicon-192x192.png",
+    color: "from-cyan-500 to-sky-600",
+    status: "active",
+    logoUrl: "https://productschool.teachable.com/courses/2772460/certificate"
+  },
+  {
+    id: 10,
     title: "Automating Sales Tasks with Zapier",
     issuer: "Coursera", 
     date: "2025",
@@ -17,82 +152,53 @@ const certifications = [
     image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
     color: "from-blue-500 to-indigo-600",
     status: "active",
-    logoUrl: "https://images.credly.com/images/6c1b3b2e-2f1a-4f3d-9f1a-2b3c4d5e6f7g/product-management-institute.png"
+    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/KYTTUGO3KYQK"
   },
   {
-    id: 2,
-    title: "Google Analytics Certified",
-    issuer: "Google",
-    date: "2023", 
-    validUntil: "2024",
-    credentialId: "GA-IQ-789456123",
-    description: "Advanced certification in Google Analytics, covering data analysis, conversion tracking, and performance measurement.",
-    skills: ["Data Analysis", "Conversion Tracking", "Performance Metrics", "Attribution Modeling"],
-    verificationUrl: "#",
-    image: "/placeholder.svg",
-    color: "from-orange-500 to-red-600",
-    status: "active",
-    logoUrl: "https://developers.google.com/static/analytics/images/terms/logo_lockup_analytics_icon_vertical_black_2x.png"
-  },
-  {
-    id: 3,
-    title: "Scrum Product Owner",
-    issuer: "Scrum Alliance",
-    date: "2022",
-    validUntil: "2025",
-    credentialId: "CSPO-2022-98765",
-    description: "Certified Scrum Product Owner with expertise in agile methodologies, backlog management, and stakeholder collaboration.",
-    skills: ["Scrum", "Agile", "Backlog Management", "Sprint Planning", "Stakeholder Management"],
-    verificationUrl: "#",
-    image: "/placeholder.svg",
-    color: "from-green-500 to-teal-600",
-    status: "active",
-    logoUrl: "https://www.scrumalliance.org/ScrumRedesignDEVSite/media/ScrumAllianceMedia/Global%20Nav/scrumalliance_logo.png"
-  },
-  {
-    id: 4,
-    title: "AWS Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "2022",
-    validUntil: "2025",
-    credentialId: "AWS-SAA-C02-567890",
-    description: "Solutions architect certification with focus on cloud infrastructure, scalability, and system design principles.",
-    skills: ["Cloud Architecture", "System Design", "Infrastructure", "Scalability", "Security"],
-    verificationUrl: "#",
-    image: "/placeholder.svg",
-    color: "from-purple-500 to-pink-600",
-    status: "active",
-    logoUrl: "https://d1.awsstatic.com/logos/aws-logo-lockups/poweredbyaws/PB_AWS_logo_RGB_stacked_REV_SQ.8c88ac215fe4e441dc42865dd6962ed4f444a90d.png"
-  },
-  {
-    id: 5,
-    title: "Design Thinking Certification",
-    issuer: "IDEO U",
-    date: "2021",
+    id: 11,
+    title: "Create a Value Proposition Canvas in Miro",
+    issuer: "Coursera / Coursera Project Network",
+    date: "2025",
     validUntil: "Lifetime",
-    credentialId: "DT-2021-34567",
-    description: "Human-centered design methodology certification focusing on innovation, empathy, and creative problem-solving.",
-    skills: ["Design Thinking", "User Empathy", "Ideation", "Prototyping", "Innovation"],
-    verificationUrl: "#",
-    image: "/placeholder.svg",
-    color: "from-cyan-500 to-blue-600",
+    credentialId: "ZVPRGKKZ3L48",
+    description: "Completed a hands-on project focused on mapping customer segments and value propositions using Miro to align business and user needs.",
+    skills: ["Value Proposition", "Customer Segments", "Business Alignment", "Miro"],
+    verificationUrl: "https://coursera.org/verify/ZVPRGKKZ3L48",
+    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    color: "from-pink-500 to-red-600",
     status: "active",
-    logoUrl: "https://www.ideou.com/hubfs/IDEO_U_Lockup_Black.png"
+    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/ZVPRGKKZ3L48"
   },
   {
-    id: 6,
-    title: "Data Science Fundamentals",
-    issuer: "IBM",
-    date: "2021",
-    validUntil: "2024",
-    credentialId: "IBM-DS-2021-78901",
-    description: "Foundation certification in data science, machine learning, and statistical analysis for product insights.",
-    skills: ["Data Science", "Machine Learning", "Statistical Analysis", "Python", "SQL"],
-    verificationUrl: "#",
-    image: "/placeholder.svg",
-    color: "from-indigo-500 to-purple-600",
-    status: "expiring",
-    logoUrl: "https://1000logos.net/wp-content/uploads/2021/05/IBM-logo.png"
+    id: 12,
+    title: "Business Analysis & Process Management",
+    issuer: "Coursera / Coursera Project Network",
+    date: "2025",
+    validUntil: "Lifetime",
+    credentialId: "A2BM4XDR1B94",
+    description: "Completed a practical course on business analysis, process modeling, and stakeholder engagement for optimizing organizational workflows.",
+    skills: ["Business Analysis", "Process Management", "Workflow Optimization", "Stakeholder Engagement"],
+    verificationUrl: "https://coursera.org/verify/A2BM4XDR1B94",
+    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    color: "from-yellow-600 to-orange-600",
+    status: "active",
+    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/A2BM4XDR1B94"
+  },
+
+  {
+    id: 13,
+    title: "Enterprise Product Management Fundamentals",
+    issuer: "Coursera / Microsoft",
+    date: "2025",
+    validUntil: "Lifetime",
+    credentialId: "YQY5MXNJSAXM",
+    description: "Completed a course by Microsoft on managing enterprise-level products, focusing on stakeholder management, delivery strategy, and user value.",
+    skills: ["Enterprise Product Management", "Stakeholder Management", "Delivery Strategy", "User Value"],
+    verificationUrl: "https://coursera.org/verify/YQY5MXNJSAXM",
+    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    color: "from-blue-700 to-indigo-700",
+    status: "active",
+    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/YQY5MXNJSAXM"
   }
 ];
 
@@ -365,14 +471,30 @@ export const Certifications = () => {
                 </div>
 
                 <div className="flex gap-4 pt-4">
-                  <motion.button
+                  {/* <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r ${selectedCert.color} text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300`}
                   >
-                    <ExternalLink size={16} />
-                    Verify Credential
-                  </motion.button>
+                    <motion.a
+                      href={selectedCert.verificationUrl}
+                      target='_blank'
+                    >
+                        <ExternalLink size={16} />
+                        Verify Credential
+                    </motion.a>
+                  </motion.button> */}
+                  <motion.a
+                href={selectedCert.verificationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                 className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r ${selectedCert.color} text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300`}
+              >
+                <ExternalLink size={16} />
+                 Verify Credential
+              </motion.a>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
