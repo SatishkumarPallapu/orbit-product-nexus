@@ -200,117 +200,307 @@ export const Projects = () => {
   const caseStudies = [
     {
       id: 101,
-      title: "Mobile-First E-commerce Redesign",
-      category: "UX Research & Strategy",
-      description: "Comprehensive user research and design strategy for mobile commerce optimization",
-      thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=200&fit=crop",
-      documentPdf: "/case-studies/mobile-ecommerce-redesign.pdf",
+      title: "Factors AI - New Feature PRD",
+      category: "Product Requirements Document",
+      description: "Comprehensive product requirements document for new AI-powered features in Factors AI platform",
+      thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop",
+      documentPdf: "/FactorsAINewFeaturePRD-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop"
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop"
       ],
-      duration: "3 months",
-      teamSize: "5 members",
-      objective: "Reduce mobile checkout abandonment by 50% through comprehensive UX research and strategic design improvements",
-      outcome: "Achieved 35% improvement in conversion rates and reduced time-to-purchase by 40%",
+      duration: "4 weeks",
+      teamSize: "Cross-functional team",
+      objective: "Define and specify new AI-powered features to enhance user engagement and platform capabilities",
+      outcome: "Successfully launched new features with measurable impact on user adoption and platform growth",
       longDescription: [
-        "Conducted in-depth user interviews with 50+ mobile shoppers across different demographics",
-        "Analyzed user journey mapping and identified key friction points in the checkout process",
-        "Developed detailed personas and user scenarios based on behavioral data and shopping patterns",
-        "Created wireframes and high-fidelity prototypes for extensive user testing and validation"
+        "Conducted comprehensive market research and competitive analysis",
+        "Defined detailed user stories and acceptance criteria for AI features",
+        "Collaborated with engineering and design teams to ensure feasibility",
+        "Created detailed wireframes and technical specifications"
       ],
       methodology: [
-        "User Interviews & Surveys",
-        "Journey Mapping & Pain Point Analysis",
-        "Competitive Benchmarking",
-        "A/B Testing Framework",
-        "Heuristic Evaluation",
-        "Accessibility Audit"
+        "User Research & Interviews",
+        "Competitive Analysis",
+        "Technical Feasibility Assessment",
+        "Stakeholder Alignment Sessions",
+        "Agile Development Planning",
+        "Success Metrics Definition"
       ],
       keyFindings: [
-        "Mobile users abandon checkout 3x more often due to form complexity",
-        "Guest checkout option increased completion by 25%",
-        "Single-page checkout reduced abandonment by 18%",
-        "Payment method visibility crucial for user confidence"
+        "Users needed more personalized AI recommendations",
+        "Integration with existing workflows was crucial for adoption",
+        "Performance optimization was key for user satisfaction",
+        "Clear onboarding reduced time-to-value significantly"
       ],
-      tags: ['UX Research', 'Mobile Design', 'E-commerce', 'User Testing', 'Journey Mapping', 'Conversion Optimization'],
-      color: "from-blue-500 to-cyan-600"
-    },
-    {
-      id: 102,
-      title: "SaaS Onboarding Flow Analysis",
-      category: "Product Analytics",
-      description: "Deep-dive analysis of user onboarding to reduce time-to-value",
-      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=200&fit=crop",
-      documentPdf: "/case-studies/saas-onboarding-analysis.pdf",
-      images: [
-        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=400&h=300&fit=crop"
-      ],
-      duration: "6 weeks",
-      teamSize: "4 members",
-      objective: "Analyze and optimize user onboarding flow to improve product adoption and reduce churn",
-      outcome: "Reduced time-to-first-value from 14 days to 3 days, improved 30-day retention by 45%",
-      longDescription: [
-        "Mapped complete user onboarding journey from signup to first meaningful value achievement",
-        "Identified critical drop-off points using cohort analysis and advanced funnel metrics",
-        "Conducted comprehensive exit interviews with users who churned within first 30 days",
-        "Developed progressive disclosure strategy for complex features to reduce cognitive load"
-      ],
-      methodology: [
-        "Cohort Analysis",
-        "Funnel Analytics",
-        "Exit Interview Protocol",
-        "Feature Usage Tracking",
-        "Customer Success Collaboration",
-        "Progressive Disclosure Design"
-      ],
-      keyFindings: [
-        "Users needed to complete 3 key actions within first session for long-term retention",
-        "Feature discovery was the primary blocker to value realization",
-        "Personalized onboarding paths increased completion by 60%",
-        "In-app guidance reduced support tickets by 40%"
-      ],
-      tags: ['Product Analytics', 'User Onboarding', 'SaaS', 'Retention', 'Data Analysis', 'User Experience'],
+      tags: ['AI', 'Product Strategy', 'PRD', 'Feature Development', 'User Experience', 'Data Analytics'],
       color: "from-purple-500 to-indigo-600"
     },
     {
-      id: 103,
-      title: "Healthcare App Accessibility Study",
-      category: "Accessibility Research",
-      description: "Comprehensive accessibility audit and improvement recommendations for healthcare mobile application",
-      thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=200&fit=crop",
-      documentPdf: "/case-studies/healthcare-accessibility-study.pdf",
+      id: 102,
+      title: "MakeMyTrip - Graduate Project",
+      category: "Travel & Tourism",
+      description: "Strategic product development project for MakeMyTrip focusing on user experience optimization",
+      thumbnail: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=200&fit=crop",
+      documentPdf: "/MakeMyTrip_GradProject-Venkatesh.pdf",
       images: [
-        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop"
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop"
       ],
-      duration: "4 months",
-      teamSize: "6 members",
-      objective: "Ensure WCAG 2.1 AA compliance and improve usability for users with disabilities",
-      outcome: "Achieved 98% WCAG compliance and improved accessibility score from 65% to 94%",
+      duration: "3 months",
+      teamSize: "Academic project team",
+      objective: "Analyze and improve MakeMyTrip's user journey and conversion optimization strategies",
+      outcome: "Developed actionable recommendations that could improve conversion rates and user satisfaction",
       longDescription: [
-        "Conducted comprehensive accessibility audit using automated and manual testing methods",
-        "Engaged with users with various disabilities for user testing and feedback sessions",
-        "Developed accessibility guidelines and design system components",
-        "Implemented assistive technology compatibility improvements"
+        "Conducted in-depth analysis of MakeMyTrip's current user experience",
+        "Identified key pain points in the booking journey",
+        "Proposed solutions for improving conversion rates",
+        "Developed comprehensive strategy for user engagement"
       ],
       methodology: [
-        "WCAG 2.1 Compliance Audit",
-        "Screen Reader Testing",
-        "Keyboard Navigation Assessment",
-        "Color Contrast Analysis",
-        "User Testing with Disabilities",
-        "Assistive Technology Integration"
+        "User Journey Mapping",
+        "Competitive Benchmarking",
+        "Conversion Funnel Analysis",
+        "UX Audit & Recommendations",
+        "Market Research",
+        "Strategic Planning"
       ],
       keyFindings: [
-        "Critical health information was inaccessible to screen reader users",
-        "Color-only indicators failed for colorblind users",
-        "Touch targets were too small for users with motor impairments",
-        "Complex navigation structure hindered cognitive accessibility"
+        "Booking abandonment occurred primarily at payment stage",
+        "Mobile experience needed significant optimization",
+        "Price comparison features were underutilized",
+        "Customer support integration could reduce friction"
       ],
-      tags: ['Accessibility', 'Healthcare', 'WCAG Compliance', 'Inclusive Design', 'User Testing', 'Mobile Apps'],
-      color: "from-green-500 to-teal-600"
+      tags: ['Travel Tech', 'UX Research', 'Conversion Optimization', 'Mobile Experience', 'E-commerce', 'Graduate Project'],
+      color: "from-blue-500 to-cyan-600"
+    },
+    {
+      id: 103,
+      title: "BookMyShow - Product Strategy",
+      category: "Entertainment & Ticketing",
+      description: "Strategic analysis and product recommendations for BookMyShow's platform optimization",
+      thumbnail: "https://images.unsplash.com/photo-1489599177986-d989f76c9390?w=400&h=200&fit=crop",
+      documentPdf: "/NLBookMyShow-Venkatesh.pdf",
+      images: [
+        "https://images.unsplash.com/photo-1489599177986-d989f76c9390?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=400&h=300&fit=crop"
+      ],
+      duration: "6 weeks",
+      teamSize: "Product analysis team",
+      objective: "Analyze BookMyShow's current platform and identify opportunities for growth and user engagement",
+      outcome: "Delivered comprehensive strategy with actionable recommendations for platform enhancement",
+      longDescription: [
+        "Analyzed current user flow and identified optimization opportunities",
+        "Researched competitor strategies and market positioning",
+        "Developed recommendations for new features and improvements",
+        "Created roadmap for implementation of suggested changes"
+      ],
+      methodology: [
+        "Platform Analysis",
+        "User Behavior Study",
+        "Feature Gap Analysis",
+        "Revenue Model Assessment",
+        "Competitive Intelligence",
+        "Growth Strategy Development"
+      ],
+      keyFindings: [
+        "Seat selection process could be more intuitive",
+        "Social features would increase engagement",
+        "Recommendation engine needed improvement",
+        "Payment options required diversification"
+      ],
+      tags: ['Entertainment', 'Product Strategy', 'User Experience', 'Platform Analysis', 'Growth Strategy', 'Ticketing'],
+      color: "from-red-500 to-pink-600"
+    },
+    {
+      id: 104,
+      title: "EverythingPets - Product Analysis",
+      category: "E-commerce & Pet Care",
+      description: "Comprehensive product analysis and strategic recommendations for EverythingPets platform",
+      thumbnail: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=200&fit=crop",
+      documentPdf: "/NL_EverythingPets-Venkatesh.pdf",
+      images: [
+        "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=300&fit=crop"
+      ],
+      duration: "5 weeks",
+      teamSize: "Product research team",
+      objective: "Evaluate EverythingPets platform and develop strategic recommendations for market expansion",
+      outcome: "Created detailed analysis with growth strategies and user experience improvements",
+      longDescription: [
+        "Conducted comprehensive analysis of the pet care e-commerce market",
+        "Evaluated current platform capabilities and user experience",
+        "Identified market opportunities and competitive advantages",
+        "Developed strategic roadmap for platform enhancement"
+      ],
+      methodology: [
+        "Market Research",
+        "Platform Audit",
+        "User Experience Analysis",
+        "Competitor Benchmarking",
+        "Business Model Evaluation",
+        "Strategic Recommendations"
+      ],
+      keyFindings: [
+        "Subscription model could increase customer lifetime value",
+        "Pet care advice content would drive engagement",
+        "Mobile app needed significant improvements",
+        "Inventory management required optimization"
+      ],
+      tags: ['Pet Care', 'E-commerce', 'Market Analysis', 'Subscription Model', 'Mobile Strategy', 'Customer Retention'],
+      color: "from-green-500 to-emerald-600"
+    },
+    {
+      id: 105,
+      title: "Rapido - Product Requirements Document",
+      category: "Ride-sharing & Mobility",
+      description: "Strategic PRD for Rapido's new features focusing on user acquisition and retention",
+      thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=200&fit=crop",
+      documentPdf: "/RapidoPRD-Venkatesh.pdf",
+      images: [
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop"
+      ],
+      duration: "4 weeks",
+      teamSize: "Product development team",
+      objective: "Define new features and enhancements for Rapido's ride-sharing platform to improve user experience",
+      outcome: "Delivered comprehensive PRD with detailed specifications for successful feature implementation",
+      longDescription: [
+        "Analyzed current user journey and identified pain points",
+        "Defined new features to enhance rider and driver experience",
+        "Created detailed technical specifications and user stories",
+        "Established success metrics and implementation timeline"
+      ],
+      methodology: [
+        "User Journey Analysis",
+        "Feature Prioritization",
+        "Technical Specification",
+        "Stakeholder Collaboration",
+        "Success Metrics Definition",
+        "Implementation Planning"
+      ],
+      keyFindings: [
+        "Real-time tracking accuracy needed improvement",
+        "Driver-rider communication required enhancement",
+        "Safety features were top priority for users",
+        "Pricing transparency could improve satisfaction"
+      ],
+      tags: ['Mobility', 'Ride-sharing', 'PRD', 'User Experience', 'Safety Features', 'Real-time Tracking'],
+      color: "from-yellow-500 to-orange-600"
+    },
+    {
+      id: 106,
+      title: "Swiggy - Strategic Case Study",
+      category: "Food Delivery & Logistics",
+      description: "In-depth case study analysis of Swiggy's business model and growth strategies",
+      thumbnail: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&h=200&fit=crop",
+      documentPdf: "/Swiggy_CaseStudy-Venkatesh.pdf",
+      images: [
+        "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=400&h=300&fit=crop"
+      ],
+      duration: "8 weeks",
+      teamSize: "Case study research team",
+      objective: "Analyze Swiggy's business model, growth strategies, and market positioning in the food delivery sector",
+      outcome: "Comprehensive case study with insights into successful scaling strategies and operational excellence",
+      longDescription: [
+        "Conducted thorough analysis of Swiggy's business model evolution",
+        "Examined growth strategies and market expansion tactics",
+        "Analyzed operational efficiency and logistics optimization",
+        "Studied competitive positioning and differentiation strategies"
+      ],
+      methodology: [
+        "Business Model Analysis",
+        "Financial Performance Review",
+        "Competitive Landscape Study",
+        "Operational Efficiency Assessment",
+        "Growth Strategy Evaluation",
+        "Market Positioning Analysis"
+      ],
+      keyFindings: [
+        "Hyperlocal focus was key to initial success",
+        "Technology investment drove operational efficiency",
+        "Partnership strategies accelerated market penetration",
+        "Customer acquisition cost optimization was crucial"
+      ],
+      tags: ['Food Delivery', 'Business Strategy', 'Case Study', 'Logistics', 'Market Analysis', 'Scaling Operations'],
+      color: "from-orange-500 to-red-600"
+    },
+    {
+      id: 107,
+      title: "Zepto - New Feature PRD",
+      category: "Quick Commerce & Delivery",
+      description: "Product requirements document for new features in Zepto's quick commerce platform",
+      thumbnail: "https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=400&h=200&fit=crop",
+      documentPdf: "/ZeptoNewFeaturePRD-Venkatesh.pdf",
+      images: [
+        "https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop"
+      ],
+      duration: "5 weeks",
+      teamSize: "Product development team",
+      objective: "Define and specify new features for Zepto's quick commerce platform to enhance user experience and operational efficiency",
+      outcome: "Successfully delivered PRD with detailed specifications leading to successful feature launches",
+      longDescription: [
+        "Analyzed current platform capabilities and user feedback",
+        "Defined new features to improve delivery speed and accuracy",
+        "Created comprehensive technical specifications",
+        "Established implementation roadmap and success metrics"
+      ],
+      methodology: [
+        "User Feedback Analysis",
+        "Feature Definition & Prioritization",
+        "Technical Requirements Gathering",
+        "Stakeholder Alignment",
+        "Success Metrics Planning",
+        "Implementation Strategy"
+      ],
+      keyFindings: [
+        "Inventory prediction needed AI-powered improvements",
+        "User interface required simplification for faster ordering",
+        "Delivery tracking transparency was highly valued",
+        "Subscription model showed strong potential"
+      ],
+      tags: ['Quick Commerce', 'PRD', 'Delivery Optimization', 'User Experience', 'AI Integration', 'Subscription Model'],
+      color: "from-purple-500 to-pink-600"
+    },
+    {
+      id: 108,
+      title: "Zomato - Product Requirements Document",
+      category: "Food Discovery & Delivery",
+      description: "Strategic PRD for Zomato's platform enhancements focusing on user engagement and restaurant partnerships",
+      thumbnail: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=200&fit=crop",
+      documentPdf: "/Zomato-PRD-Venkatesh.pdf",
+      images: [
+        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&h=300&fit=crop"
+      ],
+      duration: "6 weeks",
+      teamSize: "Cross-functional product team",
+      objective: "Develop comprehensive PRD for Zomato's new features to improve restaurant discovery and user engagement",
+      outcome: "Delivered detailed requirements that enhanced user experience and increased restaurant partner satisfaction",
+      longDescription: [
+        "Analyzed user behavior patterns and restaurant partner feedback",
+        "Defined features to improve food discovery and ordering experience",
+        "Created detailed user stories and acceptance criteria",
+        "Established metrics for measuring feature success"
+      ],
+      methodology: [
+        "User Behavior Analysis",
+        "Restaurant Partner Interviews",
+        "Feature Specification",
+        "User Story Development",
+        "Technical Feasibility Assessment",
+        "Success Metrics Definition"
+      ],
+      keyFindings: [
+        "Personalized recommendations significantly improved engagement",
+        "Restaurant rating system needed more nuanced approach",
+        "Social features increased user retention",
+        "Delivery time prediction accuracy was crucial for satisfaction"
+      ],
+      tags: ['Food Discovery', 'PRD', 'Restaurant Partnerships', 'Personalization', 'Social Features', 'Delivery Optimization'],
+      color: "from-red-500 to-orange-600"
     }
   ];
 
