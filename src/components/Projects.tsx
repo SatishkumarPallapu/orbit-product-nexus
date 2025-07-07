@@ -204,6 +204,7 @@ export const Projects = () => {
       category: "Product Requirements Document",
       description: "Comprehensive product requirements document for new AI-powered features in Factors AI platform",
       thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop",
+      logo: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=80&h=80&fit=crop", // AI/Tech logo
       documentPdf: "/FactorsAINewFeaturePRD-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
@@ -242,6 +243,7 @@ export const Projects = () => {
       category: "Travel & Tourism",
       description: "Strategic product development project for MakeMyTrip focusing on user experience optimization",
       thumbnail: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=200&fit=crop",
+      logo: "https://images.unsplash.com/photo-1436491160399-112ba8d25d1f?w=80&h=80&fit=crop", // Travel logo
       documentPdf: "/MakeMyTrip_GradProject-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop",
@@ -280,6 +282,7 @@ export const Projects = () => {
       category: "Entertainment & Ticketing",
       description: "Strategic analysis and product recommendations for BookMyShow's platform optimization",
       thumbnail: "https://images.unsplash.com/photo-1489599177986-d989f76c9390?w=400&h=200&fit=crop",
+      logo: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=80&h=80&fit=crop", // Entertainment logo
       documentPdf: "/NLBookMyShow-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1489599177986-d989f76c9390?w=400&h=300&fit=crop",
@@ -318,6 +321,7 @@ export const Projects = () => {
       category: "E-commerce & Pet Care",
       description: "Comprehensive product analysis and strategic recommendations for EverythingPets platform",
       thumbnail: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=200&fit=crop",
+      logo: "https://images.unsplash.com/photo-1415369629392-2d1ec7ab7445?w=80&h=80&fit=crop", // Pet care logo
       documentPdf: "/NL_EverythingPets-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop",
@@ -356,6 +360,7 @@ export const Projects = () => {
       category: "Ride-sharing & Mobility",
       description: "Strategic PRD for Rapido's new features focusing on user acquisition and retention",
       thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=200&fit=crop",
+      logo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=80&h=80&fit=crop", // Mobility logo
       documentPdf: "/RapidoPRD-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
@@ -394,6 +399,7 @@ export const Projects = () => {
       category: "Food Delivery & Logistics",
       description: "In-depth case study analysis of Swiggy's business model and growth strategies",
       thumbnail: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&h=200&fit=crop",
+      logo: "https://images.unsplash.com/photo-1565299624-4b87b5e36e44?w=80&h=80&fit=crop", // Food delivery logo
       documentPdf: "/Swiggy_CaseStudy-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&h=300&fit=crop",
@@ -432,6 +438,7 @@ export const Projects = () => {
       category: "Quick Commerce & Delivery",
       description: "Product requirements document for new features in Zepto's quick commerce platform",
       thumbnail: "https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=400&h=200&fit=crop",
+      logo: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=80&h=80&fit=crop", // Quick commerce logo
       documentPdf: "/ZeptoNewFeaturePRD-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=400&h=300&fit=crop",
@@ -470,6 +477,7 @@ export const Projects = () => {
       category: "Food Discovery & Delivery",
       description: "Strategic PRD for Zomato's platform enhancements focusing on user engagement and restaurant partnerships",
       thumbnail: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=200&fit=crop",
+      logo: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=80&h=80&fit=crop", // Restaurant logo
       documentPdf: "/Zomato-PRD-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
@@ -511,6 +519,7 @@ export const Projects = () => {
       category: "Strategic Workspace",
       description: "A strategic workspace tailored for Product Managers to plan, prioritize, and track product development cycles",
       preview: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      logo: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=80&h=80&fit=crop", // Management/Strategy logo
       liveUrl: "https://prd1-0.vercel.app",
       githubUrl: "#",
       longDescription: [
@@ -539,6 +548,7 @@ export const Projects = () => {
       category: "Healthcare & Logistics",
       description: "A pharma inventory and warehouse management tool for streamlined supply chain operations",
       preview: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop",
+      logo: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=80&h=80&fit=crop", // Medical/Pharma logo
       liveUrl: "https://pharmatracker.vercel.app",
       githubUrl: "#",
       longDescription: [
@@ -568,6 +578,7 @@ export const Projects = () => {
       category: "AI & Logistics",
       description: "An AI-powered tool that recommends optimal travel routes for large vehicles based on multiple dynamic factors",
       preview: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+      logo: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?w=80&h=80&fit=crop", // Green/Environmental logo
       liveUrl: "https://green-10.vercel.app/",
       githubUrl: "#",
       longDescription: [
