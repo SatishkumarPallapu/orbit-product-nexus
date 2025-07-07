@@ -507,138 +507,89 @@ export const Projects = () => {
   const prototypes = [
     {
       id: 201,
-      title: "E-commerce Dashboard Analytics",
-      category: "Full-Stack Web Application",
-      description: "Comprehensive analytics dashboard for e-commerce platforms with real-time data visualization",
-      preview: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      liveUrl: "https://ecommerce-analytics-dashboard.vercel.app",
-      githubUrl: "https://github.com/yourusername/ecommerce-dashboard",
+      title: "Product TOOL – For Product Managers",
+      category: "Strategic Workspace",
+      description: "A strategic workspace tailored for Product Managers to plan, prioritize, and track product development cycles",
+      preview: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      liveUrl: "https://prd1-0.vercel.app",
+      githubUrl: "#",
       longDescription: [
-        "Built with React, TypeScript, and Tailwind CSS for modern UI/UX",
-        "Integrated Chart.js and Recharts for dynamic data visualizations",
-        "Implemented real-time data updates using WebSocket connections",
-        "Features responsive design optimized for desktop and mobile devices",
-        "Includes dark/light theme toggle and customizable dashboard widgets"
+        "Strategic workspace designed specifically for Product Managers",
+        "Features customizable roadmaps for long-term planning",
+        "Includes idea repositories for innovation management",
+        "User feedback tracker for customer-driven development",
+        "Agile board integrations for seamless workflow management",
+        "Clean UI designed for high usability and efficient decision-making"
       ],
-      techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js', 'Vercel'],
+      techStack: ['React', 'Next.js', 'Tailwind CSS', 'Vercel', 'TypeScript'],
       features: [
-        "Real-time sales analytics",
-        "Customer behavior insights",
-        "Revenue trend analysis",
-        "Product performance metrics",
-        "Exportable reports"
+        "Customizable product roadmaps",
+        "Idea repository management",
+        "User feedback tracking",
+        "Agile board integration",
+        "Strategic planning tools"
       ],
       color: "from-blue-500 to-cyan-600",
-      status: "Live",
-      lastUpdated: "2 weeks ago"
-    },
-    {
-      id: 202,
-      title: "Task Management SaaS",
-      category: "Productivity Application",
-      description: "Modern project management tool with team collaboration features and AI-powered insights",
-      preview: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      liveUrl: "https://taskflow-manager.vercel.app",
-      githubUrl: "https://github.com/yourusername/taskflow-saas",
-      longDescription: [
-        "Full-stack application built with Next.js and Supabase backend",
-        "Implements real-time collaboration using Supabase real-time subscriptions",
-        "Features drag-and-drop task management with smooth animations",
-        "Includes user authentication, role-based permissions, and team management",
-        "AI-powered task prioritization and deadline prediction algorithms"
-      ],
-      techStack: ['Next.js', 'Supabase', 'PostgreSQL', 'Framer Motion', 'Stripe'],
-      features: [
-        "Real-time team collaboration",
-        "Drag-and-drop task boards",
-        "AI task prioritization",
-        "Time tracking & reporting",
-        "Integration with popular tools"
-      ],
-      color: "from-purple-500 to-pink-600",
       status: "Live",
       lastUpdated: "1 week ago"
     },
     {
-      id: 203,
-      title: "AI Content Generator",
-      category: "AI-Powered Tool",
-      description: "Multi-modal content creation platform powered by OpenAI GPT and image generation APIs",
-      preview: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-      liveUrl: "https://ai-content-studio.vercel.app",
-      githubUrl: "https://github.com/yourusername/ai-content-generator",
+      id: 202,
+      title: "PharmaTracker – Warehouse Operations & Pharma Logistics",
+      category: "Healthcare & Logistics",
+      description: "A pharma inventory and warehouse management tool for streamlined supply chain operations",
+      preview: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop",
+      liveUrl: "https://pharmatracker.vercel.app",
+      githubUrl: "#",
       longDescription: [
-        "Integrated multiple AI APIs including OpenAI GPT-4, DALL-E, and Stable Diffusion",
-        "Built with React and Node.js backend for seamless API orchestration",
-        "Features content templates for blogs, social media, and marketing copy",
-        "Implements usage tracking, subscription management, and payment processing",
-        "Includes content history, favorites, and collaborative workspace features"
+        "Comprehensive pharma inventory management system",
+        "Real-time tracking of medical stock and inventory levels",
+        "Automated expiration alerts to prevent waste",
+        "Advanced batch management for quality control",
+        "Delivery status tracking for supply chain visibility",
+        "Built to enhance visibility and reduce manual errors",
+        "Improves traceability in pharmaceutical logistics"
       ],
-      techStack: ['React', 'Node.js', 'OpenAI API', 'Stripe', 'MongoDB'],
+      techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Vercel'],
       features: [
-        "Multi-format content generation",
-        "AI image creation",
-        "Brand voice consistency",
-        "Content optimization",
-        "Collaboration tools"
+        "Real-time stock tracking",
+        "Expiration date alerts",
+        "Batch management system",
+        "Delivery status monitoring",
+        "Supply chain visibility"
       ],
-      color: "from-emerald-500 to-teal-600",
+      color: "from-green-500 to-emerald-600",
       status: "Live",
       lastUpdated: "3 days ago"
     },
     {
-      id: 204,
-      title: "Real Estate Platform",
-      category: "Marketplace Application",
-      description: "Modern property listing platform with advanced search, virtual tours, and AI property matching",
-      preview: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
-      liveUrl: "https://property-finder-pro.vercel.app",
-      githubUrl: "https://github.com/yourusername/real-estate-platform",
+      id: 203,
+      title: "GreenRoute – AI-Powered Route Optimizer for Heavy Vehicles",
+      category: "AI & Logistics",
+      description: "An AI-powered tool that recommends optimal travel routes for large vehicles based on multiple dynamic factors",
+      preview: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+      liveUrl: "https://green-10.vercel.app/",
+      githubUrl: "#",
       longDescription: [
-        "Comprehensive property marketplace with advanced filtering and search capabilities",
-        "Integrated Google Maps API for location-based property discovery",
-        "Features virtual tour integration and high-quality image galleries",
-        "Implements user authentication for buyers, sellers, and agents",
-        "AI-powered property recommendations based on user preferences and behavior"
+        "AI-powered route optimization specifically for heavy vehicles",
+        "Considers weather conditions for safer travel planning",
+        "Optimizes for distance, fuel efficiency, and environmental impact",
+        "Accounts for road restrictions and vehicle specifications",
+        "Reduces carbon footprint through intelligent routing",
+        "Improves transport efficiency in logistics operations",
+        "Designed for fleet operations and logistics companies"
       ],
-      techStack: ['React', 'Firebase', 'Google Maps API', 'Cloudinary', 'Material-UI'],
+      techStack: ['AI/ML', 'React', 'Python', 'Google Maps API', 'Vercel'],
       features: [
-        "Advanced property search",
-        "Virtual tour integration",
-        "AI property matching",
-        "Mortgage calculator",
-        "Agent communication portal"
+        "AI-powered route optimization",
+        "Weather condition analysis",
+        "Fuel efficiency calculations",
+        "Environmental impact reduction",
+        "Heavy vehicle restrictions mapping"
       ],
-      color: "from-orange-500 to-red-600",
+      color: "from-purple-500 to-pink-600",
       status: "Live",
       lastUpdated: "5 days ago"
-    },
-    {
-      id: 205,
-      title: "Fitness Tracking App",
-      category: "Health & Wellness",
-      description: "Comprehensive fitness tracking platform with workout planning, nutrition logging, and progress analytics",
-      preview: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
-      liveUrl: "https://fittrack-pro.vercel.app",
-      githubUrl: "https://github.com/yourusername/fitness-tracker",
-      longDescription: [
-        "Progressive Web App optimized for mobile and desktop experiences",
-        "Integrated with fitness APIs for workout data and nutrition information",
-        "Features custom workout builder with exercise library and video demonstrations",
-        "Implements social features for sharing progress and connecting with fitness communities",
-        "AI-powered personalized workout and nutrition recommendations"
-      ],
-      techStack: ['PWA', 'React', 'IndexedDB', 'Chart.js', 'Service Workers'],
-      features: [
-        "Workout planning & tracking",
-        "Nutrition logging",
-        "Progress analytics",
-        "Social fitness community",
-        "AI personal trainer"
-      ],
-      color: "from-green-500 to-emerald-600",
-      status: "Live",
-      lastUpdated: "1 week ago"
     }
   ];
 
