@@ -1,73 +1,13 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Building, ChevronRight, TrendingUp } from 'lucide-react';
-
-// const experiences = [
-//   {
-//     id: 1,
-//     company: "Data Pro Software Technology Pvt Ltd",
-//     location: "Bangalore, Karnataka, India",
-//     totalDuration: "Feb 2022 - Present",
-//     roles: [
-//       {
-//         title: "Product Manager",
-//         duration: "May 2023 – Present",
-//         type: "Full-time",
-//         description: "As a Product Manager, I led multiple 0-to-1 and growth-stage product initiatives across campaign compliance, checkout optimization, and internal tooling—delivering impactful outcomes across adoption, efficiency, and revenue growth.",
-//         achievements: [
-//           "Spearheaded multiple 0→1 product builds, including a campaign compliance platform, checkout optimization system, and internal productivity tool—each launched within tight timelines and rapidly adopted across users.",
-//           "Drove cross-functional collaboration with design, engineering, QA, and business teams to deliver scalable, high-impact features across B2B SaaS and internal enterprise tools",
-//           `Improved user engagement and operational efficiency, achieving results such as:
-
-//           30K+ DAUs and 95% campaign compliance on Capsure
-
-//           13% conversion uplift and 21% drop in bounce rate on checkout flows`,
-//           `Defined roadmaps, success metrics, and MVP scope for all three products; led execution from concept to launch with rapid iteration and data-driven decision-making`,
-//           `Contributed to revenue and cost-saving goals, including a 6-figure ARR pipeline, 4x increase in coupon usage, and 250+ man-hours saved per agency per month.`
-//         ],
-//         technologies: ["React", "Node.js", "TypeScript", "AWS", "Docker", "MongoDB"]
-//       },
-//       {
-//         title: "Associate Product Manager",
-//         duration: "Feb 2022 - Apr 2023",
-//         type: "Full-time",
-//         description: "Developed responsive user interfaces and collaborated with design teams to create engaging user experiences. Focused on modern frontend technologies and accessibility standards.",
-//         achievements: [
-//           "Conducted data-driven problem analysis, identifying a 2× lower reservation rate among new users and formulating actionable hypotheses to address conversion gaps.",
-//           "Executed an A/B testing roadmap across content formats, UI layouts, and banner placements—resulting in an 8.5 percentage point increase in click-through rate.",
-//           "Collaborated cross-functionally with engineering, marketing, and analytics to implement scalable, automated coupon systems with real-time visibility",
-//           "Drove $13.5M in incremental revenue within 6 months by aligning product improvements with marketing and business objectives."
-//         ],
-//         technologies: ["React", "Vue.js", "Sass", "JavaScript", "Git", "Figma"]
-//       },
-//     ]
-//   },
-//   {
-//     id: 2,
-//     company: "CarTrade Tech Limited (CARWALE).",
-//     location: "Hyderabad, India", 
-//     totalDuration: "July 2021 – Dec 2021",
-//     roles: [
-//       {
-//         title: "Account Manager",
-//         duration: "July 2021 – Dec 2021",
-//         type: "Full-time",
-//         description: "Managed end-to-end dealership portfolios, focusing on client relationship growth, inventory optimization, and revenue enhancement across the used car segment.",
-//         achievements: [
-//           "Cultivated strong dealer relationships, resulting in a 25% increase in repeat business within six months",
-//           "Delivered customized inventory solutions aligned with dealer needs, leading to a 15% boost in sales performance.",
-//           "Acted as a strategic advisor to dealerships, improving operational efficiency and trust through consistent engagement and insights."
-//         ],
-//         technologies: ["React", "JavaScript", "Sass", "Bootstrap", "PHP", "MySQL"]
-//       }
-//     ]
-//   }
-// ];
 
 const experiences = [
   {
     id: 1,
     company: "Data Pro Software Technology Pvt Ltd",
+    logo: "https://media.licdn.com/dms/image/v2/C4D0BAQHGOJGKZs7tJw/company-logo_200_200/company-logo_200_200/0/1634118849502/data_pro_software_technology_pvt_ltd_logo?e=1740614400&v=beta&t=8tOoE5Pc7GFYvpgMJCWG5zDCCXOKHEKu0WLKMcvGHOo",
     location: "Bangalore, India",
     totalDuration: "Feb 2022 – Present",
     roles: [
@@ -120,6 +60,7 @@ const experiences = [
   {
     id: 2,
     company: "CarTrade Tech Limited (CARWALE.COM)",
+    logo: "https://logos-world.net/wp-content/uploads/2023/01/CarWale-Logo.png",
     location: "Hyderabad, India",
     totalDuration: "Jul 2021 – Dec 2021",
     roles: [
@@ -140,6 +81,7 @@ const experiences = [
   {
     id: 3,
     company: "Daily Daily",
+    logo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop&crop=center",
     location: "Hyderabad, India",
     totalDuration: "Nov 2019 – June 2020",
     roles: [
@@ -159,12 +101,9 @@ const experiences = [
   }
 ];
 
-
 export const Experience = () => {
   return (
-    <div className="min-h-screen pb-16 px-4">
-
-
+    <div className="min-h-screen pb-16 px-4 corporate-bg">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -176,7 +115,7 @@ export const Experience = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent mb-6">
             Professional Experience
           </h1>
-          <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             A journey through my professional roles and the impact I've made across different organizations and technologies.
           </p>
         </motion.div>
@@ -193,31 +132,43 @@ export const Experience = () => {
             >
               {/* Timeline Line */}
               {index !== experiences.length - 1 && (
-                <div className="absolute left-6 top-20 w-0.5 h-96 bg-gradient-to-b from-blue-500 to-purple-500 opacity-30" />
+                <div className="absolute left-6 top-32 w-0.5 h-96 bg-gradient-to-b from-blue-500 to-purple-500 opacity-30" />
               )}
               
               {/* Company Header */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg" />
-                <div className="ml-12">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
-                    {experience.company}
-                  </h2>
-                  <div className="flex flex-wrap items-center gap-4 text-white/70">
-                    <div className="flex items-center gap-2">
-                      <MapPin size={16} />
-                      <span>{experience.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Calendar size={16} />
-                      <span>{experience.totalDuration}</span>
-                    </div>
-                    {experience.roles.length > 1 && (
+              <div className="flex items-center gap-6 mb-6">
+                <div className="relative">
+                  <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg" />
+                </div>
+                <div className="flex items-center gap-4 flex-1">
+                  <img 
+                    src={experience.logo} 
+                    alt={`${experience.company} logo`}
+                    className="w-16 h-16 rounded-lg object-contain bg-white/10 p-2"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=64&h=64&fit=crop&crop=center";
+                    }}
+                  />
+                  <div>
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
+                      {experience.company}
+                    </h2>
+                    <div className="flex flex-wrap items-center gap-4 text-gray-300">
                       <div className="flex items-center gap-2">
-                        <TrendingUp size={16} />
-                        <span>{experience.roles.length} Roles</span>
+                        <MapPin size={16} />
+                        <span>{experience.location}</span>
                       </div>
-                    )}
+                      <div className="flex items-center gap-2">
+                        <Calendar size={16} />
+                        <span>{experience.totalDuration}</span>
+                      </div>
+                      {experience.roles.length > 1 && (
+                        <div className="flex items-center gap-2">
+                          <TrendingUp size={16} />
+                          <span>{experience.roles.length} Roles</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -227,26 +178,26 @@ export const Experience = () => {
                 {experience.roles.map((role, roleIndex) => (
                   <div
                     key={roleIndex}
-                    className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-6 sm:p-8 hover:bg-white/10 transition-all duration-300"
+                    className="corporate-card rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300"
                   >
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                       <div>
                         <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                           {role.title}
                         </h3>
-                        <div className="flex flex-wrap items-center gap-4 text-white/70 mb-4">
+                        <div className="flex flex-wrap items-center gap-4 text-gray-300 mb-4">
                           <div className="flex items-center gap-2">
                             <Calendar size={14} />
                             <span>{role.duration}</span>
                           </div>
-                          <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">
+                          <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30">
                             {role.type}
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-white/80 mb-6 leading-relaxed">
+                    <p className="text-gray-200 mb-6 leading-relaxed">
                       {role.description}
                     </p>
 
@@ -255,7 +206,7 @@ export const Experience = () => {
                       <h4 className="text-lg font-semibold text-white mb-3">Key Achievements</h4>
                       <ul className="space-y-2">
                         {role.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex} className="flex items-start gap-3 text-white/70">
+                          <li key={achievementIndex} className="flex items-start gap-3 text-gray-300">
                             <ChevronRight size={14} className="text-blue-400 mt-1 flex-shrink-0" />
                             <span className="text-sm">{achievement}</span>
                           </li>
@@ -270,7 +221,7 @@ export const Experience = () => {
                         {role.technologies.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-white border border-white/10 rounded-lg text-sm hover:bg-white/10 transition-colors"
+                            className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-white border border-white/20 rounded-lg text-sm hover:bg-white/10 transition-colors"
                           >
                             {tech}
                           </span>
@@ -291,17 +242,17 @@ export const Experience = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
-          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
+          <div className="text-center p-6 corporate-card rounded-2xl">
             <div className="text-3xl sm:text-4xl font-bold text-white mb-2">3+</div>
-            <div className="text-white/70">Years of Experience</div>
+            <div className="text-gray-300">Years of Experience</div>
           </div>
-          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
-            <div className="text-3xl sm:text-4xl font-bold text-white mb-2">2</div>
-            <div className="text-white/70">Companies</div>
+          <div className="text-center p-6 corporate-card rounded-2xl">
+            <div className="text-3xl sm:text-4xl font-bold text-white mb-2">3</div>
+            <div className="text-gray-300">Companies</div>
           </div>
-          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
+          <div className="text-center p-6 corporate-card rounded-2xl">
             <div className="text-3xl sm:text-4xl font-bold text-white mb-2">4</div>
-            <div className="text-white/70">Different Roles</div>
+            <div className="text-gray-300">Different Roles</div>
           </div>
         </motion.div>
       </div>
