@@ -7,7 +7,7 @@ import { Certifications as CertificationsComponent } from '../components/Certifi
 
 const Certifications = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+    <div className="min-h-screen corporate-bg">
       <div className="px-4 pt-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ const Certifications = () => {
         >
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
           >
             <ArrowLeft size={20} />
             Back to Home
