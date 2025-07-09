@@ -6,7 +6,7 @@ import { Calendar, MapPin, Building, ChevronRight, TrendingUp } from 'lucide-rea
 const experiences = [
   {
     id: 1,
-    company: "Data Pro Software Technology Pvt Ltd",
+    company: "Data Pro Information Technology Pvt Ltd",
     logo: "https://media.licdn.com/dms/image/v2/C4D0BAQHGOJGKZs7tJw/company-logo_200_200/company-logo_200_200/0/1634118849502/data_pro_software_technology_pvt_ltd_logo?e=1740614400&v=beta&t=8tOoE5Pc7GFYvpgMJCWG5zDCCXOKHEKu0WLKMcvGHOo",
     location: "Bangalore, India",
     totalDuration: "Feb 2022 – Present",

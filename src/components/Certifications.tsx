@@ -14,10 +14,10 @@ const certifications = [
     description: "Completed an online course on Supply Chain Logistics covering global logistics, inventory management, and distribution networks.",
     skills: ["Supply Chain", "Logistics", "Inventory Management", "Distribution", "Operations"],
     verificationUrl: "https://www.coursera.org/verify/8TGUP5W5Y5GE",
-    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    image: "",
     color: "from-yellow-500 to-red-600",
     status: "active",
-    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/8TGUP5W5Y5GE"
+    logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
   },
   {
     id: 2,
@@ -29,10 +29,10 @@ const certifications = [
     description: "Learned foundational SEO strategies, keyword research, and web optimization to improve search engine visibility.",
     skills: ["SEO", "Google Tools", "Keyword Research", "Search Rankings", "Digital Marketing"],
     verificationUrl: "https://www.coursera.org/verify/KA86N797Z2FG",
-    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    image: "",
     color: "from-green-500 to-lime-600",
     status: "active",
-    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/KA86N797Z2FG"
+    logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
   },
   {
     id: 3,
@@ -44,10 +44,10 @@ const certifications = [
     description: "Covers core enterprise product management concepts including user needs, stakeholder management, and value delivery.",
     skills: ["Product Management", "Enterprise Products", "Stakeholder Alignment", "User Research", "Roadmapping"],
     verificationUrl: "https://www.coursera.org/verify/YQY5MXNJSAXM",
-    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    image: "",
     color: "from-blue-500 to-indigo-600",
     status: "active",
-    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/YQY5MXNJSAXM"
+    logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
   },
   {
     id: 4,
@@ -58,11 +58,11 @@ const certifications = [
     credentialId: "PS-RM-2025",
     description: "Certified in building strategic product roadmaps that align with business goals and user needs.",
     skills: ["Product Strategy", "Roadmapping", "Vision Alignment", "Stakeholder Management"],
-    verificationUrl: "",
-    image: "https://productschool.com/assets/meta/favicon-192x192.png",
+    verificationUrl: "https://productschool.teachable.com/courses/2111849/certificate",
+    image: "",
     color: "from-indigo-500 to-purple-600",
     status: "active",
-    logoUrl: "https://productschool.teachable.com/courses/2111849/certificate"
+    logoUrl: "https://static-media.hotmart.com/yPgnRT7zqhISM-0j5bEA5Fh332U=/705x0/https://uploads.teachablecdn.com/attachments/Fmia05OMQaq1KzlEYSvc_Micro-certification-hero.jpg"
   },
   {
     id: 5,
@@ -73,11 +73,11 @@ const certifications = [
     credentialId: "PS-PL-2025",
     description: "Certified in managing end-to-end product launches, market readiness, and cross-functional execution.",
     skills: ["Go-To-Market", "Launch Strategy", "Coordination", "Execution", "Growth"],
-    verificationUrl: "",
+    verificationUrl: "https://productschool.teachable.com/courses/2406983/certificate",
     image: "https://productschool.com/assets/meta/favicon-192x192.png",
     color: "from-orange-500 to-pink-600",
     status: "active",
-    logoUrl: "https://productschool.teachable.com/courses/2406983/certificate"
+    logoUrl: "https://static-media.hotmart.com/yPgnRT7zqhISM-0j5bEA5Fh332U=/705x0/https://uploads.teachablecdn.com/attachments/Fmia05OMQaq1KzlEYSvc_Micro-certification-hero.jpg"
   },
   {
     id: 6,
@@ -88,11 +88,11 @@ const certifications = [
     credentialId: "PS-EX-2025",
     description: "Certified in experimentation frameworks like A/B testing to validate product decisions with data.",
     skills: ["A/B Testing", "Experiment Design", "Hypothesis Validation", "Data-Driven Decisions"],
-    verificationUrl: "",
+    verificationUrl: "https://productschool.teachable.com/courses/2702393/certificate",
     image: "https://productschool.com/assets/meta/favicon-192x192.png",
     color: "from-red-500 to-yellow-500",
     status: "active",
-    logoUrl: "https://productschool.teachable.com/courses/2702393/certificate"
+    logoUrl: "https://static-media.hotmart.com/yPgnRT7zqhISM-0j5bEA5Fh332U=/705x0/https://uploads.teachablecdn.com/attachments/Fmia05OMQaq1KzlEYSvc_Micro-certification-hero.jpg"
   },
   {
     id: 7,
@@ -103,11 +103,11 @@ const certifications = [
     credentialId: "PS-DS-2025",
     description: "Certified in uncovering user needs through research, problem framing, and validation techniques.",
     skills: ["Product Discovery", "User Research", "Problem Framing", "Customer Interviews"],
-    verificationUrl: "",
+    verificationUrl: "https://productschool.teachable.com/courses/2600192/certificate",
     image: "https://productschool.com/assets/meta/favicon-192x192.png",
     color: "from-teal-500 to-green-600",
     status: "active",
-    logoUrl: "https://productschool.teachable.com/courses/2600192/certificate"
+    logoUrl: "https://static-media.hotmart.com/yPgnRT7zqhISM-0j5bEA5Fh332U=/705x0/https://uploads.teachablecdn.com/attachments/Fmia05OMQaq1KzlEYSvc_Micro-certification-hero.jpg"
   },
   {
     id: 8,
@@ -118,11 +118,11 @@ const certifications = [
     credentialId: "PS-AN-2025",
     description: "Certified in using analytics tools to monitor product performance and guide strategic decisions.",
     skills: ["Analytics", "Data Analysis", "Metrics", "KPI Monitoring", "Product Decisions"],
-    verificationUrl: "",
+    verificationUrl: "https://productschool.teachable.com/courses/1373833/certificate",
     image: "https://productschool.com/assets/meta/favicon-192x192.png",
     color: "from-gray-500 to-slate-700",
     status: "active",
-    logoUrl: "https://productschool.teachable.com/courses/1373833/certificate"
+    logoUrl: "https://static-media.hotmart.com/yPgnRT7zqhISM-0j5bEA5Fh332U=/705x0/https://uploads.teachablecdn.com/attachments/Fmia05OMQaq1KzlEYSvc_Micro-certification-hero.jpg"
   },
   {
     id: 9,
@@ -133,11 +133,25 @@ const certifications = [
     credentialId: "PS-PR-2025",
     description: "Certified in frameworks like RICE and MoSCoW for effective prioritization in product development.",
     skills: ["Prioritization", "RICE Framework", "MoSCoW Method", "Product Planning"],
-    verificationUrl: "",
+    verificationUrl: "https://productschool.teachable.com/courses/2772460/certificate",
     image: "https://productschool.com/assets/meta/favicon-192x192.png",
     color: "from-cyan-500 to-sky-600",
     status: "active",
-    logoUrl: "https://productschool.teachable.com/courses/2772460/certificate"
+    logoUrl: "https://static-media.hotmart.com/yPgnRT7zqhISM-0j5bEA5Fh332U=/705x0/https://uploads.teachablecdn.com/attachments/Fmia05OMQaq1KzlEYSvc_Micro-certification-hero.jpg"
+  },{
+    id: 14,
+    title: "Artificial Intelligence Micro-Certification (AIC)",
+    issuer: "Product School",
+    date: "2025",
+    validUntil: "Lifetime",
+    credentialId: "PS-PR-2025",
+    description: "Certified by Product School, designed to help product managers and professionals understand how to apply AI in product development.",
+    skills: ["Prioritization", "RICE Framework", "MoSCoW Method", "Product Planning"],
+    verificationUrl: "https://productschool.teachable.com/courses/2493899/certificate",
+    image: "https://productschool.com/assets/meta/favicon-192x192.png",
+    color: "from-cyan-500 to-sky-600",
+    status: "active",
+    logoUrl: "https://static-media.hotmart.com/yPgnRT7zqhISM-0j5bEA5Fh332U=/705x0/https://uploads.teachablecdn.com/attachments/Fmia05OMQaq1KzlEYSvc_Micro-certification-hero.jpg"
   },
   {
     id: 10,
@@ -149,10 +163,10 @@ const certifications = [
     description: "Comprehensive certification covering product strategy, roadmapping, user research, and product lifecycle management.",
     skills: ["Gmail", "Operations Management", "Automation", "Productivity Software", "Business Process Automation", "Order Fulfillment", "Workflow Management", "Google Sheets", "Sales Support", "Google Docs"],
     verificationUrl: "https://www.coursera.org/account/accomplishments/verify/KYTTUGO3KYQK",
-    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    image: "",
     color: "from-blue-500 to-indigo-600",
     status: "active",
-    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/KYTTUGO3KYQK"
+    logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
   },
   {
     id: 11,
@@ -164,10 +178,10 @@ const certifications = [
     description: "Completed a hands-on project focused on mapping customer segments and value propositions using Miro to align business and user needs.",
     skills: ["Value Proposition", "Customer Segments", "Business Alignment", "Miro"],
     verificationUrl: "https://coursera.org/verify/ZVPRGKKZ3L48",
-    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    image: "",
     color: "from-pink-500 to-red-600",
     status: "active",
-    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/ZVPRGKKZ3L48"
+    logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
   },
   {
     id: 12,
@@ -179,10 +193,10 @@ const certifications = [
     description: "Completed a practical course on business analysis, process modeling, and stakeholder engagement for optimizing organizational workflows.",
     skills: ["Business Analysis", "Process Management", "Workflow Optimization", "Stakeholder Engagement"],
     verificationUrl: "https://coursera.org/verify/A2BM4XDR1B94",
-    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    image: "",
     color: "from-yellow-600 to-orange-600",
     status: "active",
-    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/A2BM4XDR1B94"
+    logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
   },
 
   {
@@ -195,10 +209,10 @@ const certifications = [
     description: "Completed a course by Microsoft on managing enterprise-level products, focusing on stakeholder management, delivery strategy, and user value.",
     skills: ["Enterprise Product Management", "Stakeholder Management", "Delivery Strategy", "User Value"],
     verificationUrl: "https://coursera.org/verify/YQY5MXNJSAXM",
-    image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/89/a0db8f3ea3417ca90d4f3a4ca1d73e/coursera-projectnetwork-purplesquare.png?auto=format%2Ccompress&dpr=2&w=80&h=80",
+    image: "",
     color: "from-blue-700 to-indigo-700",
     status: "active",
-    logoUrl: "https://www.coursera.org/account/accomplishments/certificate/YQY5MXNJSAXM"
+    logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
   }
 ];
 
