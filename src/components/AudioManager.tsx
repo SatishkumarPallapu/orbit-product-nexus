@@ -149,8 +149,8 @@ My goal? Build products that empower users, drive engagement, and deliver measur
         onPause={() => setIsPlaying(false)}
       >
         {/* Replace with your actual audio file */}
-        <source src="/profile-intro.mp3" type="audio/mpeg" />
-        <source src="/profile-intro.wav" type="audio/wav" />
+        {/* <source src="/profile-intro.mp3" type="audio/mpeg" />
+        <source src="/profile-intro.wav" type="audio/wav" /> */}
       </audio>
 
       {/* Audio Controls */}
@@ -186,3 +186,4 @@ My goal? Build products that empower users, drive engagement, and deliver measur
     </>
   );
 };
+

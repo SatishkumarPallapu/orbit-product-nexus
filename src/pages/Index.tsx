@@ -1,11 +1,10 @@
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { Navigation } from '../components/Navigation';
 import { FloatingElements } from '../components/FloatingElements';
-import { AudioManager } from '../components/AudioManager';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -29,7 +28,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen corporate-bg overflow-hidden">
       {/* Audio Manager */}
-      <AudioManager />
+      {/* <AudioManager /> */}
 
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-20">

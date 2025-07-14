@@ -242,8 +242,8 @@ export const Projects = () => {
       title: "MakeMyTrip - Graduate Project",
       category: "Travel & Tourism",
       description: "Strategic product development project for MakeMyTrip focusing on user experience optimization",
-      thumbnail: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=200&fit=crop",
-      logo: "https://images.unsplash.com/photo-1436491160399-112ba8d25d1f?w=80&h=80&fit=crop", // Travel logo
+      thumbnail: "https://promos.makemytrip.com/Growth/Images/1x/mmt_dt_top_icon.png",
+      logo: "https://promos.makemytrip.com/Growth/Images/1x/mmt_dt_top_icon.png", // Travel logo
       documentPdf: "/MakeMyTrip_GradProject-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop",
@@ -281,7 +281,7 @@ export const Projects = () => {
       title: "BookMyShow - Product Strategy",
       category: "Entertainment & Ticketing",
       description: "Strategic analysis and product recommendations for BookMyShow's platform optimization",
-      thumbnail: "https://images.unsplash.com/photo-1489599177986-d989f76c9390?w=400&h=200&fit=crop",
+      thumbnail: "https://miro.medium.com/v2/resize:fit:1200/0*LAP8e_FFBa1-LX52.jpeg",
       logo: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=80&h=80&fit=crop", // Entertainment logo
       documentPdf: "/NLBookMyShow-Venkatesh.pdf",
       images: [
@@ -359,7 +359,7 @@ export const Projects = () => {
       title: "Rapido - Product Requirements Document",
       category: "Ride-sharing & Mobility",
       description: "Strategic PRD for Rapido's new features focusing on user acquisition and retention",
-      thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=200&fit=crop",
+      thumbnail: "https://th.bing.com/th/id/OIP.MqGUX0TNQOzKZAlIkMsWLgHaEK?w=313&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
       logo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=80&h=80&fit=crop", // Mobility logo
       documentPdf: "/RapidoPRD-Venkatesh.pdf",
       images: [
@@ -398,7 +398,7 @@ export const Projects = () => {
       title: "Swiggy - Strategic Case Study",
       category: "Food Delivery & Logistics",
       description: "In-depth case study analysis of Swiggy's business model and growth strategies",
-      thumbnail: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&h=200&fit=crop",
+      thumbnail: "https://th.bing.com/th/id/OIP.38vyuEPG3EjejRZ2TDZHQwHaDf?w=304&h=165&c=7&r=0&o=5&dpr=1.3&pid=1.7",
       logo: "https://images.unsplash.com/photo-1565299624-4b87b5e36e44?w=80&h=80&fit=crop", // Food delivery logo
       documentPdf: "/Swiggy_CaseStudy-Venkatesh.pdf",
       images: [
@@ -437,7 +437,7 @@ export const Projects = () => {
       title: "Zepto - New Feature PRD",
       category: "Quick Commerce & Delivery",
       description: "Product requirements document for new features in Zepto's quick commerce platform",
-      thumbnail: "https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=400&h=200&fit=crop",
+      thumbnail: "https://th.bing.com/th/id/OIP.ETg7au_trZPdwMIZencNKQHaEA?w=329&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
       logo: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=80&h=80&fit=crop", // Quick commerce logo
       documentPdf: "/ZeptoNewFeaturePRD-Venkatesh.pdf",
       images: [
@@ -476,7 +476,7 @@ export const Projects = () => {
       title: "Zomato - Product Requirements Document",
       category: "Food Discovery & Delivery",
       description: "Strategic PRD for Zomato's platform enhancements focusing on user engagement and restaurant partnerships",
-      thumbnail: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=200&fit=crop",
+      thumbnail: "https://th.bing.com/th/id/OIP.geXLenZLjUp2Ksm2DsXP8QAAAA?w=215&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
       logo: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=80&h=80&fit=crop", // Restaurant logo
       documentPdf: "/Zomato-PRD-Venkatesh.pdf",
       images: [
