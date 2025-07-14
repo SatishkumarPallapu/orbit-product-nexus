@@ -60,7 +60,7 @@ const experiences = [
   {
     id: 2,
     company: "CarTrade Tech Limited (CARWALE.COM)",
-    logo: "https://logos-world.net/wp-content/uploads/2023/01/CarWale-Logo.png",
+    logo: "https://th.bing.com/th/id/OIP.VSaTpdWa0PeMWF-CXnifUwHaFj?w=227&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
     location: "Hyderabad, India",
     totalDuration: "Jul 2021 – Dec 2021",
     roles: [
