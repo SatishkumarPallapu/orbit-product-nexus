@@ -1,13 +1,13 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Award, Calendar, ExternalLink, Shield, CheckCircle, Star, Trophy, Globe } from 'lucide-react';
+import { Award, Calendar, ExternalLink, Shield, CheckCircle, Star, Trophy, Globe} from 'lucide-react';
 
 const certifications = [
  {
     id: 1,
     title: "Supply Chain Logistics",
-    issuer: "Coursera / Rutgers University",
+    issuer: "Rutgers University",
     date: "2020",
     validUntil: "Lifetime",
     credentialId: "8TGUP5W5Y5GE",
@@ -17,12 +17,12 @@ const certifications = [
     image: "",
     color: "from-yellow-500 to-red-600",
     status: "active",
-    logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
+    logoUrl: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/30/273c6df6d0458f86b1770c67bf7cc4/RU_V_RED_BLACK_RGB.png?auto=format%2Ccompress&dpr=2&w=80&h=80"
   },
   {
     id: 2,
     title: "Introduction to Google SEO",
-    issuer: "Coursera / UC Davis",
+    issuer: "UC Davis",
     date: "2020",
     validUntil: "Lifetime",
     credentialId: "KA86N797Z2FG",
@@ -32,12 +32,12 @@ const certifications = [
     image: "",
     color: "from-green-500 to-lime-600",
     status: "active",
-    logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
+    logoUrl: "https://www.ucdavis.edu/profiles/sitefarm/themes/sitefarm_one/images/uc-logo-gold.svg"
   },
   {
     id: 3,
     title: "Enterprise Product Management Fundamentals",
-    issuer: "Coursera / Microsoft",
+    issuer: "Microsoft",
     date: "2025",
     validUntil: "Lifetime",
     credentialId: "YQY5MXNJSAXM",
@@ -47,7 +47,7 @@ const certifications = [
     image: "",
     color: "from-blue-500 to-indigo-600",
     status: "active",
-    logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
+    logoUrl: "https://th.bing.com/th/id/OIP.uHrDUCEbFVxRTdSSRjC5_gHaCu?w=349&h=128&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
   },
   {
     id: 4,
@@ -63,6 +63,21 @@ const certifications = [
     color: "from-indigo-500 to-purple-600",
     status: "active",
     logoUrl: "https://static-media.hotmart.com/yPgnRT7zqhISM-0j5bEA5Fh332U=/705x0/https://uploads.teachablecdn.com/attachments/Fmia05OMQaq1KzlEYSvc_Micro-certification-hero.jpg"
+  },
+  {
+    id: 13,
+    title: "Enterprise Product Management Fundamentals",
+    issuer: "Coursera / Microsoft",
+    date: "2025",
+    validUntil: "Lifetime",
+    credentialId: "YQY5MXNJSAXM",
+    description: "Completed a course by Microsoft on managing enterprise-level products, focusing on stakeholder management, delivery strategy, and user value.",
+    skills: ["Enterprise Product Management", "Stakeholder Management", "Delivery Strategy", "User Value"],
+    verificationUrl: "https://coursera.org/verify/YQY5MXNJSAXM",
+    image: "",
+    color: "from-blue-700 to-indigo-700",
+    status: "active",
+    logoUrl: "https://th.bing.com/th/id/OIP.uHrDUCEbFVxRTdSSRjC5_gHaCu?w=349&h=128&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
   },
   {
     id: 5,
@@ -138,20 +153,6 @@ const certifications = [
     color: "from-cyan-500 to-sky-600",
     status: "active",
     logoUrl: "https://static-media.hotmart.com/yPgnRT7zqhISM-0j5bEA5Fh332U=/705x0/https://uploads.teachablecdn.com/attachments/Fmia05OMQaq1KzlEYSvc_Micro-certification-hero.jpg"
-  },{
-    id: 14,
-    title: "Artificial Intelligence Micro-Certification (AIC)",
-    issuer: "Product School",
-    date: "2025",
-    validUntil: "Lifetime",
-    credentialId: "PS-PR-2025",
-    description: "Certified by Product School, designed to help product managers and professionals understand how to apply AI in product development.",
-    skills: ["Prioritization", "RICE Framework", "MoSCoW Method", "Product Planning"],
-    verificationUrl: "https://productschool.teachable.com/courses/2493899/certificate",
-    image: "https://productschool.com/assets/meta/favicon-192x192.png",
-    color: "from-cyan-500 to-sky-600",
-    status: "active",
-    logoUrl: "https://static-media.hotmart.com/yPgnRT7zqhISM-0j5bEA5Fh332U=/705x0/https://uploads.teachablecdn.com/attachments/Fmia05OMQaq1KzlEYSvc_Micro-certification-hero.jpg"
   },
   {
     id: 10,
@@ -197,28 +198,41 @@ const certifications = [
     color: "from-yellow-600 to-orange-600",
     status: "active",
     logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
-  },
-
+  }, 
   {
-    id: 13,
-    title: "Enterprise Product Management Fundamentals",
-    issuer: "Coursera / Microsoft",
+    id: 14,
+    title: "Artificial Intelligence Micro-Certification (AIC)",
+    issuer: "Product School",
     date: "2025",
     validUntil: "Lifetime",
-    credentialId: "YQY5MXNJSAXM",
-    description: "Completed a course by Microsoft on managing enterprise-level products, focusing on stakeholder management, delivery strategy, and user value.",
-    skills: ["Enterprise Product Management", "Stakeholder Management", "Delivery Strategy", "User Value"],
-    verificationUrl: "https://coursera.org/verify/YQY5MXNJSAXM",
-    image: "",
-    color: "from-blue-700 to-indigo-700",
+    credentialId: "PS-PR-2025",
+    description: "Certified by Product School, designed to help product managers and professionals understand how to apply AI in product development.",
+    skills: ["Prioritization", "RICE Framework", "MoSCoW Method", "Product Planning"],
+    verificationUrl: "https://productschool.teachable.com/courses/2493899/certificate",
+    image: "https://productschool.com/assets/meta/favicon-192x192.png",
+    color: "from-cyan-500 to-sky-600",
     status: "active",
-    logoUrl: "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1757548800&v=beta&t=_529iCK35SMO1ldYyQE5aToYqmxoszWVclbR4-UlP78"
-  }
+    logoUrl: "https://static-media.hotmart.com/yPgnRT7zqhISM-0j5bEA5Fh332U=/705x0/https://uploads.teachablecdn.com/attachments/Fmia05OMQaq1KzlEYSvc_Micro-certification-hero.jpg"
+  },
+  {
+    id: 15,
+    title: "Ai Product Manager",
+    issuer: "Microsoft",
+    date: "2025",
+    validUntil: "Lifetime",
+    description: "Covers core enterprise product management concepts including user needs, stakeholder management, and value delivery.",
+    skills: ["Product Management", "Enterprise Products", "Stakeholder Alignment", "User Research", "Roadmapping"],
+    verificationUrl: "",
+    image: "",
+    color: "from-blue-500 to-indigo-600",
+    status: "progress",
+    logoUrl: "https://th.bing.com/th/id/OIP.uHrDUCEbFVxRTdSSRjC5_gHaCu?w=349&h=128&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+  },
 ];
 
 export const Certifications = () => {
   const [selectedCert, setSelectedCert] = useState<typeof certifications[0] | null>(null);
-  const [filter, setFilter] = useState<'all' | 'active' | 'expiring'>('all');
+  const [filter, setFilter] = useState<'all' | 'active' | 'progress'>('all');
 
   const filteredCertifications = certifications.filter(cert => {
     if (filter === 'all') return true;
@@ -228,7 +242,7 @@ export const Certifications = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'active': return 'text-green-400 bg-green-400/20';
-      case 'expiring': return 'text-yellow-400 bg-yellow-400/20';
+      case 'progress': return 'text-yellow-400 bg-yellow-400/20';
       default: return 'text-gray-400 bg-gray-400/20';
     }
   };
@@ -239,7 +253,7 @@ export const Certifications = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex items-center justify-center px-4 "
+      className="min-h-screen flex items-center justify-center px-4"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -257,11 +271,11 @@ export const Certifications = () => {
           </p>
 
           {/* Filter Buttons */}
-          <div className="flex justify-center gap-4 mb-12">
+          <div className="flex justify-center gap-4">
             {[
               { key: 'all', label: 'All Certifications', icon: Trophy },
               { key: 'active', label: 'Active', icon: CheckCircle },
-              { key: 'expiring', label: 'Expiring Soon', icon: Calendar }
+              { key: 'progress', label: 'Progress', icon: Calendar },
             ].map(({ key, label, icon: Icon }) => (
               <motion.button
                 key={key}
@@ -274,15 +288,46 @@ export const Certifications = () => {
                     : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
                 }`}
               >
-                <Icon size={16} />
+                 <Icon size={16} /> 
                 <span className="font-medium">{label}</span>
               </motion.button>
             ))}
           </div>
         </motion.div>
 
+         {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className=" grid grid-cols-1 md:grid-cols-4 gap-6 mb-12"
+        >
+          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
+            <Trophy className="mx-auto mb-4 text-yellow-400" size={32} />
+            <div className="text-3xl font-bold text-white mb-2">{certifications.length}</div>
+            <div className="text-white/70">Total Certifications</div>
+          </div>
+          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
+            <CheckCircle className="mx-auto mb-4 text-green-400" size={32} />
+            <div className="text-3xl font-bold text-white mb-2">
+              {certifications.filter(c => c.status === 'active').length}
+            </div>
+            <div className="text-white/70">Active Certifications</div>
+          </div>
+          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
+            <Star className="mx-auto mb-4 text-blue-400" size={32} />
+            <div className="text-3xl font-bold text-white mb-2">5+</div>
+            <div className="text-white/70">Skill Areas</div>
+          </div>
+          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
+            <Shield className="mx-auto mb-4 text-purple-400" size={32} />
+            <div className="text-3xl font-bold text-white mb-2">100%</div>
+            <div className="text-white/70">Verified</div>
+          </div>
+        </motion.div>
+
         {/* Certifications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {filteredCertifications.map((cert, index) => (
             <motion.div
               key={cert.id}
@@ -304,7 +349,7 @@ export const Certifications = () => {
                 {/* Status Badge */}
                 <div className="absolute top-4 right-4">
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(cert.status)}`}>
-                    {cert.status === 'active' ? 'Active' : 'Expiring Soon'}
+                    {cert.status === 'active' ? 'Active' : 'In Progress'}
                   </span>
                 </div>
 
@@ -373,36 +418,6 @@ export const Certifications = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-6"
-        >
-          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
-            <Trophy className="mx-auto mb-4 text-yellow-400" size={32} />
-            <div className="text-3xl font-bold text-white mb-2">{certifications.length}</div>
-            <div className="text-white/70">Total Certifications</div>
-          </div>
-          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
-            <CheckCircle className="mx-auto mb-4 text-green-400" size={32} />
-            <div className="text-3xl font-bold text-white mb-2">
-              {certifications.filter(c => c.status === 'active').length}
-            </div>
-            <div className="text-white/70">Active Certifications</div>
-          </div>
-          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
-            <Star className="mx-auto mb-4 text-blue-400" size={32} />
-            <div className="text-3xl font-bold text-white mb-2">5+</div>
-            <div className="text-white/70">Skill Areas</div>
-          </div>
-          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
-            <Shield className="mx-auto mb-4 text-purple-400" size={32} />
-            <div className="text-3xl font-bold text-white mb-2">100%</div>
-            <div className="text-white/70">Verified</div>
-          </div>
-        </motion.div>
 
         {/* Certification Detail Modal */}
         {selectedCert && (
