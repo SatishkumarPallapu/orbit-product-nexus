@@ -22,8 +22,8 @@ export const Hero = () => {
   const handleDownloadResume = () => {
     // Create a placeholder resume download
     const link = document.createElement('a');
-    link.href = '/Venkatesh_Pallapu_PM.pdf'; // Replace with your actual resume file
-    link.download = 'Venkatesh_Pallapu_PM.pdf';
+    link.href = '/Venkatesh_Product_Manager_Resume.pdf'; // Replace with your actual resume file
+    link.download = 'Venkatesh_Product_Manager_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
