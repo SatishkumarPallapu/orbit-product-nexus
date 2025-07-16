@@ -34,8 +34,8 @@ export const Navigation = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-3 bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-700"
-              style={{ boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)' }}
+              className="flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-3 glass-card rounded-full"
+              style={{ boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)' }}
             >
               {navItems.map((item, index) => {
                 const Icon = item.icon;
@@ -52,8 +52,8 @@ export const Navigation = () => {
                       to={item.id}
                       className={`relative flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full transition-all duration-300 ${
                         isActive 
-                          ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg' 
-                          : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                          ? 'text-white bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg' 
+                          : 'text-foreground hover:text-primary hover:bg-accent'
                       }`}
                     >
                       <Icon size={16} className="sm:w-[18px] sm:h-[18px]" />
@@ -62,7 +62,7 @@ export const Navigation = () => {
                       {isActive && (
                         <motion.div
                           layoutId="activeIndicator"
-                          className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full -z-10"
+                          className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full -z-10"
                           transition={{ type: "spring", stiffness: 400, damping: 30 }}
                         />
                       )}
@@ -87,9 +87,9 @@ export const Navigation = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="px-4 py-2 bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-700"
+            className="px-4 py-2 glass-card rounded-full"
           >
-            <Link to="/" className="text-white font-semibold text-lg">VP</Link>
+            <Link to="/" className="text-primary font-semibold text-lg font-display">VP</Link>
           </motion.div>
 
           <motion.button
@@ -97,7 +97,7 @@ export const Navigation = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-3 bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-700 text-white"
+            className="p-3 glass-card rounded-full text-foreground"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -113,7 +113,7 @@ export const Navigation = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-full left-4 right-4 mt-2 p-4 bg-slate-800/90 backdrop-blur-xl rounded-2xl border border-slate-700"
+              className="absolute top-full left-4 right-4 mt-2 p-4 glass-card rounded-2xl"
             >
               <div className="grid grid-cols-2 gap-3">
                 {navItems.map((item, index) => {
@@ -132,8 +132,8 @@ export const Navigation = () => {
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${
                           isActive 
-                            ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600' 
-                            : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                            ? 'text-white bg-gradient-to-r from-blue-500 to-purple-600' 
+                            : 'text-foreground hover:text-primary hover:bg-accent'
                         }`}
                       >
                         <Icon size={18} />
