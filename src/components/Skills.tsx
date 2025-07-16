@@ -59,7 +59,7 @@ export const Skills = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex items-center justify-center px-4 pb-20 corporate-bg"
+      className="min-h-screen flex items-center justify-center px-4 pb-20"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -68,10 +68,10 @@ export const Skills = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-corporate-primary mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">Skills</span>
           </h2>
-          <p className="text-xl text-corporate-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-white/70 max-w-3xl mx-auto">
             A comprehensive skill set built through years of hands-on experience
           </p>
         </motion.div>
@@ -128,7 +128,7 @@ export const Skills = () => {
                       scale: 1.05,
                       transition: { duration: 0.3 }
                     }}
-                    className="relative p-8 corporate-card rounded-3xl overflow-hidden"
+                    className="relative p-8 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden"
                     style={{ 
                       boxShadow: '0 25px 50px rgba(0, 0, 0, 0.25)',
                       transform: `rotateY(${hoveredSkill === categoryIndex ? 15 : 0}deg)`
@@ -158,7 +158,7 @@ export const Skills = () => {
                     </motion.div>
 
                     <div className="relative z-10 space-y-6">
-                      <h3 className="text-2xl font-bold text-corporate-primary text-center">
+                      <h3 className="text-2xl font-bold text-white text-center">
                         {category.title}
                       </h3>
 
@@ -176,13 +176,13 @@ export const Skills = () => {
                             className="space-y-2"
                           >
                             <div className="flex justify-between items-center">
-                              <span className="text-corporate-primary font-medium">{skill.name}</span>
+                              <span className="text-white/90 font-medium">{skill.name}</span>
                               <span className={`text-sm font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
                                 {skill.level}%
                               </span>
                             </div>
                             
-                            <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div className="relative h-2 bg-white/10 rounded-full overflow-hidden">
                               <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: `${skill.level}%` }}
@@ -246,11 +246,13 @@ export const Skills = () => {
           transition={{ duration: 1, delay: 2 }}
           className="mt-20 text-center"
         >
-          <h3 className="text-2xl font-bold text-corporate-primary mb-8">Technical Proficiencies</h3>
+          <h3 className="text-2xl font-bold text-white mb-8">Technical Proficiencies</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              'Agile/Scrum', 'Jira', 'Figma', 'Tableau', 'Google Analytics', 
+
+'Agile/Scrum', 'Jira', 'Figma', 'Tableau', 'Google Analytics', 
               'Mixpanel', 'Amplitude', 'Slack', 'Notion', 'Miro', 'Confluence', 'Git', 'N8N', 'Firebase'
+
             ].map((tool, index) => (
               <motion.span
                 key={index}
@@ -262,7 +264,7 @@ export const Skills = () => {
                   rotateY: 10,
                   transition: { duration: 0.2 }
                 }}
-                className="px-6 py-3 corporate-card rounded-full text-corporate-primary font-medium hover:shadow-lg transition-all duration-300 cursor-default"
+                className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-medium border border-white/20 hover:border-white/40 transition-colors cursor-default"
                 style={{ transform: 'perspective(800px)' }}
               >
                 {tool}

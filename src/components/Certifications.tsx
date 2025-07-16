@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Calendar, ExternalLink, Shield, CheckCircle, Star, Trophy, Globe} from 'lucide-react';
@@ -240,9 +241,9 @@ export const Certifications = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'active': return 'text-green-600 bg-green-100';
-      case 'progress': return 'text-yellow-600 bg-yellow-100';
-      default: return 'text-gray-600 bg-gray-100';
+      case 'active': return 'text-green-400 bg-green-400/20';
+      case 'progress': return 'text-yellow-400 bg-yellow-400/20';
+      default: return 'text-gray-400 bg-gray-400/20';
     }
   };
 
@@ -252,7 +253,7 @@ export const Certifications = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex items-center justify-center px-4 corporate-bg"
+      className="min-h-screen flex items-center justify-center px-4"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -262,10 +263,10 @@ export const Certifications = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-corporate-primary mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Certifications</span>
           </h2>
-          <p className="text-xl text-corporate-secondary max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-white/70 max-w-3xl mx-auto mb-8">
             Continuously expanding knowledge through industry-recognized certifications and professional development
           </p>
 
@@ -284,7 +285,7 @@ export const Certifications = () => {
                 className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${
                   filter === key
                     ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white'
-                    : 'corporate-card text-corporate-primary hover:shadow-lg'
+                    : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
                 }`}
               >
                  <Icon size={16} /> 
@@ -299,29 +300,29 @@ export const Certifications = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12"
+          className=" grid grid-cols-1 md:grid-cols-4 gap-6 mb-12"
         >
-          <div className="text-center p-6 corporate-card rounded-2xl">
-            <Trophy className="mx-auto mb-4 text-yellow-500" size={32} />
-            <div className="text-3xl font-bold text-corporate-primary mb-2">{certifications.length}</div>
-            <div className="text-corporate-secondary">Total Certifications</div>
+          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
+            <Trophy className="mx-auto mb-4 text-yellow-400" size={32} />
+            <div className="text-3xl font-bold text-white mb-2">{certifications.length}</div>
+            <div className="text-white/70">Total Certifications</div>
           </div>
-          <div className="text-center p-6 corporate-card rounded-2xl">
-            <CheckCircle className="mx-auto mb-4 text-green-500" size={32} />
-            <div className="text-3xl font-bold text-corporate-primary mb-2">
+          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
+            <CheckCircle className="mx-auto mb-4 text-green-400" size={32} />
+            <div className="text-3xl font-bold text-white mb-2">
               {certifications.filter(c => c.status === 'active').length}
             </div>
-            <div className="text-corporate-secondary">Active Certifications</div>
+            <div className="text-white/70">Active Certifications</div>
           </div>
-          <div className="text-center p-6 corporate-card rounded-2xl">
-            <Star className="mx-auto mb-4 text-blue-500" size={32} />
-            <div className="text-3xl font-bold text-corporate-primary mb-2">5+</div>
-            <div className="text-corporate-secondary">Skill Areas</div>
+          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
+            <Star className="mx-auto mb-4 text-blue-400" size={32} />
+            <div className="text-3xl font-bold text-white mb-2">5+</div>
+            <div className="text-white/70">Skill Areas</div>
           </div>
-          <div className="text-center p-6 corporate-card rounded-2xl">
-            <Shield className="mx-auto mb-4 text-purple-500" size={32} />
-            <div className="text-3xl font-bold text-corporate-primary mb-2">100%</div>
-            <div className="text-corporate-secondary">Verified</div>
+          <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
+            <Shield className="mx-auto mb-4 text-purple-400" size={32} />
+            <div className="text-3xl font-bold text-white mb-2">100%</div>
+            <div className="text-white/70">Verified</div>
           </div>
         </motion.div>
 
@@ -341,7 +342,7 @@ export const Certifications = () => {
               onClick={() => setSelectedCert(cert)}
               className="relative group cursor-pointer"
             >
-              <div className="relative p-8 corporate-card rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div className="relative p-8 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden hover:bg-white/15 transition-all duration-300">
                 {/* Background Gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`} />
                 
@@ -371,18 +372,18 @@ export const Certifications = () => {
                 </motion.div>
 
                 <div className="relative z-10 text-center">
-                  <h3 className="text-xl font-bold text-corporate-primary mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-300">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-300">
                     {cert.title}
                   </h3>
                   
-                  <p className="text-corporate-secondary font-medium mb-2">{cert.issuer}</p>
+                  <p className="text-white/70 font-medium mb-2">{cert.issuer}</p>
                   
-                  <div className="flex items-center justify-center gap-2 text-corporate-muted mb-4">
+                  <div className="flex items-center justify-center gap-2 text-white/60 mb-4">
                     <Calendar size={14} />
                     <span className="text-sm">{cert.date}</span>
                   </div>
 
-                  <p className="text-corporate-muted text-sm mb-6 line-clamp-3">
+                  <p className="text-white/60 text-sm mb-6 line-clamp-3">
                     {cert.description}
                   </p>
 
@@ -391,20 +392,20 @@ export const Certifications = () => {
                     {cert.skills.slice(0, 3).map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="px-2 py-1 bg-gray-100 text-corporate-secondary rounded-lg text-xs"
+                        className="px-2 py-1 bg-white/10 text-white/70 rounded-lg text-xs"
                       >
                         {skill}
                       </span>
                     ))}
                     {cert.skills.length > 3 && (
-                      <span className="px-2 py-1 bg-gray-100 text-corporate-muted rounded-lg text-xs">
+                      <span className="px-2 py-1 bg-white/10 text-white/50 rounded-lg text-xs">
                         +{cert.skills.length - 3} more
                       </span>
                     )}
                   </div>
 
                   {/* View Details */}
-                  <div className="flex items-center justify-center gap-2 text-corporate-secondary group-hover:text-corporate-primary transition-colors">
+                  <div className="flex items-center justify-center gap-2 text-white/70 group-hover:text-white transition-colors">
                     <span className="text-sm">View Details</span>
                     <ExternalLink size={14} />
                   </div>
@@ -416,6 +417,7 @@ export const Certifications = () => {
             </motion.div>
           ))}
         </div>
+
 
         {/* Certification Detail Modal */}
         {selectedCert && (
@@ -498,6 +500,19 @@ export const Certifications = () => {
                 </div>
 
                 <div className="flex gap-4 pt-4">
+                  {/* <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r ${selectedCert.color} text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300`}
+                  >
+                    <motion.a
+                      href={selectedCert.verificationUrl}
+                      target='_blank'
+                    >
+                        <ExternalLink size={16} />
+                        Verify Credential
+                    </motion.a>
+                  </motion.button> */}
                   <motion.a
                 href={selectedCert.verificationUrl}
                 target="_blank"
