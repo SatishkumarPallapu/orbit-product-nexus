@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { User, Briefcase, Target, TrendingUp, Mail, Home, Menu, X, Award, Shield } from 'lucide-react';
@@ -33,8 +34,8 @@ export const Navigation = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20"
-              style={{ boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)' }}
+              className="flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-3 bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-700"
+              style={{ boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)' }}
             >
               {navItems.map((item, index) => {
                 const Icon = item.icon;
@@ -51,8 +52,8 @@ export const Navigation = () => {
                       to={item.id}
                       className={`relative flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full transition-all duration-300 ${
                         isActive 
-                          ? 'text-white bg-gradient-to-r from-blue-500 to-purple-600' 
-                          : 'text-white/70 hover:text-white hover:bg-white/10'
+                          ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg' 
+                          : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
                       }`}
                     >
                       <Icon size={16} className="sm:w-[18px] sm:h-[18px]" />
@@ -61,7 +62,7 @@ export const Navigation = () => {
                       {isActive && (
                         <motion.div
                           layoutId="activeIndicator"
-                          className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full -z-10"
+                          className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full -z-10"
                           transition={{ type: "spring", stiffness: 400, damping: 30 }}
                         />
                       )}
@@ -86,7 +87,7 @@ export const Navigation = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20"
+            className="px-4 py-2 bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-700"
           >
             <Link to="/" className="text-white font-semibold text-lg">VP</Link>
           </motion.div>
@@ -96,7 +97,7 @@ export const Navigation = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 text-white"
+            className="p-3 bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-700 text-white"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -112,7 +113,7 @@ export const Navigation = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-full left-4 right-4 mt-2 p-4 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20"
+              className="absolute top-full left-4 right-4 mt-2 p-4 bg-slate-800/90 backdrop-blur-xl rounded-2xl border border-slate-700"
             >
               <div className="grid grid-cols-2 gap-3">
                 {navItems.map((item, index) => {
@@ -131,8 +132,8 @@ export const Navigation = () => {
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${
                           isActive 
-                            ? 'text-white bg-gradient-to-r from-blue-500 to-purple-600' 
-                            : 'text-white/70 hover:text-white hover:bg-white/10'
+                            ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600' 
+                            : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
                         }`}
                       >
                         <Icon size={18} />

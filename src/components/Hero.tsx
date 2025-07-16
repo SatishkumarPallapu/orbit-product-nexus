@@ -20,9 +20,8 @@ export const Hero = () => {
   ];
 
   const handleDownloadResume = () => {
-    // Create a placeholder resume download
     const link = document.createElement('a');
-    link.href = '/Venkatesh_Product_Manager_Resume.pdf'; // Replace with your actual resume file
+    link.href = '/Venkatesh_Product_Manager_Resume.pdf';
     link.download = 'Venkatesh_Product_Manager_Resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -35,7 +34,7 @@ export const Hero = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-24 md:pt-28"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-slate-900"
     >
       <div className="max-w-6xl mx-auto text-center relative z-10 w-full">
         {/* Floating PM Icons */}
@@ -59,7 +58,7 @@ export const Hero = () => {
                 y: { duration: 3, repeat: Infinity, delay: item.delay },
                 x: { duration: 4, repeat: Infinity, delay: item.delay }
               }}
-              className="absolute w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-blue-400 opacity-60"
+              className="absolute w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-cyan-400 opacity-60"
               style={{ 
                 left: `${50 + item.x}%`, 
                 top: `${30 + item.y}%`,
@@ -71,13 +70,13 @@ export const Hero = () => {
           );
         })}
 
-        {/* Floating 3D Elements - Fully Responsive */}
+        {/* Floating 3D Elements */}
         <motion.div
           style={{ y: y1 }}
           initial={{ scale: 0, rotateY: -180 }}
           animate={{ scale: 1, rotateY: 0 }}
           transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute -top-10 sm:-top-16 md:-top-20 -left-5 sm:-left-10 md:-left-20 w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-blue-400 to-purple-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-12 opacity-20"
+          className="absolute -top-10 sm:-top-16 md:-top-20 -left-5 sm:-left-10 md:-left-20 w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-cyan-400 to-sky-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-12 opacity-20"
         />
         
         <motion.div
@@ -85,7 +84,7 @@ export const Hero = () => {
           initial={{ scale: 0, rotateX: 180 }}
           animate={{ scale: 1, rotateX: 0 }}
           transition={{ duration: 1.5, delay: 1 }}
-          className="absolute -top-5 sm:-top-8 md:-top-10 -right-5 sm:-right-8 md:-right-10 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg sm:rounded-xl md:rounded-2xl transform -rotate-12 opacity-30 pb-10"
+          className="absolute -top-5 sm:-top-8 md:-top-10 -right-5 sm:-right-8 md:-right-10 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-sky-400 to-blue-500 rounded-lg sm:rounded-xl md:rounded-2xl transform -rotate-12 opacity-30 pb-10"
         />
 
         {/* Main Content */}
@@ -115,13 +114,13 @@ export const Hero = () => {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-orange-400 p-1"
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-400 p-1"
                 >
                   <div className="w-full h-full rounded-full bg-slate-900" />
                 </motion.div>
                 
                 {/* Image container */}
-                <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
+                <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-br from-cyan-400 to-sky-600 flex items-center justify-center">
                   <img
                     src="/venky_full_suit_half.png"
                     alt="Venkatesh Pallapu"
@@ -135,7 +134,7 @@ export const Hero = () => {
                   />
                   {/* Fallback initials */}
                   <div className="absolute inset-0 flex items-center justify-center text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold" style={{ display: 'none' }}>
-                    AR
+                    VP
                   </div>
                 </div>
               </div>
@@ -146,25 +145,25 @@ export const Hero = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-4 sm:mb-6 md:mb-8"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-slate-800/80 backdrop-blur-md rounded-full border border-slate-700 mb-4 sm:mb-6 md:mb-8"
             whileHover={{ scale: 1.05 }}
           >
-            <Sparkles size={12} className="text-orange-400 sm:w-4 sm:h-4" />
-            <span className="text-white/80 text-xs sm:text-sm">Product Manager & Innovation Catalyst</span>
+            <Sparkles size={12} className="text-cyan-400 sm:w-4 sm:h-4" />
+            <span className="text-slate-300 text-xs sm:text-sm">Product Manager & Innovation Catalyst</span>
           </motion.div>
 
           <motion.h1
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-slate-50 mb-3 sm:mb-4 md:mb-6 leading-tight"
           >
             Venkatesh
             <motion.span
               initial={{ rotateY: 90 }}
               animate={{ rotateY: 0 }}
               transition={{ duration: 1, delay: 1.5 }}
-              className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-orange-400"
+              className="block gradient-text"
             >
               Pallapu
             </motion.span>
@@ -174,7 +173,7 @@ export const Hero = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1.3 }}
-            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/70 mb-4 sm:mb-6 md:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-slate-400 mb-4 sm:mb-6 md:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
           >
             Transforming ideas into impactful products through data-driven insights, 
             user-centered design, and strategic execution.
@@ -190,10 +189,7 @@ export const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.05, rotateX: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-semibold overflow-hidden text-sm sm:text-base"
-                style={{ 
-                  boxShadow: '0 20px 40px rgba(59, 130, 246, 0.3)',
-                }}
+                className="group relative w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-semibold overflow-hidden text-sm sm:text-base hover:glow-cyan transition-all duration-300"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   View My Work
@@ -212,7 +208,7 @@ export const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleDownloadResume}
-              className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-2 border-white/30 rounded-full text-white font-semibold backdrop-blur-md hover:border-white/50 transition-colors text-sm sm:text-base flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-2 border-slate-600 rounded-full text-slate-300 font-semibold backdrop-blur-md hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2"
             >
               <Download size={16} className="sm:w-5 sm:h-5" />
               Download Resume
@@ -220,7 +216,7 @@ export const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* 3D Stats Cards with PM Metrics - Fully Responsive Grid */}
+        {/* 3D Stats Cards with PM Metrics */}
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -228,9 +224,9 @@ export const Hero = () => {
           className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 px-2 sm:px-4"
         >
           {[
-            { value: '05+', label: 'Products Launched', color: 'from-blue-400 to-blue-600', icon: Target },
-            { value: '98%', label: 'Client Satisfaction', color: 'from-purple-400 to-purple-600', icon: Users },
-            { value: '5x', label: 'Average ROI Increase', color: 'from-orange-400 to-orange-600', icon: TrendingUp }
+            { value: '05+', label: 'Products Launched', color: 'from-cyan-400 to-cyan-600', icon: Target },
+            { value: '98%', label: 'Client Satisfaction', color: 'from-sky-400 to-sky-600', icon: Users },
+            { value: '5x', label: 'Average ROI Increase', color: 'from-blue-500 to-blue-600', icon: TrendingUp }
           ].map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -244,10 +240,7 @@ export const Hero = () => {
                   scale: 1.05,
                   transition: { duration: 0.3 }
                 }}
-                className="relative p-3 sm:p-4 md:p-6 bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-white/20 group"
-                style={{ 
-                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.25)'
-                }}
+                className="relative p-3 sm:p-4 md:p-6 bg-slate-800/80 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-slate-700 group corporate-card"
               >
                 {/* Floating Icon */}
                 <motion.div
@@ -278,7 +271,7 @@ export const Hero = () => {
                 >
                   {stat.value}
                 </motion.div>
-                <div className="text-white/70 text-xs sm:text-sm md:text-base">{stat.label}</div>
+                <div className="text-slate-400 text-xs sm:text-sm md:text-base">{stat.label}</div>
 
                 {/* Pulsing dot indicator */}
                 <motion.div
@@ -298,7 +291,7 @@ export const Hero = () => {
           })}
         </motion.div>
 
-        {/* Product Lifecycle Visualization - Responsive */}
+        {/* Product Lifecycle Visualization */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -325,12 +318,12 @@ export const Hero = () => {
                 }}
                 className={`w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full bg-gradient-to-r ${
                   index === 0 ? 'from-yellow-400 to-orange-500' :
-                  index === 1 ? 'from-blue-400 to-purple-500' :
+                  index === 1 ? 'from-cyan-400 to-sky-500' :
                   index === 2 ? 'from-green-400 to-teal-500' :
-                  'from-purple-400 to-pink-500'
+                  'from-sky-400 to-blue-500'
                 }`}
               />
-              <span className="text-white/60 text-xs sm:text-sm font-medium">{phase}</span>
+              <span className="text-slate-400 text-xs sm:text-sm font-medium">{phase}</span>
               {index < 3 && (
                 <motion.div
                   animate={{ scaleX: [0, 1, 0] }}
@@ -339,7 +332,7 @@ export const Hero = () => {
                     repeat: Infinity, 
                     delay: 4.5 + index * 0.5 
                   }}
-                  className="w-2 sm:w-4 md:w-8 h-0.5 bg-gradient-to-r from-white/20 to-white/40 origin-left"
+                  className="w-2 sm:w-4 md:w-8 h-0.5 bg-gradient-to-r from-slate-600 to-slate-500 origin-left"
                 />
               )}
             </motion.div>
