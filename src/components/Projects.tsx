@@ -204,7 +204,7 @@ export const Projects = () => {
       category: "Product Requirements Document",
       description: "Comprehensive product requirements document for new AI-powered features in Factors AI platform",
       thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop",
-      logo: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=80&h=80&fit=crop", // AI/Tech logo
+      logo: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=80&h=80&fit=crop",
       documentPdf: "/FactorsAINewFeaturePRD-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
@@ -243,7 +243,7 @@ export const Projects = () => {
       category: "Travel & Tourism",
       description: "Strategic product development project for MakeMyTrip focusing on user experience optimization",
       thumbnail: "https://promos.makemytrip.com/Growth/Images/1x/mmt_dt_top_icon.png",
-      logo: "https://promos.makemytrip.com/Growth/Images/1x/mmt_dt_top_icon.png", // Travel logo
+      logo: "https://promos.makemytrip.com/Growth/Images/1x/mmt_dt_top_icon.png",
       documentPdf: "/MakeMyTrip_GradProject-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop",
@@ -282,7 +282,7 @@ export const Projects = () => {
       category: "Entertainment & Ticketing",
       description: "Strategic analysis and product recommendations for BookMyShow's platform optimization",
       thumbnail: "https://miro.medium.com/v2/resize:fit:1200/0*LAP8e_FFBa1-LX52.jpeg",
-      logo: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=80&h=80&fit=crop", // Entertainment logo
+      logo: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=80&h=80&fit=crop",
       documentPdf: "/NLBookMyShow-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1489599177986-d989f76c9390?w=400&h=300&fit=crop",
@@ -321,7 +321,7 @@ export const Projects = () => {
       category: "E-commerce & Pet Care",
       description: "Comprehensive product analysis and strategic recommendations for EverythingPets platform",
       thumbnail: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=200&fit=crop",
-      logo: "https://images.unsplash.com/photo-1415369629392-2d1ec7ab7445?w=80&h=80&fit=crop", // Pet care logo
+      logo: "https://images.unsplash.com/photo-1415369629392-2d1ec7ab7445?w=80&h=80&fit=crop",
       documentPdf: "/NL_EverythingPets-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop",
@@ -360,7 +360,7 @@ export const Projects = () => {
       category: "Ride-sharing & Mobility",
       description: "Strategic PRD for Rapido's new features focusing on user acquisition and retention",
       thumbnail: "https://th.bing.com/th/id/OIP.MqGUX0TNQOzKZAlIkMsWLgHaEK?w=313&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-      logo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=80&h=80&fit=crop", // Mobility logo
+      logo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=80&h=80&fit=crop",
       documentPdf: "/RapidoPRD-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
@@ -399,7 +399,7 @@ export const Projects = () => {
       category: "Food Delivery & Logistics",
       description: "In-depth case study analysis of Swiggy's business model and growth strategies",
       thumbnail: "https://th.bing.com/th/id/OIP.38vyuEPG3EjejRZ2TDZHQwHaDf?w=304&h=165&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-      logo: "https://images.unsplash.com/photo-1565299624-4b87b5e36e44?w=80&h=80&fit=crop", // Food delivery logo
+      logo: "https://images.unsplash.com/photo-1565299624-4b87b5e36e44?w=80&h=80&fit=crop",
       documentPdf: "/Swiggy_CaseStudy-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&h=300&fit=crop",
@@ -438,7 +438,7 @@ export const Projects = () => {
       category: "Quick Commerce & Delivery",
       description: "Product requirements document for new features in Zepto's quick commerce platform",
       thumbnail: "https://th.bing.com/th/id/OIP.ETg7au_trZPdwMIZencNKQHaEA?w=329&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
-      logo: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=80&h=80&fit=crop", // Quick commerce logo
+      logo: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=80&h=80&fit=crop",
       documentPdf: "/ZeptoNewFeaturePRD-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=400&h=300&fit=crop",
@@ -477,7 +477,7 @@ export const Projects = () => {
       category: "Food Discovery & Delivery",
       description: "Strategic PRD for Zomato's platform enhancements focusing on user engagement and restaurant partnerships",
       thumbnail: "https://th.bing.com/th/id/OIP.geXLenZLjUp2Ksm2DsXP8QAAAA?w=215&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
-      logo: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=80&h=80&fit=crop", // Restaurant logo
+      logo: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=80&h=80&fit=crop",
       documentPdf: "/Zomato-PRD-Venkatesh.pdf",
       images: [
         "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop",
@@ -519,7 +519,7 @@ export const Projects = () => {
       category: "Strategic Workspace",
       description: "A strategic workspace tailored for Product Managers to plan, prioritize, and track product development cycles",
       preview: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      logo: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=80&h=80&fit=crop", // Management/Strategy logo
+      logo: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=80&h=80&fit=crop",
       liveUrl: "https://prd1-0.vercel.app",
       githubUrl: "#",
       longDescription: [
@@ -548,7 +548,7 @@ export const Projects = () => {
       category: "Healthcare & Logistics",
       description: "A pharma inventory and warehouse management tool for streamlined supply chain operations",
       preview: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop",
-      logo: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=80&h=80&fit=crop", // Medical/Pharma logo
+      logo: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=80&h=80&fit=crop",
       liveUrl: "https://pharmatracker.vercel.app",
       githubUrl: "#",
       longDescription: [
@@ -578,7 +578,7 @@ export const Projects = () => {
       category: "AI & Logistics",
       description: "An AI-powered tool that recommends optimal travel routes for large vehicles based on multiple dynamic factors",
       preview: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-      logo: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?w=80&h=80&fit=crop", // Green/Environmental logo
+      logo: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?w=80&h=80&fit=crop",
       liveUrl: "https://green-10.vercel.app/",
       githubUrl: "#",
       longDescription: [
@@ -773,7 +773,7 @@ export const Projects = () => {
             scale: 1.02,
             transition: { duration: 0.2 }
           }}
-          className="relative cursor-pointer group bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden h-full"
+          className="relative cursor-pointer group bg-card backdrop-blur-xl rounded-3xl border border-border overflow-hidden h-full hover-lift"
         >
           {/* Preview Image */}
           <div className="relative h-48 overflow-hidden">
@@ -796,13 +796,13 @@ export const Projects = () => {
           <div className="p-6 space-y-4">
             {/* Header */}
             <div className="space-y-2">
-              <div className="text-orange-400 text-sm font-medium uppercase tracking-wide">
+              <div className="text-primary text-sm font-medium uppercase tracking-wide">
                 {prototype.category}
               </div>
-              <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-300 transition-all duration-300">
+              <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-all duration-300">
                 {prototype.title}
               </h3>
-              <p className="text-white/70 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {prototype.description}
               </p>
             </div>
@@ -815,7 +815,7 @@ export const Projects = () => {
                 </span>
               ))}
               {prototype.techStack.length > 3 && (
-                <span className="px-2 py-1 text-xs bg-white/10 rounded-full text-white/60">
+                <span className="px-2 py-1 text-xs bg-secondary rounded-full text-muted-foreground">
                   +{prototype.techStack.length - 3} more
                 </span>
               )}
@@ -829,7 +829,7 @@ export const Projects = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg font-medium text-sm hover:shadow-lg transition-shadow"
+                className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium text-sm hover:shadow-lg transition-shadow"
               >
                 <Globe size={16} />
                 Live Demo
@@ -840,7 +840,7 @@ export const Projects = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-lg font-medium text-sm border border-white/20 hover:border-white/40 transition-colors"
+                className="flex items-center justify-center gap-2 bg-secondary text-foreground px-4 py-2 rounded-lg font-medium text-sm border border-border hover:border-primary/50 transition-colors"
               >
                 <Github size={16} />
                 Code
@@ -848,7 +848,7 @@ export const Projects = () => {
             </div>
 
             {/* Last Updated */}
-            <div className="text-white/50 text-xs">
+            <div className="text-muted-foreground text-xs">
               Updated {prototype.lastUpdated}
             </div>
           </div>
@@ -857,10 +857,10 @@ export const Projects = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileHover={{ opacity: 1 }}
-            className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl flex items-center justify-center"
+            className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl flex items-center justify-center"
             onClick={() => setSelectedProject(prototype.id)}
           >
-            <ExternalLink className="text-white/80" size={32} />
+            <ExternalLink className="text-primary" size={32} />
           </motion.div>
         </motion.div>
       ))}
@@ -888,10 +888,10 @@ export const Projects = () => {
             transition: { duration: 0.3 }
           }}
           onClick={() => setSelectedProject(item.id)}
-          className="relative cursor-pointer group"
+          className="relative cursor-pointer group hover-lift"
           style={{ transform: 'perspective(1000px)' }}
         >
-          <div className={`relative p-6 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden h-full`}>
+          <div className={`relative p-6 bg-card backdrop-blur-xl rounded-3xl border border-border overflow-hidden h-full`}>
             {/* Gradient Background */}
             <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`} />
             
@@ -913,31 +913,31 @@ export const Projects = () => {
 
             <div className="relative z-10 space-y-4">
               <div className="space-y-2">
-                <div className="text-orange-400 text-sm font-medium uppercase tracking-wide">
+                <div className="text-primary text-sm font-medium uppercase tracking-wide">
                   {item.category}
                 </div>
-                <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-300 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-all duration-300">
                   {item.title}
                 </h3>
-                <p className="text-white/70 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
               </div>
 
               {/* Quick Metrics - only for items with metrics property */}
               {'metrics' in item && (
-                <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
+                <div className="grid grid-cols-2 gap-3 pt-4 border-t border-border">
                   <div className="text-center">
                     <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                       {item.metrics.conversion}
                     </div>
-                    <div className="text-white/60 text-xs">Conversion</div>
+                    <div className="text-muted-foreground text-xs">Conversion</div>
                   </div>
                   <div className="text-center">
                     <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                       {item.metrics.users}
                     </div>
-                    <div className="text-white/60 text-xs">Users</div>
+                    <div className="text-muted-foreground text-xs">Users</div>
                   </div>
                 </div>
               )}
@@ -946,9 +946,9 @@ export const Projects = () => {
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 whileHover={{ scale: 1, opacity: 1 }}
-                className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl flex items-center justify-center"
+                className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl flex items-center justify-center"
               >
-                <ExternalLink className="text-white/80" size={32} />
+                <ExternalLink className="text-primary" size={32} />
               </motion.div>
             </div>
           </div>
@@ -958,223 +958,172 @@ export const Projects = () => {
   );
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 1 }}
-      className="min-h-screen flex lg:items-start justify-center px-4"
-    >
-      <div className="max-w-7xl mx-auto">
+    <div className="relative min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 overflow-hidden">
+      {/* Background Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            {getSectionTitle()} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"></span>
-          </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto mb-8">
-            {getSectionDescription()}
-          </p>
+          animate={{ 
+            y: [0, -20, 0],
+            x: [0, 10, 0],
+            rotate: [0, 5, 0]
+          }}
+          transition={{ 
+            duration: 8, 
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl"
+        />
+        <motion.div
+          animate={{ 
+            y: [0, 15, 0],
+            x: [0, -15, 0],
+            rotate: [0, -3, 0]
+          }}
+          transition={{ 
+            duration: 10, 
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-br from-pink-400/20 to-purple-400/20 rounded-full blur-xl"
+        />
+        <motion.div
+          animate={{ 
+            y: [0, -25, 0],
+            x: [0, 20, 0],
+            rotate: [0, 8, 0]
+          }}
+          transition={{ 
+            duration: 12, 
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+          className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-br from-purple-400/20 to-blue-400/20 rounded-full blur-xl"
+        />
+        <motion.div
+          animate={{ 
+            y: [0, 10, 0],
+            x: [0, -10, 0],
+            rotate: [0, -5, 0]
+          }}
+          transition={{ 
+            duration: 9, 
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5
+          }}
+          className="absolute top-2/3 right-1/3 w-28 h-28 bg-gradient-to-br from-blue-300/20 to-pink-300/20 rounded-full blur-xl"
+        />
+      </div>
 
-          {/* Section Navigation */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {[
-              { key: 'projects', label: 'Projects', icon: Monitor },
-              { key: 'case-studies', label: 'Case Studies', icon: FileText },
-              { key: 'prototypes', label: 'Live Prototypes', icon: Code2 },
-              { key: 'ai-agents', label: 'AI Agents', icon: Bot }
-            ].map(({ key, label, icon: Icon }) => (
-              <motion.button
-                key={key}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveSection(key as any)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeSection === key
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                    : 'bg-white/10 backdrop-blur-md text-white/70 border border-white/20 hover:border-white/40'
-                }`}
-              >
-                <Icon size={20} />
-                {label}
-              </motion.button>
-            ))}
-          </div>
-        </motion.div>
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 min-h-screen flex lg:items-start justify-center px-4 py-16"
+      >
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6 font-display">
+              {getSectionTitle()} <span className="gradient-text"></span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              {getSectionDescription()}
+            </p>
 
-        {/* Projects Grid */}
-        <AnimatePresence mode="wait">
-          {activeSection === 'case-studies' && renderCaseStudies()}
-          {activeSection === 'prototypes' && renderPrototypes()}
-          {(activeSection === 'projects' || activeSection === 'ai-agents') && renderOtherSections()}
-        </AnimatePresence>
+            {/* Enhanced Section Navigation with better visibility */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {[
+                { key: 'projects', label: 'Projects', icon: Monitor },
+                { key: 'case-studies', label: 'Case Studies', icon: FileText },
+                { key: 'prototypes', label: 'Live Prototypes', icon: Code2 },
+                { key: 'ai-agents', label: 'AI Agents', icon: Bot }
+              ].map(({ key, label, icon: Icon }) => (
+                <motion.button
+                  key={key}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveSection(key as any)}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 border ${
+                    activeSection === key
+                      ? 'bg-primary text-primary-foreground shadow-lg border-primary'
+                      : 'bg-card text-foreground border-border hover:border-primary/50 hover:bg-secondary'
+                  }`}
+                >
+                  <Icon size={20} />
+                  {label}
+                </motion.button>
+              ))}
+            </div>
+          </motion.div>
 
-        {/* Modals */}
-        <AnimatePresence>
-          {selectedProject && activeSection === 'case-studies' && (
-            <CaseStudyViewer
-              caseStudy={caseStudies.find(cs => cs.id === selectedProject)!}
-              onClose={() => setSelectedProject(null)}
-            />
-          )}
-          
-          {selectedProject && activeSection === 'prototypes' && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-              onClick={() => setSelectedProject(null)}
-            >
+          {/* Projects Grid with improved styling */}
+          <AnimatePresence mode="wait">
+            {activeSection === 'case-studies' && renderCaseStudies()}
+            {activeSection === 'prototypes' && renderPrototypes()}
+            {(activeSection === 'projects' || activeSection === 'ai-agents') && renderOtherSections()}
+          </AnimatePresence>
+
+          {/* Modals */}
+          <AnimatePresence>
+            {selectedProject && activeSection === 'case-studies' && (
+              <CaseStudyViewer
+                caseStudy={caseStudies.find(cs => cs.id === selectedProject)!}
+                onClose={() => setSelectedProject(null)}
+              />
+            )}
+            
+            {selectedProject && activeSection === 'prototypes' && (
               <motion.div
-                initial={{ scale: 0.8, y: 50, opacity: 0 }}
-                animate={{ scale: 1, y: 0, opacity: 1 }}
-                exit={{ scale: 0.8, y: 50, opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-                onClick={(e) => e.stopPropagation()}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                onClick={() => setSelectedProject(null)}
               >
-                {(() => {
-                  const prototype = prototypes.find(p => p.id === selectedProject);
-                  if (!prototype) return null;
+                <motion.div
+                  initial={{ scale: 0.8, y: 50, opacity: 0 }}
+                  animate={{ scale: 1, y: 0, opacity: 1 }}
+                  exit={{ scale: 0.8, y: 50, opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {(() => {
+                    const prototype = prototypes.find(p => p.id === selectedProject);
+                    if (!prototype) return null;
 
-                  return (
-                    <div className="space-y-8">
-                      {/* Header */}
-                      <div className="text-center space-y-4">
-                        <h3 className="text-4xl font-bold text-white">{prototype.title}</h3>
-                        <p className="text-xl text-white/70">{prototype.description}</p>
-                      </div>
-
-                      {/* Preview Image */}
-                      <div className="relative rounded-2xl overflow-hidden">
-                        <img 
-                          src={prototype.preview} 
-                          alt={prototype.title}
-                          className="w-full h-64 object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                      </div>
-
-                      {/* Description */}
-                      <div className="space-y-4">
-                        <h4 className="text-xl font-semibold text-white">Technical Implementation</h4>
-                        <ul className="text-white/80 space-y-2">
-                          {prototype.longDescription.map((point, index) => (
-                            <li key={index} className="flex items-start gap-3">
-                              <span className="text-blue-400 mt-2 flex-shrink-0">•</span>
-                              <span>{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Features */}
-                      <div className="space-y-4">
-                        <h4 className="text-xl font-semibold text-white">Key Features</h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {prototype.features.map((feature, index) => (
-                            <div key={index} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10">
-                              <div className={`w-2 h-2 bg-gradient-to-r ${prototype.color} rounded-full`}></div>
-                              <span className="text-white/80">{feature}</span>
-                            </div>
-                          ))}
+                    return (
+                      <div className="space-y-8">
+                        {/* Header */}
+                        <div className="text-center space-y-4">
+                          <h3 className="text-4xl font-bold text-white">{prototype.title}</h3>
+                          <p className="text-xl text-white/70">{prototype.description}</p>
                         </div>
-                      </div>
 
-                      {/* Tech Stack */}
-                      <div className="space-y-4">
-                        <h4 className="text-xl font-semibold text-white">Technology Stack</h4>
-                        <div className="flex flex-wrap gap-3">
-                          {prototype.techStack.map((tech, index) => (
-                            <span
-                              key={index}
-                              className={`px-4 py-2 bg-gradient-to-r ${prototype.color} rounded-full text-white font-medium`}
-                            >
-                              {tech}
-                            </span>
-                          ))}
+                        {/* Preview Image */}
+                        <div className="relative rounded-2xl overflow-hidden">
+                          <img 
+                            src={prototype.preview} 
+                            alt={prototype.title}
+                            className="w-full h-64 object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                         </div>
-                      </div>
 
-                      {/* Action Buttons */}
-                      <div className="flex flex-wrap gap-4 justify-center">
-                        <motion.a
-                          href={prototype.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-shadow"
-                        >
-                          <Globe size={20} />
-                          View Live Demo
-                        </motion.a>
-                        <motion.a
-                          href={prototype.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold border border-white/20 hover:border-white/40 transition-colors"
-                        >
-                          <Github size={20} />
-                          View Source Code
-                        </motion.a>
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          onClick={() => setSelectedProject(null)}
-                          className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-semibold border border-white/20 hover:border-white/40 transition-colors"
-                        >
-                          Close
-                        </motion.button>
-                      </div>
-                    </div>
-                  );
-                })()}
-              </motion.div>
-            </motion.div>
-          )}
-          
-          {selectedProject && activeSection !== 'case-studies' && activeSection !== 'prototypes' && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-              onClick={() => setSelectedProject(null)}
-            >
-              <motion.div
-                initial={{ scale: 0.8, rotateY: -90, opacity: 0 }}
-                animate={{ scale: 1, rotateY: 0, opacity: 1 }}
-                exit={{ scale: 0.8, rotateY: 90, opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-                onClick={(e) => e.stopPropagation()}
-                style={{ transform: 'perspective(1000px)' }}
-              >
-                {(() => {
-                  const allItems = [...projects, ...caseStudies, ...prototypes, ...aiAgents];
-                  const item = allItems.find(p => p.id === selectedProject);
-                  if (!item) return null;
-
-                  // Check if item has metrics property (projects, prototypes, ai-agents)
-                  const hasMetrics = 'metrics' in item;
-                  const hasRoles = 'roles' in item;
-                  const hasImpact = 'impact' in item;
-
-                  return (
-                    <div className="space-y-8">
-                      {/* Header */}
-                      <div className="text-center space-y-4">
-                        <h3 className="text-4xl font-bold text-white">{item.title}</h3>
-                        <div className="text-left max-w-none">
-                          <ul className="text-xl text-white/70 space-y-2">
-                            {item.longDescription.map((point, index) => (
+                        {/* Description */}
+                        <div className="space-y-4">
+                          <h4 className="text-xl font-semibold text-white">Technical Implementation</h4>
+                          <ul className="text-white/80 space-y-2">
+                            {prototype.longDescription.map((point, index) => (
                               <li key={index} className="flex items-start gap-3">
                                 <span className="text-blue-400 mt-2 flex-shrink-0">•</span>
                                 <span>{point}</span>
@@ -1182,82 +1131,194 @@ export const Projects = () => {
                             ))}
                           </ul>
                         </div>
-                      </div>
 
-                      {/* Metrics Grid - only show if item has metrics */}
-                      {hasMetrics && (
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                          {[
-                            { icon: DollarSign, label: 'Revenue Impact', value: (item as any).metrics.revenue },
-                            { icon: TrendingUp, label: 'Conversion Lift', value: (item as any).metrics.conversion },
-                            { icon: Users, label: 'Users Reached', value: (item as any).metrics.users },
-                            { icon: Clock, label: 'Timeline', value: (item as any).metrics.timeline }
-                          ].map((metric, index) => {
-                            const Icon = metric.icon;
-                            return (
-                              <motion.div
-                                key={index}
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: index * 0.1 }}
-                                className="text-center p-4 bg-white/5 rounded-2xl border border-white/10"
-                              >
-                                <Icon className={`mx-auto mb-2 text-2xl bg-gradient-to-r ${item.color} bg-clip-text text-transparent`} size={32} />
-                                <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
-                                <div className="text-white/60 text-sm">{metric.label}</div>
-                              </motion.div>
-                            );
-                          })}
-                        </div>
-                      )}
-
-                      {/* Technologies/Roles - only show if item has roles */}
-                      {hasRoles && (
+                        {/* Features */}
                         <div className="space-y-4">
-                          <h4 className="text-xl font-semibold text-white">Teams Collaborated</h4>
-                          <div className="flex flex-wrap gap-3">
-                            {(item as any).roles.map((tech: string, index: number) => (
-                              <motion.span
-                                key={index}
-                                initial={{ scale: 0 }}
-                                animate={{ scale: 1 }}
-                                transition={{ delay: 0.5 + index * 0.1 }}
-                                className={`px-4 py-2 bg-gradient-to-r ${item.color} rounded-full text-white font-medium`}
-                              >
-                                {tech}
-                              </motion.span>
+                          <h4 className="text-xl font-semibold text-white">Key Features</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {prototype.features.map((feature, index) => (
+                              <div key={index} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10">
+                                <div className={`w-2 h-2 bg-gradient-to-r ${prototype.color} rounded-full`}></div>
+                                <span className="text-white/80">{feature}</span>
+                              </div>
                             ))}
                           </div>
                         </div>
-                      )}
 
-                      {/* Impact - only show if item has impact */}
-                      {hasImpact && (
+                        {/* Tech Stack */}
                         <div className="space-y-4">
-                          <h4 className="text-xl font-semibold text-white">Business Impact</h4>
-                          <p className="text-white/80 text-lg leading-relaxed">{(item as any).impact}</p>
+                          <h4 className="text-xl font-semibold text-white">Technology Stack</h4>
+                          <div className="flex flex-wrap gap-3">
+                            {prototype.techStack.map((tech, index) => (
+                              <span
+                                key={index}
+                                className={`px-4 py-2 bg-gradient-to-r ${prototype.color} rounded-full text-white font-medium`}
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
                         </div>
-                      )}
 
-                      {/* Close Button */}
-                      <div className="text-center">
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          onClick={() => setSelectedProject(null)}
-                          className="px-8 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-semibold border border-white/20 hover:border-white/40 transition-colors"
-                        >
-                          Close
-                        </motion.button>
+                        {/* Action Buttons */}
+                        <div className="flex flex-wrap gap-4 justify-center">
+                          <motion.a
+                            href={prototype.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-shadow"
+                          >
+                            <Globe size={20} />
+                            View Live Demo
+                          </motion.a>
+                          <motion.a
+                            href={prototype.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold border border-white/20 hover:border-white/40 transition-colors"
+                          >
+                            <Github size={20} />
+                            View Source Code
+                          </motion.a>
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => setSelectedProject(null)}
+                            className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-semibold border border-white/20 hover:border-white/40 transition-colors"
+                          >
+                            Close
+                          </motion.button>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })()}
+                    );
+                  })()}
+                </motion.div>
               </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.section>
+            )}
+            
+            {selectedProject && activeSection !== 'case-studies' && activeSection !== 'prototypes' && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                onClick={() => setSelectedProject(null)}
+              >
+                <motion.div
+                  initial={{ scale: 0.8, rotateY: -90, opacity: 0 }}
+                  animate={{ scale: 1, rotateY: 0, opacity: 1 }}
+                  exit={{ scale: 0.8, rotateY: 90, opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                  onClick={(e) => e.stopPropagation()}
+                  style={{ transform: 'perspective(1000px)' }}
+                >
+                  {(() => {
+                    const allItems = [...projects, ...caseStudies, ...prototypes, ...aiAgents];
+                    const item = allItems.find(p => p.id === selectedProject);
+                    if (!item) return null;
+
+                    // Check if item has metrics property (projects, prototypes, ai-agents)
+                    const hasMetrics = 'metrics' in item;
+                    const hasRoles = 'roles' in item;
+                    const hasImpact = 'impact' in item;
+
+                    return (
+                      <div className="space-y-8">
+                        {/* Header */}
+                        <div className="text-center space-y-4">
+                          <h3 className="text-4xl font-bold text-white">{item.title}</h3>
+                          <div className="text-left max-w-none">
+                            <ul className="text-xl text-white/70 space-y-2">
+                              {item.longDescription.map((point, index) => (
+                                <li key={index} className="flex items-start gap-3">
+                                  <span className="text-blue-400 mt-2 flex-shrink-0">•</span>
+                                  <span>{point}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+
+                        {/* Metrics Grid - only show if item has metrics */}
+                        {hasMetrics && (
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            {[
+                              { icon: DollarSign, label: 'Revenue Impact', value: (item as any).metrics.revenue },
+                              { icon: TrendingUp, label: 'Conversion Lift', value: (item as any).metrics.conversion },
+                              { icon: Users, label: 'Users Reached', value: (item as any).metrics.users },
+                              { icon: Clock, label: 'Timeline', value: (item as any).metrics.timeline }
+                            ].map((metric, index) => {
+                              const Icon = metric.icon;
+                              return (
+                                <motion.div
+                                  key={index}
+                                  initial={{ y: 20, opacity: 0 }}
+                                  animate={{ y: 0, opacity: 1 }}
+                                  transition={{ delay: index * 0.1 }}
+                                  className="text-center p-4 bg-white/5 rounded-2xl border border-white/10"
+                                >
+                                  <Icon className={`mx-auto mb-2 text-2xl bg-gradient-to-r ${item.color} bg-clip-text text-transparent`} size={32} />
+                                  <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
+                                  <div className="text-white/60 text-sm">{metric.label}</div>
+                                </motion.div>
+                              );
+                            })}
+                          </div>
+                        )}
+
+                        {/* Technologies/Roles - only show if item has roles */}
+                        {hasRoles && (
+                          <div className="space-y-4">
+                            <h4 className="text-xl font-semibold text-white">Teams Collaborated</h4>
+                            <div className="flex flex-wrap gap-3">
+                              {(item as any).roles.map((tech: string, index: number) => (
+                                <motion.span
+                                  key={index}
+                                  initial={{ scale: 0 }}
+                                  animate={{ scale: 1 }}
+                                  transition={{ delay: 0.5 + index * 0.1 }}
+                                  className={`px-4 py-2 bg-gradient-to-r ${item.color} rounded-full text-white font-medium`}
+                                >
+                                  {tech}
+                                </motion.span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Impact - only show if item has impact */}
+                        {hasImpact && (
+                          <div className="space-y-4">
+                            <h4 className="text-xl font-semibold text-white">Business Impact</h4>
+                            <p className="text-white/80 text-lg leading-relaxed">{(item as any).impact}</p>
+                          </div>
+                        )}
+
+                        {/* Close Button */}
+                        <div className="text-center">
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => setSelectedProject(null)}
+                            className="px-8 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-semibold border border-white/20 hover:border-white/40 transition-colors"
+                          >
+                            Close
+                          </motion.button>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </motion.section>
+    </div>
   );
 };
