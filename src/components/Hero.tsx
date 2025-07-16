@@ -149,7 +149,7 @@ export const Hero = () => {
             whileHover={{ scale: 1.05 }}
           >
             <Sparkles size={12} className="text-cyan-400 sm:w-4 sm:h-4" />
-            <span className="text-slate-300 text-xs sm:text-sm">Product Manager & Innovation Catalyst</span>
+            <span className="text-slate-300 text-xs sm:text-sm">AI Product Manager</span>
           </motion.div>
 
           <motion.h1
