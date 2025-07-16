@@ -130,7 +130,7 @@ export const Process = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex lg:items-start justify-center px-4 "
+      className="min-h-screen flex lg:items-start justify-center px-4 corporate-bg"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -139,10 +139,10 @@ export const Process = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-corporate-primary mb-6">
             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Process</span>
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-xl text-corporate-secondary max-w-3xl mx-auto">
             A proven methodology for delivering exceptional products
           </p>
         </motion.div>
@@ -169,8 +169,8 @@ export const Process = () => {
                     whileHover={{ rotateY: 5 }}
                     className={`relative p-6 rounded-3xl border transition-all duration-300 ${
                       isActive 
-                        ? 'bg-white/15 border-white/30 shadow-2xl' 
-                        : 'bg-white/5 border-white/10 hover:bg-white/10'
+                        ? 'corporate-card shadow-2xl' 
+                        : 'corporate-card hover:shadow-lg'
                     }`}
                     style={{ 
                       transform: 'perspective(1000px)',
@@ -201,12 +201,12 @@ export const Process = () => {
 
                       <div className="flex-1">
                         <h3 className={`text-xl font-bold transition-colors duration-300 ${
-                          isActive ? 'text-white' : 'text-white/80'
+                          isActive ? 'text-corporate-primary' : 'text-corporate-secondary'
                         }`}>
                           {step.title}
                         </h3>
-                        <p className="text-white/60 text-sm">{step.description}</p>
-                        <p className="text-orange-400 text-sm font-semibold mt-1">{step.timeline}</p>
+                        <p className="text-corporate-muted text-sm">{step.description}</p>
+                        <p className="text-orange-500 text-sm font-semibold mt-1">{step.timeline}</p>
                       </div>
 
                       <motion.div
@@ -214,7 +214,7 @@ export const Process = () => {
                         transition={{ duration: 0.3 }}
                       >
                         <ArrowRight className={`transition-colors duration-300 ${
-                          isActive ? 'text-white' : 'text-white/40'
+                          isActive ? 'text-corporate-primary' : 'text-corporate-muted'
                         }`} size={20} />
                       </motion.div>
                     </div>
@@ -225,7 +225,7 @@ export const Process = () => {
                         initial={{ scaleY: 0 }}
                         animate={{ scaleY: 1 }}
                         transition={{ delay: 0.8 + index * 0.1, duration: 0.5 }}
-                        className="absolute left-8 top-full w-0.5 h-4 bg-gradient-to-b from-white/30 to-transparent origin-top"
+                        className="absolute left-8 top-full w-0.5 h-4 bg-gradient-to-b from-gray-300 to-transparent origin-top"
                       />
                     )}
                   </motion.div>
@@ -243,7 +243,7 @@ export const Process = () => {
                 animate={{ opacity: 1, rotateY: 0, scale: 1 }}
                 exit={{ opacity: 0, rotateY: 90, scale: 0.8 }}
                 transition={{ duration: 0.6 }}
-                className="relative p-8 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20"
+                className="relative p-8 corporate-card rounded-3xl"
                 style={{ 
                   transform: 'perspective(1000px)',
                   boxShadow: '0 25px 50px rgba(0, 0, 0, 0.25)'
@@ -276,14 +276,14 @@ export const Process = () => {
                         </motion.div>
                         
                         <div>
-                          <h3 className="text-3xl font-bold text-white mb-2">{step.title}</h3>
-                          <p className="text-white/70">{step.description}</p>
+                          <h3 className="text-3xl font-bold text-corporate-primary mb-2">{step.title}</h3>
+                          <p className="text-corporate-secondary">{step.description}</p>
                         </div>
                       </div>
 
                       {/* Details */}
                       <div className="space-y-4">
-                        <h4 className="text-lg font-semibold text-white">Key Activities</h4>
+                        <h4 className="text-lg font-semibold text-corporate-primary">Key Activities</h4>
                         <div className="grid grid-cols-1 gap-3">
                           {step.details.map((detail, index) => (
                             <motion.div
@@ -293,17 +293,17 @@ export const Process = () => {
                               transition={{ delay: 0.3 + index * 0.1 }}
                               className="flex items-center gap-3"
                             >
-                              <CheckCircle className={`text-green-400 flex-shrink-0`} size={16} />
-                              <span className="text-white/80">{detail}</span>
+                              <CheckCircle className="text-green-500 flex-shrink-0" size={16} />
+                              <span className="text-corporate-secondary">{detail}</span>
                             </motion.div>
                           ))}
                         </div>
                       </div>
 
                       {/* Deliverables & Timeline */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-white/10">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-gray-200">
                         <div>
-                          <h4 className="text-lg font-semibold text-white mb-3">Deliverables</h4>
+                          <h4 className="text-lg font-semibold text-corporate-primary mb-3">Deliverables</h4>
                           <div className="space-y-2">
                             {step.deliverables.map((deliverable, index) => (
                               <motion.div
@@ -311,7 +311,7 @@ export const Process = () => {
                                 initial={{ scale: 0 }}
                                 animate={{ scale: 1 }}
                                 transition={{ delay: 0.6 + index * 0.1 }}
-                                className={`px-3 py-2 bg-gradient-to-r ${step.color} bg-opacity-20 rounded-full text-white text-sm`}
+                                className={`px-3 py-2 bg-gradient-to-r ${step.color} bg-opacity-20 rounded-full text-corporate-primary text-sm`}
                               >
                                 {deliverable}
                               </motion.div>
@@ -320,12 +320,12 @@ export const Process = () => {
                         </div>
                         
                         <div>
-                          <h4 className="text-lg font-semibold text-white mb-3">Timeline</h4>
+                          <h4 className="text-lg font-semibold text-corporate-primary mb-3">Timeline</h4>
                           <motion.div
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ delay: 0.8 }}
-                            className="text-2xl font-bold text-orange-400"
+                            className="text-2xl font-bold text-orange-500"
                           >
                             {step.timeline}
                           </motion.div>

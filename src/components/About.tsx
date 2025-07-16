@@ -14,7 +14,7 @@ export const About = () => {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex lg:items-start items-center justify-center px-4 sm:px-6 lg:px-8  pb-20"
+      className="min-h-screen flex lg:items-start items-center justify-center px-4 sm:px-6 lg:px-8 pb-20 corporate-bg"
     >
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
@@ -23,10 +23,10 @@ export const About = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="text-center mb-12 sm:mb-16 mt-0"
         >
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-corporate-primary mb-4 sm:mb-6">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Me</span>
           </h2>
-          <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto px-4">
+          <p className="text-lg sm:text-xl text-corporate-secondary max-w-3xl mx-auto px-4">
             Passionate about bridging the gap between user needs and business objectives
           </p>
         </motion.div>
@@ -40,7 +40,7 @@ export const About = () => {
             className="relative order-2 lg:order-1"
           >
             <div 
-              className="relative p-6 sm:p-8 bg-white/10 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-white/20 overflow-hidden"
+              className="relative p-6 sm:p-8 corporate-card rounded-2xl sm:rounded-3xl overflow-hidden"
               style={{ 
                 transform: 'perspective(1000px) rotateY(5deg)',
                 boxShadow: '0 25px 50px rgba(0, 0, 0, 0.25)'
@@ -70,10 +70,10 @@ export const About = () => {
               </motion.div>
 
               <div className="text-center space-y-4">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white">Venkatesh Pallapu</h3>
-                <p className="text-blue-300 text-base sm:text-lg"> Product Manager</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-corporate-primary">Venkatesh Pallapu</h3>
+                <p className="text-blue-600 text-base sm:text-lg font-semibold">Product Manager</p>
                 
-                <div className="flex items-center justify-center gap-4 sm:gap-6 text-white/60 text-sm sm:text-base">
+                <div className="flex items-center justify-center gap-4 sm:gap-6 text-corporate-secondary text-sm sm:text-base">
                   <div className="flex items-center gap-2">
                     <MapPin size={14} className="sm:w-4 sm:h-4" />
                     <span>Hyderabad, TG</span>
@@ -95,21 +95,20 @@ export const About = () => {
             className="space-y-6 sm:space-y-8 order-1 lg:order-2"
           >
             <div className="space-y-4 sm:space-y-6">
-              <p className="text-white/80 text-base sm:text-lg leading-relaxed">
-               I'm Venkatesh Pallapu, a strategic Product Manager with 3+ years of experience, passionate about building impactful digital products and solving complex business problems. I specialize in <b>0→1 product development, SaaS platforms, and data-driven optimization</b> across eCommerce, campaign governance, and internal productivity tools. 
+              <p className="text-corporate-secondary text-base sm:text-lg leading-relaxed">
+               I'm Venkatesh Pallapu, a strategic Product Manager with 3+ years of experience, passionate about building impactful digital products and solving complex business problems. I specialize in <b className="text-corporate-primary">0→1 product development, SaaS platforms, and data-driven optimization</b> across eCommerce, campaign governance, and internal productivity tools. 
 
                 With over 3+ years of experience in product management, I've led cross-functional teams 
                 to launch 4+ successful products that have generated millions in revenue and delighted 
                 users worldwide.
-
               </p>
               
-              <p className="text-white/80 text-base sm:text-lg leading-relaxed">
-                I bring a unique blend of analytical rigor and user empathy, and thrive in fast-paced, agile environments. From defining product vision to shipping scalable MVPs, I lead cross-functional teams with clarity and ownership. I believe great products are born at the intersection of <b>user research, market understanding, and lean execution</b>
+              <p className="text-corporate-secondary text-base sm:text-lg leading-relaxed">
+                I bring a unique blend of analytical rigor and user empathy, and thrive in fast-paced, agile environments. From defining product vision to shipping scalable MVPs, I lead cross-functional teams with clarity and ownership. I believe great products are born at the intersection of <b className="text-corporate-primary">user research, market understanding, and lean execution</b>
               </p>
 
-              <p className="text-white/80 text-base sm:text-lg leading-relaxed">
-                My goal? Build products that <i>empower users, drive engagement, and deliver measurable impact.</i>
+              <p className="text-corporate-secondary text-base sm:text-lg leading-relaxed">
+                My goal? Build products that <i className="text-corporate-primary">empower users, drive engagement, and deliver measurable impact.</i>
               </p>
             </div>
 
@@ -131,12 +130,12 @@ export const About = () => {
                       rotateY: 10,
                       transition: { duration: 0.3 }
                     }}
-                    className="p-4 bg-white/5 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/10"
+                    className="p-4 corporate-card rounded-xl sm:rounded-2xl"
                     style={{ transform: 'perspective(800px)' }}
                   >
-                    <Icon className="text-orange-400 mb-2" size={20} />
-                    <h4 className="text-white font-semibold text-sm sm:text-base">{achievement.title}</h4>
-                    <p className="text-white/60 text-xs sm:text-sm">{achievement.desc}</p>
+                    <Icon className="text-orange-500 mb-2" size={20} />
+                    <h4 className="text-corporate-primary font-semibold text-sm sm:text-base">{achievement.title}</h4>
+                    <p className="text-corporate-muted text-xs sm:text-sm">{achievement.desc}</p>
                   </motion.div>
                 );
               })}

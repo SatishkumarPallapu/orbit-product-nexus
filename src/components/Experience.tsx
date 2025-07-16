@@ -112,10 +112,10 @@ export const Experience = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-corporate-primary mb-6">
             Professional Experience
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-corporate-secondary max-w-3xl mx-auto">
             A journey through my professional roles and the impact I've made across different organizations and technologies.
           </p>
         </motion.div>
@@ -150,10 +150,10 @@ export const Experience = () => {
                     }}
                   />
                   <div>
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-corporate-primary mb-2">
                       {experience.company}
                     </h2>
-                    <div className="flex flex-wrap items-center gap-4 text-gray-300">
+                    <div className="flex flex-wrap items-center gap-4 text-corporate-secondary">
                       <div className="flex items-center gap-2">
                         <MapPin size={16} />
                         <span>{experience.location}</span>
@@ -182,32 +182,32 @@ export const Experience = () => {
                   >
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                       <div>
-                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                        <h3 className="text-xl sm:text-2xl font-bold text-corporate-primary mb-2">
                           {role.title}
                         </h3>
-                        <div className="flex flex-wrap items-center gap-4 text-gray-300 mb-4">
+                        <div className="flex flex-wrap items-center gap-4 text-corporate-secondary mb-4">
                           <div className="flex items-center gap-2">
                             <Calendar size={14} />
                             <span>{role.duration}</span>
                           </div>
-                          <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30">
+                          <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm border border-blue-200">
                             {role.type}
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-gray-200 mb-6 leading-relaxed">
+                    <p className="text-corporate-secondary mb-6 leading-relaxed">
                       {role.description}
                     </p>
 
                     {/* Achievements */}
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-3">Key Achievements</h4>
+                      <h4 className="text-lg font-semibold text-corporate-primary mb-3">Key Achievements</h4>
                       <ul className="space-y-2">
                         {role.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex} className="flex items-start gap-3 text-gray-300">
-                            <ChevronRight size={14} className="text-blue-400 mt-1 flex-shrink-0" />
+                          <li key={achievementIndex} className="flex items-start gap-3 text-corporate-secondary">
+                            <ChevronRight size={14} className="text-blue-500 mt-1 flex-shrink-0" />
                             <span className="text-sm">{achievement}</span>
                           </li>
                         ))}
@@ -216,12 +216,12 @@ export const Experience = () => {
 
                     {/* Technologies */}
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-3">Technologies Used</h4>
+                      <h4 className="text-lg font-semibold text-corporate-primary mb-3">Technologies Used</h4>
                       <div className="flex flex-wrap gap-2">
                         {role.technologies.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-white border border-white/20 rounded-lg text-sm hover:bg-white/10 transition-colors"
+                            className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-corporate-primary border border-gray-200 rounded-lg text-sm hover:shadow-md transition-all duration-300"
                           >
                             {tech}
                           </span>
@@ -243,16 +243,16 @@ export const Experience = () => {
           className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
           <div className="text-center p-6 corporate-card rounded-2xl">
-            <div className="text-3xl sm:text-4xl font-bold text-white mb-2">3+</div>
-            <div className="text-gray-300">Years of Experience</div>
+            <div className="text-3xl sm:text-4xl font-bold text-corporate-primary mb-2">3+</div>
+            <div className="text-corporate-secondary">Years of Experience</div>
           </div>
           <div className="text-center p-6 corporate-card rounded-2xl">
-            <div className="text-3xl sm:text-4xl font-bold text-white mb-2">3</div>
-            <div className="text-gray-300">Companies</div>
+            <div className="text-3xl sm:text-4xl font-bold text-corporate-primary mb-2">3</div>
+            <div className="text-corporate-secondary">Companies</div>
           </div>
           <div className="text-center p-6 corporate-card rounded-2xl">
-            <div className="text-3xl sm:text-4xl font-bold text-white mb-2">4</div>
-            <div className="text-gray-300">Different Roles</div>
+            <div className="text-3xl sm:text-4xl font-bold text-corporate-primary mb-2">4</div>
+            <div className="text-corporate-secondary">Different Roles</div>
           </div>
         </motion.div>
       </div>
