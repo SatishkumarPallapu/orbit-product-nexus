@@ -87,7 +87,7 @@ export const Projects = () => {
         users: '500+',
         timeline: 'August 2022 – September 2022 (60 days)'
       },
-      color: 'from-yellow-500 to-yellow-600',
+      color: 'from-pink-500 to-white-600',
       roles: ['PM', 'FE Dev', 'BE Dev', 'QA', 'UI/UX Designer'],
       impact: `The tool achieved company-wide adoption as the daily standard for time reporting, significantly improving operational transparency. It enabled proactive resource planning and more effective performance reviews by providing accurate, real-time visibility into task-level efforts. By replacing manual logging processes, it reduced friction and human error, leading to increased efficiency. Additionally, the success and feedback from this tool directly informed the development of further automation solutions for HR and operations teams`
     },
@@ -122,7 +122,7 @@ export const Projects = () => {
         users: '500k+',
         timeline: '6 Months'
       },
-      color: 'from-orange-500 to-yellow-600',
+      color: 'from-blue-500 to-red-600',
       roles: ['PM', '2 Engineers', 'Designers', 'Analyst', 'CRM Specialist'],
       impact: `The redesigned payment experience led to a 16% reduction in checkout abandonment, outperforming industry benchmarks. One-tap wallet integration improved the checkout completion rate by 19%, while behavioral enhancements such as predictive coupon suggestions and exit-intent modals significantly boosted user engagement and retention. These changes resulted in a 4x increase in coupon usage and a 22% revenue lift from returning users. Overall, A/B testing validated a 13% improvement in conversion rates across over half a million sessions, demonstrating the substantial business value of these UX and behavioral optimizations.`
     },
@@ -146,7 +146,7 @@ export const Projects = () => {
         users: '15-30k+',
         timeline: '26 Months'
       },
-      color: 'from-orange-500 to-yellow-600',
+      color: 'from-green-500 to-blue-600',
       roles: ['PM', '4 FE Engineers', '3 BE Engineers', '2 QA', '2 Designers', '2 Data Analysts', '2 Marketing Ops', '3 Support'],
       impact: `Capsure transformed ad operations by enabling real-time compliance monitoring across multiple platforms, leading to a 95%+ campaign compliance rate—up from 65%. The platform dramatically reduced QA cycle times and saved over 250 man-hours per agency every month. Deep integration into agency workflows drove high user stickiness with a DAU/MAU ratio of 0.62, and strong engagement resulted in an NPS score of 72+. The introduction of enterprise dashboard features contributed to a six-figure ARR pipeline, while the Rule Template Marketplace improved onboarding speed by 38%, making Capsure a key operational asset for 150+ advertising agencies.`
     },
@@ -170,7 +170,7 @@ export const Projects = () => {
         users: '500k+',
         timeline: 'November 2022 – April 2023'
       },
-      color: 'from-orange-500 to-yellow-600',
+      color: 'from-red-500 to-gold-600',
       roles: ['PM', '2 Engineers', 'Designers', 'Analyst', 'CRM Specialist'],
       impact: `Boosted compliance from 65% to 95%, reduced QA cycles by 40%, and saved 250+ man-hours/month per agency..`
     },
@@ -191,7 +191,7 @@ export const Projects = () => {
         users: '500k+',
         timeline: 'November 2022 – April 2023'
       },
-      color: 'from-orange-500 to-yellow-600',
+      color: 'from-purple-500 to-indigo-600',
       roles: ['PM', 'FE Dev', 'BE Dev', 'QA', 'Designers', '2 Data Analysts', '2 Marketing Ops', '3 Support'],
       impact: `Boosted compliance from 65% to 95%, reduced QA cycles by 40%, and saved 250+ man-hours/month per agency..`
     }
