@@ -122,7 +122,7 @@ export const Hero = () => {
                 {/* Image container */}
                 <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-br from-cyan-400 to-sky-600 flex items-center justify-center">
                   <img
-                    src="/venky_full_suit_half.png"
+                    src="/venky_full_suit_half.webp"
                     alt="Venkatesh Pallapu"
                     className="w-full h-full object-cover rounded-full"
                     onError={(e) => {
