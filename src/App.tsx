@@ -32,7 +32,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Suspense fallback={<div style={{display:'flex', justifyContent: 'center', alignItems: 'center', height: '90vh', fontWeight: '1000'}}>Is Loading....</div>}>
+        <Suspense fallback={<div style={{display:'flex', justifyContent: 'center', alignItems: 'center', height: '90vh', fontWeight: '1000'}}>
+          <img src="/loader.svg" alt="loader-spinner" width="200px" height="200px" decoding="async" loading="eager"/>
+           </div>}>
           
           <Routes>
             <Route path="/" element={<Index />} />
