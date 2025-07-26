@@ -26,6 +26,7 @@ export const SocialLinks = () => {
             <motion.a
               key={index}
               href={social.href}
+              aria-label={social.label}
               target='_blank'
               initial={{ scale: 0, rotateY: -90 }}
               animate={{ scale: 1, rotateY: 0 }}

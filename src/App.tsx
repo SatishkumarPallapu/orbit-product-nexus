@@ -10,7 +10,7 @@ import Index from "./pages/Index";
 // import Skills from "./pages/Skills";
 // import Process from "./pages/Process";
 // import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+// import NotFound from "./pages/NotFound";
 // import Experience from "./pages/Experience";
 // import Certifications from "./pages/Certifications";
 import { lazy, Suspense } from "react";
@@ -22,6 +22,7 @@ const Skills = lazy(()=> import('./pages/Skills'))
 const Certifications = lazy(()=> import('./pages/Certifications'))
 const Process = lazy(()=> import('./pages/Process'))
 const Contact = lazy(()=> import('./pages/Contact'))
+const NotFound = lazy(()=> import('./pages/NotFound'))
 
 
 const queryClient = new QueryClient();
