@@ -124,7 +124,7 @@ export const Hero = () => {
                   <img
                     src="/venky_full_suit_half.webp"
                     alt="Venkatesh Pallapu"
-                    className="w-full h-full object-cover rounded-full"
+                    className="object-cover rounded-full"
                     loading='eager'
                     decoding='async'
                     width="120px"

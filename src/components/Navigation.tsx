@@ -100,6 +100,7 @@ export const Navigation = () => {
             className="p-3 bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-700 text-white"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            aria-label='menu-button'
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </motion.button>
