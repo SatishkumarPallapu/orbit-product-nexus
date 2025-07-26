@@ -127,6 +127,8 @@ export const Hero = () => {
                     className="w-full h-full object-cover rounded-full"
                     loading='eager'
                     decoding='async'
+                    width="120px"
+                    height="120px"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
