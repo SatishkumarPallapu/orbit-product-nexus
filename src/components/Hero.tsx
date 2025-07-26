@@ -125,6 +125,8 @@ export const Hero = () => {
                     src="/venky_full_suit_half.webp"
                     alt="Venkatesh Pallapu"
                     className="w-full h-full object-cover rounded-full"
+                    loading='eager'
+                    decoding='async'
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
