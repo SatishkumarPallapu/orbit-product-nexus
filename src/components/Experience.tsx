@@ -6,9 +6,9 @@ import { Calendar, MapPin, Building, ChevronRight, TrendingUp } from 'lucide-rea
 const experiences = [
   {
     id: 1,
-    company: "Data Pro Information Technology Pvt Ltd",
+    company: "BOVEN TECHNOLOGIES",
     logo: "https://media.licdn.com/dms/image/v2/C4D0BAQHGOJGKZs7tJw/company-logo_200_200/company-logo_200_200/0/1634118849502/data_pro_software_technology_pvt_ltd_logo?e=1740614400&v=beta&t=8tOoE5Pc7GFYvpgMJCWG5zDCCXOKHEKu0WLKMcvGHOo",
-    location: "Pune, India",
+    location: "Bangalore, India",
     totalDuration: "Feb 2022 – Present",
     roles: [
       {
@@ -59,7 +59,7 @@ const experiences = [
   },
   {
     id: 2,
-    company: "CarTrade Tech Limited (CARWALE.COM)",
+    company: "MXC SOLUTIONS (CARWALE.COM)",
     logo: "https://th.bing.com/th/id/OIP.VSaTpdWa0PeMWF-CXnifUwHaFj?w=227&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
     location: "Hyderabad, India",
     totalDuration: "Jul 2021 – Dec 2021",

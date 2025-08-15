@@ -21,8 +21,8 @@ export const Hero = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/Venkatesh_Product_Manager_Resume.pdf';
-    link.download = 'Venkatesh_Product_Manager_Resume.pdf';
+    link.href = '/Venkatesh_ProductManager_Resume.pdf';
+    link.download = 'Venkatesh_ProductManager_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
