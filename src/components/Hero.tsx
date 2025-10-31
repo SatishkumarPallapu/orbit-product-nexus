@@ -34,7 +34,7 @@ export const Hero = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-slate-900"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"
     >
       <div className="max-w-6xl mx-auto text-center relative z-10 w-full">
         {/* Floating PM Icons */}
@@ -149,18 +149,18 @@ export const Hero = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-slate-800/80 backdrop-blur-md rounded-full border border-slate-700 mb-4 sm:mb-6 md:mb-8"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/80 backdrop-blur-md rounded-full border border-gray-200 shadow-md mb-4 sm:mb-6 md:mb-8"
             whileHover={{ scale: 1.05 }}
           >
             <Sparkles size={12} className="text-cyan-400 sm:w-4 sm:h-4" />
-            <span className="text-slate-300 text-xs sm:text-sm">AI Product Manager</span>
+            <span className="text-gray-700 text-xs sm:text-sm">AI Product Manager</span>
           </motion.div>
 
           <motion.h1
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-slate-50 mb-3 sm:mb-4 md:mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight"
           >
             Venkatesh
             <motion.span
@@ -177,7 +177,7 @@ export const Hero = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1.3 }}
-            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-slate-400 mb-4 sm:mb-6 md:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 mb-4 sm:mb-6 md:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
           >
             Transforming ideas into impactful products through data-driven insights, 
             user-centered design, and strategic execution.
@@ -212,7 +212,7 @@ export const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleDownloadResume}
-              className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-2 border-slate-600 rounded-full text-slate-300 font-semibold backdrop-blur-md hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-2 border-gray-300 rounded-full text-gray-700 font-semibold backdrop-blur-md hover:border-cyan-400 hover:text-cyan-600 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2"
             >
               <Download size={16} className="sm:w-5 sm:h-5" />
               Download Resume
@@ -244,7 +244,7 @@ export const Hero = () => {
                   scale: 1.05,
                   transition: { duration: 0.3 }
                 }}
-                className="relative p-3 sm:p-4 md:p-6 bg-slate-800/80 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-slate-700 group corporate-card"
+                className="relative p-3 sm:p-4 md:p-6 bg-white/80 backdrop-blur-md rounded-lg sm:rounded-xl md:rounded-2xl border border-gray-200 shadow-lg group corporate-card"
               >
                 {/* Floating Icon */}
                 <motion.div
@@ -327,7 +327,7 @@ export const Hero = () => {
                   'from-sky-400 to-blue-500'
                 }`}
               />
-              <span className="text-slate-400 text-xs sm:text-sm font-medium">{phase}</span>
+              <span className="text-gray-600 text-xs sm:text-sm font-medium">{phase}</span>
               {index < 3 && (
                 <motion.div
                   animate={{ scaleX: [0, 1, 0] }}

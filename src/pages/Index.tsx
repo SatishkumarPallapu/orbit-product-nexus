@@ -26,14 +26,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-slate-900 overflow-hidden">
+    <div className="relative min-h-screen bg-white overflow-hidden">
       {/* Scroll Progress Bar */}
       <ScrollProgress />
       
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50" />
         
         {/* Floating orbs */}
         <motion.div 
@@ -99,7 +99,7 @@ const Index = () => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="text-slate-400 flex flex-col items-center cursor-pointer hover:text-cyan-400 transition-colors"
+            className="text-gray-600 flex flex-col items-center cursor-pointer hover:text-cyan-500 transition-colors"
           >
             <span className="text-xs sm:text-sm mb-2">Explore More</span>
             <ChevronDown size={16} className="sm:w-5 sm:h-5" />

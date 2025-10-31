@@ -7,7 +7,7 @@ export const LoadingScreen = () => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-white"
     >
       <div className="relative">
         {/* Animated logo or spinner */}
@@ -23,8 +23,8 @@ export const LoadingScreen = () => {
           }}
           className="w-24 h-24 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-1"
         >
-          <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
-            <span className="text-2xl font-bold text-white">VP</span>
+          <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+            <span className="text-2xl font-bold text-gray-900">VP</span>
           </div>
         </motion.div>
 
@@ -51,7 +51,7 @@ export const LoadingScreen = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-white/70 text-center mt-4"
+          className="text-gray-600 text-center mt-4"
         >
           Loading...
         </motion.p>
