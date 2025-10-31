@@ -1,10 +1,10 @@
-
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { Navigation } from '../components/Navigation';
 import { FloatingElements } from '../components/FloatingElements';
+import { ScrollProgress } from '../components/ScrollProgress';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -27,6 +27,9 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen bg-slate-900 overflow-hidden">
+      {/* Scroll Progress Bar */}
+      <ScrollProgress />
+      
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Gradient overlays */}

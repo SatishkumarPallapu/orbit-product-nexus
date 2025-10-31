@@ -1,7 +1,8 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Calendar, ExternalLink, Shield, CheckCircle, Star, Trophy, Globe} from 'lucide-react';
+import { AnimatedCard } from './AnimatedCard';
+import { staggerContainer, buttonHover } from '@/utils/animationVariants';
 
 const certifications = [
  {

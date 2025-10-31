@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { User, Briefcase, Target, TrendingUp, Mail, Home, Menu, X, Award, Shield } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { MagneticButton } from './MagneticButton';
 
 export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -98,11 +98,16 @@ export const Navigation = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-3 bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-700 text-white"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.1, rotate: isMobileMenuOpen ? 0 : 90 }}
+            whileTap={{ scale: 0.9 }}
             aria-label='menu-button'
           >
-            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            <motion.div
+              animate={{ rotate: isMobileMenuOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </motion.div>
           </motion.button>
         </div>
 

@@ -1,7 +1,8 @@
-
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Award, Calendar, MapPin, Heart } from 'lucide-react';
+import { AnimatedCard } from './AnimatedCard';
+import { staggerContainer, fadeInUp } from '@/utils/animationVariants';
 
 export const About = () => {
   const ref = React.useRef(null);
@@ -114,33 +115,35 @@ export const About = () => {
             </div>
 
             {/* Achievement Cards  */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.div 
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              variants={staggerContainer}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+            >
               {[
                 { icon: Award, title: 'Product Excellence Award', desc: '2023 Innovation Leader' },
                 { icon: Heart, title: 'Team Favorite', desc: '95% Team Satisfaction' }
               ].map((achievement, index) => {
                 const Icon = achievement.icon;
                 return (
-                  <motion.div
+                  <AnimatedCard
                     key={index}
-                    initial={{ scale: 0, rotateY: -90 }}
-                    animate={isInView ? { scale: 1, rotateY: 0 } : { scale: 0, rotateY: -90 }}
-                    transition={{ duration: 0.8, delay: 1.2 + index * 0.2 }}
-                    whileHover={{ 
-                      scale: 1.05,
-                      rotateY: 10,
-                      transition: { duration: 0.3 }
-                    }}
-                    className="p-4 bg-white/5 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/10"
-                    style={{ transform: 'perspective(800px)' }}
+                    delay={1.2 + index * 0.1}
+                    className="p-4 bg-white/5 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/10 card-shadow group cursor-pointer"
                   >
-                    <Icon className="text-orange-400 mb-2" size={20} />
-                    <h4 className="text-white font-semibold text-sm sm:text-base">{achievement.title}</h4>
+                    <motion.div
+                      whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <Icon className="text-orange-400 mb-2 group-hover:text-orange-300 transition-colors" size={20} />
+                    </motion.div>
+                    <h4 className="text-white font-semibold text-sm sm:text-base group-hover:text-cyan-400 transition-colors">{achievement.title}</h4>
                     <p className="text-white/60 text-xs sm:text-sm">{achievement.desc}</p>
-                  </motion.div>
+                  </AnimatedCard>
                 );
               })}
-            </div>
+            </motion.div>
 
             {/* CTA */}
             <motion.button
