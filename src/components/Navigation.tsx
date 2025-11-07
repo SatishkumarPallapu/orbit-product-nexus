@@ -34,8 +34,8 @@ export const Navigation = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-3 bg-white/90 backdrop-blur-xl rounded-full border border-gray-200 shadow-lg"
-              style={{ boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)' }}
+              className="flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-3 bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-700"
+              style={{ boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)' }}
             >
               {navItems.map((item, index) => {
                 const Icon = item.icon;
@@ -53,7 +53,7 @@ export const Navigation = () => {
                       className={`relative flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full transition-all duration-300 ${
                         isActive 
                           ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg' 
-                          : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                          : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
                       }`}
                     >
                       <Icon size={16} className="sm:w-[18px] sm:h-[18px]" />
@@ -87,9 +87,9 @@ export const Navigation = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="px-4 py-2 bg-white/90 backdrop-blur-xl rounded-full border border-gray-200 shadow-lg"
+            className="px-4 py-2 bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-700"
           >
-            <Link to="/" className="text-gray-900 font-semibold text-lg">VP</Link>
+            <Link to="/" className="text-white font-semibold text-lg">VP</Link>
           </motion.div>
 
           <motion.button
@@ -97,7 +97,7 @@ export const Navigation = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-3 bg-white/90 backdrop-blur-xl rounded-full border border-gray-200 shadow-lg text-gray-900"
+            className="p-3 bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-700 text-white"
             whileHover={{ scale: 1.1, rotate: isMobileMenuOpen ? 0 : 90 }}
             whileTap={{ scale: 0.9 }}
             aria-label='menu-button'
@@ -119,7 +119,7 @@ export const Navigation = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-full left-4 right-4 mt-2 p-4 bg-white/95 backdrop-blur-xl rounded-2xl border border-gray-200 shadow-xl"
+              className="absolute top-full left-4 right-4 mt-2 p-4 bg-slate-800/90 backdrop-blur-xl rounded-2xl border border-slate-700"
             >
               <div className="grid grid-cols-2 gap-3">
                 {navItems.map((item, index) => {
@@ -139,7 +139,7 @@ export const Navigation = () => {
                         className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${
                           isActive 
                             ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600' 
-                            : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                            : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
                         }`}
                       >
                         <Icon size={18} />
