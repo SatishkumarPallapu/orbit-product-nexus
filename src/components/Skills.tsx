@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { BarChart3, Users, Lightbulb, Target, Code, TrendingUp, Zap, Brain } from 'lucide-react';
 import { AnimatedCard } from './AnimatedCard';
 import { staggerContainer } from '@/utils/animationVariants';
+import { useCountAnimation } from '@/hooks/useCountAnimation';
 
 export const Skills = () => {
   const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
@@ -163,50 +164,86 @@ export const Skills = () => {
                         {category.title}
                       </h3>
 
-                      {/* Skills List */}
+                      {/* Skills List with Animated Progress Bars */}
                       <div className="space-y-4">
-                        {category.skills.map((skill, skillIndex) => (
-                          <motion.div
-                            key={skillIndex}
-                            initial={{ x: -20, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ 
-                              delay: 1.2 + categoryIndex * 0.2 + skillIndex * 0.1,
-                              duration: 0.6
-                            }}
-                            className="space-y-2"
-                          >
-                            <div className="flex justify-between items-center">
-                              <span className="text-white/90 font-medium">{skill.name}</span>
-                              <span className={`text-sm font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
-                                {skill.level}%
-                              </span>
-                            </div>
-                            
-                            <div className="relative h-2 bg-white/10 rounded-full overflow-hidden">
+                        {category.skills.map((skill, skillIndex) => {
+                          const SkillProgressBar = () => {
+                            const ref = useRef<HTMLDivElement>(null);
+                            const isInView = useInView(ref, { once: true });
+                            const animatedValue = useCountAnimation(skill.level, 1500, ref);
+
+                            return (
                               <motion.div
-                                initial={{ width: 0 }}
-                                animate={{ width: `${skill.level}%` }}
+                                ref={ref}
+                                key={skillIndex}
+                                initial={{ x: -20, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
                                 transition={{ 
-                                  delay: 1.5 + categoryIndex * 0.2 + skillIndex * 0.1,
-                                  duration: 1,
-                                  ease: "easeOut"
+                                  delay: 1.2 + categoryIndex * 0.2 + skillIndex * 0.1,
+                                  duration: 0.6
                                 }}
-                                className={`h-full bg-gradient-to-r ${category.color} rounded-full relative`}
+                                className="space-y-2"
                               >
-                                <motion.div
-                                  animate={{ x: [-10, 10, -10] }}
-                                  transition={{ 
-                                    duration: 2, 
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
-                                  }}
-                                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                                />
+                                <div className="flex justify-between items-center">
+                                  <span className="text-white/90 font-medium">{skill.name}</span>
+                                  <motion.span 
+                                    className={`text-sm font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent tabular-nums`}
+                                    initial={{ scale: 0 }}
+                                    animate={{ scale: isInView ? 1 : 0 }}
+                                    transition={{ delay: 1.5 + categoryIndex * 0.2 + skillIndex * 0.1 }}
+                                  >
+                                    {animatedValue}%
+                                  </motion.span>
+                                </div>
+                                
+                                <div className="relative h-3 bg-white/10 rounded-full overflow-hidden backdrop-blur-sm">
+                                  <motion.div
+                                    initial={{ width: 0 }}
+                                    animate={{ width: isInView ? `${skill.level}%` : 0 }}
+                                    transition={{ 
+                                      delay: 1.5 + categoryIndex * 0.2 + skillIndex * 0.1,
+                                      duration: 1.5,
+                                      ease: "easeOut"
+                                    }}
+                                    className={`h-full bg-gradient-to-r ${category.color} rounded-full relative shadow-lg`}
+                                    style={{
+                                      boxShadow: `0 0 20px ${category.color.includes('cyan') ? 'rgba(34, 211, 238, 0.4)' : 
+                                                          category.color.includes('purple') ? 'rgba(168, 85, 247, 0.4)' :
+                                                          category.color.includes('orange') ? 'rgba(251, 146, 60, 0.4)' :
+                                                          'rgba(45, 212, 191, 0.4)'}`
+                                    }}
+                                  >
+                                    <motion.div
+                                      animate={{ x: [-10, 10, -10] }}
+                                      transition={{ 
+                                        duration: 2, 
+                                        repeat: Infinity,
+                                        ease: "easeInOut"
+                                      }}
+                                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                                    />
+                                    
+                                    {/* Animated dots */}
+                                    <motion.div
+                                      animate={{ 
+                                        scale: [1, 1.2, 1],
+                                        opacity: [0.5, 1, 0.5]
+                                      }}
+                                      transition={{ 
+                                        duration: 1.5, 
+                                        repeat: Infinity,
+                                        delay: skillIndex * 0.2
+                                      }}
+                                      className="absolute right-1 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full"
+                                    />
+                                  </motion.div>
+                                </div>
                               </motion.div>
-                            </div>
-                          </motion.div>
-                        ))}
+                            );
+                          };
+
+                          return <SkillProgressBar key={skillIndex} />;
+                        })}
                       </div>
                     </div>
 

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock, FileText, Layers, Monitor, Bot, Globe, Code2 } from 'lucide-react';
 import { CaseStudyCard } from './CaseStudyCard';
 import { CaseStudyViewer } from './CaseStudyViewer';
+import { FlipCard3D } from './FlipCard3D';
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -876,21 +877,8 @@ export const Projects = () => {
       transition={{ duration: 0.5 }}
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
     >
-      {getCurrentData().map((item, index) => (
-        <motion.div
-          key={item.id}
-          initial={{ rotateY: -90, opacity: 0 }}
-          animate={{ rotateY: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: index * 0.2 }}
-          whileHover={{ 
-            rotateY: 10, 
-            scale: 1.05,
-            transition: { duration: 0.3 }
-          }}
-          onClick={() => setSelectedProject(item.id)}
-          className="relative cursor-pointer group"
-          style={{ transform: 'perspective(1000px)' }}
-        >
+      {getCurrentData().map((item, index) => {
+        const frontContent = (
           <div className={`relative p-6 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden h-full`}>
             {/* Gradient Background */}
             <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`} />
@@ -916,7 +904,7 @@ export const Projects = () => {
                 <div className="text-orange-400 text-sm font-medium uppercase tracking-wide">
                   {item.category}
                 </div>
-                <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-300 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-white">
                   {item.title}
                 </h3>
                 <p className="text-white/70 leading-relaxed">
@@ -941,19 +929,78 @@ export const Projects = () => {
                   </div>
                 </div>
               )}
-
-              {/* Hover Effect */}
-              <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                whileHover={{ scale: 1, opacity: 1 }}
-                className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl flex items-center justify-center"
-              >
-                <ExternalLink className="text-white/80" size={32} />
-              </motion.div>
             </div>
           </div>
-        </motion.div>
-      ))}
+        );
+
+        const backContent = (
+          <div className={`relative p-6 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden h-full flex flex-col justify-between`}>
+            {/* Gradient Background */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-20`} />
+            
+            <div className="relative z-10 space-y-4">
+              <h3 className="text-xl font-bold text-white mb-3">Key Impact</h3>
+              
+              {'impact' in item && (
+                <p className="text-white/80 text-sm leading-relaxed mb-4">
+                  {item.impact}
+                </p>
+              )}
+
+              {'metrics' in item && (
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-white/10 rounded-lg p-3">
+                    <div className="flex items-center gap-2 mb-1">
+                      <DollarSign size={16} className="text-green-400" />
+                      <span className="text-white/60 text-xs">Revenue</span>
+                    </div>
+                    <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                      {item.metrics.revenue}
+                    </div>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-3">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Clock size={16} className="text-blue-400" />
+                      <span className="text-white/60 text-xs">Timeline</span>
+                    </div>
+                    <div className="text-white font-medium text-sm">
+                      {item.metrics.timeline}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setSelectedProject(item.id)}
+              className={`relative z-10 w-full mt-4 px-4 py-3 bg-gradient-to-r ${item.color} rounded-lg text-white font-semibold flex items-center justify-center gap-2 hover:shadow-xl transition-shadow`}
+            >
+              View Details
+              <ExternalLink size={16} />
+            </motion.button>
+          </div>
+        );
+
+        return (
+          <motion.div
+            key={item.id}
+            initial={{ rotateY: -90, opacity: 0 }}
+            animate={{ rotateY: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
+            className="h-[400px]"
+            style={{ transform: 'perspective(1000px)' }}
+          >
+            <FlipCard3D
+              front={frontContent}
+              back={backContent}
+              flipOnHover={true}
+              className="h-full"
+            />
+          </motion.div>
+        );
+      })}
     </motion.div>
   );
 

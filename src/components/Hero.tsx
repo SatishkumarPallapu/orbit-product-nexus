@@ -1,13 +1,22 @@
 
-import React from 'react';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Sparkles, Target, TrendingUp, Users, Lightbulb, BarChart3, Zap, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ParallaxSection, ParallaxLayer } from './ParallaxSection';
 
 export const Hero = () => {
-  const { scrollY } = useViewportScroll();
-  const y1 = useTransform(scrollY, [0, 300], [0, -50]);
-  const y2 = useTransform(scrollY, [0, 300], [0, -100]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -250]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0.3]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
 
   // Product Management themed floating icons
   const pmIcons = [
@@ -30,13 +39,17 @@ export const Hero = () => {
 
   return (
     <motion.section
+      ref={containerRef}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
       className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-slate-900"
     >
-      <div className="max-w-6xl mx-auto text-center relative z-10 w-full">
+      <motion.div 
+        style={{ opacity, scale }} 
+        className="max-w-6xl mx-auto text-center relative z-10 w-full"
+      >
         {/* Floating PM Icons */}
         {pmIcons.map((item, index) => {
           const Icon = item.icon;
@@ -70,30 +83,48 @@ export const Hero = () => {
           );
         })}
 
-        {/* Floating 3D Elements */}
-        <motion.div
-          style={{ y: y1 }}
-          initial={{ scale: 0, rotateY: -180 }}
-          animate={{ scale: 1, rotateY: 0 }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute -top-10 sm:-top-16 md:-top-20 -left-5 sm:-left-10 md:-left-20 w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-cyan-400 to-sky-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-12 opacity-20"
-        />
+        {/* Parallax 3D Elements */}
+        <ParallaxLayer speed={-0.5} className="absolute -top-10 sm:-top-16 md:-top-20 -left-5 sm:-left-10 md:-left-20">
+          <motion.div
+            initial={{ scale: 0, rotateY: -180 }}
+            animate={{ scale: 1, rotateY: 0 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+            className="w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-cyan-400 to-sky-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-12 opacity-20"
+          />
+        </ParallaxLayer>
         
-        <motion.div
-          style={{ y: y2 }}
-          initial={{ scale: 0, rotateX: 180 }}
-          animate={{ scale: 1, rotateX: 0 }}
-          transition={{ duration: 1.5, delay: 1 }}
-          className="absolute -top-5 sm:-top-8 md:-top-10 -right-5 sm:-right-8 md:-right-10 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-sky-400 to-blue-500 rounded-lg sm:rounded-xl md:rounded-2xl transform -rotate-12 opacity-30 pb-10"
-        />
+        <ParallaxLayer speed={-0.8} className="absolute -top-5 sm:-top-8 md:-top-10 -right-5 sm:-right-8 md:-right-10">
+          <motion.div
+            initial={{ scale: 0, rotateX: 180 }}
+            animate={{ scale: 1, rotateX: 0 }}
+            transition={{ duration: 1.5, delay: 1 }}
+            className="w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-sky-400 to-blue-500 rounded-lg sm:rounded-xl md:rounded-2xl transform -rotate-12 opacity-30 pb-10"
+          />
+        </ParallaxLayer>
+        
+        <ParallaxLayer speed={-0.3} className="absolute bottom-10 left-1/4">
+          <motion.div
+            animate={{ 
+              rotate: [0, 360],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 20, 
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-10"
+          />
+        </ParallaxLayer>
 
-        {/* Main Content */}
-        <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="relative"
-        >
+        {/* Main Content with Parallax */}
+        <ParallaxSection speed="slow" className="relative">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="relative"
+          >
           {/* Profile Image */}
           <motion.div
             initial={{ scale: 0, rotateY: -180 }}
@@ -219,14 +250,16 @@ export const Hero = () => {
             </motion.button>
           </motion.div>
         </motion.div>
+        </ParallaxSection>
 
-        {/* 3D Stats Cards with PM Metrics */}
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 2 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 px-2 sm:px-4"
-        >
+        {/* 3D Stats Cards with PM Metrics and Parallax */}
+        <ParallaxSection speed="medium">
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 2 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20 px-2 sm:px-4"
+          >
           {[
             { value: '05+', label: 'Products Launched', color: 'from-cyan-400 to-cyan-600', icon: Target },
             { value: '98%', label: 'Client Satisfaction', color: 'from-sky-400 to-sky-600', icon: Users },
@@ -294,6 +327,7 @@ export const Hero = () => {
             );
           })}
         </motion.div>
+        </ParallaxSection>
 
         {/* Product Lifecycle Visualization */}
         <motion.div
@@ -342,7 +376,7 @@ export const Hero = () => {
             </motion.div>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 };
