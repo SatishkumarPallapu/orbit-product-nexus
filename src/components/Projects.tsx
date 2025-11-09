@@ -4,9 +4,13 @@ import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock, FileText, L
 import { CaseStudyCard } from './CaseStudyCard';
 import { CaseStudyViewer } from './CaseStudyViewer';
 import { FlipCard3D } from './FlipCard3D';
+import { ProjectSidePanel } from './ProjectSidePanel';
+import { PDFModal } from './PDFModal';
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState<number | null>(null);
+  const [pdfModal, setPdfModal] = useState<{ url: string; title: string } | null>(null);
   const [activeSection, setActiveSection] = useState<'projects' | 'case-studies' | 'prototypes' | 'ai-agents'>('projects');
 
   const projects = [
@@ -749,7 +753,13 @@ export const Projects = () => {
           key={caseStudy.id}
           caseStudy={caseStudy}
           index={index}
-          onClick={() => setSelectedProject(caseStudy.id)}
+          onClick={() => {
+            if (caseStudy.documentPdf) {
+              setPdfModal({ url: caseStudy.documentPdf, title: caseStudy.title });
+            } else {
+              setSelectedCaseStudy(caseStudy.id);
+            }
+          }}
         />
       ))}
     </motion.div>
@@ -1061,9 +1071,27 @@ export const Projects = () => {
 
         {/* Modals */}
         <AnimatePresence>
-          {selectedProject && activeSection === 'case-studies' && (
+          {/* PDF Modal for Case Studies */}
+          {pdfModal && (
+            <PDFModal
+              pdfUrl={pdfModal.url}
+              title={pdfModal.title}
+              onClose={() => setPdfModal(null)}
+            />
+          )}
+
+          {/* Case Study Detail Viewer */}
+          {selectedCaseStudy && (
             <CaseStudyViewer
-              caseStudy={caseStudies.find(cs => cs.id === selectedProject)!}
+              caseStudy={caseStudies.find(cs => cs.id === selectedCaseStudy)!}
+              onClose={() => setSelectedCaseStudy(null)}
+            />
+          )}
+
+          {/* Project Side Panel - for regular projects */}
+          {selectedProject && activeSection === 'projects' && (
+            <ProjectSidePanel
+              project={projects.find(p => p.id === selectedProject) || null}
               onClose={() => setSelectedProject(null)}
             />
           )}

@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Building, ChevronRight, TrendingUp } from 'lucide-react';
+import { TimelineCard } from '../components/TimelineCard';
 
 const experiences = [
   {
@@ -121,117 +120,18 @@ export const Experience = () => {
         </motion.div>
 
         {/* Experience Timeline */}
-        <div className="space-y-12">
+        <div className="space-y-16">
           {experiences.map((experience, index) => (
-            <motion.div
+            <TimelineCard
               key={experience.id}
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="relative"
-            >
-              {/* Timeline Line */}
-              {index !== experiences.length - 1 && (
-                <div className="absolute left-6 top-32 w-0.5 h-96 bg-gradient-to-b from-blue-500 to-purple-500 opacity-30" />
-              )}
-              
-              {/* Company Header */}
-              <div className="flex items-center gap-6 mb-6">
-                <div className="relative">
-                  <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg" />
-                </div>
-                <div className="flex items-center gap-4 flex-1">
-                  <img 
-                    src={experience.logo} 
-                    alt={`${experience.company} logo`}
-                    className="w-16 h-16 rounded-lg object-contain bg-white/10 p-2"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=64&h=64&fit=crop&crop=center";
-                    }}
-                  />
-                  <div>
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
-                      {experience.company}
-                    </h2>
-                    <div className="flex flex-wrap items-center gap-4 text-gray-300">
-                      <div className="flex items-center gap-2">
-                        <MapPin size={16} />
-                        <span>{experience.location}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Calendar size={16} />
-                        <span>{experience.totalDuration}</span>
-                      </div>
-                      {experience.roles.length > 1 && (
-                        <div className="flex items-center gap-2">
-                          <TrendingUp size={16} />
-                          <span>{experience.roles.length} Roles</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Roles */}
-              <div className="ml-16 space-y-6">
-                {experience.roles.map((role, roleIndex) => (
-                  <div
-                    key={roleIndex}
-                    className="corporate-card rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300"
-                  >
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-                      <div>
-                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                          {role.title}
-                        </h3>
-                        <div className="flex flex-wrap items-center gap-4 text-gray-300 mb-4">
-                          <div className="flex items-center gap-2">
-                            <Calendar size={14} />
-                            <span>{role.duration}</span>
-                          </div>
-                          <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30">
-                            {role.type}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <p className="text-gray-200 mb-6 leading-relaxed">
-                      {role.description}
-                    </p>
-
-                    {/* Achievements */}
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-3">Key Achievements</h4>
-                      <ul className="space-y-2">
-                        {role.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex} className="flex items-start gap-3 text-gray-300">
-                            <ChevronRight size={14} className="text-blue-400 mt-1 flex-shrink-0" />
-                            <span className="text-sm">{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Technologies */}
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-3">Technologies Used</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {role.technologies.map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-white border border-white/20 rounded-lg text-sm hover:bg-white/10 transition-colors"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+              company={experience.company}
+              logo={experience.logo}
+              location={experience.location}
+              totalDuration={experience.totalDuration}
+              roles={experience.roles}
+              index={index}
+              isLast={index === experiences.length - 1}
+            />
           ))}
         </div>
 
