@@ -6,6 +6,7 @@ import { CaseStudyViewer } from './CaseStudyViewer';
 import { FlipCard3D } from './FlipCard3D';
 import { ProjectSidePanel } from './ProjectSidePanel';
 import { PDFModal } from './PDFModal';
+import { SearchBar } from './SearchBar';
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -1035,6 +1036,28 @@ export const Projects = () => {
           <p className="text-xl text-white/70 max-w-3xl mx-auto mb-8">
             {getSectionDescription()}
           </p>
+
+          {/* Search Bar */}
+          <div className="mb-12">
+            <SearchBar
+              projects={projects}
+              caseStudies={caseStudies}
+              onResultClick={(result) => {
+                if (result.type === 'project') {
+                  setActiveSection('projects');
+                  setSelectedProject(result.id);
+                } else {
+                  setActiveSection('case-studies');
+                  const caseStudy = caseStudies.find(cs => cs.id === result.id);
+                  if (caseStudy?.documentPdf) {
+                    setPdfModal({ url: caseStudy.documentPdf, title: caseStudy.title });
+                  } else {
+                    setSelectedCaseStudy(result.id);
+                  }
+                }
+              }}
+            />
+          </div>
 
           {/* Section Navigation */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">

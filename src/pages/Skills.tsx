@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Skills as SkillsComponent } from '../components/Skills';
+import { SkillsChart } from '../components/SkillsChart';
 
 const Skills = () => {
   return (
@@ -24,6 +25,7 @@ const Skills = () => {
         </motion.div>
       </div>
       <SkillsComponent />
+      <SkillsChart />
     </div>
   );
 };
