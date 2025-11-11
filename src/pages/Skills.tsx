@@ -5,6 +5,10 @@ import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Skills as SkillsComponent } from '../components/Skills';
 import { SkillsChart } from '../components/SkillsChart';
+import { ToggleShowcase } from '../components/ToggleShowcase';
+import { Icons3DShowcase } from '../components/Icons3DShowcase';
+import { GlassEffectsShowcase } from '../components/GlassEffectsShowcase';
+import { ParallaxSection } from '../components/ParallaxSection';
 
 const Skills = () => {
   return (
@@ -24,8 +28,28 @@ const Skills = () => {
           </Link>
         </motion.div>
       </div>
-      <SkillsComponent />
-      <SkillsChart />
+      
+      <ParallaxSection speed="slow">
+        <SkillsComponent />
+      </ParallaxSection>
+      
+      <ParallaxSection speed="medium">
+        <SkillsChart />
+      </ParallaxSection>
+
+      <div className="py-12">
+        <ParallaxSection speed="fast">
+          <ToggleShowcase />
+        </ParallaxSection>
+        
+        <ParallaxSection speed="slow">
+          <Icons3DShowcase />
+        </ParallaxSection>
+        
+        <ParallaxSection speed="medium">
+          <GlassEffectsShowcase />
+        </ParallaxSection>
+      </div>
     </div>
   );
 };
