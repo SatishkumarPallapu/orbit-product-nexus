@@ -11,6 +11,9 @@ import { LoadingScreen } from "./components/LoadingScreen";
 import { Footer } from "./components/Footer";
 import { Breadcrumb } from "./components/Breadcrumb";
 import { FloatingActionButton } from "./components/FloatingActionButton";
+import { AnimatedGridBackground } from "./components/AnimatedGridBackground";
+import { MagneticCursor } from "./components/MagneticCursor";
+import { PageTransition } from "./components/PageTransition";
 
 const About = lazy(()=> import('./pages/About'))
 const Projects = lazy(()=> import('./pages/Projects'))
@@ -34,18 +37,20 @@ const AnimatedRoutes = () => {
   
   return (
     <>
+      <AnimatedGridBackground />
+      <MagneticCursor />
       <Breadcrumb />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/certifications" element={<Certifications />} />
-          <Route path="/process" element={<Process />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<PageTransition><Index /></PageTransition>} />
+          <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+          <Route path="/experience" element={<PageTransition><Experience /></PageTransition>} />
+          <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
+          <Route path="/skills" element={<PageTransition><Skills /></PageTransition>} />
+          <Route path="/certifications" element={<PageTransition><Certifications /></PageTransition>} />
+          <Route path="/process" element={<PageTransition><Process /></PageTransition>} />
+          <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+          <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
         </Routes>
       </AnimatePresence>
       <Footer />

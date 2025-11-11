@@ -4,6 +4,10 @@ import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { About as AboutComponent } from '../components/About';
+import { ToggleShowcase } from '../components/ToggleShowcase';
+import { Icons3DShowcase } from '../components/Icons3DShowcase';
+import { GlassEffectsShowcase } from '../components/GlassEffectsShowcase';
+import { ParallaxSection } from '../components/ParallaxSection';
 
 const About = () => {
   return (
@@ -23,7 +27,24 @@ const About = () => {
           </Link>
         </motion.div>
       </div>
-      <AboutComponent />
+      
+      <ParallaxSection speed="slow">
+        <AboutComponent />
+      </ParallaxSection>
+
+      <div className="py-12">
+        <ParallaxSection speed="medium">
+          <GlassEffectsShowcase />
+        </ParallaxSection>
+        
+        <ParallaxSection speed="fast">
+          <Icons3DShowcase />
+        </ParallaxSection>
+        
+        <ParallaxSection speed="slow">
+          <ToggleShowcase />
+        </ParallaxSection>
+      </div>
     </div>
   );
 };
