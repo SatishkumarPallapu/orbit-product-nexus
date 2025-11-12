@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Award, Calendar, ExternalLink, Shield, CheckCircle, Star, Trophy, Globe} from 'lucide-react';
 import { AnimatedCard } from './AnimatedCard';
 import { staggerContainer, buttonHover } from '@/utils/animationVariants';
+import { CertificationFlipCard } from './CertificationFlipCard';
 
 const certifications = [
  {
@@ -330,92 +331,11 @@ export const Certifications = () => {
         {/* Certifications Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {filteredCertifications.map((cert, index) => (
-            <motion.div
+            <CertificationFlipCard
               key={cert.id}
-              initial={{ opacity: 0, y: 30, rotateY: -15 }}
-              animate={{ opacity: 1, y: 0, rotateY: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-              whileHover={{ 
-                y: -10, 
-                rotateY: 5,
-                transition: { duration: 0.3 }
-              }}
-              onClick={() => setSelectedCert(cert)}
-              className="relative group cursor-pointer"
-            >
-              <div className="relative p-8 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden hover:bg-white/15 transition-all duration-300">
-                {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`} />
-                
-                {/* Status Badge */}
-                <div className="absolute top-4 right-4">
-                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(cert.status)}`}>
-                    {cert.status === 'active' ? 'Active' : 'In Progress'}
-                  </span>
-                </div>
-
-                {/* Certificate Logo */}
-                <motion.div
-                  animate={{ rotateY: [0, 10, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative mb-6 w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-lg p-2"
-                >
-                  <img 
-                    src={cert.logoUrl} 
-                    alt={`${cert.issuer} logo`}
-                    className="w-full h-full object-contain"
-                    onError={(e) => {
-                      // Fallback to placeholder if image fails to load
-                      const target = e.target as HTMLImageElement;
-                      target.src = "/placeholder.svg";
-                    }}
-                  />
-                </motion.div>
-
-                <div className="relative z-10 text-center">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-orange-500 transition-all duration-300">
-                    {cert.title}
-                  </h3>
-                  
-                  <p className="text-white/70 font-medium mb-2">{cert.issuer}</p>
-                  
-                  <div className="flex items-center justify-center gap-2 text-white/60 mb-4">
-                    <Calendar size={14} />
-                    <span className="text-sm">{cert.date}</span>
-                  </div>
-
-                  <p className="text-white/60 text-sm mb-6 line-clamp-3">
-                    {cert.description}
-                  </p>
-
-                  {/* Skills Tags */}
-                  <div className="flex flex-wrap gap-2 justify-center mb-6">
-                    {cert.skills.slice(0, 3).map((skill, skillIndex) => (
-                      <span
-                        key={skillIndex}
-                        className="px-2 py-1 bg-white/10 text-white/70 rounded-lg text-xs"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                    {cert.skills.length > 3 && (
-                      <span className="px-2 py-1 bg-white/10 text-white/50 rounded-lg text-xs">
-                        +{cert.skills.length - 3} more
-                      </span>
-                    )}
-                  </div>
-
-                  {/* View Details */}
-                  <div className="flex items-center justify-center gap-2 text-white/70 group-hover:text-white transition-colors">
-                    <span className="text-sm">View Details</span>
-                    <ExternalLink size={14} />
-                  </div>
-                </div>
-
-                {/* Hover Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            </motion.div>
+              cert={cert}
+              index={index}
+            />
           ))}
         </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TimelineCard } from '../components/TimelineCard';
+import { InteractiveTimeline } from './InteractiveTimeline';
 
 const experiences = [
   {
@@ -120,9 +121,9 @@ export const Experience = () => {
         </motion.div>
 
         {/* Experience Timeline */}
-        <div className="space-y-16">
+        <div className="space-y-8">
           {experiences.map((experience, index) => (
-            <TimelineCard
+            <InteractiveTimeline
               key={experience.id}
               company={experience.company}
               logo={experience.logo}
