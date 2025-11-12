@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FileText, Download, ExternalLink, Calendar, Users, Target, TrendingUp } from 'lucide-react';
 
@@ -26,19 +26,56 @@ interface CaseStudyCardProps {
 }
 
 export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ caseStudy, index, onClick }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [tiltPosition, setTiltPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    
+    const rect = cardRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    const distanceX = (e.clientX - centerX) / (rect.width / 2);
+    const distanceY = (e.clientY - centerY) / (rect.height / 2);
+    
+    setTiltPosition({
+      x: distanceY * 15, // Tilt on X axis when mouse moves on Y
+      y: -distanceX * 15, // Tilt on Y axis when mouse moves on X
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setTiltPosition({ x: 0, y: 0 });
+  };
+
   return (
     <motion.div
+      ref={cardRef}
       initial={{ rotateY: -90, opacity: 0 }}
-      animate={{ rotateY: 0, opacity: 1 }}
-      transition={{ duration: 0.8, delay: index * 0.2 }}
+      animate={{ 
+        opacity: 1,
+        rotateX: tiltPosition.x,
+        rotateY: tiltPosition.y,
+      }}
+      transition={{ 
+        duration: 0.8, 
+        delay: index * 0.2,
+        rotateX: { type: 'spring', stiffness: 150, damping: 20 },
+        rotateY: { type: 'spring', stiffness: 150, damping: 20 }
+      }}
       whileHover={{ 
-        rotateY: 5, 
-        scale: 1.03,
+        scale: 1.05,
         transition: { duration: 0.3 }
       }}
       onClick={onClick}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className="relative cursor-pointer group h-full"
-      style={{ transform: 'perspective(1000px)' }}
+      style={{ 
+        transform: 'perspective(1000px)',
+        transformStyle: 'preserve-3d'
+      }}
     >
       <div className="relative p-6 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden h-full flex flex-col">
         {/* Gradient Background */}
