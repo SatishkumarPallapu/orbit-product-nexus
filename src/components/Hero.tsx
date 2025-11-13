@@ -46,6 +46,22 @@ export const Hero = () => {
       transition={{ duration: 1 }}
       className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-slate-900"
     >
+      {/* Layered Parallax Background Elements */}
+      <motion.div style={{ y: y3 }} className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl" />
+      </motion.div>
+
+      <motion.div style={{ y: y2 }} className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-gradient-to-br from-blue-500/15 to-cyan-500/15 rounded-full blur-2xl" />
+        <div className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-gradient-to-br from-pink-500/15 to-orange-500/15 rounded-full blur-2xl" />
+      </motion.div>
+
+      <motion.div style={{ y: y1 }} className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 right-1/4 w-56 h-56 bg-gradient-to-br from-teal-500/20 to-green-500/20 rounded-full blur-xl" />
+        <div className="absolute bottom-1/2 left-1/4 w-80 h-80 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-full blur-xl" />
+      </motion.div>
+
       <motion.div 
         style={{ opacity, scale }} 
         className="max-w-6xl mx-auto text-center relative z-10 w-full"
