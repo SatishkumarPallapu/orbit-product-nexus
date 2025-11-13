@@ -1,8 +1,15 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ParticleExplosion } from '../ParticleExplosion';
 
 export const CallToAction = () => {
+  const [explode, setExplode] = useState(false);
+
+  const handleClick = () => {
+    setExplode(true);
+    setTimeout(() => setExplode(false), 100);
+  };
+
   return (
     <motion.div
       initial={{ y: 30, opacity: 0 }}
@@ -14,13 +21,17 @@ export const CallToAction = () => {
       <p className="text-white/70 mb-4">
         Let's schedule a free consultation to discuss your product goals and how I can help achieve them.
       </p>
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl text-white font-semibold"
-      >
-        Schedule Consultation
-      </motion.button>
+      <div className="relative inline-block">
+        <motion.button
+          onClick={handleClick}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="relative overflow-hidden px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl text-white font-semibold"
+        >
+          Schedule Consultation
+        </motion.button>
+        <ParticleExplosion trigger={explode} />
+      </div>
     </motion.div>
   );
 };

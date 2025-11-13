@@ -15,6 +15,7 @@ import { AnimatedGridBackground } from "./components/AnimatedGridBackground";
 import { MagneticCursor } from "./components/MagneticCursor";
 import { PageTransition } from "./components/PageTransition";
 import { WebGLParticles } from "./components/WebGLParticles";
+import { FloatingNavigator } from "./components/FloatingNavigator";
 
 const About = lazy(()=> import('./pages/About'))
 const Projects = lazy(()=> import('./pages/Projects'))
@@ -57,6 +58,7 @@ const AnimatedRoutes = () => {
       </AnimatePresence>
       <Footer />
       <FloatingActionButton />
+      <FloatingNavigator />
     </>
   );
 };
