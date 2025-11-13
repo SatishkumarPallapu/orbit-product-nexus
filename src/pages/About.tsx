@@ -3,10 +3,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { About as AboutComponent } from '../components/About';
+import { AboutStaggered } from '../components/AboutStaggered';
 import { ToggleShowcase } from '../components/ToggleShowcase';
 import { Icons3DShowcase } from '../components/Icons3DShowcase';
 import { GlassEffectsShowcase } from '../components/GlassEffectsShowcase';
+import { StatsCounter } from '../components/StatsCounter';
 import { ParallaxSection } from '../components/ParallaxSection';
 
 const About = () => {
@@ -28,9 +29,11 @@ const About = () => {
         </motion.div>
       </div>
       
-      <ParallaxSection speed="slow">
-        <AboutComponent />
-      </ParallaxSection>
+      <div className="max-w-7xl mx-auto px-4">
+        <AboutStaggered />
+        
+        <StatsCounter />
+      </div>
 
       <div className="py-12">
         <ParallaxSection speed="medium">
