@@ -162,6 +162,7 @@ export const CaseStudyViewer: React.FC<CaseStudyViewerProps> = ({ caseStudy, onC
                       <img 
                         src={image} 
                         alt={`${caseStudy.title} - Image ${index + 1}`}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">

@@ -65,6 +65,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
               <img 
                 src={logo}
                 alt={company}
+                loading="lazy"
                 className="w-12 h-12 object-contain"
                 onError={(e) => {
                   e.currentTarget.src = "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=64&h=64&fit=crop";

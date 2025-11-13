@@ -162,6 +162,7 @@ export const InteractiveTimeline: React.FC<TimelineItemProps> = ({
                   <img 
                     src={logo} 
                     alt={company}
+                    loading="lazy"
                     className="w-full h-full object-contain"
                   />
                 </motion.div>
