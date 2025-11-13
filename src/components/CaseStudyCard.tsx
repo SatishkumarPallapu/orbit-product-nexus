@@ -104,6 +104,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ caseStudy, index, 
               <img 
                 src={caseStudy.thumbnail} 
                 alt={caseStudy.title}
+                loading="lazy"
                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
               />
             </div>

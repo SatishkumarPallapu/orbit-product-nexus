@@ -114,6 +114,7 @@ export const CertificationFlipCard: React.FC<CertificationFlipCardProps> = ({ ce
             <img 
               src={cert.logoUrl} 
               alt={`${cert.issuer} logo`}
+              loading="lazy"
               className="w-full h-full object-contain"
             />
           </motion.div>

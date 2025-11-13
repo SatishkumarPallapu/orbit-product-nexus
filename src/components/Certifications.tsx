@@ -362,6 +362,7 @@ export const Certifications = () => {
                   <img 
                     src={selectedCert.logoUrl} 
                     alt={`${selectedCert.issuer} logo`}
+                    loading="lazy"
                     className="w-full h-full object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
