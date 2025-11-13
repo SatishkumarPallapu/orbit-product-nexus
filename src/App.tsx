@@ -12,7 +12,6 @@ import { Footer } from "./components/Footer";
 import { Breadcrumb } from "./components/Breadcrumb";
 import { FloatingActionButton } from "./components/FloatingActionButton";
 import { AnimatedGridBackground } from "./components/AnimatedGridBackground";
-import { MagneticCursor } from "./components/MagneticCursor";
 import { PageTransition } from "./components/PageTransition";
 import { WebGLParticles } from "./components/WebGLParticles";
 import { FloatingNavigator } from "./components/FloatingNavigator";
@@ -41,7 +40,6 @@ const AnimatedRoutes = () => {
     <>
       <AnimatedGridBackground />
       <WebGLParticles />
-      <MagneticCursor />
       <Breadcrumb />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
