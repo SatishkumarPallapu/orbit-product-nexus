@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Home, User, Briefcase, FolderOpen, Award, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Bento3DMapSection } from './Bento3DMapSection';
 
 export const Footer = () => {
   const quickLinks = [
@@ -130,67 +131,8 @@ export const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Contact Info Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30, rotateX: -15 }}
-            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="relative group"
-            style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
-            <div className="relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl transform transition-all duration-500 group-hover:scale-[1.02] group-hover:border-white/20"
-              style={{ 
-                transformStyle: 'preserve-3d',
-                transform: 'translateZ(20px)',
-              }}
-            >
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <div className="w-1 h-6 bg-gradient-to-b from-orange-400 to-pink-500 rounded-full" />
-                Get In Touch
-              </h3>
-              <ul className="space-y-4">
-                {contactInfo.map((info, index) => {
-                  const Icon = info.icon;
-                  const content = (
-                    <>
-                      <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
-                        <Icon size={18} className="text-cyan-400" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="text-xs text-white/50 mb-1">{info.label}</div>
-                        <div className="text-sm text-white/90">{info.value}</div>
-                      </div>
-                    </>
-                  );
-
-                  return (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      {info.href ? (
-                        <a
-                          href={info.href}
-                          className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group/item"
-                        >
-                          {content}
-                        </a>
-                      ) : (
-                        <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5">
-                          {content}
-                        </div>
-                      )}
-                    </motion.li>
-                  );
-                })}
-              </ul>
-            </div>
-          </motion.div>
+          {/* Bento 3D Travel Map */}
+          <Bento3DMapSection />
         </div>
 
         {/* Bottom Bar */}

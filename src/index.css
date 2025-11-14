@@ -298,3 +298,32 @@ button {
 .card-shadow:hover {
   box-shadow: 0 20px 50px rgba(6, 182, 212, 0.2);
 }
+
+/* Mapbox popup custom styles */
+.mapboxgl-popup-content {
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mapboxgl-popup-close-button {
+  font-size: 20px;
+  padding: 0 8px;
+  color: #64748b;
+  right: 4px;
+  top: 4px;
+}
+
+.mapboxgl-popup-close-button:hover {
+  background-color: transparent;
+  color: #334155;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: white;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  border-bottom-color: white;
+}
