@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Map, { Marker, Popup, NavigationControl } from 'react-map-gl';
 import { motion } from 'framer-motion';
-import { MapPin } from 'lucide-react';
+import { MapPin, Plane } from 'lucide-react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 interface Location {
@@ -17,10 +17,10 @@ const locations: Location[] = [
   {
     id: 1,
     name: 'Bangalore',
-    subtitle: 'Tech Capital of India',
+    subtitle: 'My Home City - Tech Capital',
     longitude: 77.5946,
     latitude: 12.9716,
-    color: '#3B82F6'
+    color: '#F59E0B'
   },
   {
     id: 2,
@@ -52,22 +52,43 @@ const locations: Location[] = [
     subtitle: 'Asian Tech Hub',
     longitude: 103.8198,
     latitude: 1.3521,
-    color: '#F59E0B'
+    color: '#3B82F6'
   }
 ];
 
 export const Bento3DMapSection = () => {
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
   const [hoveredLocation, setHoveredLocation] = useState<number | null>(null);
+  const [planePosition, setPlanePosition] = useState({ lng: 77.5946, lat: 12.9716 });
+  const [planeRotation, setPlaneRotation] = useState(0);
   const mapRef = useRef<any>(null);
 
   const [viewState, setViewState] = useState({
     longitude: 77.5946,
-    latitude: 20,
-    zoom: 1.5,
+    latitude: 12.9716,
+    zoom: 10,
     pitch: 50,
     bearing: -20
   });
+
+  // Animate plane around Bangalore
+  useEffect(() => {
+    const radius = 0.15; // Distance from center
+    const centerLng = 77.5946;
+    const centerLat = 12.9716;
+    let angle = 0;
+    
+    const animatePlane = setInterval(() => {
+      angle += 0.02;
+      const newLng = centerLng + radius * Math.cos(angle);
+      const newLat = centerLat + radius * Math.sin(angle);
+      
+      setPlanePosition({ lng: newLng, lat: newLat });
+      setPlaneRotation(angle * (180 / Math.PI) + 90);
+    }, 50);
+
+    return () => clearInterval(animatePlane);
+  }, []);
 
   const handleMove = (evt: any) => {
     setViewState(evt.viewState);
@@ -92,11 +113,11 @@ export const Bento3DMapSection = () => {
   const handleClosePopup = () => {
     setSelectedLocation(null);
     
-    // Return to initial view
+    // Return to Bangalore view
     if (mapRef.current) {
       mapRef.current.flyTo({
-        center: [77.5946, 20],
-        zoom: 1.5,
+        center: [77.5946, 12.9716],
+        zoom: 10,
         duration: 2000,
         pitch: 50,
         bearing: -20,
@@ -138,6 +159,34 @@ export const Bento3DMapSection = () => {
             dragRotate={false}
           >
             <NavigationControl showCompass={false} />
+            
+            {/* Animated Plane Marker */}
+            <Marker
+              longitude={planePosition.lng}
+              latitude={planePosition.lat}
+            >
+              <motion.div
+                animate={{ 
+                  rotate: planeRotation,
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{
+                  rotate: { duration: 0.05 },
+                  scale: { duration: 2, repeat: Infinity }
+                }}
+                className="relative"
+              >
+                <div 
+                  className="w-10 h-10 rounded-full flex items-center justify-center"
+                  style={{ 
+                    backgroundColor: '#F59E0B',
+                    boxShadow: '0 4px 12px rgba(245, 158, 11, 0.6), 0 0 20px rgba(245, 158, 11, 0.4)'
+                  }}
+                >
+                  <Plane size={20} className="text-white" />
+                </div>
+              </motion.div>
+            </Marker>
             
             {locations.map((location) => (
               <Marker
