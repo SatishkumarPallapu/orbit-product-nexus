@@ -109,29 +109,7 @@ export const Hero = () => {
           />
         </ParallaxLayer>
         
-        <ParallaxLayer speed={-0.8} className="absolute -top-5 sm:-top-8 md:-top-10 -right-5 sm:-right-8 md:-right-10">
-          <motion.div
-            initial={{ scale: 0, rotateX: 180 }}
-            animate={{ scale: 1, rotateX: 0 }}
-            transition={{ duration: 1.5, delay: 1 }}
-            className="w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-sky-400 to-blue-500 rounded-lg sm:rounded-xl md:rounded-2xl transform -rotate-12 opacity-30 pb-10"
-          />
-        </ParallaxLayer>
         
-        <ParallaxLayer speed={-0.3} className="absolute bottom-10 left-1/4">
-          <motion.div
-            animate={{ 
-              rotate: [0, 360],
-              scale: [1, 1.1, 1]
-            }}
-            transition={{ 
-              duration: 20, 
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-10"
-          />
-        </ParallaxLayer>
 
         {/* Main Content with Parallax */}
         <ParallaxSection speed="slow" className="relative">
