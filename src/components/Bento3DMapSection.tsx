@@ -65,8 +65,8 @@ export const Bento3DMapSection = () => {
 
   const [viewState, setViewState] = useState({
     longitude: 77.5946,
-    latitude: 12.9716,
-    zoom: 10,
+    latitude: 20,
+    zoom: 4.5,
     pitch: 50,
     bearing: -20
   });
@@ -101,7 +101,7 @@ export const Bento3DMapSection = () => {
     if (mapRef.current) {
       mapRef.current.flyTo({
         center: [location.longitude, location.latitude],
-        zoom: 6,
+        zoom: location.id === 1 ? 8 : 6,
         duration: 2000,
         pitch: 50,
         bearing: -20,
@@ -113,11 +113,11 @@ export const Bento3DMapSection = () => {
   const handleClosePopup = () => {
     setSelectedLocation(null);
     
-    // Return to Bangalore view
+    // Return to India view
     if (mapRef.current) {
       mapRef.current.flyTo({
-        center: [77.5946, 12.9716],
-        zoom: 10,
+        center: [77.5946, 20],
+        zoom: 4.5,
         duration: 2000,
         pitch: 50,
         bearing: -20,
@@ -148,19 +148,25 @@ export const Bento3DMapSection = () => {
           Travel Map
         </h3>
         
-        <div className="relative w-full h-[400px] rounded-xl overflow-hidden bg-slate-800/50 shadow-lg">
+        <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-lg" style={{ background: 'linear-gradient(135deg, #f4e7d3 0%, #e8d5b7 100%)' }}>
+          {/* Parchment texture overlay */}
+          <div className="absolute inset-0 opacity-30 pointer-events-none z-10" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")`,
+            mixBlendMode: 'multiply'
+          }} />
+          
           <Map
             ref={mapRef}
             {...viewState}
             onMove={handleMove}
             mapboxAccessToken="pk.eyJ1IjoibG92YWJsZSIsImEiOiJjbTRsMnlndXoxMDB5MmpzY2Z4bXJjY3FtIn0.Ui13hNypKxfvPdoJrMPXQQ"
             style={{ width: '100%', height: '100%' }}
-            mapStyle="mapbox://styles/mapbox/light-v11"
+            mapStyle="mapbox://styles/mapbox/streets-v11"
             dragRotate={false}
           >
             <NavigationControl showCompass={false} />
             
-            {/* Animated Plane Marker */}
+            {/* Animated Plane Marker - Larger size */}
             <Marker
               longitude={planePosition.lng}
               latitude={planePosition.lat}
@@ -168,7 +174,7 @@ export const Bento3DMapSection = () => {
               <motion.div
                 animate={{ 
                   rotate: planeRotation,
-                  scale: [1, 1.1, 1]
+                  scale: [1, 1.08, 1]
                 }}
                 transition={{
                   rotate: { duration: 0.05 },
@@ -177,13 +183,29 @@ export const Bento3DMapSection = () => {
                 className="relative"
               >
                 <div 
-                  className="w-10 h-10 rounded-full flex items-center justify-center"
+                  className="w-16 h-16 rounded-full flex items-center justify-center relative"
                   style={{ 
                     backgroundColor: '#F59E0B',
-                    boxShadow: '0 4px 12px rgba(245, 158, 11, 0.6), 0 0 20px rgba(245, 158, 11, 0.4)'
+                    boxShadow: '0 6px 20px rgba(245, 158, 11, 0.7), 0 0 30px rgba(245, 158, 11, 0.5)'
                   }}
                 >
-                  <Plane size={20} className="text-white" />
+                  <Plane size={32} className="text-white" strokeWidth={2.5} />
+                  {/* Animated trail effect */}
+                  <motion.div
+                    className="absolute inset-0 rounded-full"
+                    style={{ 
+                      background: 'radial-gradient(circle, rgba(245, 158, 11, 0.4) 0%, transparent 70%)',
+                    }}
+                    animate={{
+                      scale: [1, 1.5, 1],
+                      opacity: [0.6, 0.2, 0.6]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
                 </div>
               </motion.div>
             </Marker>
@@ -203,23 +225,74 @@ export const Bento3DMapSection = () => {
                     type: "spring",
                     stiffness: 200
                   }}
-                  whileHover={{ scale: 1.2, y: -5 }}
+                  whileHover={{ scale: 1.3, y: -8 }}
                   onHoverStart={() => setHoveredLocation(location.id)}
                   onHoverEnd={() => setHoveredLocation(null)}
                   onClick={() => handleMarkerClick(location)}
                   className="cursor-pointer relative"
                 >
+                  {/* Special highlight for Bangalore */}
+                  {location.id === 1 && (
+                    <>
+                      <motion.div
+                        className="absolute inset-0 rounded-full"
+                        style={{
+                          background: `radial-gradient(circle, ${location.color}40 0%, transparent 100%)`,
+                          width: '80px',
+                          height: '80px',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%)'
+                        }}
+                        animate={{
+                          scale: [1, 1.4, 1],
+                          opacity: [0.6, 0.3, 0.6]
+                        }}
+                        transition={{
+                          duration: 2.5,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      />
+                      <motion.div
+                        className="absolute inset-0 rounded-full"
+                        style={{
+                          background: `radial-gradient(circle, ${location.color}60 0%, transparent 100%)`,
+                          width: '60px',
+                          height: '60px',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%)'
+                        }}
+                        animate={{
+                          scale: [1, 1.3, 1],
+                          opacity: [0.8, 0.4, 0.8]
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: 0.3
+                        }}
+                      />
+                    </>
+                  )}
+                  
                   <motion.div
                     animate={hoveredLocation === location.id ? {
                       boxShadow: `0 10px 30px ${location.color}80`
+                    } : location.id === 1 ? {
+                      boxShadow: `0 8px 24px ${location.color}70, 0 0 40px ${location.color}50`
                     } : {}}
-                    className="w-8 h-8 rounded-full flex items-center justify-center shadow-xl"
+                    className={`rounded-full flex items-center justify-center shadow-xl ${location.id === 1 ? 'w-12 h-12' : 'w-8 h-8'}`}
                     style={{ 
                       backgroundColor: location.color,
-                      boxShadow: `0 4px 12px ${location.color}60`
+                      boxShadow: location.id === 1 
+                        ? `0 6px 20px ${location.color}80, 0 0 30px ${location.color}50`
+                        : `0 4px 12px ${location.color}60`
                     }}
                   >
-                    <MapPin size={16} className="text-white" />
+                    <MapPin size={location.id === 1 ? 24 : 16} className="text-white" strokeWidth={location.id === 1 ? 2.5 : 2} />
                   </motion.div>
                   
                   {/* Marker label on hover */}
@@ -274,9 +347,15 @@ export const Bento3DMapSection = () => {
           </Map>
         </div>
         
-        <p className="text-xs text-white/50 mt-3 text-center">
-          Click on markers to explore • {locations.length} locations
-        </p>
+        <div className="flex items-center justify-between mt-3">
+          <p className="text-xs text-white/50">
+            Click on markers to explore • {locations.length} locations
+          </p>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+            <p className="text-xs text-amber-500/80 font-semibold">Bangalore - Home</p>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
