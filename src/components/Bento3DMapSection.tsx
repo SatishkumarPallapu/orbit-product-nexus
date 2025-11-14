@@ -69,6 +69,10 @@ export const Bento3DMapSection = () => {
     bearing: -20
   });
 
+  const handleMove = (evt: any) => {
+    setViewState(evt.viewState);
+  };
+
   const handleMarkerClick = (location: Location) => {
     setSelectedLocation(location);
     
@@ -127,13 +131,11 @@ export const Bento3DMapSection = () => {
           <Map
             ref={mapRef}
             {...viewState}
-            onViewportChange={(viewport: any) => setViewState(viewport)}
-            mapboxApiAccessToken="pk.eyJ1IjoibG92YWJsZSIsImEiOiJjbTRsMnlndXoxMDB5MmpzY2Z4bXJjY3FtIn0.Ui13hNypKxfvPdoJrMPXQQ"
-            width="100%"
-            height="100%"
+            onMove={handleMove}
+            mapboxAccessToken="pk.eyJ1IjoibG92YWJsZSIsImEiOiJjbTRsMnlndXoxMDB5MmpzY2Z4bXJjY3FtIn0.Ui13hNypKxfvPdoJrMPXQQ"
+            style={{ width: '100%', height: '100%' }}
             mapStyle="mapbox://styles/mapbox/light-v11"
             dragRotate={false}
-            touchRotate={false}
           >
             <NavigationControl showCompass={false} />
             
