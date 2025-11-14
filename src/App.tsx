@@ -10,11 +10,9 @@ import { AnimatePresence } from "framer-motion";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Footer } from "./components/Footer";
 import { Breadcrumb } from "./components/Breadcrumb";
-import { FloatingActionButton } from "./components/FloatingActionButton";
 import { AnimatedGridBackground } from "./components/AnimatedGridBackground";
 import { PageTransition } from "./components/PageTransition";
 import { WebGLParticles } from "./components/WebGLParticles";
-import { FloatingNavigator } from "./components/FloatingNavigator";
 import { ThemeToggle } from "./components/ThemeToggle";
 
 const About = lazy(()=> import('./pages/About'))
@@ -57,8 +55,6 @@ const AnimatedRoutes = () => {
         </Routes>
       </AnimatePresence>
       <Footer />
-      <FloatingActionButton />
-      <FloatingNavigator />
     </>
   );
 };
