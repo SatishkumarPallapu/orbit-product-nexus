@@ -36,17 +36,17 @@ const About = () => {
       </div>
 
       <div className="py-12">
-        <ParallaxSection speed="medium">
+        {/* <ParallaxSection speed="medium">
           <GlassEffectsShowcase />
-        </ParallaxSection>
+        </ParallaxSection> */}
         
-        <ParallaxSection speed="fast">
+        {/* <ParallaxSection speed="fast">
           <Icons3DShowcase />
         </ParallaxSection>
         
         <ParallaxSection speed="slow">
           <ToggleShowcase />
-        </ParallaxSection>
+        </ParallaxSection> */}
       </div>
     </div>
   );

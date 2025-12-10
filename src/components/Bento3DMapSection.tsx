@@ -1,9 +1,129 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
+import React, { useRef, useState, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Plane, Navigation2 } from 'lucide-react';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+import { MapPin, Plane, BookOpen, Grid3X3, TrendingUp, Users, Target, Lightbulb } from 'lucide-react';
+import Map, { Marker, Popup, GeolocateControl, FullscreenControl } from 'react-map-gl';
+import type { MapRef } from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
+// Loading skeleton for the map
+const MapLoadingPlaceholder = () => (
+  <div className="w-full h-[400px] rounded-xl bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-2 border-amber-400 border-t-transparent mx-auto mb-3" />
+      <p className="text-white/70 text-sm">Loading map...</p>
+    </div>
+  </div>
+);
+
+// PM Theories & Frameworks Data
+const pmFrameworks = [
+  {
+    id: 1,
+    name: 'SWOT Analysis',
+    icon: '📊',
+    description: 'Strengths, Weaknesses, Opportunities, Threats - Strategic analysis framework',
+    category: 'Strategic',
+    color: 'from-blue-500 to-cyan-500'
+  },
+  {
+    id: 2,
+    name: 'PESTEL',
+    icon: '🌍',
+    description: 'Political, Economic, Social, Technological, Environmental, Legal factors',
+    category: 'Environmental',
+    color: 'from-green-500 to-emerald-500'
+  },
+  {
+    id: 3,
+    name: 'Jobs Theory',
+    icon: '🎯',
+    description: 'Clayton Christensen - Understanding what jobs customers want done',
+    category: 'Discovery',
+    color: 'from-purple-500 to-pink-500'
+  },
+  {
+    id: 4,
+    name: 'OKR Framework',
+    icon: '🎪',
+    description: 'Objectives & Key Results - Goal setting and alignment',
+    category: 'Execution',
+    color: 'from-orange-500 to-red-500'
+  },
+  {
+    id: 5,
+    name: 'Kano Model',
+    icon: '📈',
+    description: 'Basic, Performance, and Delighter features categorization',
+    category: 'Prioritization',
+    color: 'from-indigo-500 to-purple-500'
+  },
+  {
+    id: 6,
+    name: 'Product Roadmap',
+    icon: '🗺️',
+    description: 'Now-Next-Later roadmap for product planning',
+    category: 'Planning',
+    color: 'from-teal-500 to-cyan-500'
+  },
+  {
+    id: 7,
+    name: 'Value Chain',
+    icon: '🔗',
+    description: 'Michael Porter - Primary and support activities analysis',
+    category: 'Strategic',
+    color: 'from-rose-500 to-pink-500'
+  },
+  {
+    id: 8,
+    name: 'Design Thinking',
+    icon: '💡',
+    description: 'Empathize, Define, Ideate, Prototype, Test methodology',
+    category: 'Innovation',
+    color: 'from-yellow-500 to-orange-500'
+  },
+  {
+    id: 9,
+    name: 'Lean Canvas',
+    icon: '📋',
+    description: 'One-page business model canvas for MVPs and startups',
+    category: 'Planning',
+    color: 'from-fuchsia-500 to-purple-500'
+  },
+  {
+    id: 10,
+    name: 'Growth Loops',
+    icon: '🔄',
+    description: 'Viral, Referral, and Retention loops for scaling',
+    category: 'Growth',
+    color: 'from-lime-500 to-green-500'
+  },
+  {
+    id: 11,
+    name: 'RICE Scoring',
+    icon: '🍚',
+    description: 'Reach, Impact, Confidence, Effort - prioritization framework',
+    category: 'Prioritization',
+    color: 'from-amber-500 to-orange-500'
+  },
+  {
+    id: 12,
+    name: 'MoSCoW Method',
+    icon: '🏰',
+    description: 'Must, Should, Could, Wont - prioritization approach',
+    category: 'Prioritization',
+    color: 'from-violet-500 to-indigo-500'
+  },
+];
+
+// Roadmap Types
+const roadmapTypes = [
+  { name: 'Now-Next-Later', icon: '⏰', desc: 'Timeline-based roadmap' },
+  { name: 'Theme-Based', icon: '🎭', desc: 'Feature grouping by theme' },
+  { name: 'Goal-Based', icon: '🎯', desc: 'OKR-aligned roadmap' },
+  { name: 'Technical', icon: '⚙️', desc: 'Tech debt & infrastructure' },
+  { name: 'Swimlane', icon: '🏊', desc: 'Cross-team dependencies' },
+  { name: 'Kanban', icon: '📊', desc: 'Continuous delivery flow' },
+];
 
 interface Location {
   id: number;
@@ -97,290 +217,160 @@ const locations: Location[] = [
   }
 ];
 
-// Create custom marker icons
-const createCustomIcon = (color: string, isMain: boolean = false) => {
-  const size = isMain ? 24 : 16;
-  return L.divIcon({
-    className: 'custom-marker',
-    html: `
-      <div style="
-        width: ${size}px;
-        height: ${size}px;
-        background: ${color};
-        border-radius: 50%;
-        border: 3px solid white;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.3), 0 0 20px ${color}50;
-        ${isMain ? 'animation: pulse 2s infinite;' : ''}
-      "></div>
-    `,
-    iconSize: [size, size],
-    iconAnchor: [size / 2, size / 2],
-  });
-};
-
-// Compass Rose Component
-const CompassRose = () => {
+// Optimized marker component - reduced animation complexity
+const CustomMarker = ({ location, isMain, onClick }: { location: Location; isMain: boolean; onClick: () => void }) => {
+  const size = isMain ? 48 : 28;
   return (
-    <motion.div
-      className="absolute bottom-4 right-4 z-[1000] w-20 h-20"
-      animate={{ rotate: 360 }}
-      transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+    <div
+      onClick={onClick}
+      style={{
+        position: 'relative',
+        cursor: 'pointer',
+      }}
     >
-      <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-lg">
-        <defs>
-          <radialGradient id="parchmentGrad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#f4e7d3" />
-            <stop offset="100%" stopColor="#d4c4a8" />
-          </radialGradient>
-        </defs>
-        
-        <circle cx="50" cy="50" r="48" fill="url(#parchmentGrad)" stroke="#8B7355" strokeWidth="2" />
-        <circle cx="50" cy="50" r="42" fill="none" stroke="#8B7355" strokeWidth="1" opacity="0.5" />
-        <circle cx="50" cy="50" r="35" fill="none" stroke="#8B7355" strokeWidth="0.5" opacity="0.3" />
-        
-        <polygon points="50,8 54,45 50,38 46,45" fill="#C41E3A" stroke="#8B0000" strokeWidth="0.5" />
-        <polygon points="50,92 54,55 50,62 46,55" fill="#2F4F4F" stroke="#1C3A3A" strokeWidth="0.5" />
-        <polygon points="8,50 45,54 38,50 45,46" fill="#2F4F4F" stroke="#1C3A3A" strokeWidth="0.5" />
-        <polygon points="92,50 55,54 62,50 55,46" fill="#2F4F4F" stroke="#1C3A3A" strokeWidth="0.5" />
-        
-        <polygon points="22,22 44,46 40,44 46,40" fill="#5C4033" opacity="0.7" />
-        <polygon points="78,22 56,46 60,44 54,40" fill="#5C4033" opacity="0.7" />
-        <polygon points="22,78 44,54 40,56 46,60" fill="#5C4033" opacity="0.7" />
-        <polygon points="78,78 56,54 60,56 54,60" fill="#5C4033" opacity="0.7" />
-        
-        <text x="50" y="20" textAnchor="middle" fill="#8B0000" fontSize="8" fontFamily="serif" fontWeight="bold">N</text>
-        <text x="50" y="88" textAnchor="middle" fill="#2F4F4F" fontSize="7" fontFamily="serif">S</text>
-        <text x="15" y="53" textAnchor="middle" fill="#2F4F4F" fontSize="7" fontFamily="serif">W</text>
-        <text x="85" y="53" textAnchor="middle" fill="#2F4F4F" fontSize="7" fontFamily="serif">E</text>
-        
-        <circle cx="50" cy="50" r="6" fill="#8B7355" />
-        <circle cx="50" cy="50" r="4" fill="#f4e7d3" />
-        <circle cx="50" cy="50" r="2" fill="#8B7355" />
-      </svg>
-    </motion.div>
+      {/* Glow background for main location - CSS animation */}
+      {isMain && (
+        <div
+          style={{
+            position: 'absolute',
+            width: '80px',
+            height: '80px',
+            left: '-16px',
+            top: '-16px',
+            background: 'radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, transparent 70%)',
+            borderRadius: '50%',
+            animation: 'pulse-marker 2s infinite',
+            willChange: 'transform'
+          }}
+        />
+      )}
+      
+      {/* Main marker */}
+      <div
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          background: location.color,
+          borderRadius: '50%',
+          border: isMain ? '4px solid white' : '3px solid white',
+          boxShadow: isMain 
+            ? `0 4px 15px rgba(0,0,0,0.4), 0 0 30px ${location.color}80, 0 0 50px ${location.color}40`
+            : `0 2px 10px rgba(0,0,0,0.3), 0 0 15px ${location.color}60`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: isMain ? '20px' : '14px',
+          fontWeight: 'bold',
+          color: 'white',
+          transition: 'all 0.3s ease',
+          animation: isMain ? 'pulse-marker-core 2s infinite' : 'none',
+          willChange: isMain ? 'transform' : 'auto'
+        }}
+        className="marker hover:scale-125"
+      >
+        {isMain ? '📍' : ''}
+      </div>
+    </div>
   );
 };
 
-// Animated 3D Plane Component
-const AnimatedPlane = () => {
-  const [position, setPosition] = useState({ x: 0, y: -20 });
-  const [rotation, setRotation] = useState(0);
-
-  useEffect(() => {
-    let angle = 0;
-    const radius = 30;
-    
-    const animatePlane = setInterval(() => {
-      angle += 0.02;
-      const newX = radius * Math.cos(angle) * 1.5;
-      const newY = radius * Math.sin(angle) - 20;
-      
-      setPosition({ x: newX, y: newY });
-      setRotation(angle * (180 / Math.PI) + 90);
-    }, 50);
-
-    return () => clearInterval(animatePlane);
-  }, []);
-
+// Optimized lightweight plane overlay - minimal SVG, CSS-based animations
+const AnimatedPlaneOverlay = () => {
   return (
-    <motion.div
-      className="absolute z-[1000]"
-      style={{ 
-        left: '50%',
-        top: '40%',
-        transform: `translate(calc(-50% + ${position.x}px), calc(-50% + ${position.y}px)) rotate(${rotation}deg)`,
-        transformStyle: 'preserve-3d'
-      }}
-      animate={{ 
-        y: [0, -8, 0]
-      }}
-      transition={{
-        y: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-      }}
-    >
-      {/* Shadow */}
+    <motion.div className="absolute inset-0 z-[500] pointer-events-none overflow-hidden">
+      {/* Main animated plane at Bangalore center - simplified */}
       <motion.div
-        className="absolute top-20 left-1/2 -translate-x-1/2 w-20 h-6 bg-black/20 rounded-full blur-md"
-        animate={{
-          scale: [1, 0.8, 1],
-          opacity: [0.3, 0.15, 0.3]
+        className="absolute top-1/2 left-1/2 z-[500] transform -translate-x-1/2 -translate-y-1/2"
+        animate={{ 
+          y: [0, -10, 0],
         }}
         transition={{
-          duration: 2,
+          duration: 4,
           repeat: Infinity,
           ease: "easeInOut"
         }}
-      />
-      
-      {/* Main Plane */}
-      <div 
-        className="w-24 h-24 rounded-full flex items-center justify-center relative"
-        style={{ 
-          background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
-          boxShadow: '0 8px 30px rgba(245, 158, 11, 0.6), 0 0 50px rgba(245, 158, 11, 0.4), inset 0 2px 10px rgba(255,255,255,0.3)',
-          transform: 'perspective(100px) rotateX(10deg)'
-        }}
+        style={{ willChange: 'transform' }}
       >
-        <Plane size={48} className="text-white" strokeWidth={2} />
-        
-        {/* Glow effect */}
-        <motion.div
-          className="absolute inset-0 rounded-full"
+        <div 
+          className="w-24 h-24 rounded-full flex items-center justify-center relative"
           style={{ 
-            background: 'radial-gradient(circle, rgba(245, 158, 11, 0.5) 0%, transparent 70%)',
+            background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
+            boxShadow: '0 8px 30px rgba(245, 158, 11, 0.6)',
+          }}
+        >
+          <Plane size={48} className="text-white" strokeWidth={1.5} />
+          
+          {/* Optimized pulse ring effect - CSS only */}
+          <div
+            className="absolute inset-0 rounded-full border-2 border-amber-300"
+            style={{
+              animation: 'pulse-ring 2s infinite',
+            }}
+          />
+        </div>
+      </motion.div>
+
+      {/* Lightweight flight particles - reduced count */}
+      {[...Array(2)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-2 h-2 rounded-full bg-amber-400"
+          style={{
+            left: '50%',
+            top: '50%',
+            boxShadow: '0 0 8px rgba(245, 158, 11, 0.8)',
+            willChange: 'transform, opacity'
           }}
           animate={{
-            scale: [1, 1.6, 1],
-            opacity: [0.5, 0.2, 0.5]
+            x: Math.cos((i / 2) * Math.PI * 2) * 40,
+            y: Math.sin((i / 2) * Math.PI * 2) * 40,
+            opacity: [1, 0],
           }}
           transition={{
             duration: 2,
             repeat: Infinity,
-            ease: "easeInOut"
+            delay: i * 0.5,
+            ease: "easeOut"
           }}
         />
-        
-        {/* Trail particles */}
-        {[...Array(3)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-3 h-3 rounded-full bg-amber-300"
-            style={{
-              left: -12 - i * 10,
-              top: '50%',
-              transform: 'translateY(-50%)'
-            }}
-            animate={{
-              opacity: [0.8, 0.2, 0.8],
-              scale: [1, 0.5, 1]
-            }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              delay: i * 0.2
-            }}
-          />
-        ))}
-      </div>
+      ))}
     </motion.div>
   );
 };
 
 // Flight Path Component with animated particles
 const FlightPaths = ({ particles }: { particles: { lat: number; lng: number }[] }) => {
-  const bangalore = locations[0];
-  const otherCities = locations.slice(1);
-  
-  // Create curved paths
-  const createCurvedPath = (from: Location, to: Location): [number, number][] => {
-    const points: [number, number][] = [];
-    const steps = 50;
-    
-    for (let i = 0; i <= steps; i++) {
-      const t = i / steps;
-      // Quadratic bezier for curve
-      const midLat = (from.latitude + to.latitude) / 2 + 2; // Curve upward
-      const midLng = (from.longitude + to.longitude) / 2;
-      
-      const lat = (1 - t) * (1 - t) * from.latitude + 2 * (1 - t) * t * midLat + t * t * to.latitude;
-      const lng = (1 - t) * (1 - t) * from.longitude + 2 * (1 - t) * t * midLng + t * t * to.longitude;
-      
-      points.push([lat, lng]);
-    }
-    return points;
-  };
-
-  return (
-    <>
-      {otherCities.map((city, index) => (
-        <Polyline
-          key={city.id}
-          positions={createCurvedPath(bangalore, city)}
-          pathOptions={{
-            color: '#F59E0B',
-            weight: 2,
-            opacity: 0.7,
-            dashArray: '8, 12',
-            lineCap: 'round',
-          }}
-        />
-      ))}
-    </>
-  );
+  // No longer needed for Mapbox, but keeping for interface compatibility
+  return null;
 };
 
 // Animated Particles along flight paths
 const AnimatedParticles = () => {
-  const [particles, setParticles] = useState<{ lat: number; lng: number; cityIndex: number }[]>([]);
-  
-  useEffect(() => {
-    const bangalore = locations[0];
-    const otherCities = locations.slice(1);
-    
-    const animateParticles = setInterval(() => {
-      const newParticles = otherCities.map((city, index) => {
-        const progress = ((Date.now() / 3000) + index * 0.15) % 1;
-        const t = progress;
-        
-        const midLat = (bangalore.latitude + city.latitude) / 2 + 2;
-        const midLng = (bangalore.longitude + city.longitude) / 2;
-        
-        const lat = (1 - t) * (1 - t) * bangalore.latitude + 2 * (1 - t) * t * midLat + t * t * city.latitude;
-        const lng = (1 - t) * (1 - t) * bangalore.longitude + 2 * (1 - t) * t * midLng + t * t * city.longitude;
-        
-        return { lat, lng, cityIndex: index };
-      });
-      
-      setParticles(newParticles);
-    }, 50);
-    
-    return () => clearInterval(animateParticles);
-  }, []);
-
-  const particleIcon = L.divIcon({
-    className: 'particle-marker',
-    html: `<div style="
-      width: 10px;
-      height: 10px;
-      background: #F59E0B;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(245, 158, 11, 0.8), 0 0 20px rgba(245, 158, 11, 0.5);
-      animation: particlePulse 1s infinite;
-    "></div>`,
-    iconSize: [10, 10],
-    iconAnchor: [5, 5],
-  });
-
-  return (
-    <>
-      {particles.map((particle, index) => (
-        <Marker
-          key={`particle-${index}`}
-          position={[particle.lat, particle.lng]}
-          icon={particleIcon}
-        />
-      ))}
-    </>
-  );
+  // No longer needed for Mapbox, but keeping for interface compatibility
+  return null;
 };
 
 // Map click handler component
 const MapController = ({ onLocationClick }: { onLocationClick: (location: Location) => void }) => {
-  const map = useMap();
-  
-  const flyToLocation = (location: Location, zoom: number = 6) => {
-    map.flyTo([location.latitude, location.longitude], zoom, {
-      duration: 2
-    });
-    onLocationClick(location);
-  };
-
+  // No longer needed for Mapbox, but keeping for interface compatibility
   return null;
 };
 
 export const Bento3DMapSection = () => {
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
-  const mapRef = useRef<any>(null);
+  const [selectedFramework, setSelectedFramework] = useState<number | null>(null);
+  const [activeRoadmapType, setActiveRoadmapType] = useState<string>('Now-Next-Later');
+  const mapRef = useRef<MapRef>(null);
+  const [viewState, setViewState] = useState({
+    longitude: 77.5946,
+    latitude: 12.9716,
+    zoom: 12,
+    pitch: 60,
+    bearing: 45,
+  });
+
+  // Get Mapbox token from environment variables or use a placeholder
+  const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN || 'pk.eyJ1IjoiZXhhbXBsZSIsImEiOiJjbGV4YW1wbGUifQ.example';
 
   return (
     <motion.div
@@ -392,19 +382,43 @@ export const Bento3DMapSection = () => {
       style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
     >
       <style>{`
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); box-shadow: 0 2px 10px rgba(0,0,0,0.3), 0 0 20px #F59E0B50; }
-          50% { transform: scale(1.2); box-shadow: 0 2px 20px rgba(0,0,0,0.4), 0 0 40px #F59E0B80; }
+        @keyframes pulse-marker {
+          0%, 100% { transform: scale(1); opacity: 0.6; }
+          50% { transform: scale(1.3); opacity: 0.3; }
         }
-        @keyframes particlePulse {
-          0%, 100% { transform: scale(1); opacity: 1; }
-          50% { transform: scale(1.3); opacity: 0.7; }
+        @keyframes pulse-marker-core {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.1); }
         }
-        .leaflet-container {
-          background: linear-gradient(135deg, #f4e7d3 0%, #e8d5b7 100%) !important;
+        @keyframes pulse-ring {
+          0% { transform: scale(1); opacity: 0.8; }
+          100% { transform: scale(1.4); opacity: 0; }
         }
-        .leaflet-tile {
-          filter: sepia(30%) saturate(80%) brightness(95%) !important;
+        .mapboxgl-popup-content {
+          background: rgba(17, 24, 39, 0.95) !important;
+          color: white !important;
+          border: 1px solid rgba(255, 255, 255, 0.2) !important;
+          border-radius: 8px !important;
+          padding: 12px !important;
+        }
+        .mapboxgl-popup-close-button {
+          color: white !important;
+        }
+        .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+          border-bottom-color: rgba(17, 24, 39, 0.95) !important;
+        }
+        .mapboxgl-ctrl-attrib {
+          display: none !important;
+        }
+        .mapboxgl-ctrl-logo {
+          display: none !important;
+        }
+        .mapbox-improve-map {
+          display: none !important;
+        }
+        .map-container-wrapper {
+          position: relative;
+          background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
         }
       `}</style>
       
@@ -419,79 +433,198 @@ export const Bento3DMapSection = () => {
         <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
           <div className="w-1 h-6 bg-gradient-to-b from-amber-400 to-orange-500 rounded-full" />
           <MapPin className="w-5 h-5 text-amber-400" />
-          Location
+          India Map - Base Location
         </h3>
-        
-        <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-lg" style={{ background: 'linear-gradient(135deg, #f4e7d3 0%, #e8d5b7 100%)' }}>
-          {/* Parchment texture overlay */}
-          <div className="absolute inset-0 opacity-40 pointer-events-none z-[999]" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.7' numOctaves='4' /%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E")`,
-            mixBlendMode: 'multiply'
-          }} />
-          
-          {/* Vintage border */}
-          <div className="absolute inset-2 border-2 border-amber-900/30 rounded-lg pointer-events-none z-[999]" style={{
-            boxShadow: 'inset 0 0 30px rgba(139, 115, 85, 0.3)'
-          }} />
-          
-          {/* Compass Rose */}
-          <CompassRose />
-          
-          {/* Animated 3D Plane above Bangalore */}
-          <AnimatedPlane />
 
-          <MapContainer
-            ref={mapRef}
-            center={[20, 78]}
-            zoom={5}
-            style={{ width: '100%', height: '100%' }}
-            scrollWheelZoom={false}
-            zoomControl={true}
+        {/* PM Frameworks & Theories Tabs */}
+        {/* <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-6 p-4 bg-card/50 border border-border/50 rounded-lg"
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <BookOpen className="w-4 h-4 text-primary" />
+            <p className="text-xs font-semibold text-muted-foreground">PM FRAMEWORKS & THEORIES</p>
+          </div>
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+            {pmFrameworks.map((fw) => (
+              <motion.button
+                key={fw.id}
+                onClick={() => setSelectedFramework(selectedFramework === fw.id ? null : fw.id)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`p-2 rounded-lg transition-all text-center text-xs font-medium ${
+                  selectedFramework === fw.id
+                    ? `bg-gradient-to-br ${fw.color} text-white shadow-lg`
+                    : 'bg-muted/50 text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                <div className="text-lg mb-1">{fw.icon}</div>
+                <div className="line-clamp-1 text-[10px]">{fw.name}</div>
+              </motion.button>
+            ))}
+          </div>
+        </motion.div> */}
+
+        {/* Roadmap Types */}
+        {/* <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-6 p-4 bg-card/50 border border-border/50 rounded-lg"
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <TrendingUp className="w-4 h-4 text-primary" />
+            <p className="text-xs font-semibold text-muted-foreground">ROADMAP TYPES</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+            {roadmapTypes.map((rm) => (
+              <motion.button
+                key={rm.name}
+                onClick={() => setActiveRoadmapType(activeRoadmapType === rm.name ? '' : rm.name)}
+                whileHover={{ scale: 1.05 }}
+                className={`p-2 rounded-lg transition-all text-center text-xs font-medium ${
+                  activeRoadmapType === rm.name
+                    ? 'bg-primary text-primary-foreground shadow-lg'
+                    : 'bg-muted/50 text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                <div className="text-lg mb-1">{rm.icon}</div>
+                <div className="line-clamp-1 text-[10px]">{rm.name}</div>
+              </motion.button>
+            ))}
+          </div>
+        </motion.div> */}
+
+        {/* Framework Details Panel */}
+        {/* {selectedFramework !== null && (
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            className="mb-6 p-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-lg"
           >
-            {/* OpenStreetMap tiles - Free, no API key needed */}
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            
-            {/* Alternative: Stamen Toner for vintage look - Also free */}
-            {/* <TileLayer
-              attribution='Map tiles by Stamen Design'
-              url="https://stamen-tiles.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png"
-            /> */}
-            
-            <MapController onLocationClick={setSelectedLocation} />
-            
-            {/* Flight Paths */}
-            <FlightPaths particles={[]} />
-            
-            {/* Animated Particles */}
-            <AnimatedParticles />
-            
-            {/* City Markers */}
-            {locations.map((location) => (
+            {pmFrameworks.find(fw => fw.id === selectedFramework) && (
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="text-3xl">{pmFrameworks.find(fw => fw.id === selectedFramework)?.icon}</div>
+                    <div>
+                      <h4 className="text-white font-bold">{pmFrameworks.find(fw => fw.id === selectedFramework)?.name}</h4>
+                      <p className="text-xs text-blue-300">{pmFrameworks.find(fw => fw.id === selectedFramework)?.category}</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setSelectedFramework(null)}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <p className="text-sm text-white/80">{pmFrameworks.find(fw => fw.id === selectedFramework)?.description}</p>
+              </div>
+            )}
+          </motion.div>
+        )} */}
+
+        {/* Roadmap Description Panel */}
+        {/* {activeRoadmapType && (
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            className="mb-6 p-4 bg-gradient-to-br from-cyan-500/10 to-teal-500/10 border border-cyan-500/30 rounded-lg"
+          >
+            {roadmapTypes.find(rm => rm.name === activeRoadmapType) && (
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="text-3xl">{roadmapTypes.find(rm => rm.name === activeRoadmapType)?.icon}</div>
+                    <div>
+                      <h4 className="text-white font-bold">{roadmapTypes.find(rm => rm.name === activeRoadmapType)?.name}</h4>
+                      <p className="text-xs text-cyan-300">Roadmap Type</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setActiveRoadmapType('')}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <p className="text-sm text-white/80">{roadmapTypes.find(rm => rm.name === activeRoadmapType)?.desc}</p>
+              </div>
+            )}
+          </motion.div>
+        )} */}
+        
+        <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-lg map-container-wrapper">
+          {/* Mapbox Map */}
+          <Map
+            ref={mapRef}
+            {...viewState}
+            onMove={(evt) => setViewState(evt.viewState)}
+            style={{ width: '100%', height: '100%' }}
+            mapStyle="mapbox://styles/mapbox/dark-v11"
+            mapboxAccessToken={MAPBOX_TOKEN}
+            attributionControl={false}
+            reuseMaps
+          >
+            {/* Marker for Bangalore */}
+            <Marker
+              longitude={locations[0].longitude}
+              latitude={locations[0].latitude}
+              anchor="bottom"
+            >
+              <CustomMarker 
+                location={locations[0]} 
+                isMain={true}
+                onClick={() => setSelectedLocation(locations[0])}
+              />
+            </Marker>
+
+            {/* Markers for other cities */}
+            {locations.slice(1).map((location) => (
               <Marker
                 key={location.id}
-                position={[location.latitude, location.longitude]}
-                icon={createCustomIcon(location.color, location.id === 1)}
-                eventHandlers={{
-                  click: () => setSelectedLocation(location)
-                }}
+                longitude={location.longitude}
+                latitude={location.latitude}
+                anchor="bottom"
               >
-                <Popup>
-                  <div className="text-center p-2">
-                    <h4 className="font-bold text-lg" style={{ color: location.color }}>{location.name}</h4>
-                    <p className="text-gray-600 text-sm">{location.subtitle}</p>
-                    {location.id === 1 && (
-                      <span className="inline-block mt-2 px-2 py-1 bg-amber-100 text-amber-800 text-xs rounded-full">
-                        📍 Current Location
-                      </span>
-                    )}
-                  </div>
-                </Popup>
+                <CustomMarker 
+                  location={location} 
+                  isMain={false}
+                  onClick={() => setSelectedLocation(location)}
+                />
               </Marker>
             ))}
-          </MapContainer>
+
+            {/* Popup for selected location */}
+            {selectedLocation && (
+              <Popup
+                longitude={selectedLocation.longitude}
+                latitude={selectedLocation.latitude}
+                anchor="top"
+                onClose={() => setSelectedLocation(null)}
+              >
+                <div className="text-center p-2">
+                  <h4 className="font-bold text-lg" style={{ color: selectedLocation.color }}>{selectedLocation.name}</h4>
+                  <p className="text-gray-400 text-sm">{selectedLocation.subtitle}</p>
+                  {selectedLocation.id === 1 && (
+                    <span className="inline-block mt-2 px-2 py-1 bg-amber-500/20 text-amber-400 text-xs rounded-full border border-amber-500/30">
+                      📍 Base Location
+                    </span>
+                  )}
+                </div>
+              </Popup>
+            )}
+
+            {/* Map Controls */}
+            <GeolocateControl position="top-left" />
+            <FullscreenControl position="top-right" />
+          </Map>
+
+          {/* Animated Plane Overlay - on top */}
+          <AnimatedPlaneOverlay />
         </div>
 
         {/* Location Info Card */}
@@ -499,7 +632,7 @@ export const Bento3DMapSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute bottom-8 left-8 right-8 p-4 bg-white/10 backdrop-blur-xl rounded-xl border border-white/20 z-[1000]"
+            className="absolute bottom-8 left-8 right-8 p-4 bg-white/10 backdrop-blur-xl rounded-xl border border-white/20 z-[100]"
           >
             <div className="flex items-center gap-3">
               <div 
@@ -512,7 +645,7 @@ export const Bento3DMapSection = () => {
               </div>
               {selectedLocation.id === 1 && (
                 <span className="ml-auto px-3 py-1 bg-amber-500/20 text-amber-400 text-xs rounded-full border border-amber-500/30">
-                  Home Base
+                  Base
                 </span>
               )}
             </div>
