@@ -53,6 +53,46 @@ const locations: Location[] = [
     longitude: 78.4867,
     latitude: 17.3850,
     color: '#3B82F6'
+  },
+  {
+    id: 6,
+    name: 'Kolkata',
+    subtitle: 'City of Joy',
+    longitude: 88.3639,
+    latitude: 22.5726,
+    color: '#EF4444'
+  },
+  {
+    id: 7,
+    name: 'Pune',
+    subtitle: 'Oxford of the East',
+    longitude: 73.8567,
+    latitude: 18.5204,
+    color: '#06B6D4'
+  },
+  {
+    id: 8,
+    name: 'Ahmedabad',
+    subtitle: 'Manchester of India',
+    longitude: 72.5714,
+    latitude: 23.0225,
+    color: '#84CC16'
+  },
+  {
+    id: 9,
+    name: 'Jaipur',
+    subtitle: 'Pink City',
+    longitude: 75.7873,
+    latitude: 26.9124,
+    color: '#F472B6'
+  },
+  {
+    id: 10,
+    name: 'Kochi',
+    subtitle: 'Queen of Arabian Sea',
+    longitude: 76.2673,
+    latitude: 9.9312,
+    color: '#A855F7'
   }
 ];
 
