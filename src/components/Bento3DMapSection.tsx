@@ -338,6 +338,28 @@ export const Bento3DMapSection = () => {
           ))}
         </div>
 
+        {/* Map Legend */}
+        <div className="flex items-center gap-4 mb-4 px-3 py-2 bg-muted/40 rounded-lg border border-border/50 w-fit">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center">
+              <span className="text-xs">💼</span>
+            </div>
+            <span className="text-xs text-muted-foreground">Work</span>
+          </div>
+          <div className="w-px h-4 bg-border" />
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <span className="text-xs">🏠</span>
+            </div>
+            <span className="text-xs text-muted-foreground">Home</span>
+          </div>
+          <div className="w-px h-4 bg-border" />
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 rounded-full bg-muted-foreground/30" />
+            <span className="text-xs text-muted-foreground">Other Cities</span>
+          </div>
+        </div>
+
         <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-lg border border-border/50">
           <MapContainer
             center={[20.5937, 78.9629]}
