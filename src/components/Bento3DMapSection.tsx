@@ -25,21 +25,32 @@ interface Location {
   highlights: string[];
 }
 
-// Major Indian cities only
+// Major Indian cities - Bangalore (Work) & Hyderabad (Home) highlighted
 const locations: Location[] = [
   { 
     id: 1, 
     name: 'Bangalore', 
-    subtitle: 'Tech Capital of India', 
+    subtitle: '💼 Work Location', 
     lat: 12.9716, 
     lng: 77.5946, 
     color: '#F59E0B',
     population: '12.3M',
     industry: 'Technology & Startups',
-    highlights: ['Silicon Valley of India', 'IT Hub', '400+ Tech Companies']
+    highlights: ['Silicon Valley of India', 'Current Workplace', 'Tech Hub']
   },
   { 
     id: 2, 
+    name: 'Hyderabad', 
+    subtitle: '🏠 Home Town', 
+    lat: 17.3850, 
+    lng: 78.4867, 
+    color: '#10B981',
+    population: '10.5M',
+    industry: 'IT & Pharmaceuticals',
+    highlights: ['Born & Raised', 'HITEC City', 'City of Pearls']
+  },
+  { 
+    id: 3, 
     name: 'Mumbai', 
     subtitle: 'Financial Capital', 
     lat: 19.0760, 
@@ -50,7 +61,7 @@ const locations: Location[] = [
     highlights: ['Stock Exchange', 'Bollywood', 'Business Hub']
   },
   { 
-    id: 3, 
+    id: 4, 
     name: 'Delhi', 
     subtitle: 'National Capital', 
     lat: 28.7041, 
@@ -61,23 +72,12 @@ const locations: Location[] = [
     highlights: ['Political Center', 'Historical Sites', 'Metro Network']
   },
   { 
-    id: 4, 
-    name: 'Hyderabad', 
-    subtitle: 'City of Pearls', 
-    lat: 17.3850, 
-    lng: 78.4867, 
-    color: '#3B82F6',
-    population: '10.5M',
-    industry: 'IT & Pharmaceuticals',
-    highlights: ['HITEC City', 'Pharma Hub', 'Heritage Sites']
-  },
-  { 
     id: 5, 
     name: 'Chennai', 
     subtitle: 'Gateway to South', 
     lat: 13.0827, 
     lng: 80.2707, 
-    color: '#10B981',
+    color: '#3B82F6',
     population: '11.5M',
     industry: 'Automobile & IT',
     highlights: ['Detroit of India', 'Cultural Capital', 'Port City']
@@ -85,16 +85,17 @@ const locations: Location[] = [
 ];
 
 const bangalore = locations[0];
+const hyderabad = locations[1];
 
 // Custom marker icon creator
-const createCustomIcon = (color: string, isMain: boolean, isSelected: boolean) => {
-  const size = isMain ? 48 : isSelected ? 40 : 28;
+const createCustomIcon = (color: string, isMain: boolean, isHome: boolean, isSelected: boolean) => {
+  const size = isMain || isHome ? 44 : isSelected ? 40 : 28;
   const glowSize = size + 20;
   
   return L.divIcon({
     html: `
       <div class="marker-container" style="position: relative; width: ${glowSize}px; height: ${glowSize}px;">
-        ${isMain || isSelected ? `<div class="marker-glow" style="
+        ${isMain || isHome || isSelected ? `<div class="marker-glow" style="
           position: absolute;
           inset: 0;
           background: radial-gradient(circle, ${color}60 0%, transparent 70%);
@@ -117,9 +118,9 @@ const createCustomIcon = (color: string, isMain: boolean, isSelected: boolean) =
           justify-content: center;
           transition: all 0.3s ease;
         ">
-          ${isMain ? '<span style="font-size: 20px;">📍</span>' : ''}
+          ${isMain ? '<span style="font-size: 18px;">💼</span>' : isHome ? '<span style="font-size: 18px;">🏠</span>' : ''}
         </div>
-        ${isMain ? `<div class="pulse-ring" style="
+        ${isMain || isHome ? `<div class="pulse-ring" style="
           position: absolute;
           top: 50%;
           left: 50%;
@@ -376,7 +377,7 @@ export const Bento3DMapSection = () => {
               <Marker
                 key={location.id}
                 position={[location.lat, location.lng]}
-                icon={createCustomIcon(location.color, location.id === 1, selectedCity?.id === location.id)}
+                icon={createCustomIcon(location.color, location.id === 1, location.id === 2, selectedCity?.id === location.id)}
                 eventHandlers={{
                   click: () => handleCityClick(location),
                   mouseover: () => setHoveredCity(location),
@@ -434,7 +435,13 @@ export const Bento3DMapSection = () => {
                       className="w-12 h-12 rounded-xl flex items-center justify-center"
                       style={{ background: `${selectedCity.color}30` }}
                     >
-                      <Building2 className="w-6 h-6" style={{ color: selectedCity.color }} />
+                      {selectedCity.id === 1 ? (
+                        <Briefcase className="w-6 h-6" style={{ color: selectedCity.color }} />
+                      ) : selectedCity.id === 2 ? (
+                        <MapPin className="w-6 h-6" style={{ color: selectedCity.color }} />
+                      ) : (
+                        <Building2 className="w-6 h-6" style={{ color: selectedCity.color }} />
+                      )}
                     </div>
                     <div>
                       <h4 className="text-lg font-bold text-foreground">{selectedCity.name}</h4>
@@ -499,8 +506,22 @@ export const Bento3DMapSection = () => {
                     className="mt-4 p-3 rounded-lg bg-amber-500/10 border border-amber-500/30"
                   >
                     <p className="text-xs text-amber-400 font-medium flex items-center gap-2">
+                      <Briefcase className="w-3.5 h-3.5" />
+                      💼 Currently working here as a Product Manager
+                    </p>
+                  </motion.div>
+                )}
+
+                {selectedCity.id === 2 && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="mt-4 p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30"
+                  >
+                    <p className="text-xs text-emerald-400 font-medium flex items-center gap-2">
                       <MapPin className="w-3.5 h-3.5" />
-                      This is my base location - Where I live and work!
+                      🏠 My hometown - Where I grew up and my roots are!
                     </p>
                   </motion.div>
                 )}
