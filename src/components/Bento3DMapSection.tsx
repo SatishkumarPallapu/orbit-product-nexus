@@ -203,16 +203,22 @@ const AnimatedPlane = ({ from, to }: { from: Location; to: Location }) => {
     let startTime: number;
     const duration = 5000;
     const arcHeight = Math.sqrt(Math.pow(to.lat - from.lat, 2) + Math.pow(to.lng - from.lng, 2)) * 0.2;
+    let lastUpdate = 0;
+    const updateInterval = 100; // Update position every 100ms instead of every frame
 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      const rawT = (elapsed % (duration * 2)) / duration;
-      const t = rawT <= 1 ? rawT : 2 - rawT;
+      
+      if (timestamp - lastUpdate >= updateInterval) {
+        lastUpdate = timestamp;
+        const elapsed = timestamp - startTime;
+        const rawT = (elapsed % (duration * 2)) / duration;
+        const t = rawT <= 1 ? rawT : 2 - rawT;
 
-      const lat = from.lat + (to.lat - from.lat) * t + Math.sin(t * Math.PI) * arcHeight;
-      const lng = from.lng + (to.lng - from.lng) * t;
-      setPosition([lat, lng]);
+        const lat = from.lat + (to.lat - from.lat) * t + Math.sin(t * Math.PI) * arcHeight;
+        const lng = from.lng + (to.lng - from.lng) * t;
+        setPosition([lat, lng]);
+      }
       
       animationRef.current = requestAnimationFrame(animate);
     };
