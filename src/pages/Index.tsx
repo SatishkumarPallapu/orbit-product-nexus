@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Hero } from '../components/Hero';
-import { Navigation } from '../components/Navigation';
 import { ScrollProgress } from '../components/ScrollProgress';
 import { Link } from 'react-router-dom';
 
@@ -12,8 +11,6 @@ const Index = () => {
       
       {/* Simple gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
-
-      <Navigation />
 
       <main className="relative z-10">
         <Hero />
