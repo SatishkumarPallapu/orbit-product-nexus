@@ -455,6 +455,7 @@ export const Bento3DMapSection = () => {
               />
             ))}
           </MapContainer>
+          </MapErrorBoundary>
 
           {/* Large animated plane at Bangalore when not zoomed */}
           {!selectedCity && (
