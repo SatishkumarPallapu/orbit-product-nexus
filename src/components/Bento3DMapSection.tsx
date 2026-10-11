@@ -407,6 +407,7 @@ export const Bento3DMapSection = () => {
         </div>
 
         <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-lg border border-border/50">
+          <MapErrorBoundary>
           <MapContainer
             center={[20.5937, 78.9629]}
             zoom={5}
