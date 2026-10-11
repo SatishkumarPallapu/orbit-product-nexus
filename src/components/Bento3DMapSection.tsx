@@ -247,6 +247,46 @@ const AnimatedPlane = ({ from, to }: { from: Location; to: Location }) => {
   return <Marker position={position} icon={planeIcon} />;
 };
 
+// Error boundary that auto-recovers the map by remounting it with a fresh key.
+// Prevents a Leaflet "Map container is already initialized" crash from
+// unmounting the entire app (which was breaking header navigation).
+interface MapBoundaryState {
+  mapKey: number;
+  hasError: boolean;
+}
+
+class MapErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  MapBoundaryState
+> {
+  state: MapBoundaryState = { mapKey: 0, hasError: false };
+
+  static getDerivedStateFromError(): Partial<MapBoundaryState> {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: unknown) {
+    console.warn('Map recovered from error:', error);
+    // Remount the map with a fresh container on the next tick
+    setTimeout(() => {
+      this.setState((s) => ({ mapKey: s.mapKey + 1, hasError: false }));
+    }, 50);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="w-full h-full flex items-center justify-center bg-muted/50">
+          <span className="text-xs text-muted-foreground">Loading map…</span>
+        </div>
+      );
+    }
+    return (
+      <React.Fragment key={this.state.mapKey}>{this.props.children}</React.Fragment>
+    );
+  }
+}
+
 export const Bento3DMapSection = () => {
   const [selectedCity, setSelectedCity] = useState<Location | null>(null);
   const [hoveredCity, setHoveredCity] = useState<Location | null>(null);
