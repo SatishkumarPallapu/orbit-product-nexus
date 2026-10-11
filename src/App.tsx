@@ -14,6 +14,7 @@ import { AnimatedGridBackground } from "./components/AnimatedGridBackground";
 import { PageTransition } from "./components/PageTransition";
 import { WebGLParticles } from "./components/WebGLParticles";
 import { ThemeToggle } from "./components/ThemeToggle";
+import { Navigation } from "./components/Navigation";
 
 const About = lazy(()=> import('./pages/About'))
 const Projects = lazy(()=> import('./pages/Projects'))
@@ -40,6 +41,7 @@ const AnimatedRoutes = () => {
       <ThemeToggle />
       <AnimatedGridBackground />
       <WebGLParticles />
+      <Navigation />
       <Breadcrumb />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
