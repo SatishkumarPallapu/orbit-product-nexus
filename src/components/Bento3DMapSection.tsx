@@ -290,6 +290,26 @@ class MapErrorBoundary extends React.Component<
 export const Bento3DMapSection = () => {
   const [selectedCity, setSelectedCity] = useState<Location | null>(null);
   const [hoveredCity, setHoveredCity] = useState<Location | null>(null);
+  const [mapVisible, setMapVisible] = useState(false);
+  const mapWrapperRef = useRef<HTMLDivElement>(null);
+
+  // Mount the Leaflet map only once, when it first scrolls into view.
+  // This prevents "Map container is already initialized" double-mounts.
+  useEffect(() => {
+    const el = mapWrapperRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setMapVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleCityClick = (city: Location) => {
     setSelectedCity(selectedCity?.id === city.id ? null : city);
