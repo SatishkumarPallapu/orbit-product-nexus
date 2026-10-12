@@ -8,31 +8,23 @@ interface PageTransitionProps {
 
 export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
   const location = useLocation();
-
   const pageVariants = {
     initial: {
       opacity: 0,
-      scale: 0.95,
-      rotateY: -10,
-      z: -100,
+      y: 8,
     },
     enter: {
       opacity: 1,
-      scale: 1,
-      rotateY: 0,
-      z: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.25,
         ease: [0.43, 0.13, 0.23, 0.96],
       },
     },
     exit: {
       opacity: 0,
-      scale: 1.05,
-      rotateY: 10,
-      z: 100,
+      y: -4,
       transition: {
-        duration: 0.4,
+        duration: 0.15,
         ease: [0.43, 0.13, 0.23, 0.96],
       },
     },
@@ -46,10 +38,6 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
         animate="enter"
         exit="exit"
         variants={pageVariants}
-        style={{ 
-          transformStyle: 'preserve-3d',
-          perspective: '1000px'
-        }}
       >
         {children}
       </motion.div>

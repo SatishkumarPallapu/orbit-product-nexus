@@ -53,9 +53,9 @@ export const ProjectSidePanel: React.FC<ProjectSidePanelProps> = ({ project, onC
           className="relative w-full max-w-2xl h-full overflow-hidden"
           onClick={(e) => e.stopPropagation()}
           style={{
-            background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(31, 41, 55, 0.95))',
+            background: 'linear-gradient(135deg, hsl(var(--card) / 0.98), hsl(var(--background) / 0.98))',
             backdropFilter: 'blur(40px)',
-            borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
+            borderLeft: '1px solid hsl(var(--border))',
             boxShadow: '-10px 0 50px rgba(0, 0, 0, 0.5)',
             transformStyle: 'preserve-3d',
           }}

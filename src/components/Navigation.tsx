@@ -49,7 +49,7 @@ export const Navigation = () => {
                 }}
                 className="relative flex items-center gap-1 sm:gap-2 px-6 py-4 rounded-2xl"
                 style={{ 
-                  background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%)',
+                  background: 'linear-gradient(135deg, hsl(var(--card) / 0.9) 0%, hsl(var(--background) / 0.96) 100%)',
                   backdropFilter: 'blur(20px)',
                   boxShadow: `
                     0 8px 32px rgba(0, 0, 0, 0.4),
@@ -57,7 +57,7 @@ export const Navigation = () => {
                     inset 0 -1px 1px rgba(0, 0, 0, 0.2),
                     0 0 40px rgba(34, 211, 238, 0.1)
                   `,
-                  border: '1px solid rgba(148, 163, 184, 0.2)',
+                  border: '1px solid hsl(var(--border) / 0.9)',
                   transformStyle: 'preserve-3d',
                   transform: 'translateZ(20px)'
                 }}
@@ -234,10 +234,10 @@ export const Navigation = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="px-5 py-2.5 rounded-xl"
             style={{
-              background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%)',
+              background: 'linear-gradient(135deg, hsl(var(--card) / 0.9) 0%, hsl(var(--background) / 0.96) 100%)',
               backdropFilter: 'blur(20px)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.1)',
-              border: '1px solid rgba(148, 163, 184, 0.2)'
+              border: '1px solid hsl(var(--border) / 0.9)'
             }}
           >
             <Link to="/" className="text-white font-bold text-lg bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
@@ -252,10 +252,10 @@ export const Navigation = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-3 rounded-xl text-white relative overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%)',
+              background: 'linear-gradient(135deg, hsl(var(--card) / 0.9) 0%, hsl(var(--background) / 0.96) 100%)',
               backdropFilter: 'blur(20px)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.1)',
-              border: '1px solid rgba(148, 163, 184, 0.2)'
+              border: '1px solid hsl(var(--border) / 0.9)'
             }}
             whileHover={{ 
               scale: 1.05,

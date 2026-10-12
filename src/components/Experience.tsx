@@ -3,56 +3,42 @@ import { motion } from 'framer-motion';
 import { TimelineCard } from '../components/TimelineCard';
 import { InteractiveTimeline } from './InteractiveTimeline';
 
+
 const experiences = [
   {
     id: 1,
-    company: "BOVEN TECHNOLOGIES",
-    logo: "https://media.licdn.com/dms/image/v2/C4D0BAQHGOJGKZs7tJw/company-logo_200_200/company-logo_200_200/0/1634118849502/data_pro_software_technology_pvt_ltd_logo?e=1740614400&v=beta&t=8tOoE5Pc7GFYvpgMJCWG5zDCCXOKHEKu0WLKMcvGHOo",
-    location: "Bangalore, India",
-    totalDuration: "Feb 2022 – Present",
+    company: "WORTHSTYLE",
+    logo: "/ws.webp",
+    location: "Hyderabad, India",
+    totalDuration: "2023 – Present",
     roles: [
       {
-        title: "Product Manager",
-        duration: "Aug 2022 – Present",
+        title: "Product Manager – B2B Athleisure",
+        duration: "2024 – Present",
         type: "Full-time",
         description:
-          "Led end-to-end product lifecycle for multiple SaaS and internal tools. Delivered high-impact 0→1 product launches, optimized conversion funnels, and introduced scalable systems across campaign governance and productivity.",
+          "Built and scaled a bootstrapped B2B athleisure vertical, owning client acquisition, international sourcing, product development, manufacturing operations, quality control, and order fulfillment.",
         achievements: [
-          "Built Capsure platform from scratch; now used by 150+ agencies with 15K–30K daily users",
-          "Achieved 95%+ campaign compliance (from 65%) and saved 250+ man-hours/month per agency",
-          "Launched time tracking tool adopted by 500+ employees, improving task-effort accuracy by 70%",
-          "Reduced payment abandonment by 16% through UX revamp, wallet integration, and A/B testing",
-          "Boosted conversion rates by 13% through data-driven experiments and behavioral nudges"
+          "Built and scaled the B2B athleisure vertical to 35 active clients (12 international, 23 domestic), generating ₹1.5 Cr in annual order value, with ~₹4.29 L average annual value per client and ~₹1.95 L average order value",
+          "Achieved an estimated ~55% client rebill rate through standardized sampling approvals and QC checkpoints, exceeding the >20% industry reorder benchmark",
+          "Established a 9-region sourcing network across 5 countries (UK, Australia, USA, Bangladesh, Sri Lanka) and 4 Indian states (Tamil Nadu, Karnataka, Maharashtra, Delhi-NCR), managing 6 manufacturing partners",
+          "Partnered with a Dubai-based designer to develop 42 SKUs across 4 product lines, translating concepts into production-ready technical packs",
+          "Achieved 10–14 day sampling and 35–50 day bulk turnaround with MOQs of 100–500 pieces per style/colour, maintaining ~92% on-time delivery",
+          "Improved lead-to-order conversion from ~12% to ~18% by introducing standardized tech-pack templates and structured sampling workflows",
+          "Reduced defect rates from ~5% to <2% through pre-production approval gates and in-line quality control, against an industry average of 3–5%",
+          "Reduced unsold inventory by ~20% by shifting from speculative production to confirmed-order-only and pre-order models",
+          "Achieved an estimated CLV:CAC ratio of ~40:1, with client lifetime value of ~₹9.4 L against an acquisition cost of ~₹20K"
         ],
         technologies: [
-          "Amplitude",
-          "Google Analytics",
-          "JIRA",
-          "Figma",
-          "SQL",
-          "Power BI",
-          "Chrome Extensions",
-          "Shopify"
-        ]
-      },
-      {
-        title: "Associate Product Manager",
-        duration: "Feb 2022 – July 2022",
-        type: "Full-time",
-        description:
-          "Owned feature experimentation and strategic repositioning initiatives focused on increasing user engagement and revenue uplift.",
-        achievements: [
-          "Redesigned coupon experience as homepage-discoverable product tiles",
-          "Improved CTR by 8.5% and generated $13.5M in incremental revenue",
-          "Executed A/B tests across content, UI, and targeting segments"
-        ],
-        technologies: [
-          "Amplitude",
-          "Figma",
-          "Google Analytics",
-          "SQL",
-          "JIRA",
-          "Confluence"
+          "B2B Product Management",
+          "Product Development",
+          "Sourcing & Vendor Management",
+          "Supply Chain Management",
+          "Tech Packs",
+          "Quality Control",
+          "Sampling Workflows",
+          "Inventory Optimization",
+          "Client Relationship Management"
         ]
       }
     ]
@@ -60,7 +46,7 @@ const experiences = [
   {
     id: 2,
     company: "MXC SOLUTIONS (CARWALE.COM)",
-    logo: "https://th.bing.com/th/id/OIP.VSaTpdWa0PeMWF-CXnifUwHaFj?w=227&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    logo: "/mxc_solutions.jpg",
     location: "Hyderabad, India",
     totalDuration: "Jul 2021 – Dec 2021",
     roles: [
@@ -74,7 +60,11 @@ const experiences = [
           "Increased repeat business by 25% through relationship building and proactive engagement",
           "Improved dealer sales by 15% through personalized stock strategy and CRM utilization"
         ],
-        technologies: ["CRM Tools", "Excel", "Client Relationship Management"]
+        technologies: [
+          "CRM Tools",
+          "Excel",
+          "Client Relationship Management"
+        ]
       }
     ]
   },
@@ -95,11 +85,15 @@ const experiences = [
           "Achieved 40% repeat customer rate within first 6 months",
           "Reduced average delivery time by 20% through optimized logistics"
         ],
-        technologies: ["Excel", "Local Supply Chain Tools"]
+        technologies: [
+          "Excel",
+          "Local Supply Chain Tools"
+        ]
       }
     ]
   }
 ];
+
 
 export const Experience = () => {
   return (

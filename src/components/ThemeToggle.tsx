@@ -21,7 +21,7 @@ export const ThemeToggle = () => {
     root.classList.add(newTheme);
     
     // Update body background
-    document.body.style.background = newTheme === 'dark' ? '#0F172A' : '#FFFFFF';
+    document.body.style.background = 'hsl(var(--background))';
   };
 
   const toggleTheme = () => {
@@ -34,11 +34,13 @@ export const ThemeToggle = () => {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="fixed top-20 right-4 md:top-6 md:right-6 z-50 w-12 h-12 rounded-full backdrop-blur-xl bg-card/80 border border-border shadow-lg flex items-center justify-center group overflow-hidden"
+      className="fixed top-20 right-4 md:top-6 md:right-6 z-[60] w-12 h-12 rounded-full backdrop-blur-xl bg-card/80 border border-border shadow-lg flex items-center justify-center group overflow-hidden"
       whileHover={{ scale: 1.1, rotate: 180 }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
       aria-label="Toggle theme"
+      aria-pressed={theme === 'dark'}
+      title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
     >
       {/* Background Gradient */}
       <motion.div

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Briefcase, MapPin, Calendar, Award, CheckCircle } from 'lucide-react';
 
 interface Role {
@@ -32,14 +32,6 @@ export const InteractiveTimeline: React.FC<TimelineItemProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  const lineHeight = useTransform(scrollYProgress, [0, 0.5], ["0%", "100%"]);
-  const connectorOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0.5]);
-
   return (
     <motion.div
       ref={ref}
@@ -48,9 +40,9 @@ export const InteractiveTimeline: React.FC<TimelineItemProps> = ({
       transition={{ duration: 0.6, delay: index * 0.2 }}
       className="relative"
     >
-      <div className="flex gap-8 relative">
+      <div className="flex items-stretch gap-4 sm:gap-8 relative">
         {/* Timeline Connector */}
-        <div className="relative flex flex-col items-center">
+        <div className="relative flex w-16 shrink-0 flex-col items-center">
           {/* Milestone Marker */}
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
@@ -89,13 +81,13 @@ export const InteractiveTimeline: React.FC<TimelineItemProps> = ({
 
             {/* Date Badge */}
             <motion.div
-              initial={{ x: -20, opacity: 0 }}
-              animate={isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+              initial={{ y: -4, opacity: 0 }}
+              animate={isInView ? { y: 0, opacity: 1 } : { y: -4, opacity: 0 }}
               transition={{ delay: index * 0.2 + 0.5 }}
-              className="absolute -left-28 top-1/2 -translate-y-1/2 whitespace-nowrap"
+              className="absolute left-1/2 top-full z-20 mt-3 w-24 -translate-x-1/2"
             >
-              <div className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-600/20 backdrop-blur-md rounded-full border border-blue-400/30">
-                <span className="text-blue-300 font-semibold text-sm">{totalDuration}</span>
+              <div className="rounded-full border border-blue-400/30 bg-gradient-to-r from-blue-500/20 to-purple-600/20 px-1 py-1.5 text-center backdrop-blur-md">
+                <span className="text-[10px] font-semibold leading-tight text-blue-300">{totalDuration}</span>
               </div>
             </motion.div>
           </motion.div>
@@ -103,12 +95,10 @@ export const InteractiveTimeline: React.FC<TimelineItemProps> = ({
           {/* Animated Connector Line */}
           {!isLast && (
             <motion.div
-              className="w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 flex-1 mt-4 relative overflow-hidden"
-              style={{ opacity: connectorOpacity }}
+              className="absolute left-1/2 top-8 -bottom-16 w-1 -translate-x-1/2 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 overflow-hidden"
             >
               <motion.div
-                style={{ height: lineHeight }}
-                className="w-full bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-600"
+                className="h-full w-full bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-600"
               />
               
               {/* Animated Particles on Line */}

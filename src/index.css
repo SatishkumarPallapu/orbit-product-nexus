@@ -84,6 +84,10 @@
     --sidebar-ring: 197 93% 45%;
   }
 
+  html.light {
+    color-scheme: light;
+  }
+
   .dark {
     --background: 210 40% 6%;
     --foreground: 210 40% 98%;
@@ -113,6 +117,10 @@
     --sidebar-border: 210 40% 20%;
     --sidebar-ring: 197 93% 65%;
   }
+
+  html.dark {
+    color-scheme: dark;
+  }
 }
 
 @layer base {
@@ -125,6 +133,44 @@
     min-height: 100vh;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.light [class~="text-white"],
+  html.light [class*="text-white/"] {
+    color: hsl(var(--foreground)) !important;
+  }
+
+  html.light [class*="bg-white/"] {
+    background-color: hsl(var(--card) / 0.9) !important;
+  }
+
+  html.light [class*="border-white/"] {
+    border-color: hsl(var(--border) / 0.9) !important;
+  }
+
+  html.light [class*="bg-slate-900"],
+  html.light [class*="bg-slate-800"],
+  html.light [class*="bg-slate-700"],
+  html.light [class~="bg-gray-900"] {
+    background-color: hsl(var(--card)) !important;
+  }
+
+  html.light [class~="text-slate-300"],
+  html.light [class~="text-slate-400"],
+  html.light [class~="text-gray-300"],
+  html.light [class~="text-gray-400"] {
+    color: hsl(var(--muted-foreground)) !important;
+  }
+
+  html.light [class~="border-slate-600"],
+  html.light [class~="border-slate-700"] {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  html.light [class*="bg-gradient-to"][class~="text-white"],
+  html.light [class*="bg-gradient-to"] [class~="text-white"],
+  html.light [class*="bg-gradient-to"] [class*="text-white/"] {
+    color: white !important;
   }
   
   /* Ensure html also has the background for full coverage */

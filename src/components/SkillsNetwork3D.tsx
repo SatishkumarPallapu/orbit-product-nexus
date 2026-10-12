@@ -31,9 +31,11 @@ export const SkillsNetwork3D = () => {
   
   const [selectedNode, setSelectedNode] = useState<number | null>(null);
   const [hoveredNode, setHoveredNode] = useState<number | null>(null);
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const animationRef = useRef({ rotationX: 0, rotationY: 0 });
+  const interactionRef = useRef({ mousePos: { x: 0, y: 0 }, hoveredNode, selectedNode });
+  const frameRef = useRef<number | null>(null);
+  interactionRef.current.hoveredNode = hoveredNode;
+  interactionRef.current.selectedNode = selectedNode;
 
   // 3D Nodes positioned in 3D space
   const nodes3D: Node3D[] = useMemo(() => [
@@ -130,19 +132,29 @@ export const SkillsNetwork3D = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const width = canvas.width;
-    const height = canvas.height;
+    const resizeCanvas = () => {
+      const rect = canvas.getBoundingClientRect();
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(rect.width * pixelRatio);
+      canvas.height = Math.round(rect.height * pixelRatio);
+      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    };
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
     const nodesData = nodes3D;
     const connectionsData = connections;
 
     // Animation loop
     const animate = () => {
       // Smooth rotation towards mouse position
-      animationRef.current.rotationY += (mousePos.x * 0.005 - animationRef.current.rotationY) * 0.1;
-      animationRef.current.rotationX += (mousePos.y * 0.005 - animationRef.current.rotationX) * 0.1;
+      const { mousePos: currentMouse, hoveredNode: currentHovered, selectedNode: currentSelected } = interactionRef.current;
+      const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
+      animationRef.current.rotationY += (currentMouse.x * 0.005 - animationRef.current.rotationY) * 0.1;
+      animationRef.current.rotationX += (currentMouse.y * 0.005 - animationRef.current.rotationX) * 0.1;
 
       // Auto-rotation when not interacting
-      if (Math.abs(mousePos.x - width / 2) < 50 && Math.abs(mousePos.y - height / 2) < 50) {
+      if (Math.abs(currentMouse.x - width / 2) < 50 && Math.abs(currentMouse.y - height / 2) < 50) {
         animationRef.current.rotationY += 0.001;
       }
 
@@ -178,7 +190,7 @@ export const SkillsNetwork3D = () => {
         const fromNode = projectedNodes[from];
         const toNode = projectedNodes[to];
 
-        const isActive = hoveredNode === from || hoveredNode === to || selectedNode === from || selectedNode === to;
+        const isActive = currentHovered === from || currentHovered === to || currentSelected === from || currentSelected === to;
         const opacity = isActive ? 0.8 : 0.15;
         const width = isActive ? 2.5 : 1;
 
@@ -212,8 +224,8 @@ export const SkillsNetwork3D = () => {
       // Draw nodes
       sortedIndices.forEach((idx) => {
         const node = projectedNodes[idx];
-        const isHovered = hoveredNode === idx;
-        const isSelected = selectedNode === idx;
+        const isHovered = currentHovered === idx;
+        const isSelected = currentSelected === idx;
 
         const baseSize = 20;
         const size = isHovered ? baseSize * 1.5 : isSelected ? baseSize * 1.3 : baseSize;
@@ -260,20 +272,24 @@ export const SkillsNetwork3D = () => {
         }
       });
 
-      requestAnimationFrame(animate);
+      frameRef.current = requestAnimationFrame(animate);
     };
 
-    animate();
-  }, [isInView, mousePos, hoveredNode, selectedNode, nodes3D, connections]);
+    frameRef.current = requestAnimationFrame(animate);
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      if (frameRef.current !== null) cancelAnimationFrame(frameRef.current);
+    };
+  }, [isInView, nodes3D, connections]);
 
   // Mouse move handler
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (!canvasRef.current) return;
     const rect = canvasRef.current.getBoundingClientRect();
-    setMousePos({
+    interactionRef.current.mousePos = {
       x: e.clientX - rect.left,
       y: e.clientY - rect.top,
-    });
+    };
   };
 
   // Get hovered node
@@ -289,8 +305,8 @@ export const SkillsNetwork3D = () => {
 
     nodes3D.forEach((node, idx) => {
       // Rough approximation - would need actual projection
-      const projX = canvasRef.current!.width / 2 + node.x * 0.3;
-      const projY = canvasRef.current!.height / 2 + node.y * 0.3;
+      const projX = canvasRef.current!.clientWidth / 2 + node.x * 0.3;
+      const projY = canvasRef.current!.clientHeight / 2 + node.y * 0.3;
       const dist = Math.hypot(projX - mouseX, projY - mouseY);
       if (dist < minDist) {
         minDist = dist;
