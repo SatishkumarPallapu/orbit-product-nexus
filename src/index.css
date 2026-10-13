@@ -47,7 +47,7 @@
 
   .light {
     --background: 210 24% 98%;
-    --foreground: 222 30% 13%;
+    --foreground: 222 34% 10%;
 
     --card: 0 0% 100%;
     --card-foreground: 222 30% 13%;
@@ -55,7 +55,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 174 62% 32%;
+    --primary: 174 72% 26%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 20% 93%;
@@ -64,7 +64,7 @@
     --muted: 210 20% 95%;
     --muted-foreground: 215 16% 40%;
 
-    --accent: 199 82% 36%;
+    --accent: 202 86% 30%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -147,11 +147,15 @@
   }
 
   .route-content {
-    padding-top: 4rem;
+    padding-top: 0.5rem;
   }
 
-  h1 [class~="text-transparent"],
-  h2 [class~="text-transparent"] {
+  h1[class*="text-transparent"],
+  h1 [class*="text-transparent"],
+  h2[class*="text-transparent"],
+  h2 [class*="text-transparent"],
+  h3[class*="text-transparent"],
+  h3 [class*="text-transparent"] {
     background-image: linear-gradient(110deg, hsl(var(--primary)), hsl(var(--accent))) !important;
   }
 
@@ -186,6 +190,58 @@
   html.light [class~="text-slate-400"],
   html.light [class~="text-gray-300"],
   html.light [class~="text-gray-400"] {
+    color: hsl(var(--muted-foreground)) !important;
+  }
+
+  /* Bring decorative Tailwind text colors into the light theme's accessible palette. */
+  html.light [class*="text-blue-"]:not([class*="hover:text-blue-"]),
+  html.light [class*="hover:text-blue-"]:hover,
+  html.light [class*="text-sky-"]:not([class*="hover:text-sky-"]),
+  html.light [class*="hover:text-sky-"]:hover,
+  html.light [class*="text-cyan-"]:not([class*="hover:text-cyan-"]),
+  html.light [class*="hover:text-cyan-"]:hover,
+  html.light [class*="text-indigo-"]:not([class*="hover:text-indigo-"]),
+  html.light [class*="hover:text-indigo-"]:hover {
+    color: hsl(var(--primary)) !important;
+  }
+
+  html.light [class*="text-purple-"]:not([class*="hover:text-purple-"]),
+  html.light [class*="hover:text-purple-"]:hover,
+  html.light [class*="text-pink-"]:not([class*="hover:text-pink-"]),
+  html.light [class*="hover:text-pink-"]:hover {
+    color: hsl(var(--accent)) !important;
+  }
+
+  html.light [class*="text-orange-"]:not([class*="hover:text-orange-"]),
+  html.light [class*="hover:text-orange-"]:hover,
+  html.light [class*="text-amber-"]:not([class*="hover:text-amber-"]),
+  html.light [class*="hover:text-amber-"]:hover,
+  html.light [class*="text-yellow-"]:not([class*="hover:text-yellow-"]),
+  html.light [class*="hover:text-yellow-"]:hover {
+    color: hsl(28 82% 38%) !important;
+  }
+
+  html.light [class*="text-green-"]:not([class*="hover:text-green-"]),
+  html.light [class*="hover:text-green-"]:hover,
+  html.light [class*="text-emerald-"]:not([class*="hover:text-emerald-"]),
+  html.light [class*="hover:text-emerald-"]:hover,
+  html.light [class*="text-teal-"]:not([class*="hover:text-teal-"]),
+  html.light [class*="hover:text-teal-"]:hover {
+    color: hsl(158 64% 30%) !important;
+  }
+
+  html.light [class*="text-red-"]:not([class*="hover:text-red-"]),
+  html.light [class*="hover:text-red-"]:hover,
+  html.light [class*="text-rose-"]:not([class*="hover:text-rose-"]),
+  html.light [class*="hover:text-rose-"]:hover {
+    color: hsl(0 68% 42%) !important;
+  }
+
+  /* Keep utility-based secondary copy legible and consistent in both themes. */
+  html [class~="text-gray-500"],
+  html [class~="text-gray-600"],
+  html [class~="text-slate-500"],
+  html [class~="text-slate-600"] {
     color: hsl(var(--muted-foreground)) !important;
   }
 

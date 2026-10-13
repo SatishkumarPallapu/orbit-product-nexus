@@ -185,7 +185,7 @@ export const Navigation = () => {
                             <Icon size={18} className="relative z-10" />
                           </motion.div>
                           
-                          <span className="hidden lg:block text-sm font-medium relative z-10">
+                          <span className="hidden xl:block text-sm font-medium relative z-10">
                             {item.label}
                           </span>
 

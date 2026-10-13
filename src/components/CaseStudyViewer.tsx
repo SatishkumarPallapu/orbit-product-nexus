@@ -34,7 +34,7 @@ export const CaseStudyViewer: React.FC<CaseStudyViewerProps> = ({ caseStudy, onC
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-2 backdrop-blur-sm sm:p-4"
       onClick={onClose}
     >
       <motion.div
@@ -42,12 +42,12 @@ export const CaseStudyViewer: React.FC<CaseStudyViewerProps> = ({ caseStudy, onC
         animate={{ scale: 1, rotateY: 0, opacity: 1 }}
         exit={{ scale: 0.8, rotateY: 90, opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 max-w-6xl w-full max-h-[90vh] overflow-hidden"
+        className="flex h-[90dvh] max-h-[900px] w-full min-w-0 max-w-6xl flex-col overflow-hidden rounded-2xl border border-white/20 bg-white/10 backdrop-blur-xl sm:rounded-3xl"
         onClick={(e) => e.stopPropagation()}
         style={{ transform: 'perspective(1000px)' }}
       >
         {/* Header */}
-        <div className={`relative p-6 bg-gradient-to-r ${caseStudy.color} bg-opacity-20 border-b border-white/20`}>
+        <div className={`relative shrink-0 border-b border-white/20 bg-gradient-to-r ${caseStudy.color} bg-opacity-20 p-4 sm:p-6`}>
           <button
             onClick={onClose}
             className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
@@ -55,15 +55,15 @@ export const CaseStudyViewer: React.FC<CaseStudyViewerProps> = ({ caseStudy, onC
             <X className="text-white" size={20} />
           </button>
           
-          <div className="space-y-3">
-            <div className="text-orange-400 text-sm font-medium uppercase tracking-wide flex items-center gap-2">
+          <div className="min-w-0 space-y-3 pr-8 sm:pr-10">
+            <div className="flex min-w-0 flex-wrap items-center gap-2 break-words pr-2 text-orange-400 text-sm font-medium uppercase tracking-wide">
               <FileText size={16} />
               {caseStudy.category}
             </div>
-            <h2 className="text-3xl font-bold text-white">{caseStudy.title}</h2>
+            <h2 className="break-words text-2xl font-bold text-white sm:text-3xl">{caseStudy.title}</h2>
             
             {/* Meta Info */}
-            <div className="flex flex-wrap gap-6 text-white/70">
+            <div className="flex flex-wrap gap-3 text-sm text-white/70 sm:gap-6 sm:text-base">
               <div className="flex items-center gap-2">
                 <Calendar size={16} />
                 <span>{caseStudy.duration}</span>
@@ -87,8 +87,8 @@ export const CaseStudyViewer: React.FC<CaseStudyViewerProps> = ({ caseStudy, onC
         </div>
 
         {/* Content */}
-        <div className="overflow-y-auto max-h-[calc(90vh-200px)]">
-          <div className="p-6 space-y-8">
+        <div className="min-h-0 flex-1 overflow-y-auto">
+          <div className="space-y-8 p-4 sm:p-6">
             {/* Overview Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
@@ -116,7 +116,7 @@ export const CaseStudyViewer: React.FC<CaseStudyViewerProps> = ({ caseStudy, onC
                   {caseStudy.longDescription.map((point, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <span className="text-blue-400 mt-2 flex-shrink-0">•</span>
-                      <p className="text-white/80">{point}</p>
+                      <p className="min-w-0 break-words text-white/80">{point}</p>
                     </div>
                   ))}
                 </div>

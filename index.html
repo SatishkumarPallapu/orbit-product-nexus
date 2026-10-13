@@ -4,6 +4,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          document.documentElement.classList.add(savedTheme === 'light' ? 'light' : 'dark');
+        } catch {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <title>Venkatesh Pallapu - Product Manager Portfolio | 3D Interactive Experience</title>
     <meta name="description" content="Explore Venkatesh Pallapu's interactive 3D portfolio showcasing 8+ years of product management excellence. Featuring innovative projects, proven methodologies, and transformative results in product strategy and development." />
     <meta name="author" content="Venkatesh Pallapu" />

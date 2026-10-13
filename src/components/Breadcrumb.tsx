@@ -18,7 +18,7 @@ export const Breadcrumb = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="absolute top-20 left-4 right-4 z-40 md:left-8 md:right-auto"
+      className="relative z-40 px-4 pt-2 md:px-8"
     >
       <motion.div
         className="relative inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl"

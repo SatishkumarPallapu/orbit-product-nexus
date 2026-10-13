@@ -92,7 +92,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ caseStudy, index, 
             repeat: Infinity,
             delay: index * 0.5
           }}
-          className={`absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br ${caseStudy.color} rounded-full flex items-center justify-center text-white shadow-lg`}
+          className={`absolute top-4 right-4 z-20 w-10 h-10 bg-gradient-to-br ${caseStudy.color} rounded-full flex items-center justify-center text-white shadow-lg`}
         >
           <FileText size={20} />
         </motion.div>
@@ -113,14 +113,14 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ caseStudy, index, 
           {/* Content */}
           <div className="flex-1 space-y-4">
             <div className="space-y-2">
-              <div className="text-orange-400 text-sm font-medium uppercase tracking-wide flex items-center gap-2">
-                <FileText size={14} />
+              <div className="min-w-0 flex flex-wrap items-center gap-2 pr-12 text-orange-400 text-sm font-medium uppercase tracking-wide">
+                <FileText size={14} className="shrink-0" />
                 {caseStudy.category}
               </div>
-              <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-300 transition-all duration-300">
+              <h3 className="break-words text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-300 transition-all duration-300">
                 {caseStudy.title}
               </h3>
-              <p className="text-white/70 text-sm leading-relaxed">
+              <p className="break-words text-white/70 text-sm leading-relaxed">
                 {caseStudy.description}
               </p>
             </div>

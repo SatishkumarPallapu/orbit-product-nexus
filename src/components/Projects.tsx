@@ -12,7 +12,7 @@ export const Projects = () => {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<number | null>(null);
   const [pdfModal, setPdfModal] = useState<{ url: string; title: string } | null>(null);
   const [activeSection, setActiveSection] = useState<'case-studies' | 'prototypes' | 'ai-agents'>('prototypes');
-  const cardGridClass = 'grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3';
+  const cardGridClass = 'grid w-full min-w-0 grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3';
 
   const caseStudies = [
     {
@@ -702,7 +702,7 @@ export const Projects = () => {
     >
       {getCurrentData().map((item, index) => {
         const frontContent = (
-          <div className={`relative p-6 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden h-full`}>
+          <div className={`relative p-6 pt-16 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 overflow-hidden h-full`}>
             {/* Gradient Background */}
             <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`} />
             
@@ -717,7 +717,7 @@ export const Projects = () => {
                 repeat: Infinity,
                 delay: index * 0.5
               }}
-              className={`absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br ${item.color} rounded-full flex items-center justify-center text-white font-bold shadow-lg`}
+              className={`absolute top-4 right-4 w-10 h-10 bg-gradient-to-br ${item.color} rounded-full flex items-center justify-center text-white font-bold shadow-lg`}
             >
               {String(item.id).padStart(2, '0')}
             </motion.div>
@@ -727,10 +727,10 @@ export const Projects = () => {
                 <div className="text-orange-400 text-sm font-medium uppercase tracking-wide">
                   {item.category}
                 </div>
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="break-words text-2xl font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="text-white/70 leading-relaxed">
+                <p className="break-words text-white/70 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -738,14 +738,14 @@ export const Projects = () => {
               {/* Quick Metrics - only for items with metrics property */}
               {'metrics' in item && (
                 <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
-                  <div className="text-center">
-                    <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                  <div className="min-w-0 text-center">
+                    <div className={`break-words text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                       {item.metrics.conversion}
                     </div>
                     <div className="text-white/60 text-xs">Conversion</div>
                   </div>
-                  <div className="text-center">
-                    <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                  <div className="min-w-0 text-center">
+                    <div className={`break-words text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                       {item.metrics.users}
                     </div>
                     <div className="text-white/60 text-xs">Users</div>
@@ -772,21 +772,21 @@ export const Projects = () => {
 
               {'metrics' in item && (
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-white/10 rounded-lg p-3">
+                  <div className="min-w-0 bg-white/10 rounded-lg p-3">
                     <div className="flex items-center gap-2 mb-1">
                       <DollarSign size={16} className="text-green-400" />
                       <span className="text-white/60 text-xs">Revenue</span>
                     </div>
-                    <div className={`text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                    <div className={`break-words text-lg font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                       {item.metrics.revenue}
                     </div>
                   </div>
-                  <div className="bg-white/10 rounded-lg p-3">
+                  <div className="min-w-0 bg-white/10 rounded-lg p-3">
                     <div className="flex items-center gap-2 mb-1">
                       <Clock size={16} className="text-blue-400" />
                       <span className="text-white/60 text-xs">Timeline</span>
                     </div>
-                    <div className="text-white font-medium text-sm">
+                    <div className="break-words text-white font-medium text-sm">
                       {item.metrics.timeline}
                     </div>
                   </div>
@@ -812,14 +812,14 @@ export const Projects = () => {
             initial={{ rotateY: -90, opacity: 0 }}
             animate={{ rotateY: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="h-[400px] w-full min-w-0"
+            className="w-full min-w-0"
             style={{ transform: 'perspective(1000px)' }}
           >
             <FlipCard3D
               front={frontContent}
               back={backContent}
               flipOnHover={true}
-              className="h-full w-full"
+              className="h-full min-h-[440px] w-full"
             />
           </motion.div>
         );
@@ -833,19 +833,19 @@ export const Projects = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex lg:items-start justify-center px-4"
+      className="min-h-screen flex w-full min-w-0 lg:items-start justify-center px-4"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto w-full min-w-0 max-w-7xl">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 break-words">
             {getSectionTitle()} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"></span>
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto mb-8">
+          <p className="mx-auto mb-8 max-w-3xl break-words px-2 text-base text-white/70 sm:text-lg md:text-xl">
             {getSectionDescription()}
           </p>
 
@@ -929,7 +929,7 @@ export const Projects = () => {
                 animate={{ scale: 1, y: 0, opacity: 1 }}
                 exit={{ scale: 0.8, y: 50, opacity: 0 }}
                 transition={{ duration: 0.4 }}
-                className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                className="max-h-[90dvh] w-full min-w-0 max-w-4xl overflow-y-auto break-words rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-xl sm:rounded-3xl sm:p-6 md:p-8"
                 onClick={(e) => e.stopPropagation()}
               >
                 {(() => {
@@ -940,8 +940,8 @@ export const Projects = () => {
                     <div className="space-y-8">
                       {/* Header */}
                       <div className="text-center space-y-4">
-                        <h3 className="text-4xl font-bold text-white">{prototype.title}</h3>
-                        <p className="text-xl text-white/70">{prototype.description}</p>
+                        <h3 className="break-words text-2xl font-bold text-white sm:text-3xl md:text-4xl">{prototype.title}</h3>
+                        <p className="break-words text-base text-white/70 sm:text-lg md:text-xl">{prototype.description}</p>
                       </div>
 
                       {/* Preview Image */}
@@ -1049,7 +1049,7 @@ export const Projects = () => {
                 animate={{ scale: 1, rotateY: 0, opacity: 1 }}
                 exit={{ scale: 0.8, rotateY: 90, opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                className="max-h-[90dvh] w-full min-w-0 max-w-4xl overflow-y-auto break-words rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-xl sm:rounded-3xl sm:p-6 md:p-8"
                 onClick={(e) => e.stopPropagation()}
                 style={{ transform: 'perspective(1000px)' }}
               >
@@ -1066,13 +1066,13 @@ export const Projects = () => {
                     <div className="space-y-8">
                       {/* Header */}
                       <div className="text-center space-y-4">
-                        <h3 className="text-4xl font-bold text-white">{item.title}</h3>
+                        <h3 className="break-words text-2xl font-bold text-white sm:text-3xl md:text-4xl">{item.title}</h3>
                         <div className="text-left max-w-none">
-                          <ul className="text-xl text-white/70 space-y-2">
+                          <ul className="min-w-0 space-y-2 text-base text-white/70 sm:text-lg">
                             {item.longDescription.map((point, index) => (
                               <li key={index} className="flex items-start gap-3">
                                 <span className="text-blue-400 mt-2 flex-shrink-0">•</span>
-                                <span>{point}</span>
+                                <span className="min-w-0 break-words">{point}</span>
                               </li>
                             ))}
                           </ul>
@@ -1081,7 +1081,7 @@ export const Projects = () => {
 
                       {/* Metrics Grid - only show if item has metrics */}
                       {hasMetrics && (
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-6">
                           {[
                             { icon: DollarSign, label: 'Revenue Impact', value: (item as any).metrics.revenue },
                             { icon: TrendingUp, label: 'Conversion Lift', value: (item as any).metrics.conversion },
@@ -1095,10 +1095,10 @@ export const Projects = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: index * 0.1 }}
-                                className="text-center p-4 bg-white/5 rounded-2xl border border-white/10"
+                                className="min-w-0 text-center p-4 bg-white/5 rounded-2xl border border-white/10"
                               >
                                 <Icon className={`mx-auto mb-2 text-2xl bg-gradient-to-r ${item.color} bg-clip-text text-transparent`} size={32} />
-                                <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
+                                <div className="mb-1 break-words text-xl font-bold text-white sm:text-2xl">{metric.value}</div>
                                 <div className="text-white/60 text-sm">{metric.label}</div>
                               </motion.div>
                             );
@@ -1117,7 +1117,7 @@ export const Projects = () => {
                                 initial={{ scale: 0 }}
                                 animate={{ scale: 1 }}
                                 transition={{ delay: 0.5 + index * 0.1 }}
-                                className={`px-4 py-2 bg-gradient-to-r ${item.color} rounded-full text-white font-medium`}
+                                className={`max-w-full break-words px-4 py-2 bg-gradient-to-r ${item.color} rounded-full text-white font-medium`}
                               >
                                 {tech}
                               </motion.span>
