@@ -44,7 +44,7 @@ export const Hero = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-slate-900"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-background"
     >
       {/* Layered Parallax Background Elements */}
       <motion.div style={{ y: y3 }} className="absolute inset-0 pointer-events-none">
@@ -178,7 +178,7 @@ export const Hero = () => {
             whileHover={{ scale: 1.05 }}
           >
             <Sparkles size={12} className="text-cyan-400 sm:w-4 sm:h-4" />
-            <span className="text-slate-300 text-xs sm:text-sm">AI Product Manager</span>
+            <span className="text-slate-300 text-xs sm:text-sm">Founder at Worthstyle</span>
           </motion.div>
 
           <motion.h1

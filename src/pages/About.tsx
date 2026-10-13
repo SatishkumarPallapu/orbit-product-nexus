@@ -32,7 +32,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4">
         <AboutStaggered />
         
-        <StatsCounter />
+        {/* <StatsCounter /> */}
       </div>
 
       <div className="py-12">

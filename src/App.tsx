@@ -43,19 +43,21 @@ const AnimatedRoutes = () => {
       <WebGLParticles />
       <Navigation />
       <Breadcrumb />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<PageTransition><Index /></PageTransition>} />
-          <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-          <Route path="/experience" element={<PageTransition><Experience /></PageTransition>} />
-          <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
-          <Route path="/skills" element={<PageTransition><Skills /></PageTransition>} />
-          <Route path="/certifications" element={<PageTransition><Certifications /></PageTransition>} />
-          <Route path="/process" element={<PageTransition><Process /></PageTransition>} />
-          <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-          <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
-        </Routes>
-      </AnimatePresence>
+      <div className={location.pathname === '/' ? undefined : 'route-content'}>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<PageTransition><Index /></PageTransition>} />
+            <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+            <Route path="/experience" element={<PageTransition><Experience /></PageTransition>} />
+            <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
+            <Route path="/skills" element={<PageTransition><Skills /></PageTransition>} />
+            <Route path="/certifications" element={<PageTransition><Certifications /></PageTransition>} />
+            <Route path="/process" element={<PageTransition><Process /></PageTransition>} />
+            <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+            <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+          </Routes>
+        </AnimatePresence>
+      </div>
       <Footer />
     </>
   );

@@ -1,47 +1,35 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X, FileText, Briefcase, TrendingUp } from 'lucide-react';
+import { Search, X, FileText } from 'lucide-react';
 
 interface SearchResult {
   id: number;
   title: string;
   category: string;
   description: string;
-  type: 'project' | 'case-study';
   tags?: string[];
 }
 
 interface SearchBarProps {
-  projects: any[];
   caseStudies: any[];
   onResultClick: (result: SearchResult) => void;
 }
 
-export const SearchBar: React.FC<SearchBarProps> = ({ projects, caseStudies, onResultClick }) => {
+export const SearchBar: React.FC<SearchBarProps> = ({ caseStudies, onResultClick }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isFocused, setIsFocused] = useState(false);
 
   const allItems: SearchResult[] = useMemo(() => {
-    const projectItems = projects.map(p => ({
-      id: p.id,
-      title: p.title,
-      category: p.category,
-      description: p.description,
-      type: 'project' as const,
-      tags: p.roles
-    }));
-
     const caseStudyItems = caseStudies.map(c => ({
       id: c.id,
       title: c.title,
       category: c.category,
       description: c.description,
-      type: 'case-study' as const,
       tags: c.tags
     }));
 
-    return [...projectItems, ...caseStudyItems];
-  }, [projects, caseStudies]);
+    return caseStudyItems;
+  }, [caseStudies]);
 
   const filteredResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
@@ -107,7 +95,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ projects, caseStudies, onR
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setTimeout(() => setIsFocused(false), 200)}
-              placeholder="Search projects and case studies..."
+              placeholder="Search case studies..."
               className="flex-1 bg-transparent text-white placeholder-white/50 outline-none text-lg"
             />
 
@@ -157,7 +145,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ projects, caseStudies, onR
             <div className="max-h-96 overflow-y-auto p-2">
               {filteredResults.map((result, index) => (
                 <motion.div
-                  key={`${result.type}-${result.id}`}
+                  key={result.id}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
@@ -181,17 +169,9 @@ export const SearchBar: React.FC<SearchBarProps> = ({ projects, caseStudies, onR
                     <motion.div
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.5 }}
-                      className={`p-3 rounded-xl ${
-                        result.type === 'project'
-                          ? 'bg-gradient-to-br from-blue-500/20 to-purple-500/20'
-                          : 'bg-gradient-to-br from-orange-500/20 to-pink-500/20'
-                      }`}
+                      className="rounded-xl bg-primary/10 p-3"
                     >
-                      {result.type === 'project' ? (
-                        <Briefcase size={20} className="text-blue-400" />
-                      ) : (
-                        <FileText size={20} className="text-orange-400" />
-                      )}
+                      <FileText size={20} className="text-primary" />
                     </motion.div>
 
                     {/* Content */}
@@ -200,8 +180,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({ projects, caseStudies, onR
                         <h4 className="text-white font-semibold text-sm group-hover:text-cyan-400 transition-colors">
                           {result.title}
                         </h4>
-                        <span className="text-xs px-2 py-1 rounded-full bg-white/10 text-white/70">
-                          {result.type === 'project' ? 'Project' : 'Case Study'}
+                        <span className="rounded-full bg-white/10 px-2 py-1 text-xs text-white/70">
+                          Case Study
                         </span>
                       </div>
                       <p className="text-white/60 text-sm mb-2 line-clamp-1">

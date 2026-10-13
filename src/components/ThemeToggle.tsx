@@ -8,8 +8,7 @@ export const ThemeToggle = () => {
   useEffect(() => {
     // Load theme from localStorage
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    const initialTheme = savedTheme || 'dark';
     
     setTheme(initialTheme);
     applyTheme(initialTheme);
@@ -34,7 +33,7 @@ export const ThemeToggle = () => {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="fixed top-20 right-4 md:top-6 md:right-6 z-[60] w-12 h-12 rounded-full backdrop-blur-xl bg-card/80 border border-border shadow-lg flex items-center justify-center group overflow-hidden"
+      className="fixed top-4 right-20 z-[60] flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-border bg-card/90 shadow-lg backdrop-blur-xl group md:right-6 md:top-6 md:h-12 md:w-12"
       whileHover={{ scale: 1.1, rotate: 180 }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}

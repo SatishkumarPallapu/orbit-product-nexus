@@ -29,7 +29,7 @@ export const Footer = () => {
   return (
     <footer className="relative mt-20 py-12 px-4">
       {/* Glass Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background backdrop-blur-sm" />
       
       <div className="relative max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">

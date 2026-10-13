@@ -18,38 +18,17 @@ export const Breadcrumb = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-20 left-4 right-4 md:left-8 md:right-auto z-40"
+      className="absolute top-20 left-4 right-4 z-40 md:left-8 md:right-auto"
     >
       <motion.div
         className="relative inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl"
         style={{
-          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
-          backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
-          transformStyle: 'preserve-3d',
-          perspective: '1000px',
-        }}
-        whileHover={{ 
-          scale: 1.02,
-          boxShadow: '0 12px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+          background: 'hsl(var(--card) / 0.92)',
+          backdropFilter: 'blur(16px)',
+          border: '1px solid hsl(var(--border))',
+          boxShadow: '0 8px 24px hsl(var(--background) / 0.16)',
         }}
       >
-        {/* Glass shine effect */}
-        <div className="absolute inset-0 rounded-2xl overflow-hidden">
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-            animate={{
-              x: ['-200%', '200%'],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          />
-        </div>
-
         {/* Home link */}
         <motion.div
           whileHover={{ scale: 1.1, rotateZ: 5 }}
@@ -57,7 +36,7 @@ export const Breadcrumb = () => {
         >
           <Link
             to="/"
-            className="relative z-10 flex items-center justify-center w-7 h-7 rounded-lg bg-white/10 text-cyan-400 hover:bg-white/20 transition-all duration-300"
+            className="relative z-10 flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors hover:bg-primary/15"
           >
             <Home size={14} />
           </Link>
@@ -75,7 +54,7 @@ export const Breadcrumb = () => {
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <ChevronRight size={14} className="text-white/40" />
+                <ChevronRight size={14} className="text-muted-foreground" />
               </motion.div>
 
               {/* Breadcrumb item */}
@@ -86,13 +65,13 @@ export const Breadcrumb = () => {
                 whileHover={!isLast ? { scale: 1.05, y: -2 } : {}}
               >
                 {isLast ? (
-                  <span className="relative z-10 text-sm font-medium text-white px-2 py-1 rounded-lg bg-gradient-to-r from-cyan-500/20 to-blue-500/20">
+                  <span className="relative z-10 rounded-lg bg-primary/10 px-2 py-1 text-sm font-medium text-primary">
                     {pathToName(name)}
                   </span>
                 ) : (
                   <Link
                     to={routeTo}
-                    className="relative z-10 text-sm text-white/70 hover:text-white px-2 py-1 rounded-lg hover:bg-white/10 transition-all duration-300"
+                    className="relative z-10 rounded-lg px-2 py-1 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                   >
                     {pathToName(name)}
                   </Link>
@@ -102,14 +81,6 @@ export const Breadcrumb = () => {
           );
         })}
 
-        {/* 3D depth shadow */}
-        <div 
-          className="absolute inset-0 rounded-2xl bg-black/20 -z-10"
-          style={{
-            transform: 'translateZ(-10px) translateY(5px)',
-            filter: 'blur(5px)',
-          }}
-        />
       </motion.div>
     </motion.nav>
   );

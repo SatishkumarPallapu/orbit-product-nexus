@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { User, Briefcase, Target, TrendingUp, Mail, Home, Menu, X, Award, Shield } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -6,7 +6,32 @@ import { MagneticButton } from './MagneticButton';
 
 export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const location = useLocation();
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollY.current;
+
+      if (currentScrollY <= 24) {
+        setIsNavVisible(true);
+      } else if (scrollDelta > 6) {
+        setIsNavVisible(false);
+        setIsMobileMenuOpen(false);
+      } else if (scrollDelta < -6) {
+        setIsNavVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { id: '/', label: 'Home', icon: Home },
@@ -24,9 +49,10 @@ export const Navigation = () => {
       {/* Desktop Navigation - 3D Glass Box */}
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="fixed top-0 left-0 right-0 z-50 p-4 sm:p-6 hidden md:block"
+        animate={{ y: isNavVisible ? 0 : -140, opacity: isNavVisible ? 1 : 0 }}
+        transition={{ duration: isNavVisible ? 0.48 : 0.24, ease: 'easeInOut' }}
+        style={{ pointerEvents: isNavVisible ? 'auto' : 'none' }}
+        className="sticky top-0 left-0 right-0 z-50 hidden p-4 sm:p-6 md:block"
       >
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-center">
@@ -129,19 +155,17 @@ export const Navigation = () => {
                             relative flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-xl
                             transition-all duration-300
                             ${isActive 
-                              ? 'text-white' 
-                              : 'text-slate-300 hover:text-white'
+                              ? 'text-primary-foreground'
+                              : 'text-muted-foreground hover:text-foreground'
                             }
                           `}
                           style={{
-                            background: isActive 
-                              ? 'linear-gradient(135deg, rgba(34, 211, 238, 0.8) 0%, rgba(37, 99, 235, 0.8) 100%)'
-                              : 'transparent',
+                            background: isActive ? 'hsl(var(--primary))' : 'transparent',
                             boxShadow: isActive 
-                              ? '0 4px 20px rgba(34, 211, 238, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2)'
+                              ? '0 4px 14px hsl(var(--primary) / 0.22)'
                               : 'none',
                             border: isActive 
-                              ? '1px solid rgba(34, 211, 238, 0.3)'
+                              ? '1px solid hsl(var(--primary) / 0.45)'
                               : '1px solid transparent',
                             transformStyle: 'preserve-3d'
                           }}
@@ -223,9 +247,10 @@ export const Navigation = () => {
       {/* Mobile Navigation - 3D Glass Box */}
       <motion.div
         initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="fixed top-0 left-0 right-0 z-50 p-4 md:hidden"
+        animate={{ y: isNavVisible ? 0 : -140, opacity: isNavVisible ? 1 : 0 }}
+        transition={{ duration: isNavVisible ? 0.48 : 0.24, ease: 'easeInOut' }}
+        style={{ pointerEvents: isNavVisible ? 'auto' : 'none' }}
+        className="sticky top-0 left-0 right-0 z-50 p-4 md:hidden"
       >
         <div className="flex items-center justify-between">
           <motion.div
@@ -250,7 +275,7 @@ export const Navigation = () => {
             animate={{ scale: 1, opacity: 1, rotateY: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-3 rounded-xl text-white relative overflow-hidden"
+            className="p-3 rounded-xl text-foreground relative overflow-hidden"
             style={{
               background: 'linear-gradient(135deg, hsl(var(--card) / 0.9) 0%, hsl(var(--background) / 0.96) 100%)',
               backdropFilter: 'blur(20px)',
@@ -292,14 +317,14 @@ export const Navigation = () => {
               transition={{ duration: 0.4, type: "spring", stiffness: 300, damping: 25 }}
               className="absolute top-full left-4 right-4 mt-3 p-5 rounded-2xl"
               style={{
-                background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.9) 100%)',
+                background: 'hsl(var(--card) / 0.97)',
                 backdropFilter: 'blur(24px)',
                 boxShadow: `
                   0 20px 60px rgba(0, 0, 0, 0.5),
                   inset 0 1px 2px rgba(255, 255, 255, 0.1),
                   0 0 40px rgba(34, 211, 238, 0.15)
                 `,
-                border: '1px solid rgba(148, 163, 184, 0.2)',
+                border: '1px solid hsl(var(--border))',
                 perspective: '1000px'
               }}
             >
@@ -345,25 +370,23 @@ export const Navigation = () => {
                             transition-all duration-300 relative overflow-hidden
                           `}
                           style={{
-                            background: isActive 
-                              ? 'linear-gradient(135deg, rgba(34, 211, 238, 0.8) 0%, rgba(37, 99, 235, 0.8) 100%)'
-                              : 'rgba(51, 65, 85, 0.3)',
+                            background: isActive ? 'hsl(var(--primary))' : 'hsl(var(--muted) / 0.7)',
                             boxShadow: isActive 
-                              ? '0 4px 20px rgba(34, 211, 238, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2)'
+                              ? '0 4px 14px hsl(var(--primary) / 0.22)'
                               : '0 2px 8px rgba(0, 0, 0, 0.1)',
                             border: isActive 
-                              ? '1px solid rgba(34, 211, 238, 0.4)'
-                              : '1px solid rgba(148, 163, 184, 0.1)',
+                              ? '1px solid hsl(var(--primary) / 0.45)'
+                              : '1px solid hsl(var(--border))',
                             transformStyle: 'preserve-3d'
                           }}
                         >
                           <Icon 
                             size={20} 
-                            className={isActive ? 'text-white' : 'text-slate-300'}
+                            className={isActive ? 'text-primary-foreground' : 'text-muted-foreground'}
                           />
                           <span 
                             className={`font-medium ${
-                              isActive ? 'text-white' : 'text-slate-300'
+                              isActive ? 'text-primary-foreground' : 'text-muted-foreground'
                             }`}
                           >
                             {item.label}

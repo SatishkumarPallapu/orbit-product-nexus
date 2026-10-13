@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen bg-slate-900 overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden bg-background">
       <ScrollProgress />
       
       {/* Simple gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted" />
 
       <main className="relative z-10">
         <Hero />

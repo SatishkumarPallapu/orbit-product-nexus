@@ -1,207 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock, FileText, Layers, Monitor, Bot, Globe, Code2 } from 'lucide-react';
+import { ExternalLink, Github, TrendingUp, Users, DollarSign, Clock, FileText, Bot, Globe, Code2 } from 'lucide-react';
 import { CaseStudyCard } from './CaseStudyCard';
 import { CaseStudyViewer } from './CaseStudyViewer';
 import { FlipCard3D } from './FlipCard3D';
-import { ProjectSidePanel } from './ProjectSidePanel';
 import { PDFModal } from './PDFModal';
 import { SearchBar } from './SearchBar';
 
 export const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<number | null>(null);
   const [pdfModal, setPdfModal] = useState<{ url: string; title: string } | null>(null);
-  const [activeSection, setActiveSection] = useState<'projects' | 'case-studies' | 'prototypes' | 'ai-agents'>('projects');
-
-  const projects = [
-    {
-      id: 1,
-      title: 'E-commerce Revolution',
-      category: 'Mobile App',
-      description: 'Redesigned checkout flow resulting in 40% increase in conversion rates',
-      longDescription: [
-        'Led a comprehensive redesign of the mobile checkout experience',
-        'Implemented progressive disclosure, one-click payments, and smart form validation',
-        'Conducted extensive A/B testing and user research to optimize every step of the funnel'
-      ],
-      metrics: {
-        revenue: '+$2.5M ARR',
-        conversion: '+40%',
-        users: '500K+',
-        timeline: '6 months'
-      },
-      color: 'from-blue-500 to-purple-600',
-      roles: ['React Native', 'GraphQL', 'Stripe', 'Analytics'],
-      impact: 'Increased company revenue by $2.5M annually and improved user satisfaction scores by 35%'
-    },
-    {
-      id: 2,
-      title: 'AI-Powered Analytics',
-      category: 'SaaS Platform',
-      description: 'Built ML-driven insights platform serving 10K+ businesses',
-      longDescription: [
-        'Spearheaded the development of an AI-powered analytics platform',
-        'Provided automated insights and recommendations to business users',
-        'Collaborated with data science teams to translate complex ML models into actionable business intelligence'
-      ],
-      metrics: {
-        revenue: '+$5M ARR',
-        conversion: '+60%',
-        users: '10K+',
-        timeline: '12 months'
-      },
-      color: 'from-purple-500 to-pink-600',
-      roles: ['Python', 'TensorFlow', 'React', 'PostgreSQL'],
-      impact: 'Enabled data-driven decision making for 10,000+ businesses and reduced analysis time by 80%'
-    },
-    {
-      id: 3,
-      title: 'Fintech Innovation',
-      category: 'Financial App',
-      description: 'Launched digital banking features with 95% user adoption',
-      longDescription: [
-        'Led the product strategy and execution for a suite of digital banking features',
-        'Developed budgeting tools, savings goals, and investment tracking capabilities',
-        'Worked closely with regulatory teams to ensure compliance while maintaining exceptional UX'
-      ],
-      metrics: {
-        revenue: '+$8M ARR',
-        conversion: '+95%',
-        users: '1M+',
-        timeline: '18 months'
-      },
-      color: 'from-orange-500 to-red-600',
-      roles: ['Flutter', 'Node.js', 'Blockchain', 'Plaid API'],
-      impact: 'Achieved 95% feature adoption rate and positioned company as fintech innovation leader'
-    },
-    {
-      id: 4,
-      title: 'TImesheet Guru',
-      category: ' Internal Employee Productivity & Time Tracking Tool',
-      description: 'An internal time tracking and productivity tool - streamline timesheet logging, and performance reporting across departments',
-      longDescription: [
-        'Conceptualized, developed, and launched in just 60 days as a 0→1 internal web application',
-        'Led a 5-member cross-functional team (PM, FE, BE, QA, and UI/UX)',
-        'Replaced manual logging with a scalable, automated system',
-        'Enabled session tracking, role-based access, compliance, and real-time dashboards for 500+ users',
-        'Reduced payroll and timesheet discrepancies and improved reporting accuracy'
-      ],
-      metrics: {
-        revenue: ' NA',
-        conversion: '100%',
-        users: '500+',
-        timeline: 'August 2022 – September 2022 (60 days)'
-      },
-      color: 'from-pink-500 to-white-600',
-      roles: ['PM', 'FE Dev', 'BE Dev', 'QA', 'UI/UX Designer'],
-      impact: `The tool achieved company-wide adoption as the daily standard for time reporting, significantly improving operational transparency. It enabled proactive resource planning and more effective performance reviews by providing accurate, real-time visibility into task-level efforts. By replacing manual logging processes, it reduced friction and human error, leading to increased efficiency. Additionally, the success and feedback from this tool directly informed the development of further automation solutions for HR and operations teams`
-    },
-    {
-      id: 5,
-      title: 'Payment Page Abandonment Optimization',
-      category: 'Conversion Optimization',
-      description: ` Redesigned the payment experience to address high checkout abandonment by
- integrating high-trust wallets, streamlining UX, and leveraging behavioral nudges—
- targeting increased conversion and improved customer confidence`,
-      longDescription: [
-        ` Led quantitative funnel
- analysis and qualitative session tracking to identify abandonment triggers—slow
- loading, trust friction, and poor visibility of savings.`,
-        `Integrated major wallets (e.g., KakaoPay, NaverPay) and
- reducing payment time by 35% and enabling one-tap mobile transactions.`,
-        `Launched real-time, cart-aware coupon suggestions with auto
- apply—resulting in a 4x boost in coupon usage and significant uptick in AOV`,
-        `Implemented exit-intent modals with personalized incentives
- (based on user behavior & cart size), decreasing bounce rate by 21%.`,
-        ` Deployed high-impact visual elements (refund guarantees,
- secure SSL badges, local payment icons) alongside contextual FAQs to increase
- perceived safety`,
-        `Checkout completion rate improved by 19% post one-tap wallet rollout`,
-        ` A/B testing across 500K+ sessions validated a +13% uplift in overall conversion
- rate, with strong statistical significance.`
-
-      ],
-      metrics: {
-        revenue: '+22%',
-        conversion: '+13%',
-        users: '500k+',
-        timeline: '6 Months'
-      },
-      color: 'from-blue-500 to-red-600',
-      roles: ['PM', '2 Engineers', 'Designers', 'Analyst', 'CRM Specialist'],
-      impact: `The redesigned payment experience led to a 16% reduction in checkout abandonment, outperforming industry benchmarks. One-tap wallet integration improved the checkout completion rate by 19%, while behavioral enhancements such as predictive coupon suggestions and exit-intent modals significantly boosted user engagement and retention. These changes resulted in a 4x increase in coupon usage and a 22% revenue lift from returning users. Overall, A/B testing validated a 13% improvement in conversion rates across over half a million sessions, demonstrating the substantial business value of these UX and behavioral optimizations.`
-    },
-    {
-      id: 6,
-      title: 'Capsure – Real-Time Campaign Compliance Platform',
-      category: 'Conversion Optimization',
-      description: 'A real-time campaign compliance and governance tool for advertising agencies, integrated with major ad platforms to enforce best practices and reduce QA overhead.',
-      longDescription: [
-        'Spearheaded 0-1 development of Capsure, now used by 150+ ad agencies and integrated with 18+ ad platforms including Meta, Reddit, and Google Ads',
-        'Scaled daily usage from 15K to 30K users, enabling deployment across 100-200 marketers per agency',
-        'Built a modular Chrome extension and rule engine for naming, targeting, and creative compliance',
-        'Launched Rule Template Marketplace MVP, reducing onboarding time by 38%',
-        'Delivered a powerful admin dashboard with compliance scores, audit logs, and governance insights',
-        'Contributed to a 6-figure ARR pipeline through premium enterprise features.',
-        'Increased product stickiness (DAU/MAU = 0.62) with real-time alerts and embedded workflows.'
-      ],
-      metrics: {
-        revenue: 'NA',
-        conversion: '90%',
-        users: '15-30k+',
-        timeline: '26 Months'
-      },
-      color: 'from-green-500 to-blue-600',
-      roles: ['PM', '4 FE Engineers', '3 BE Engineers', '2 QA', '2 Designers', '2 Data Analysts', '2 Marketing Ops', '3 Support'],
-      impact: `Capsure transformed ad operations by enabling real-time compliance monitoring across multiple platforms, leading to a 95%+ campaign compliance rate—up from 65%. The platform dramatically reduced QA cycle times and saved over 250 man-hours per agency every month. Deep integration into agency workflows drove high user stickiness with a DAU/MAU ratio of 0.62, and strong engagement resulted in an NPS score of 72+. The introduction of enterprise dashboard features contributed to a six-figure ARR pipeline, while the Rule Template Marketplace improved onboarding speed by 38%, making Capsure a key operational asset for 150+ advertising agencies.`
-    },
-    {
-      id: 7,
-      title: 'Checkout Experience Redesign',
-      category: 'Conversion Optimization',
-      description: 'A strategic redesign of the e-commerce payment flow to reduce checkout abandonment by integrating trusted payment methods, predictive incentives, and behavioral nudges.',
-      longDescription: [
-        'Addressed high checkout abandonment by revamping UI/UX, wallet integrations, and behavioral nudges.',
-        'Integrated KakaoPay, NaverPay for one-tap mobile transactions, cutting payment time by 35%',
-        'Implemented real-time coupon engine with auto-apply, resulting in 4x boost in coupon use and higher AOV.',
-        'Deployed exit-intent modals with personalized offers, reducing bounce rate by 21%.',
-        'Enhanced perceived trust with refund guarantees, SSL badges, and local payment icons',
-        'Achieved a 16% drop in abandonment rate (57% → 41%) and 19% uplift in checkout completion',
-        'Validated a +13% conversion uplift via A/B tests across 500K+ sessions.'
-      ],
-      metrics: {
-        revenue: '+22%',
-        conversion: '+13%',
-        users: '500k+',
-        timeline: 'November 2022 – April 2023'
-      },
-      color: 'from-red-500 to-gold-600',
-      roles: ['PM', '2 Engineers', 'Designers', 'Analyst', 'CRM Specialist'],
-      impact: `Boosted compliance from 65% to 95%, reduced QA cycles by 40%, and saved 250+ man-hours/month per agency..`
-    },
-    {
-      id: 8,
-      title: 'Promotional Coupons Optimization',
-      category: 'Internal Tool',
-      description: 'A strategic redesign of the e-commerce payment flow to reduce checkout abandonment by integrating trusted payment methods, predictive incentives, and behavioral nudges.',
-      longDescription: [
-        'Reframed coupons as discoverable homepage products, driving same-day reservations',
-        'Conducted deep user behavior analysis, revealing 2x lower conversion among new users.',
-        'Increased banner click-through rate by 8.5pp through A/B testing of content, layout, and CTA.',
-        ''
-      ],
-      metrics: {
-        revenue: '+22%',
-        conversion: '+13%',
-        users: '500k+',
-        timeline: 'November 2022 – April 2023'
-      },
-      color: 'from-purple-500 to-indigo-600',
-      roles: ['PM', 'FE Dev', 'BE Dev', 'QA', 'Designers', '2 Data Analysts', '2 Marketing Ops', '3 Support'],
-      impact: `Boosted compliance from 65% to 95%, reduced QA cycles by 40%, and saved 250+ man-hours/month per agency..`
-    }
-  ];
+  const [activeSection, setActiveSection] = useState<'case-studies' | 'prototypes' | 'ai-agents'>('prototypes');
+  const cardGridClass = 'grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3';
 
   const caseStudies = [
     {
@@ -536,7 +347,7 @@ export const Projects = () => {
         "Agile board integrations for seamless workflow management",
         "Clean UI designed for high usability and efficient decision-making"
       ],
-      techStack: ['React', 'Next.js', 'Tailwind CSS', 'Vercel', 'TypeScript'],
+      techStack: ['Vercel', 'Lovable', 'Bolt', 'Emergent', 'Firebase'],
       features: [
         "Customizable product roadmaps",
         "Idea repository management",
@@ -710,7 +521,7 @@ export const Projects = () => {
       case 'ai-agents':
         return aiAgents;
       default:
-        return projects;
+        return prototypes;
     }
   };
 
@@ -723,7 +534,7 @@ export const Projects = () => {
       case 'ai-agents':
         return 'AI Agents';
       default:
-        return 'Featured Projects';
+        return 'Live Prototypes';
     }
   };
 
@@ -736,7 +547,7 @@ export const Projects = () => {
       case 'ai-agents':
         return 'Intelligent agents automating complex workflows and decision-making';
       default:
-        return 'Transforming ideas into market-leading products';
+        return 'Live websites and applications built to solve real problems';
     }
   };
 
@@ -747,7 +558,7 @@ export const Projects = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      className={cardGridClass}
     >
       {caseStudies.map((caseStudy, index) => (
         <CaseStudyCard
@@ -773,7 +584,7 @@ export const Projects = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      className={cardGridClass}
     >
       {prototypes.map((prototype, index) => (
         <motion.div
@@ -871,7 +682,7 @@ export const Projects = () => {
             initial={{ opacity: 0 }}
             whileHover={{ opacity: 1 }}
             className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl flex items-center justify-center"
-            onClick={() => setSelectedProject(prototype.id)}
+            onClick={() => setSelectedItemId(prototype.id)}
           >
             <ExternalLink className="text-white/80" size={32} />
           </motion.div>
@@ -887,7 +698,7 @@ export const Projects = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8"
+      className={cardGridClass}
     >
       {getCurrentData().map((item, index) => {
         const frontContent = (
@@ -986,7 +797,7 @@ export const Projects = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedProject(item.id)}
+              onClick={() => setSelectedItemId(item.id)}
               className={`relative z-10 w-full mt-4 px-4 py-3 bg-gradient-to-r ${item.color} rounded-lg text-white font-semibold flex items-center justify-center gap-2 hover:shadow-xl transition-shadow`}
             >
               View Details
@@ -1001,14 +812,14 @@ export const Projects = () => {
             initial={{ rotateY: -90, opacity: 0 }}
             animate={{ rotateY: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="h-[400px]"
+            className="h-[400px] w-full min-w-0"
             style={{ transform: 'perspective(1000px)' }}
           >
             <FlipCard3D
               front={frontContent}
               back={backContent}
               flipOnHover={true}
-              className="h-full"
+              className="h-full w-full"
             />
           </motion.div>
         );
@@ -1041,20 +852,14 @@ export const Projects = () => {
           {/* Search Bar */}
           <div className="mb-12">
             <SearchBar
-              projects={projects}
               caseStudies={caseStudies}
               onResultClick={(result) => {
-                if (result.type === 'project') {
-                  setActiveSection('projects');
-                  setSelectedProject(result.id);
+                setActiveSection('case-studies');
+                const caseStudy = caseStudies.find(cs => cs.id === result.id);
+                if (caseStudy?.documentPdf) {
+                  setPdfModal({ url: caseStudy.documentPdf, title: caseStudy.title });
                 } else {
-                  setActiveSection('case-studies');
-                  const caseStudy = caseStudies.find(cs => cs.id === result.id);
-                  if (caseStudy?.documentPdf) {
-                    setPdfModal({ url: caseStudy.documentPdf, title: caseStudy.title });
-                  } else {
-                    setSelectedCaseStudy(result.id);
-                  }
+                  setSelectedCaseStudy(result.id);
                 }
               }}
             />
@@ -1063,9 +868,8 @@ export const Projects = () => {
           {/* Section Navigation */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {[
-              { key: 'projects', label: 'Projects', icon: Monitor },
-              { key: 'case-studies', label: 'Case Studies', icon: FileText },
               { key: 'prototypes', label: 'Live Prototypes', icon: Code2 },
+              { key: 'case-studies', label: 'Case Studies', icon: FileText },
               { key: 'ai-agents', label: 'AI Agents', icon: Bot }
             ].map(({ key, label, icon: Icon }) => (
               <motion.button
@@ -1086,11 +890,11 @@ export const Projects = () => {
           </div>
         </motion.div>
 
-        {/* Projects Grid */}
+        {/* Selected section content */}
         <AnimatePresence mode="wait">
           {activeSection === 'case-studies' && renderCaseStudies()}
           {activeSection === 'prototypes' && renderPrototypes()}
-          {(activeSection === 'projects' || activeSection === 'ai-agents') && renderOtherSections()}
+          {activeSection === 'ai-agents' && renderOtherSections()}
         </AnimatePresence>
 
         {/* Modals */}
@@ -1112,21 +916,13 @@ export const Projects = () => {
             />
           )}
 
-          {/* Project Side Panel - for regular projects */}
-          {selectedProject && activeSection === 'projects' && (
-            <ProjectSidePanel
-              project={projects.find(p => p.id === selectedProject) || null}
-              onClose={() => setSelectedProject(null)}
-            />
-          )}
-          
-          {selectedProject && activeSection === 'prototypes' && (
+          {selectedItemId && activeSection === 'prototypes' && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-              onClick={() => setSelectedProject(null)}
+              onClick={() => setSelectedItemId(null)}
             >
               <motion.div
                 initial={{ scale: 0.8, y: 50, opacity: 0 }}
@@ -1137,7 +933,7 @@ export const Projects = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 {(() => {
-                  const prototype = prototypes.find(p => p.id === selectedProject);
+                  const prototype = prototypes.find(p => p.id === selectedItemId);
                   if (!prototype) return null;
 
                   return (
@@ -1227,7 +1023,7 @@ export const Projects = () => {
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          onClick={() => setSelectedProject(null)}
+                          onClick={() => setSelectedItemId(null)}
                           className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-semibold border border-white/20 hover:border-white/40 transition-colors"
                         >
                           Close
@@ -1240,13 +1036,13 @@ export const Projects = () => {
             </motion.div>
           )}
           
-          {selectedProject && activeSection !== 'case-studies' && activeSection !== 'prototypes' && (
+          {selectedItemId && activeSection === 'ai-agents' && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-              onClick={() => setSelectedProject(null)}
+              onClick={() => setSelectedItemId(null)}
             >
               <motion.div
                 initial={{ scale: 0.8, rotateY: -90, opacity: 0 }}
@@ -1258,11 +1054,10 @@ export const Projects = () => {
                 style={{ transform: 'perspective(1000px)' }}
               >
                 {(() => {
-                  const allItems = [...projects, ...caseStudies, ...prototypes, ...aiAgents];
-                  const item = allItems.find(p => p.id === selectedProject);
+                  const item = aiAgents.find(agent => agent.id === selectedItemId);
                   if (!item) return null;
 
-                  // Check if item has metrics property (projects, prototypes, ai-agents)
+                  // Show the agent's available business impact details.
                   const hasMetrics = 'metrics' in item;
                   const hasRoles = 'roles' in item;
                   const hasImpact = 'impact' in item;
@@ -1344,7 +1139,7 @@ export const Projects = () => {
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          onClick={() => setSelectedProject(null)}
+                          onClick={() => setSelectedItemId(null)}
                           className="px-8 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-semibold border border-white/20 hover:border-white/40 transition-colors"
                         >
                           Close

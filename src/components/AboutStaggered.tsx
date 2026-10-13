@@ -95,7 +95,7 @@ export const AboutStaggered = () => {
             variants={fadeInUp}
             className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto px-4"
           >
-            Passionate about bridging the gap between user needs and business objectives
+            Bridging 0→1 operational execution, B2B partner ecosystems, and commercial growth.
           </motion.p>
         </motion.div>
 
@@ -194,7 +194,7 @@ export const AboutStaggered = () => {
                   transition={{ delay: 0.4 }}
                   className="text-blue-300 text-base sm:text-lg"
                 >
-                  Product Manager
+                  Founder &amp; CEO at WORTHSTYLE
                 </motion.p>
                 
                 <motion.div 
@@ -209,7 +209,7 @@ export const AboutStaggered = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Calendar size={14} className="sm:w-4 sm:h-4" />
-                    <span>3+ Years</span>
+                    <span>3.5+ Years</span>
                   </div>
                 </motion.div>
               </div>
@@ -230,28 +230,28 @@ export const AboutStaggered = () => {
                 variants={slideInRight}
                 className="text-white/80 text-base sm:text-lg leading-relaxed"
               >
-                I'm Venkatesh Pallapu, a strategic Product Manager with 3+ years of experience, passionate about building impactful digital products and solving complex business problems. I specialize in <b>0→1 product development, SaaS platforms, and data-driven optimization</b> across eCommerce, campaign governance, and internal productivity tools.
+                I am Venkatesh Pallapu, an entrepreneurial operator based in Hyderabad with 3.5+ years of experience across enterprise account management and physical product brand building.
               </motion.p>
               
               <motion.p 
                 variants={slideInRight}
                 className="text-white/80 text-base sm:text-lg leading-relaxed"
               >
-                With over 3+ years of experience in product management, I've led cross-functional teams to launch 4+ successful products that have generated millions in revenue and delighted users worldwide.
+                As the Founder &amp; CEO of WORTHSTYLE, I treated physical apparel distribution like a high-velocity product engine: scoping market fit, iterating proprietary athleisure designs from prototype to production, and building an offline B2B supply network across partnered retail stores. By owning unit economics, inventory lead times, and retail partner onboarding, I learned to make tough trade-offs between speed, cost, and partner retention.
               </motion.p>
 
               <motion.p 
                 variants={slideInRight}
                 className="text-white/80 text-base sm:text-lg leading-relaxed"
               >
-                I bring a unique blend of analytical rigor and user empathy, and thrive in fast-paced, agile environments. From defining product vision to shipping scalable MVPs, I lead cross-functional teams with clarity and ownership. I believe great products are born at the intersection of <b>user research, market understanding, and lean execution</b>
+                Prior to founding WORTHSTYLE, I served as an Account Manager at CarWale, where I managed regional dealership portfolios, monitored operational health metrics, and drove partner alignment in high-velocity local markets.
               </motion.p>
 
               <motion.p 
                 variants={slideInRight}
                 className="text-white/80 text-base sm:text-lg leading-relaxed"
               >
-                My goal? Build products that <i>empower users, drive engagement, and deliver measurable impact.</i>
+                I am transitioning this hybrid toolkit—combining the data-led stakeholder rigor of an enterprise account manager with the gritty 0→1 execution of a venture founder—into a full-time Product Manager role. I build where business strategy, partner workflows, and scalable execution intersect.
               </motion.p>
             </motion.div>
 
@@ -345,7 +345,7 @@ export const AboutStaggered = () => {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {[
-            { label: 'Years Experience', value: '3+', icon: Calendar, color: 'from-blue-500 to-cyan-500' },
+            { label: 'Years Experience', value: '3.5+', icon: Calendar, color: 'from-blue-500 to-cyan-500' },
             { label: 'Products Launched', value: '4+', icon: Rocket, color: 'from-purple-500 to-pink-500' },
             { label: 'Team Members Led', value: '15+', icon: Award, color: 'from-orange-500 to-red-500' },
             { label: 'Success Rate', value: '95%', icon: Target, color: 'from-green-500 to-teal-500' },

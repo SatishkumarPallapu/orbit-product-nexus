@@ -13,8 +13,8 @@ const experiences = [
     totalDuration: "2023 – Present",
     roles: [
       {
-        title: "Product Manager – B2B Athleisure",
-        duration: "2024 – Present",
+        title: "Founder & CEO at WORTHSTYLE",
+        duration: "2023 – Present",
         type: "Full-time",
         description:
           "Built and scaled a bootstrapped B2B athleisure vertical, owning client acquisition, international sourcing, product development, manufacturing operations, quality control, and order fulfillment.",
