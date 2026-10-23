@@ -8,9 +8,9 @@ export const ContactMethods = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'venkateshpallapu79@gmail.com',
+      value: 'venkateshpallapu36@gmail.com',
       color: 'from-blue-500 to-cyan-500',
-      action: () => window.open('mailto:venkateshpallapu79@gmail.com', '_blank')
+      action: () => window.open('mailto:venkateshpallapu36@gmail.com', '_blank')
     },
     {
       icon: Phone,
