@@ -230,7 +230,7 @@ export const AboutStaggered = () => {
                 variants={slideInRight}
                 className="text-white/80 text-base sm:text-lg leading-relaxed"
               >
-                I am Venkatesh Pallapu, an entrepreneurial operator based in Hyderabad with 3.5+ years of experience across enterprise account management and physical product brand building.
+                I am Venkatesh Pallapu, an entrepreneurial operator based in Hyderabad with 3+ years of experience across enterprise account management and physical product brand building.
               </motion.p>
               
               <motion.p 
@@ -345,7 +345,7 @@ export const AboutStaggered = () => {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {[
-            { label: 'Years Experience', value: '3.5+', icon: Calendar, color: 'from-blue-500 to-cyan-500' },
+            { label: 'Years Experience', value: '3+', icon: Calendar, color: 'from-blue-500 to-cyan-500' },
             { label: 'Products Launched', value: '4+', icon: Rocket, color: 'from-purple-500 to-pink-500' },
             { label: 'Team Members Led', value: '15+', icon: Award, color: 'from-orange-500 to-red-500' },
             { label: 'Success Rate', value: '95%', icon: Target, color: 'from-green-500 to-teal-500' },
