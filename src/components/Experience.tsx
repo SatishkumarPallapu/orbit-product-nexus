@@ -10,7 +10,7 @@ const experiences = [
     company: "WORTHSTYLE",
     logo: "/ws.webp",
     location: "Hyderabad, India",
-    totalDuration: "2023 – Present",
+    totalDuration: "2024 – Present",
     roles: [
       {
         title: "Founder & CEO at WORTHSTYLE",
