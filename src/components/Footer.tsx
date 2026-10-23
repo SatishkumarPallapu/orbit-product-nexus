@@ -15,15 +15,15 @@ export const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/venkateshpallapu-6b2b0a144/', color: 'from-blue-500 to-blue-600' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/venkatesh-pallapu/', color: 'from-blue-500 to-blue-600' },
     { icon: Github, label: 'GitHub', href: 'https://github.com/venkateshpallapu2122', color: 'from-gray-600 to-gray-700' },
     { icon: Twitter, label: 'Twitter', href: '#', color: 'from-sky-400 to-sky-500' },
   ];
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'venkateshpallapu999@gmail.com', href: 'mailto:venkateshpallapu999@gmail.com' },
-    { icon: Phone, label: 'Phone', value: '+91 8074416697', href: 'tel:+918074416697' },
-    { icon: MapPin, label: 'Location', value: 'Bangalore, India' },
+    { icon: Mail, label: 'Email', value: 'venkateshpallapu36@gmail.com', href: 'mailto:venkateshpallapu36@gmail.com' },
+    { icon: Phone, label: 'Phone', value: '+91 8367784677', href: 'tel:+91 8367784677' },
+    { icon: MapPin, label: 'Location', value: 'Hyderabad, India' },
   ];
 
   return (
