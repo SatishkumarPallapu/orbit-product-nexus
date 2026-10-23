@@ -5,7 +5,7 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 
 export const SocialLinks = () => {
   const socialLinks = [
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/venkateshpallapu-6b2b0a144/', color: 'from-blue-600 to-blue-700' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/venkatesh-pallapu/', color: 'from-blue-600 to-blue-700' },
     { icon: Twitter, label: 'Twitter', href: '#', color: 'from-sky-400 to-sky-600' },
     { icon: Github, label: 'GitHub', href: 'https://github.com/venkateshpallapu2122', color: 'from-gray-700 to-gray-900' }
   ];
