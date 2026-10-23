@@ -209,7 +209,7 @@ export const AboutStaggered = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Calendar size={14} className="sm:w-4 sm:h-4" />
-                    <span>3.5+ Years</span>
+                    <span>3+ Years</span>
                   </div>
                 </motion.div>
               </div>
