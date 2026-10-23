@@ -148,7 +148,7 @@ export const Footer = () => {
               © {new Date().getFullYear()} Venkatesh Pallapu. All rights reserved.
             </p>
             <p className="text-white/40 text-xs">
-              Designed & Built VENKATESH PALLAPU❤️
+              Designed & Built By VENKATESH PALLAPU❤️
             </p>
           </div>
         </motion.div>
